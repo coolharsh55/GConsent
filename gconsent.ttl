@@ -491,7 +491,7 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---""" .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
-:ShareWithPartners a gconsent:SharingOfPersonalData ;
+:ShareWithPartners a gconsent:ShareAction ;
     rdfs:label "Shares data with partners" ;
     gconsent:sharesDataWith "ShareWithPartners" .  # <----""" .
 

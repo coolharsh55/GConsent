@@ -173,7 +173,7 @@
 @prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
 @prefix : &lt;http://example.com/&gt; .
 
-:ShareWithPartners a gconsent:SharingOfPersonalData ;
+:ShareWithPartners a gconsent:ShareAction ;
     rdfs:label &quot;Shares data with partners&quot; ;
     gconsent:sharesDataWith &quot;ShareWithPartners&quot; .  # &lt;----</vann:example>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sharing of data involves another entity that needs to be named (explicitly). Therefore, it is a special case of `Action`, and has the property `sharesDataWith` to link it with the entity that data is shared with. The domain of this property is an instance of `ShareAction` which should be unique for each entity the data is shared with. This also allows changes in how data is shared with entities indenpent of the given consent.</rdfs:comment>

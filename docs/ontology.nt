@@ -52,7 +52,7 @@
 <https://w3id.org/GConsent#hasVerificationProcessForDelegation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#ConsentDelegation> .
 # 
 # https://w3id.org/GConsent#sharesDataWith
-<https://w3id.org/GConsent#sharesDataWith> <http://purl.org/vocab/vann/example> "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:ShareWithPartners a gconsent:SharingOfPersonalData ;\n    rdfs:label \"Shares data with partners\" ;\n    gconsent:sharesDataWith \"ShareWithPartners\" .  # <----" .
+<https://w3id.org/GConsent#sharesDataWith> <http://purl.org/vocab/vann/example> "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:ShareWithPartners a gconsent:ShareAction ;\n    rdfs:label \"Shares data with partners\" ;\n    gconsent:sharesDataWith \"ShareWithPartners\" .  # <----" .
 <https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Sharing of data involves another entity that needs to be named (explicitly). Therefore, it is a special case of `Action`, and has the property `sharesDataWith` to link it with the entity that data is shared with. The domain of this property is an instance of `ShareAction` which should be unique for each entity the data is shared with. This also allows changes in how data is shared with entities indenpent of the given consent." .
 <https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/2000/01/rdf-schema#label> "sharesDataWith" .
 <https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
