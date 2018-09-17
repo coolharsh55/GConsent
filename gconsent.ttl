@@ -22,7 +22,7 @@ prefix vann: <http://purl.org/vocab/vann/>
 prefix : <https://w3id.org/GConsent#>
 
 # Ontology Metadata
-<https://w3id.org/GConsent#> rdf:type owl:Ontology ;
+<https://w3id.org/GConsent> rdf:type owl:Ontology ;
     vann:preferredNamespaceUri "https://w3id.org/GConsent" ;
     vann:preferredNamespacePrefix "gconsent" ;
     dct:title "GConsent - a consent ontology based on the GDPR" ;

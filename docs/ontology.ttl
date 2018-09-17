@@ -1,24 +1,24 @@
-@prefix : <https://w3id.org/GConsent##> .
+@prefix : <https://w3id.org/GConsent#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/GConsent#> .
+@base <https://w3id.org/GConsent> .
 
-<https://w3id.org/GConsent#> rdf:type owl:Ontology ;
-                              <http://purl.org/dc/terms/abstract> "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner."^^xsd:string ;
-                              <http://purl.org/dc/terms/created> "2018-08-24"^^xsd:date ;
-                              <http://purl.org/dc/terms/creator> "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
-                              <http://purl.org/dc/terms/description> "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
-                              <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
-                              <http://purl.org/dc/terms/title> "GConsent - a consent ontology based on the GDPR"^^xsd:string ;
-                              <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
-                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "gconsent"^^xsd:string ;
-                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/GConsent"^^xsd:string ;
-                              owl:incompatibleWith <http://purl.org/adaptcentre/openscience/ontologies/consent> ;
-                              owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
-                              owl:versionInfo "0.5"^^xsd:string .
+<https://w3id.org/GConsent> rdf:type owl:Ontology ;
+                             <http://purl.org/dc/terms/abstract> "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner."^^xsd:string ;
+                             <http://purl.org/dc/terms/created> "2018-08-24"^^xsd:date ;
+                             <http://purl.org/dc/terms/creator> "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
+                             <http://purl.org/dc/terms/description> "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
+                             <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
+                             <http://purl.org/dc/terms/title> "GConsent - a consent ontology based on the GDPR"^^xsd:string ;
+                             <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
+                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "gconsent"^^xsd:string ;
+                             <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/GConsent"^^xsd:string ;
+                             owl:incompatibleWith <http://purl.org/adaptcentre/openscience/ontologies/consent> ;
+                             owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
+                             owl:versionInfo "0.5"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -29,7 +29,7 @@
 
 
 ###  https://w3id.org/GConsent#hasConsentGivenByDelegate
-<https://w3id.org/GConsent#hasConsentGivenByDelegate> <http://purl.org/vocab/vann/example> """
+:hasConsentGivenByDelegate <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -46,14 +46,14 @@
     rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;
     gconsent:hasConsentGivenByDelegate \"Hospitanl Staff Member 4826719\" ;  # <----
     gconsent:isDelegationForDataSubject :HJP ."""^^xsd:string ;
-                                                      rdfs:comment "Specifies the _delegate_ that gave consent. The range of this property can be a `DataSubject` or any entity, including cases where an entity is as an automated mechanism."^^xsd:string ;
-                                                      rdfs:label "hasConsentGivenByDelegate"^^xsd:string ;
-                                                      rdf:type owl:AnnotationProperty ;
-                                                      rdfs:domain <https://w3id.org/GConsent#ConsentDelegation> .
+                           rdfs:comment "Specifies the _delegate_ that gave consent. The range of this property can be a `DataSubject` or any entity, including cases where an entity is as an automated mechanism."^^xsd:string ;
+                           rdfs:label "hasConsentGivenByDelegate"^^xsd:string ;
+                           rdf:type owl:AnnotationProperty ;
+                           rdfs:domain :ConsentDelegation .
 
 
 ###  https://w3id.org/GConsent#hasContext
-<https://w3id.org/GConsent#hasContext> <http://purl.org/vocab/vann/example> """
+:hasContext <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -71,14 +71,14 @@
     rdfs:comment \"Links the Web Form object to the consent instances obtained through it.\" ;
     rdfs:domain :WebForm ;
     rdfs:range gconsent:ConsentInstance ."""^^xsd:string ;
-                                       rdfs:comment "The parent property linking all `ConsentInstance` to contexts."^^xsd:string ;
-                                       rdfs:label "hasContext"^^xsd:string ;
-                                       rdf:type owl:AnnotationProperty ;
-                                       rdfs:domain <https://w3id.org/GConsent#ConsentInstance> .
+            rdfs:comment "The parent property linking all `ConsentInstance` to contexts."^^xsd:string ;
+            rdfs:label "hasContext"^^xsd:string ;
+            rdf:type owl:AnnotationProperty ;
+            rdfs:domain :ConsentInstance .
 
 
 ###  https://w3id.org/GConsent#hasExpiry
-<https://w3id.org/GConsent#hasExpiry> <http://purl.org/vocab/vann/example> """
+:hasExpiry <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -97,14 +97,14 @@
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn ."""^^xsd:string ;
-                                      rdfs:comment "Specifies the expiry of the (current) current instance. The value of this expiry can be an instant in time, such as a specific date or datetime, or can be a duration."^^xsd:string ;
-                                      rdfs:label "hasExpiry"^^xsd:string ;
-                                      rdf:type owl:AnnotationProperty ;
-                                      rdfs:domain <https://w3id.org/GConsent#ConsentInstance> .
+           rdfs:comment "Specifies the expiry of the (current) current instance. The value of this expiry can be an instant in time, such as a specific date or datetime, or can be a duration."^^xsd:string ;
+           rdfs:label "hasExpiry"^^xsd:string ;
+           rdf:type owl:AnnotationProperty ;
+           rdfs:domain :ConsentInstance .
 
 
 ###  https://w3id.org/GConsent#hasVerificationProcessForDelegation
-<https://w3id.org/GConsent#hasVerificationProcessForDelegation> <http://purl.org/vocab/vann/example> """
+:hasVerificationProcessForDelegation <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -125,28 +125,28 @@
 
 :verify_delegate a prov:Activity ;
     rdfs:label \"Verification of Staff to provide consent for Patient HJP\" ;"""^^xsd:string ;
-                                                                rdfs:comment "Specifies the verification process used in the activity for delegation of consent. The range of this property can be a `prov:Activity`, or event, or reference to an activity."^^xsd:string ;
-                                                                rdfs:label "hasVerificationProcessForDelegation"^^xsd:string ;
-                                                                rdf:type owl:AnnotationProperty ;
-                                                                rdfs:domain <https://w3id.org/GConsent#ConsentDelegation> .
+                                     rdfs:comment "Specifies the verification process used in the activity for delegation of consent. The range of this property can be a `prov:Activity`, or event, or reference to an activity."^^xsd:string ;
+                                     rdfs:label "hasVerificationProcessForDelegation"^^xsd:string ;
+                                     rdf:type owl:AnnotationProperty ;
+                                     rdfs:domain :ConsentDelegation .
 
 
 ###  https://w3id.org/GConsent#sharesDataWith
-<https://w3id.org/GConsent#sharesDataWith> <http://purl.org/vocab/vann/example> """
+:sharesDataWith <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
 :ShareWithPartners a gconsent:ShareAction ;
     rdfs:label \"Shares data with partners\" ;
     gconsent:sharesDataWith \"ShareWithPartners\" .  # <----"""^^xsd:string ;
-                                           rdfs:comment "Sharing of data involves another entity that needs to be named (explicitly). Therefore, it is a special case of `Action`, and has the property `sharesDataWith` to link it with the entity that data is shared with. The domain of this property is an instance of `ShareAction` which should be unique for each entity the data is shared with. This also allows changes in how data is shared with entities indenpent of the given consent."^^xsd:string ;
-                                           rdfs:label "sharesDataWith"^^xsd:string ;
-                                           rdf:type owl:AnnotationProperty ;
-                                           rdfs:domain <https://w3id.org/GConsent#ShareAction> .
+                rdfs:comment "Sharing of data involves another entity that needs to be named (explicitly). Therefore, it is a special case of `Action`, and has the property `sharesDataWith` to link it with the entity that data is shared with. The domain of this property is an instance of `ShareAction` which should be unique for each entity the data is shared with. This also allows changes in how data is shared with entities indenpent of the given consent."^^xsd:string ;
+                rdfs:label "sharesDataWith"^^xsd:string ;
+                rdf:type owl:AnnotationProperty ;
+                rdfs:domain :ShareAction .
 
 
 ###  https://w3id.org/GConsent#wasGivenAtInstant
-<https://w3id.org/GConsent#wasGivenAtInstant> <http://purl.org/vocab/vann/example> """
+:wasGivenAtInstant <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -157,15 +157,15 @@
     gconsent:wasGivenBy :HJP ;
     gconsent:wasGivenAtInstant \"2099-12-30-00-00-00\" ;  # <----
     gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven ."""^^xsd:string ;
-                                              rdfs:comment "Specifies the instance in time for the given consent. This is used to specify the timestamp for when the consent was captured/obtained. It has (currently) no restrictions (`rdfs:range`) on how this instant is represented."^^xsd:string ;
-                                              rdfs:label "wasGivenAtInstant"^^xsd:string ;
-                                              rdf:type owl:AnnotationProperty ;
-                                              rdfs:subPropertyOf <https://w3id.org/GConsent#hasContext> ;
-                                              rdfs:domain <https://w3id.org/GConsent#ConsentInstance> .
+                   rdfs:comment "Specifies the instance in time for the given consent. This is used to specify the timestamp for when the consent was captured/obtained. It has (currently) no restrictions (`rdfs:range`) on how this instant is represented."^^xsd:string ;
+                   rdfs:label "wasGivenAtInstant"^^xsd:string ;
+                   rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :hasContext ;
+                   rdfs:domain :ConsentInstance .
 
 
 ###  https://w3id.org/GConsent#wasGivenAtLocation
-<https://w3id.org/GConsent#wasGivenAtLocation> <http://purl.org/vocab/vann/example> """
+:wasGivenAtLocation <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -177,15 +177,15 @@
     gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;
     gconsent:wasGivenAtLocation \"Hospital\" ;  # <----
     gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven ."""^^xsd:string ;
-                                               rdfs:comment "Specifies the location for the given consent. This could be a geological place (e.g. street, city) or a virtual entity (e.g. webpage, web form). It has (currently) no restrictions (`rdfs:range`) on how this location is represented."^^xsd:string ;
-                                               rdfs:label "wasGivenAtLocation"^^xsd:string ;
-                                               rdf:type owl:AnnotationProperty ;
-                                               rdfs:subPropertyOf <https://w3id.org/GConsent#hasContext> ;
-                                               rdfs:domain <https://w3id.org/GConsent#ConsentInstance> .
+                    rdfs:comment "Specifies the location for the given consent. This could be a geological place (e.g. street, city) or a virtual entity (e.g. webpage, web form). It has (currently) no restrictions (`rdfs:range`) on how this location is represented."^^xsd:string ;
+                    rdfs:label "wasGivenAtLocation"^^xsd:string ;
+                    rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :hasContext ;
+                    rdfs:domain :ConsentInstance .
 
 
 ###  https://w3id.org/GConsent#wasGivenBy
-<https://w3id.org/GConsent#wasGivenBy> <http://purl.org/vocab/vann/example> """
+:wasGivenBy <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -204,15 +204,15 @@
     gconsent:isConsentDelegationFor :HJP ;
     gconsent:hasVerificationProcessForDelegation \"Recorded under medical registry for emergencies\" .
     """^^xsd:string ;
-                                       rdfs:comment "Specifies the entity (or agent) that has given the specific consent. This allows representation of cases where another entity (or agent) acts in lieu of the data subject to provide consent. Examples are a legal representative or Guardian providing consent for a minor. In cases where _delegation_ occurs for giving consent, the `Delegation` class must be used as the range of the `wasGivenBy` property."^^xsd:string ;
-                                       rdfs:label "wasGivenBy"^^xsd:string ;
-                                       rdf:type owl:AnnotationProperty ;
-                                       rdfs:subPropertyOf <https://w3id.org/GConsent#hasContext> ;
-                                       rdfs:domain <https://w3id.org/GConsent#ConsentInstance> .
+            rdfs:comment "Specifies the entity (or agent) that has given the specific consent. This allows representation of cases where another entity (or agent) acts in lieu of the data subject to provide consent. Examples are a legal representative or Guardian providing consent for a minor. In cases where _delegation_ occurs for giving consent, the `Delegation` class must be used as the range of the `wasGivenBy` property."^^xsd:string ;
+            rdfs:label "wasGivenBy"^^xsd:string ;
+            rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf :hasContext ;
+            rdfs:domain :ConsentInstance .
 
 
 ###  https://w3id.org/GConsent#wasGivenThroughMedium
-<https://w3id.org/GConsent#wasGivenThroughMedium> <http://purl.org/vocab/vann/example> """
+:wasGivenThroughMedium <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -223,11 +223,11 @@
     gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;
     gconsent:wasGivenThroughMedium \"website\" ;  # <----
     gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven ."""^^xsd:string ;
-                                                  rdfs:comment "Specifies the medium of the given consent. This could be a paper document (e.g. signed application) or a web-form submitted through a web page. It has (currently) no restrictions (`rdfs:range`) on how this medium is represented."^^xsd:string ;
-                                                  rdfs:label "wasGivenThroughMedium"^^xsd:string ;
-                                                  rdf:type owl:AnnotationProperty ;
-                                                  rdfs:subPropertyOf <https://w3id.org/GConsent#hasContext> ;
-                                                  rdfs:domain <https://w3id.org/GConsent#ConsentInstance> .
+                       rdfs:comment "Specifies the medium of the given consent. This could be a paper document (e.g. signed application) or a web-form submitted through a web page. It has (currently) no restrictions (`rdfs:range`) on how this medium is represented."^^xsd:string ;
+                       rdfs:label "wasGivenThroughMedium"^^xsd:string ;
+                       rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf :hasContext ;
+                       rdfs:domain :ConsentInstance .
 
 
 #################################################################
@@ -235,10 +235,10 @@
 #################################################################
 
 ###  https://w3id.org/GConsent#changesConsentStatusTo
-<https://w3id.org/GConsent#changesConsentStatusTo> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain <https://w3id.org/GConsent#ConsentInstance> ;
-                                                   rdfs:range <https://w3id.org/GConsent#ConsentStatus> ;
-                                                   <http://purl.org/vocab/vann/example> """
+:changesConsentStatusTo rdf:type owl:ObjectProperty ;
+                        rdfs:domain :ConsentInstance ;
+                        rdfs:range :ConsentStatus ;
+                        <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -255,15 +255,15 @@
     gconsent:wasGivenBy :HJP ;
     gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;
     gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .  # <----"""^^xsd:string ;
-                                                   rdfs:comment "Specifies the status of consent resulting from this consent."^^xsd:string ;
-                                                   rdfs:label "changesConsentStatusTo"^^xsd:string .
+                        rdfs:comment "Specifies the status of consent resulting from this consent."^^xsd:string ;
+                        rdfs:label "changesConsentStatusTo"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#givenForPurpose
-<https://w3id.org/GConsent#givenForPurpose> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://w3id.org/GConsent#Consent> ;
-                                            rdfs:range <https://w3id.org/GConsent#Purpose> ;
-                                            <http://purl.org/vocab/vann/example> """
+:givenForPurpose rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Consent ;
+                 rdfs:range :Purpose ;
+                 <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -282,16 +282,16 @@
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;  # <----
     gconsent:givenForPurpose :Marketing .    # <----"""^^xsd:string ;
-                                            rdfs:comment "Links the `Consent` instance to a `Purpose` instance."^^xsd:string ;
-                                            rdfs:label "givenForPurpose"^^xsd:string .
+                 rdfs:comment "Links the `Consent` instance to a `Purpose` instance."^^xsd:string ;
+                 rdfs:label "givenForPurpose"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#hasAction
-<https://w3id.org/GConsent#hasAction> rdf:type owl:ObjectProperty ;
-                                      owl:inverseOf <https://w3id.org/GConsent#isActionForPurpose> ;
-                                      rdfs:domain <https://w3id.org/GConsent#Purpose> ;
-                                      rdfs:range <https://w3id.org/GConsent#Action> ;
-                                      <http://purl.org/vocab/vann/example> """
+:hasAction rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isActionForPurpose ;
+           rdfs:domain :Purpose ;
+           rdfs:range :Action ;
+           <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -310,16 +310,16 @@
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                      rdfs:comment "Links `Purpose` to an `Action`."^^xsd:string ;
-                                      rdfs:label "hasAction"^^xsd:string .
+           rdfs:comment "Links `Purpose` to an `Action`."^^xsd:string ;
+           rdfs:label "hasAction"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#hasConsent
-<https://w3id.org/GConsent#hasConsent> rdf:type owl:ObjectProperty ;
-                                       owl:inverseOf <https://w3id.org/GConsent#isConsentFor> ;
-                                       rdfs:domain <https://w3id.org/GConsent#DataSubject> ;
-                                       rdfs:range <https://w3id.org/GConsent#Consent> ;
-                                       <http://purl.org/vocab/vann/example> """
+:hasConsent rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isConsentFor ;
+            rdfs:domain :DataSubject ;
+            rdfs:range :Consent ;
+            <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -328,15 +328,15 @@
     foaf:name \"Harshvardhan\" ;
     gconsent:hasConsent :HJP_Consent .  # <----
 :HJP_Consent a gconsent:Consent ."""^^xsd:string ;
-                                       rdfs:comment "Links the `DataSubject` instance with the `Consent` instance."^^xsd:string ;
-                                       rdfs:label "hasConsent"^^xsd:string .
+            rdfs:comment "Links the `DataSubject` instance with the `Consent` instance."^^xsd:string ;
+            rdfs:label "hasConsent"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#hasConsentDelegation
-<https://w3id.org/GConsent#hasConsentDelegation> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <https://w3id.org/GConsent#DataSubject> ;
-                                                 rdfs:range <https://w3id.org/GConsent#ConsentDelegation> ;
-                                                 <http://purl.org/vocab/vann/example> """
+:hasConsentDelegation rdf:type owl:ObjectProperty ;
+                      rdfs:domain :DataSubject ;
+                      rdfs:range :ConsentDelegation ;
+                      <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -357,15 +357,15 @@
     rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;
     gconsent:hasConsentGivenByDelegate \"Hospital Staff Member 4826719\" ;
     gconsent:isDelegationForDataSubject :HJP ."""^^xsd:string ;
-                                                 rdfs:comment "Specifies the `ConsentDelegation` instances for a particular `DataSubject`."^^xsd:string ;
-                                                 rdfs:label "hasConsentDelegation"^^xsd:string .
+                      rdfs:comment "Specifies the `ConsentDelegation` instances for a particular `DataSubject`."^^xsd:string ;
+                      rdfs:label "hasConsentDelegation"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#hasConsentInstance
-<https://w3id.org/GConsent#hasConsentInstance> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <https://w3id.org/GConsent#Consent> ;
-                                               rdfs:range <https://w3id.org/GConsent#ConsentInstance> ;
-                                               <http://purl.org/vocab/vann/example> """
+:hasConsentInstance rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Consent ;
+                    rdfs:range :ConsentInstance ;
+                    <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -381,15 +381,15 @@
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;  # <----
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn ."""^^xsd:string ;
-                                               rdfs:comment "Links `Consent` to `ConsentInstance`."^^xsd:string ;
-                                               rdfs:label "hasConsentInstance"^^xsd:string .
+                    rdfs:comment "Links `Consent` to `ConsentInstance`."^^xsd:string ;
+                    rdfs:label "hasConsentInstance"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#hasPersonalData
-<https://w3id.org/GConsent#hasPersonalData> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://w3id.org/GConsent#Purpose> ;
-                                            rdfs:range <https://w3id.org/GConsent#PersonalData> ;
-                                            <http://purl.org/vocab/vann/example> """
+:hasPersonalData rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Purpose ;
+                 rdfs:range :PersonalData ;
+                 <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -399,15 +399,15 @@
 :Marketing a gconsent:Purpose ;
     rdfs:label \"Marketing\" ;
     gconsent:hasPersonalData :ProfileInformation .  # <----"""^^xsd:string ;
-                                            rdfs:comment "Links `Purpose` instance with `PersonalData` instance."^^xsd:string ;
-                                            rdfs:label "hasPersonalData"^^xsd:string .
+                 rdfs:comment "Links `Purpose` instance with `PersonalData` instance."^^xsd:string ;
+                 rdfs:label "hasPersonalData"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#hasStatus
-<https://w3id.org/GConsent#hasStatus> rdf:type owl:ObjectProperty ;
-                                      rdfs:domain <https://w3id.org/GConsent#Consent> ;
-                                      rdfs:range <https://w3id.org/GConsent#ConsentStatus> ;
-                                      <http://purl.org/vocab/vann/example> """
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:domain :Consent ;
+           rdfs:range :ConsentStatus ;
+           <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -417,15 +417,15 @@
     gconsent:isConsentFor :HJP ;
     gconsent:hasExpiry \"2000-01-01\" ;
     gconsent:hasStatus gconsent:ConsentStatusExpired .  # <----"""^^xsd:string ;
-                                      rdfs:comment "Links `Consent` instance to its `ConsentStatus` instance."^^xsd:string ;
-                                      rdfs:label "hasStatus"^^xsd:string .
+           rdfs:comment "Links `Consent` instance to its `ConsentStatus` instance."^^xsd:string ;
+           rdfs:label "hasStatus"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isActionForPurpose
-<https://w3id.org/GConsent#isActionForPurpose> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <https://w3id.org/GConsent#Action> ;
-                                               rdfs:range <https://w3id.org/GConsent#Purpose> ;
-                                               <http://purl.org/vocab/vann/example> """
+:isActionForPurpose rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Action ;
+                    rdfs:range :Purpose ;
+                    <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -434,16 +434,16 @@
 gconsent:StorageOfPersonalData :isActionForPurpose :Advertising .  # <---
 gconsent:UsageOfPersonalData :isActionForPurpose :Advertising .    # <---
 gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xsd:string ;
-                                               rdfs:comment "Links `Action` to a `Purpose`."^^xsd:string ;
-                                               rdfs:label "isActionForPurpose"^^xsd:string .
+                    rdfs:comment "Links `Action` to a `Purpose`."^^xsd:string ;
+                    rdfs:label "isActionForPurpose"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isConsentDelegationFor
-<https://w3id.org/GConsent#isConsentDelegationFor> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <https://w3id.org/GConsent#hasConsentDelegation> ;
-                                                   rdfs:domain <https://w3id.org/GConsent#ConsentDelegation> ;
-                                                   rdfs:range <https://w3id.org/GConsent#DataSubject> ;
-                                                   <http://purl.org/vocab/vann/example> """
+:isConsentDelegationFor rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :hasConsentDelegation ;
+                        rdfs:domain :ConsentDelegation ;
+                        rdfs:range :DataSubject ;
+                        <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -460,15 +460,15 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;
     gconsent:hasConsentGivenByDelegate \"Hospital Staff Member 4826719\" ;
     gconsent:isDelegationForDataSubject :HJP .  # <----"""^^xsd:string ;
-                                                   rdfs:comment "Specifies the `DataSubject` the delegation activity is for."^^xsd:string ;
-                                                   rdfs:label "isConsentDelegationFor"^^xsd:string .
+                        rdfs:comment "Specifies the `DataSubject` the delegation activity is for."^^xsd:string ;
+                        rdfs:label "isConsentDelegationFor"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isConsentFor
-<https://w3id.org/GConsent#isConsentFor> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/GConsent#Consent> ;
-                                         rdfs:range <https://w3id.org/GConsent#DataSubject> ;
-                                         <http://purl.org/vocab/vann/example> """
+:isConsentFor rdf:type owl:ObjectProperty ;
+              rdfs:domain :Consent ;
+              rdfs:range :DataSubject ;
+              <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -477,17 +477,17 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     foaf:name \"Harshvardhan\" .
 :HJP_Consent a gconsent:Consent ;
     gconsent:isConsentFor :HJP .  # <----"""^^xsd:string ;
-                                         rdfs:comment """Links the `Consent` instance with the `DataSubject` instance it represents.
+              rdfs:comment """Links the `Consent` instance with the `DataSubject` instance it represents.
 """^^xsd:string ;
-                                         rdfs:label "isConsentFor"^^xsd:string .
+              rdfs:label "isConsentFor"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isConsentInstanceOf
-<https://w3id.org/GConsent#isConsentInstanceOf> rdf:type owl:ObjectProperty ;
-                                                owl:inverseOf <https://w3id.org/GConsent#hasConsentInstance> ;
-                                                rdfs:domain <https://w3id.org/GConsent#ConsentInstance> ;
-                                                rdfs:range <https://w3id.org/GConsent#Consent> ;
-                                                <http://purl.org/vocab/vann/example> """
+:isConsentInstanceOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :hasConsentInstance ;
+                     rdfs:domain :ConsentInstance ;
+                     rdfs:range :Consent ;
+                     <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -503,14 +503,14 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn ."""^^xsd:string ;
-                                                rdfs:comment "Links `ConsentInstance` to `Consent`."^^xsd:string ;
-                                                rdfs:label "isConsentInstanceOf"^^xsd:string .
+                     rdfs:comment "Links `ConsentInstance` to `Consent`."^^xsd:string ;
+                     rdfs:label "isConsentInstanceOf"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isContextForConsentInstance
-<https://w3id.org/GConsent#isContextForConsentInstance> rdf:type owl:ObjectProperty ;
-                                                        rdfs:range <https://w3id.org/GConsent#ConsentInstance> ;
-                                                        <http://purl.org/vocab/vann/example> """
+:isContextForConsentInstance rdf:type owl:ObjectProperty ;
+                             rdfs:range :ConsentInstance ;
+                             <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -528,14 +528,14 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     rdfs:comment \"Links the Web Form object to the consent instances obtained through it.\" ;
     rdfs:domain :WebForm ;
     rdfs:range gconsent:ConsentInstance ."""^^xsd:string ;
-                                                        rdfs:comment "The parent propertly linking all contexts to `ConsentInstance`."^^xsd:string ;
-                                                        rdfs:label "isContextForConsentInstance"^^xsd:string .
+                             rdfs:comment "The parent propertly linking all contexts to `ConsentInstance`."^^xsd:string ;
+                             rdfs:label "isContextForConsentInstance"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isDelegateForConsentDelegation
-<https://w3id.org/GConsent#isDelegateForConsentDelegation> rdf:type owl:ObjectProperty ;
-                                                           rdfs:range <https://w3id.org/GConsent#ConsentDelegation> ;
-                                                           <http://purl.org/vocab/vann/example> """
+:isDelegateForConsentDelegation rdf:type owl:ObjectProperty ;
+                                rdfs:range :ConsentDelegation ;
+                                <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -556,16 +556,16 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
 :HospitalStaff_4826719 a foaf:Person ;
     rdfs:label \"Hospital Staff 4826719\" ;
     gconsent:isDelegateForConsentDelegation :delegatedconsent .  # <----"""^^xsd:string ;
-                                                           rdfs:comment "Links an entity that acted as delegate for giving consent with the delegation activity. The range of this property is the `ConsentDelegation` activity."^^xsd:string ;
-                                                           rdfs:label "isDelegateForConsentDelegation"^^xsd:string .
+                                rdfs:comment "Links an entity that acted as delegate for giving consent with the delegation activity. The range of this property is the `ConsentDelegation` activity."^^xsd:string ;
+                                rdfs:label "isDelegateForConsentDelegation"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isPersonalDataForPurpose
-<https://w3id.org/GConsent#isPersonalDataForPurpose> rdf:type owl:ObjectProperty ;
-                                                     owl:inverseOf <https://w3id.org/GConsent#hasPersonalData> ;
-                                                     rdfs:domain <https://w3id.org/GConsent#PersonalData> ;
-                                                     rdfs:range <https://w3id.org/GConsent#Purpose> ;
-                                                     <http://purl.org/vocab/vann/example> """
+:isPersonalDataForPurpose rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :hasPersonalData ;
+                          rdfs:domain :PersonalData ;
+                          rdfs:range :Purpose ;
+                          <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -576,16 +576,16 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
 :ProfileInformation a gconsent:PersonalData ;
     rdfs:label \"Profile Information of an User\" ;
     gconsent:isPersonalDataForPurpose :Marketing ;  # <----"""^^xsd:string ;
-                                                     rdfs:comment "Links `PersonalData` instance with `Purpose` instance."^^xsd:string ;
-                                                     rdfs:label "isPersonalDataForPurpose"^^xsd:string .
+                          rdfs:comment "Links `PersonalData` instance with `Purpose` instance."^^xsd:string ;
+                          rdfs:label "isPersonalDataForPurpose"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isPurposeForConsent
-<https://w3id.org/GConsent#isPurposeForConsent> rdf:type owl:ObjectProperty ;
-                                                owl:inverseOf <https://w3id.org/GConsent#givenForPurpose> ;
-                                                rdfs:domain <https://w3id.org/GConsent#Purpose> ;
-                                                rdfs:range <https://w3id.org/GConsent#Consent> ;
-                                                <http://purl.org/vocab/vann/example> """
+:isPurposeForConsent rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :givenForPurpose ;
+                     rdfs:domain :Purpose ;
+                     rdfs:range :Consent ;
+                     <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -604,14 +604,14 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     gconsent:isPurposeForConsent :Consent_hjp .  # <----
 :Consent_hjp a gconsent:Consent ;
     gconsent:isConsentFor :HJP ."""^^xsd:string ;
-                                                rdfs:comment "Links the `Purpose` instance to `Consent` instance"^^xsd:string ;
-                                                rdfs:label "isPurposeForConsent"^^xsd:string .
+                     rdfs:comment "Links the `Purpose` instance to `Consent` instance"^^xsd:string ;
+                     rdfs:label "isPurposeForConsent"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#isVerificationProcessForDelegation
-<https://w3id.org/GConsent#isVerificationProcessForDelegation> rdf:type owl:ObjectProperty ;
-                                                               rdfs:range <https://w3id.org/GConsent#ConsentDelegation> ;
-                                                               <http://purl.org/vocab/vann/example> """
+:isVerificationProcessForDelegation rdf:type owl:ObjectProperty ;
+                                    rdfs:range :ConsentDelegation ;
+                                    <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -633,15 +633,15 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
 :verify_delegate a prov:Activity ;
     rdfs:label \"Verification of Staff to provide consent for Patient HJP\" ;
     gconsent:isVerificationProcessForDelegation :delegatedconsent .  # <----"""^^xsd:string ;
-                                                               rdfs:comment "Links the verification process used in the activity for delegation of consent with the delegation activity. The domain of this property can be a `prov:Activity`, or event, or reference to an activity."^^xsd:string ;
-                                                               rdfs:label "isVerificationProcessForDelegation"^^xsd:string .
+                                    rdfs:comment "Links the verification process used in the activity for delegation of consent with the delegation activity. The domain of this property can be a `prov:Activity`, or event, or reference to an activity."^^xsd:string ;
+                                    rdfs:label "isVerificationProcessForDelegation"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#replacesConsentInstance
-<https://w3id.org/GConsent#replacesConsentInstance> rdf:type owl:ObjectProperty ;
-                                                    rdfs:domain <https://w3id.org/GConsent#ConsentInstance> ;
-                                                    rdfs:range <https://w3id.org/GConsent#ConsentInstance> ;
-                                                    <http://purl.org/vocab/vann/example> """
+:replacesConsentInstance rdf:type owl:ObjectProperty ;
+                         rdfs:domain :ConsentInstance ;
+                         rdfs:range :ConsentInstance ;
+                         <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -665,16 +665,16 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn ."""^^xsd:string ;
-                                                    rdfs:comment "Links a future `ConsentInstance` to a past `ConsentInstance` that it has replaced."^^xsd:string ;
-                                                    rdfs:label "replacesConsentInstance"^^xsd:string .
+                         rdfs:comment "Links a future `ConsentInstance` to a past `ConsentInstance` that it has replaced."^^xsd:string ;
+                         rdfs:label "replacesConsentInstance"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#wasReplacedByConsentInstance
-<https://w3id.org/GConsent#wasReplacedByConsentInstance> rdf:type owl:ObjectProperty ;
-                                                         owl:inverseOf <https://w3id.org/GConsent#replacesConsentInstance> ;
-                                                         rdfs:domain <https://w3id.org/GConsent#ConsentInstance> ;
-                                                         rdfs:range <https://w3id.org/GConsent#ConsentInstance> ;
-                                                         <http://purl.org/vocab/vann/example> """
+:wasReplacedByConsentInstance rdf:type owl:ObjectProperty ;
+                              owl:inverseOf :replacesConsentInstance ;
+                              rdfs:domain :ConsentInstance ;
+                              rdfs:range :ConsentInstance ;
+                              <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -698,8 +698,8 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn ."""^^xsd:string ;
-                                                         rdfs:comment "Links a past `ConsentInstance` to a future `ConsentInstance` that replaces it."^^xsd:string ;
-                                                         rdfs:label "wasReplacedByConsentInstance"^^xsd:string .
+                              rdfs:comment "Links a past `ConsentInstance` to a future `ConsentInstance` that replaces it."^^xsd:string ;
+                              rdfs:label "wasReplacedByConsentInstance"^^xsd:string .
 
 
 #################################################################
@@ -711,8 +711,8 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
 
 
 ###  https://w3id.org/GConsent#Action
-<https://w3id.org/GConsent#Action> rdf:type owl:Class ;
-                                   <http://purl.org/vocab/vann/example> """
+:Action rdf:type owl:Class ;
+        <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -731,17 +731,17 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                   rdfs:comment """`Action` is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: *Collect*, *Store*, *Use*, and *Share*. To represent these, `Action` has been subclassed for each type of action as - [`CollectAction`](#CollectAction), [`StoreAction`](#StoreAction), [`UseAction`](#UseAction), and [`ShareAction`](#ShareAction). Each of these have a default instance to provide a generic target to refer to the action - [`CollectionOfPersonalData`](#CollectionOfPersonalData), [`StorageOfPersonalData`](#StorageOfPersonalData), [`UsageOfPersonalData`](#UsageOfPersonalData), and [`SharingOfPersonalData`](#SharingOfPersonalData).
+        rdfs:comment """`Action` is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: *Collect*, *Store*, *Use*, and *Share*. To represent these, `Action` has been subclassed for each type of action as - [`CollectAction`](#CollectAction), [`StoreAction`](#StoreAction), [`UseAction`](#UseAction), and [`ShareAction`](#ShareAction). Each of these have a default instance to provide a generic target to refer to the action - [`CollectionOfPersonalData`](#CollectionOfPersonalData), [`StorageOfPersonalData`](#StorageOfPersonalData), [`UsageOfPersonalData`](#UsageOfPersonalData), and [`SharingOfPersonalData`](#SharingOfPersonalData).
 
 `Action` has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost.
 """^^xsd:string ;
-                                   rdfs:label "Action"^^xsd:string .
+        rdfs:label "Action"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#CollectAction
-<https://w3id.org/GConsent#CollectAction> rdf:type owl:Class ;
-                                          rdfs:subClassOf <https://w3id.org/GConsent#Action> ;
-                                          <http://purl.org/vocab/vann/example> """
+:CollectAction rdf:type owl:Class ;
+               rdfs:subClassOf :Action ;
+               <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -760,13 +760,13 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                          rdfs:comment "Represents the action where collection of data takes place."^^xsd:string ;
-                                          rdfs:label "CollectAction"^^xsd:string .
+               rdfs:comment "Represents the action where collection of data takes place."^^xsd:string ;
+               rdfs:label "CollectAction"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#Consent
-<https://w3id.org/GConsent#Consent> rdf:type owl:Class ;
-                                    <http://purl.org/vocab/vann/example> """
+:Consent rdf:type owl:Class ;
+         <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -775,17 +775,17 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---"""^^xs
     foaf:name \"Harshvardhan\" .
 :HJP_Consent a gconsent:Consent ;  # <----
     gconsent:isConsentFor :HJP ."""^^xsd:string ;
-                                    rdfs:comment """As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;
+         rdfs:comment """As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;
 
 In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the `Consent` class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.
 
 To link the `Consent` instance with the `DataSubject` instance, use the [`isConsentFor`](#isConsentFor) and [`hasConsent`](#hasConsent) properties."""^^xsd:string ;
-                                    rdfs:label "Consent"^^xsd:string .
+         rdfs:label "Consent"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentDelegation
-<https://w3id.org/GConsent#ConsentDelegation> rdf:type owl:Class ;
-                                              <http://purl.org/vocab/vann/example> """
+:ConsentDelegation rdf:type owl:Class ;
+                   <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -804,13 +804,13 @@ To link the `Consent` instance with the `DataSubject` instance, use the [`isCons
     gconsent:isConsentDelegationFor :HJP ;
     gconsent:hasVerificationProcessForDelegation \"Recorded under medical registry for emergencies\" .
     """^^xsd:string ;
-                                              rdfs:comment "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They are provided respectively by the properties [`isConsentDelegationFor`](#isConsentDelegationFor), [`hasConsentGivenByDelegate`](#hasConsentGivenByDelegate), and [`hasVerificationProcessForDelegation`](#hasVerificationProcessForDelegation)."^^xsd:string ;
-                                              rdfs:label "Delegation"^^xsd:string .
+                   rdfs:comment "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They are provided respectively by the properties [`isConsentDelegationFor`](#isConsentDelegationFor), [`hasConsentGivenByDelegate`](#hasConsentGivenByDelegate), and [`hasVerificationProcessForDelegation`](#hasVerificationProcessForDelegation)."^^xsd:string ;
+                   rdfs:label "Delegation"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentInstance
-<https://w3id.org/GConsent#ConsentInstance> rdf:type owl:Class ;
-                                            <http://purl.org/vocab/vann/example> """
+:ConsentInstance rdf:type owl:Class ;
+                 <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -828,7 +828,7 @@ To link the `Consent` instance with the `DataSubject` instance, use the [`isCons
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn ."""^^xsd:string ;
-                                            rdfs:comment """`Consent` as an entity exists as an interface (or representation) specifying the specific consent (as permission) between the data subject and the purpose (which contains action(s) and personal data item(s)). This _entity_ stays fixed (or constant) throughout its lifetime, and is associated with various _instances_ of given consent. To represent these instances, the class `ConsentInstance` is used.
+                 rdfs:comment """`Consent` as an entity exists as an interface (or representation) specifying the specific consent (as permission) between the data subject and the purpose (which contains action(s) and personal data item(s)). This _entity_ stays fixed (or constant) throughout its lifetime, and is associated with various _instances_ of given consent. To represent these instances, the class `ConsentInstance` is used.
 
 `ConsentInstance` is associated with a `Consent` instance using the [`hasConsentInstance`](#hasConsentInstance) and [`isConsentInstanceOf`](#isConsentInstanceOf) properties.
 
@@ -837,45 +837,45 @@ A consent instance defines one specific given consent. The data subject has the 
 Attributes describing the context of specific consent instances include metadata describing specific instances of consent - such as timestamp, location, or medium. A parent property is useful to represent such attributes collectively, and to provide a common way to link these to consent instances. These are defined as [`isContextForConsentInstance`](#isContextForConsentInstance) and [`hasContext`](#hasContext) properties.
 
 A Consent Instance represents a specific status of consent applicable to the instant it defines. For e.g. a consent given at a particular instant specifies \"explicit consent\" to the specified purpose. Whereas, another consent given later \"withdraws\" this consent for the specified purpose. To capture this chain or log or provenance of change in consent, the [`changesConsentStatusTo`](#changesConsentStatusTo) property is used."""^^xsd:string ;
-                                            rdfs:label "ConsentInstance"^^xsd:string .
+                 rdfs:label "ConsentInstance"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatus
-<https://w3id.org/GConsent#ConsentStatus> rdf:type owl:Class ;
-                                          <http://purl.org/vocab/vann/example> """
+:ConsentStatus rdf:type owl:Class ;
+               <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
 :ConsentInvalidated a gconsent:ConsentStatus ;  # <----
     rdfs:label \"Consent Invalidated\" ;
     rdfs:comment \"Consent that has been invalidated due to some condition.\" ."""^^xsd:string ;
-                                          rdfs:comment "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used."^^xsd:string ;
-                                          rdfs:label "ConsentStatus"^^xsd:string .
+               rdfs:comment "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used."^^xsd:string ;
+               rdfs:label "ConsentStatus"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#DataSubject
-<https://w3id.org/GConsent#DataSubject> rdf:type owl:Class ;
-                                        rdfs:subClassOf <http://xmlns.com/foaf/Person> ;
-                                        <http://purl.org/vocab/vann/example> """
+:DataSubject rdf:type owl:Class ;
+             rdfs:subClassOf <http://xmlns.com/foaf/Person> ;
+             <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
 :HJP a gconsent:DataSubject ;  # <----
     foaf:name \"Harshvardhan\" . """^^xsd:string ;
-                                        rdfs:comment """Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.
+             rdfs:comment """Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.
 
 In the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of `foaf:Person`.
 
 The Data Subject is linked to the `Consent` instance via the [`isConsentFor`](#isConsentFor) and [`hasConsent`](#hasConsent) properties.
 """^^xsd:string ;
-                                        rdfs:label "DataSubject"^^xsd:string .
+             rdfs:label "DataSubject"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#MinorDataSubject
-<https://w3id.org/GConsent#MinorDataSubject> rdf:type owl:Class ;
-                                             rdfs:subClassOf <https://w3id.org/GConsent#DataSubject> ;
-                                             <http://purl.org/vocab/vann/example> """
+:MinorDataSubject rdf:type owl:Class ;
+                  rdfs:subClassOf :DataSubject ;
+                  <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -888,7 +888,7 @@ The Data Subject is linked to the `Consent` instance via the [`isConsentFor`](#i
 :Consent_10C a gconsent:Consent ;
     gconsent:isConsentFor :Child ;
     gconsent:wasGivenBy :HJP . """^^xsd:string ;
-                                             rdfs:comment """A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.
+                  rdfs:comment """A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.
 
 Consent given in lieu of a Minor (by their Representative) is associated with the [`ConsentInstance`](#ConsentInstance) class/instance using the [`wasGivenBy`](#wasGivenBy) property.
 
@@ -896,26 +896,26 @@ The ontology currently does not capture this relationship between the Minor and 
 
 Note: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases.
 """^^xsd:string ;
-                                             rdfs:label "MinorDataSubject"^^xsd:string .
+                  rdfs:label "MinorDataSubject"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#PersonalData
-<https://w3id.org/GConsent#PersonalData> rdf:type owl:Class ;
-                                         <http://purl.org/vocab/vann/example> """
+:PersonalData rdf:type owl:Class ;
+              <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
 :ProfileInformation a gconsent:PersonalData ;  # <----
     rdfs:label \"Profile Information of an User\" ."""^^xsd:string ;
-                                         rdfs:comment """As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);
+              rdfs:comment """As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);
 
 `PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the [`hasPersonalData`](#hasPersonalData) and [`isPersonalDataForPurpose`](#isPersonalDataForPurpose) properties."""^^xsd:string ;
-                                         rdfs:label "PersonalData"^^xsd:string .
+              rdfs:label "PersonalData"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#Purpose
-<https://w3id.org/GConsent#Purpose> rdf:type owl:Class ;
-                                    <http://purl.org/vocab/vann/example> """
+:Purpose rdf:type owl:Class ;
+         <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -934,7 +934,7 @@ Note: A Minor can provide their own consent in certain cases, or conversely, a m
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                    rdfs:comment """The model of consent is such that `Purpose` is defined as the set of `Actions` on a `Data` with an intended 'purpose'. Therefore, the same set of actions on the same set of data can have different 'purposes'.
+         rdfs:comment """The model of consent is such that `Purpose` is defined as the set of `Actions` on a `Data` with an intended 'purpose'. Therefore, the same set of actions on the same set of data can have different 'purposes'.
 
 For example, consider the set of _(collect and use personal data)_ and the different purposes of _Advertising_ and _Marketing_. Since the consent for these two is separate or can be given and modified and withdrawn independently by the data subject, their modeling and representation should also reflect this separation.
 
@@ -942,13 +942,13 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 
 `Purpose` is linked to `Consent` via the [`givenForPurpose`](#givenForPurpose) and [`isPurposeForConsent`](#isPurposeForConsent) properties.
 """^^xsd:string ;
-                                    rdfs:label "Purpose"^^xsd:string .
+         rdfs:label "Purpose"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ShareAction
-<https://w3id.org/GConsent#ShareAction> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://w3id.org/GConsent#Action> ;
-                                        <http://purl.org/vocab/vann/example> """
+:ShareAction rdf:type owl:Class ;
+             rdfs:subClassOf :Action ;
+             <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -967,14 +967,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                        rdfs:comment "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the [`sharesDataWith`](#sharesDataWith) property."^^xsd:string ;
-                                        rdfs:label "ShareAction"^^xsd:string .
+             rdfs:comment "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the [`sharesDataWith`](#sharesDataWith) property."^^xsd:string ;
+             rdfs:label "ShareAction"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#StoreAction
-<https://w3id.org/GConsent#StoreAction> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://w3id.org/GConsent#Action> ;
-                                        <http://purl.org/vocab/vann/example> """
+:StoreAction rdf:type owl:Class ;
+             rdfs:subClassOf :Action ;
+             <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -993,14 +993,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                        rdfs:comment "Represents the action where storage of data takes place."^^xsd:string ;
-                                        rdfs:label "StoreAction"^^xsd:string .
+             rdfs:comment "Represents the action where storage of data takes place."^^xsd:string ;
+             rdfs:label "StoreAction"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#UseAction
-<https://w3id.org/GConsent#UseAction> rdf:type owl:Class ;
-                                      rdfs:subClassOf <https://w3id.org/GConsent#Action> ;
-                                      <http://purl.org/vocab/vann/example> """
+:UseAction rdf:type owl:Class ;
+           rdfs:subClassOf :Action ;
+           <http://purl.org/vocab/vann/example> """
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
@@ -1019,8 +1019,8 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:givenForPurpose :Advertising ;
     gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                      rdfs:comment "Represents the action where usage of data takes place."^^xsd:string ;
-                                      rdfs:label "UseAction"^^xsd:string .
+           rdfs:comment "Represents the action where usage of data takes place."^^xsd:string ;
+           rdfs:label "UseAction"^^xsd:string .
 
 
 #################################################################
@@ -1028,10 +1028,10 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 #################################################################
 
 ###  https://w3id.org/GConsent#CollectionOfPersonalData
-<https://w3id.org/GConsent#CollectionOfPersonalData> rdf:type owl:NamedIndividual ,
-                                                              <https://w3id.org/GConsent#Action> ,
-                                                              <https://w3id.org/GConsent#CollectAction> ;
-                                                     rdfs:comment """Represents _collect_ action over personal data.
+:CollectionOfPersonalData rdf:type owl:NamedIndividual ,
+                                   :Action ,
+                                   :CollectAction ;
+                          rdfs:comment """Represents _collect_ action over personal data.
     
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix gconsent: <https://w3id.org/GConsent#> .
@@ -1051,13 +1051,13 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
         gconsent:isConsentFor :HJP ;
         gconsent:givenForPurpose :Advertising ;
         gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                                     rdfs:label "CollectionOfPersonalData"^^xsd:string .
+                          rdfs:label "CollectionOfPersonalData"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusExpired
-<https://w3id.org/GConsent#ConsentStatusExpired> rdf:type owl:NamedIndividual ,
-                                                          <https://w3id.org/GConsent#ConsentStatus> ;
-                                                 <http://purl.org/vocab/vann/example> """
+:ConsentStatusExpired rdf:type owl:NamedIndividual ,
+                               :ConsentStatus ;
+                      <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -1067,14 +1067,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:hasExpiry \"2000-01-01\" ;
     gconsent:hasStatus gconsent:ConsentStatusExpired .  # <----"""^^xsd:string ;
-                                                 rdfs:comment "When the consent has expired, that is, not been renewed past its intended expiry date."^^xsd:string ;
-                                                 rdfs:label "ConsentStatusExpired"^^xsd:string .
+                      rdfs:comment "When the consent has expired, that is, not been renewed past its intended expiry date."^^xsd:string ;
+                      rdfs:label "ConsentStatusExpired"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusExplicitlyGiven
-<https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> rdf:type owl:NamedIndividual ,
-                                                                  <https://w3id.org/GConsent#ConsentStatus> ;
-                                                         <http://purl.org/vocab/vann/example> """
+:ConsentStatusExplicitlyGiven rdf:type owl:NamedIndividual ,
+                                       :ConsentStatus ;
+                              <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -1090,14 +1090,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusExplicitlyGiven .  # <----"""^^xsd:string ;
-                                                         rdfs:comment "When the consent is explicitly given."^^xsd:string ;
-                                                         rdfs:label "ConsentStatusExplicitlyGiven"^^xsd:string .
+                              rdfs:comment "When the consent is explicitly given."^^xsd:string ;
+                              rdfs:label "ConsentStatusExplicitlyGiven"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusImplicitlyGiven
-<https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> rdf:type owl:NamedIndividual ,
-                                                                  <https://w3id.org/GConsent#ConsentStatus> ;
-                                                         <http://purl.org/vocab/vann/example> """
+:ConsentStatusImplicitlyGiven rdf:type owl:NamedIndividual ,
+                                       :ConsentStatus ;
+                              <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -1115,14 +1115,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:hasStatus gconsent:ConsentStatusImplicitlyGiven ;  # <----
     gconsent:hasConsentInstance :consent_hjp_1808 ."""^^xsd:string ;
-                                                         rdfs:comment "When the consent is implicitly obtained, that is, without an explicit action by the Data Subject."^^xsd:string ;
-                                                         rdfs:label "ConsentStatusImplicitlyGiven"^^xsd:string .
+                              rdfs:comment "When the consent is implicitly obtained, that is, without an explicit action by the Data Subject."^^xsd:string ;
+                              rdfs:label "ConsentStatusImplicitlyGiven"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusNotGiven
-<https://w3id.org/GConsent#ConsentStatusNotGiven> rdf:type owl:NamedIndividual ,
-                                                           <https://w3id.org/GConsent#ConsentStatus> ;
-                                                  <http://purl.org/vocab/vann/example> """
+:ConsentStatusNotGiven rdf:type owl:NamedIndividual ,
+                                :ConsentStatus ;
+                       <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -1131,14 +1131,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 :Consent_hjp a gconsent:Consent ;
     gconsent:isConsentFor :HJP ;
     gconsent:hasStatus gconsent:ConsentStatusNotGiven .  # <----"""^^xsd:string ;
-                                                  rdfs:comment "When the consent status is unknown."^^xsd:string ;
-                                                  rdfs:label "ConsentStatusNotGiven"^^xsd:string .
+                       rdfs:comment "When the consent status is unknown."^^xsd:string ;
+                       rdfs:label "ConsentStatusNotGiven"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusUnknown
-<https://w3id.org/GConsent#ConsentStatusUnknown> rdf:type owl:NamedIndividual ,
-                                                          <https://w3id.org/GConsent#ConsentStatus> ;
-                                                 <http://purl.org/vocab/vann/example> """
+:ConsentStatusUnknown rdf:type owl:NamedIndividual ,
+                               :ConsentStatus ;
+                      <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -1148,14 +1148,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP .
 
     gconsent:hasStatus gconsent:ConsentStatusUnknown .  # <----"""^^xsd:string ;
-                                                 rdfs:comment "When the consent status is unknown."^^xsd:string ;
-                                                 rdfs:label "ConsentStatusUnknown"^^xsd:string .
+                      rdfs:comment "When the consent status is unknown."^^xsd:string ;
+                      rdfs:label "ConsentStatusUnknown"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusWithdrawn
-<https://w3id.org/GConsent#ConsentStatusWithdrawn> rdf:type owl:NamedIndividual ,
-                                                            <https://w3id.org/GConsent#ConsentStatus> ;
-                                                   <http://purl.org/vocab/vann/example> """
+:ConsentStatusWithdrawn rdf:type owl:NamedIndividual ,
+                                 :ConsentStatus ;
+                        <http://purl.org/vocab/vann/example> """
 @prefix gconsent: <https://w3id.org/GConsent#> .
 @prefix : <http://example.com/> .
 
@@ -1171,15 +1171,15 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
     gconsent:isConsentFor :HJP ;
     gconsent:hasConsentInstance :consent_hjp_1808 ;
     gconsent:hasStatus gconsent:ConsentStatusWithdrawn .  # <----"""^^xsd:string ;
-                                                   rdfs:comment "When the consent status is withdrawn. This action or status needs to be associated with the consent to maintain a record of consent-related activity and metadata."^^xsd:string ;
-                                                   rdfs:label "ConsentStatusWithdrawn"^^xsd:string .
+                        rdfs:comment "When the consent status is withdrawn. This action or status needs to be associated with the consent to maintain a record of consent-related activity and metadata."^^xsd:string ;
+                        rdfs:label "ConsentStatusWithdrawn"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#SharingOfPersonalData
-<https://w3id.org/GConsent#SharingOfPersonalData> rdf:type owl:NamedIndividual ,
-                                                           <https://w3id.org/GConsent#Action> ,
-                                                           <https://w3id.org/GConsent#ShareAction> ;
-                                                  rdfs:comment """Represents _share_ action over personal data.
+:SharingOfPersonalData rdf:type owl:NamedIndividual ,
+                                :Action ,
+                                :ShareAction ;
+                       rdfs:comment """Represents _share_ action over personal data.
 
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix gconsent: <https://w3id.org/GConsent#> .
@@ -1199,14 +1199,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
         gconsent:isConsentFor :HJP ;
         gconsent:givenForPurpose :Advertising ;
         gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                                  rdfs:label "SharingOfPersonalData"^^xsd:string .
+                       rdfs:label "SharingOfPersonalData"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#StorageOfPersonalData
-<https://w3id.org/GConsent#StorageOfPersonalData> rdf:type owl:NamedIndividual ,
-                                                           <https://w3id.org/GConsent#Action> ,
-                                                           <https://w3id.org/GConsent#StoreAction> ;
-                                                  rdfs:comment """Represents _store_ action over personal data.
+:StorageOfPersonalData rdf:type owl:NamedIndividual ,
+                                :Action ,
+                                :StoreAction ;
+                       rdfs:comment """Represents _store_ action over personal data.
 
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix gconsent: <https://w3id.org/GConsent#> .
@@ -1226,14 +1226,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
         gconsent:isConsentFor :HJP ;
         gconsent:givenForPurpose :Advertising ;
         gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                                  rdfs:label "StorageOfPersonalData"^^xsd:string .
+                       rdfs:label "StorageOfPersonalData"^^xsd:string .
 
 
 ###  https://w3id.org/GConsent#UsageOfPersonalData
-<https://w3id.org/GConsent#UsageOfPersonalData> rdf:type owl:NamedIndividual ,
-                                                         <https://w3id.org/GConsent#Action> ,
-                                                         <https://w3id.org/GConsent#UseAction> ;
-                                                rdfs:comment """Represents _collect_ action over personal data.
+:UsageOfPersonalData rdf:type owl:NamedIndividual ,
+                              :Action ,
+                              :UseAction ;
+                     rdfs:comment """Represents _collect_ action over personal data.
     
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
     @prefix gconsent: <https://w3id.org/GConsent#> .
@@ -1253,7 +1253,7 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
         gconsent:isConsentFor :HJP ;
         gconsent:givenForPurpose :Advertising ;
         gconsent:givenForPurpose :Marketing ."""^^xsd:string ;
-                                                rdfs:label "UsageOfPersonalData"^^xsd:string .
+                     rdfs:label "UsageOfPersonalData"^^xsd:string .
 
 
 #################################################################
@@ -1261,11 +1261,11 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 #################################################################
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( <https://w3id.org/GConsent#ConsentStatusExpired>
-                        <https://w3id.org/GConsent#ConsentStatusExplicitlyGiven>
-                        <https://w3id.org/GConsent#ConsentStatusImplicitlyGiven>
-                        <https://w3id.org/GConsent#ConsentStatusUnknown>
-                        <https://w3id.org/GConsent#ConsentStatusWithdrawn>
+  owl:distinctMembers ( :ConsentStatusExpired
+                        :ConsentStatusExplicitlyGiven
+                        :ConsentStatusImplicitlyGiven
+                        :ConsentStatusUnknown
+                        :ConsentStatusWithdrawn
                       )
 ] .
 
