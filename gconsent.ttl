@@ -1,5 +1,6 @@
 @prefix : <https://w3id.org/GConsent#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -15,8 +16,11 @@
 
 <https://w3id.org/GConsent> rdf:type owl:Ontology ;
                              dct:description "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
+                             <http://xmlns.com/foaf/0.1/logo> <http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png> ;
+                             dct:modified "2018-11-10"^^xsd:date ;
                              dct:title "GConsent - a consent ontology based on the GDPR" ;
                              owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
+                             dct:modified "ADAPT Centre, Trinity College"^^xsd:string ;
                              dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
                              dct:creator "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
                              vann:preferredNamespacePrefix "gconsent" ;
@@ -31,24 +35,52 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/modified
+dct:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dct:publisher rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/example
 vann:example rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/GConsent#hasExpiry
-:hasExpiry rdf:type owl:AnnotationProperty ;
-           rdfs:range time:TemporalEntity .
+###  http://xmlns.com/foaf/0.1/logo
+<http://xmlns.com/foaf/0.1/logo> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
+###  https://w3id.org/GConsent#gaveConsent
+:gaveConsent rdf:type owl:ObjectProperty ;
+             owl:inverseOf :wasGivenBy ;
+             rdf:type owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :DataSubject
+                                         :Delegation
+                                       )
+                         ] ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Consent
+                                        :Delegation
+                                      )
+                        ] ;
+             rdfs:comment "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."@en ;
+             rdfs:label "gave consent"@en .
+
+
 ###  https://w3id.org/GConsent#hasAction
 :hasAction rdf:type owl:ObjectProperty ;
            owl:inverseOf :isActionForPurpose ;
            rdfs:domain :Purpose ;
-           rdfs:range :Action .
+           rdfs:range :Action ;
+           rdfs:comment "Links a purpose to the actions (over personal data) it contains."@en ;
+           rdfs:label "has action"@en .
 
 
 ###  https://w3id.org/GConsent#hasConsent
@@ -56,52 +88,52 @@ vann:example rdf:type owl:AnnotationProperty .
             owl:inverseOf :isConsentForDataSubject ;
             rdf:type owl:InverseFunctionalProperty ;
             rdfs:domain :DataSubject ;
-            rdfs:range :Consent .
-
-
-###  https://w3id.org/GConsent#hasConsentDelegation
-:hasConsentDelegation rdf:type owl:ObjectProperty ;
-                      owl:inverseOf :isConsentDelegationFor ;
-                      rdfs:domain :DataSubject ;
-                      rdfs:range :Delegation .
-
-
-###  https://w3id.org/GConsent#hasConsentInstance
-:hasConsentInstance rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :isConsentInstanceOf ;
-                    rdfs:domain :Consent .
+            rdfs:range :Consent ;
+            rdfs:comment "Links a data subject to their consent."@en ;
+            rdfs:label "has consent"@en .
 
 
 ###  https://w3id.org/GConsent#hasContext
 :hasContext rdf:type owl:ObjectProperty ;
-            rdfs:domain :Consent .
+            rdfs:domain :Consent ;
+            rdfs:comment "Links a consent instance to the context in which it was acquired/provided/given."@en ;
+            rdfs:label "has context"@en .
 
 
 ###  https://w3id.org/GConsent#hasExpiry
 :hasExpiry rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain :Consent .
+           rdfs:domain :Consent ;
+           rdfs:range time:TemporalEntity ;
+           rdfs:comment "Specifies the Instant or Duration in which the consent expires."@en ;
+           rdfs:label "has expiry"@en .
 
 
 ###  https://w3id.org/GConsent#hasPersonalData
 :hasPersonalData rdf:type owl:ObjectProperty ;
                  owl:inverseOf :isPersonalDataForPurpose ;
                  rdfs:domain :Purpose ;
-                 rdfs:range :PersonalData .
+                 rdfs:range :PersonalData ;
+                 rdfs:comment "Links the purpose to personal data it uses."@en ;
+                 rdfs:label "has personal data"@en .
 
 
 ###  https://w3id.org/GConsent#hasPurpose
 :hasPurpose rdf:type owl:ObjectProperty ;
             owl:inverseOf :isPurposeForConsent ;
             rdfs:domain :Consent ;
-            rdfs:range :Purpose .
+            rdfs:range :Purpose ;
+            rdfs:comment "Links a consent instace to the purpose(s) it is associated with."@en ;
+            rdfs:label "has purpose"@en .
 
 
 ###  https://w3id.org/GConsent#hasStatus
 :hasStatus rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :Consent ;
-           rdfs:range :Status .
+           rdfs:range :Status ;
+           rdfs:comment "Denotes the state or status of consent."@en ;
+           rdfs:label "has status"@en .
 
 
 ###  https://w3id.org/GConsent#invalidatesGivenConsent
@@ -109,111 +141,136 @@ vann:example rdf:type owl:AnnotationProperty .
                          owl:inverseOf :wasInvalidatedBy ;
                          rdf:type owl:IrreflexiveProperty ;
                          rdfs:domain :Consent ;
-                         rdfs:range :Consent .
+                         rdfs:range :Consent ;
+                         rdfs:comment "Denotes invalidation of the specified consent instance by the current instance. This happens when consent is revoked, withdrawn, expired, or invalidated."@en ;
+                         rdfs:label "invalidates given consent"@en .
 
 
 ###  https://w3id.org/GConsent#isActionForPurpose
 :isActionForPurpose rdf:type owl:ObjectProperty ;
                     rdfs:domain :Action ;
-                    rdfs:range :Purpose .
-
-
-###  https://w3id.org/GConsent#isConsentDelegationFor
-:isConsentDelegationFor rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Delegation ;
-                        rdfs:range :DataSubject .
+                    rdfs:range :Purpose ;
+                    rdfs:comment "Links an action to the purpose it is associated with."@en ;
+                    rdfs:label "is action for purpose"@en .
 
 
 ###  https://w3id.org/GConsent#isConsentForDataSubject
 :isConsentForDataSubject rdf:type owl:ObjectProperty ,
                                   owl:FunctionalProperty ;
                          rdfs:domain :Consent ;
-                         rdfs:range :DataSubject .
-
-
-###  https://w3id.org/GConsent#isConsentGivenBy
-:isConsentGivenBy rdf:type owl:ObjectProperty ,
-                           owl:FunctionalProperty ,
-                           owl:AsymmetricProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( :Consent
-                                              :Delegation
-                                            )
-                              ] ;
-                  rdfs:range [ rdf:type owl:Class ;
-                               owl:unionOf ( :DataSubject
-                                             :Delegation
-                                           )
-                             ] .
-
-
-###  https://w3id.org/GConsent#isConsentInstanceOf
-:isConsentInstanceOf rdf:type owl:ObjectProperty ;
-                     rdfs:range :Consent .
-
-
-###  https://w3id.org/GConsent#isDelegateForConsentDelegation
-:isDelegateForConsentDelegation rdf:type owl:ObjectProperty ;
-                                rdfs:range :Delegation .
+                         rdfs:range :DataSubject ;
+                         rdfs:comment "Links a consent instance with the data subject it is associated with."@en ;
+                         rdfs:label "is consent for data subject"@en .
 
 
 ###  https://w3id.org/GConsent#isPersonalDataForPurpose
 :isPersonalDataForPurpose rdf:type owl:ObjectProperty ;
                           rdfs:domain :PersonalData ;
-                          rdfs:range :Purpose .
+                          rdfs:range :Purpose ;
+                          rdfs:comment "Links personal data with the purpose it is associated with."@en ;
+                          rdfs:label "is personal data for purpose"@en .
 
 
 ###  https://w3id.org/GConsent#isPurposeForConsent
 :isPurposeForConsent rdf:type owl:ObjectProperty ;
                      rdfs:domain :Purpose ;
-                     rdfs:range :Consent .
-
-
-###  https://w3id.org/GConsent#isVerificationProcessForDelegation
-:isVerificationProcessForDelegation rdf:type owl:ObjectProperty ;
-                                    rdfs:range :Delegation .
+                     rdfs:range :Consent ;
+                     rdfs:comment "Links purpose with the consent instance associated with it."@en ;
+                     rdfs:label "is purpose for consent"@en .
 
 
 ###  https://w3id.org/GConsent#sharesDataWith
 :sharesDataWith rdf:type owl:ObjectProperty ;
                 rdfs:domain :ShareAction ;
-                rdfs:range prov:Agent .
+                rdfs:range prov:Agent ;
+                rdfs:comment "Indicates the agent (organisation, person) the data is shared with."@en ;
+                rdfs:label "shares data with"@en .
 
 
 ###  https://w3id.org/GConsent#wasGivenAtInstant
 :wasGivenAtInstant rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :hasContext .
+                   rdfs:subPropertyOf :hasContext ;
+                   rdfs:domain :Consent ;
+                   rdfs:range time:Instant ;
+                   rdfs:comment "Specifies the instant at which the consent was given."@en ;
+                   rdfs:label "was given at instant"@en .
 
 
 ###  https://w3id.org/GConsent#wasGivenAtLocation
 :wasGivenAtLocation rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :hasContext .
+                    rdfs:subPropertyOf :hasContext ;
+                    rdfs:domain :Consent ;
+                    rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#Feature> ;
+                    rdfs:comment "Specifies the location at which the consent was given."@en ;
+                    rdfs:label "was given at location"@en .
+
+
+###  https://w3id.org/GConsent#wasGivenBy
+:wasGivenBy rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Consent
+                                        :Delegation
+                                      )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :DataSubject
+                                       :Delegation
+                                     )
+                       ] ;
+            rdfs:comment "Indicates the entity or activitiy that provided the consent."@en ;
+            rdfs:label "was given by"@en .
 
 
 ###  https://w3id.org/GConsent#wasGivenByAgent
 :wasGivenByAgent rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :hasContext ;
-                 rdfs:range prov:Agent .
+                 rdfs:domain :Consent ;
+                 rdfs:range prov:Agent ;
+                 rdfs:comment "Specifies the agent that provided/gave the consent. Examples are automated systems that collect or provide consent. This is not the same as having a data subject provide the consent."@en ;
+                 rdfs:label "was given by agent"@en .
 
 
 ###  https://w3id.org/GConsent#wasGivenThroughMedium
 :wasGivenThroughMedium rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasContext .
+                       rdfs:subPropertyOf :hasContext ;
+                       rdfs:domain :Consent ;
+                       rdfs:range :Medium ;
+                       rdfs:comment "Specifies the medium through which the consent was given. Examples are web forms, paper documents."@en ;
+                       rdfs:label "was given through medium"@en .
 
 
 ###  https://w3id.org/GConsent#wasGivenUsingArtefact
 :wasGivenUsingArtefact rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasContext .
+                       rdfs:subPropertyOf :hasContext ;
+                       rdfs:domain :Consent ;
+                       rdfs:range prov:Entity ;
+                       rdfs:comment "Specifies involved artefacts in the consent process. Examples are terms of service and privacy policies."@en ;
+                       rdfs:label "was given using artefact"@en .
 
 
 ###  https://w3id.org/GConsent#wasInvalidatedBy
 :wasInvalidatedBy rdf:type owl:ObjectProperty ,
-                           owl:IrreflexiveProperty .
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Consent ;
+                  rdfs:range :Consent ;
+                  rdfs:comment "Specifies the consent instance which invalidated this instance."@en ;
+                  rdfs:label "was invalidated by"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Feature
+<http://www.w3.org/2003/01/geo/wgs84_pos#Feature> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Instant
+time:Instant rdf:type owl:Class ;
+             rdfs:subClassOf time:TemporalEntity .
+
 
 ###  http://www.w3.org/2006/time#TemporalEntity
 time:TemporalEntity rdf:type owl:Class .
@@ -223,42 +280,71 @@ time:TemporalEntity rdf:type owl:Class .
 prov:Agent rdf:type owl:Class .
 
 
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class .
+
+
 ###  http://xmlns.com/foaf/Person
 foaf:Person rdf:type owl:Class .
 
 
 ###  https://w3id.org/GConsent#Action
 :Action rdf:type owl:Class ;
+        rdfs:comment """Action is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: Collect, Store, Use, and Share. To represent these, Action has been subclassed for each type of action as - CollectAction, StoreAction, UseAction, and ShareAction. Each of these have a default instance to provide a generic target to refer to the action - CollectPersonalData, StorePersonalData, UsePersonalData, and SharePersonalData. Along with these, Read and Write are also defined as (subClassOf) actions with individuals ReadPersonalData and WritePersonalData respectively.
+
+Action has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost."""@en ;
         rdfs:label "Action"@en .
 
 
 ###  https://w3id.org/GConsent#CollectAction
 :CollectAction rdf:type owl:Class ;
                rdfs:subClassOf :Action ;
-               rdfs:comment "Represents the action where collection of data takes place." ;
+               rdfs:comment "Represents the action where collection of data takes place."@en ;
                rdfs:label "Collect"@en .
 
 
 ###  https://w3id.org/GConsent#Consent
 :Consent rdf:type owl:Class ;
-         rdfs:label "Consent" .
+         rdfs:comment """As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;
+
+In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.
+
+To link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."""@en ;
+         rdfs:label "Consent"@en .
 
 
 ###  https://w3id.org/GConsent#DataSubject
 :DataSubject rdf:type owl:Class ;
-             rdfs:label "DataSubject" .
+             rdfs:subClassOf [ rdf:type owl:Class ;
+                               owl:unionOf ( prov:Agent
+                                             foaf:Person
+                                           )
+                             ] ;
+             rdfs:comment """Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.
+
+In the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.
+
+The Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties."""@en ;
+             rdfs:label "Data Subject"@en .
 
 
 ###  https://w3id.org/GConsent#Delegation
 :Delegation rdf:type owl:Class ;
-            rdfs:comment "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They are provided respectively by the properties [`isConsentDelegationFor`](#isConsentDelegationFor), [`hasConsentGivenByDelegate`](#hasConsentGivenByDelegate), and [`hasVerificationProcessForDelegation`](#hasVerificationProcessForDelegation)." ;
+            rdfs:comment "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`."@en ;
             rdfs:label "Delegation" .
 
 
 ###  https://w3id.org/GConsent#EraseData
 :EraseData rdf:type owl:Class ;
            rdfs:subClassOf :Action ;
+           rdfs:comment "Represents the action where erasure of data takes place."@en ;
            rdfs:label "Erase"@en .
+
+
+###  https://w3id.org/GConsent#Medium
+:Medium rdf:type owl:Class ;
+        rdfs:comment "Describes the medium through which consent was given/provided. Example: web form, recorded voice, signature on document."@en ;
+        rdfs:label "Medium"@en .
 
 
 ###  https://w3id.org/GConsent#MinorDataSubject
@@ -266,20 +352,19 @@ foaf:Person rdf:type owl:Class .
                   rdfs:subClassOf :DataSubject ;
                   rdfs:comment """A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.
 
-Consent given in lieu of a Minor (by their Representative) is associated with the [`ConsentInstance`](#ConsentInstance) class/instance using the [`wasGivenBy`](#wasGivenBy) property.
+Consent given in lieu of a Minor (by their Representative) is associated with the `ConsentInstance` class/instance using the `wasGivenBy` property.
 
 The ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.
 
-Note: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases.
-""" ;
-                  rdfs:label "MinorDataSubject" .
+Note: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases."""@en ;
+                  rdfs:label "Minor Data Subject"@en .
 
 
 ###  https://w3id.org/GConsent#PersonalData
 :PersonalData rdf:type owl:Class ;
               rdfs:comment """As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);
 
-`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the [`hasPersonalData`](#hasPersonalData) and [`isPersonalDataForPurpose`](#isPersonalDataForPurpose) properties.""" ;
+`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the `hasPersonalData` and `isPersonalDataForPurpose` properties."""@en ;
               rdfs:label "Personal Data"@en .
 
 
@@ -291,8 +376,7 @@ For example, consider the set of _(collect and use personal data)_ and the diffe
 
 Therefore, the modeling is done as follows: Each consent has only one purpose or more purposes The applicable purpose then is the union of all purposes For e.g. _Advertising_ and _Marketing_ are two purposes, but if they are associated with a single consent instance, then the consent is deemed to be given for the _union of Advertising and Marketing_. Each purpose can have multiple actions and multiple data The applicable consent is for the union of actions on the union of data That is, each action is permitted over each item of data For a different purpose, a separate consent object must be created.
 
-`Purpose` is linked to `Consent` via the [`givenForPurpose`](#givenForPurpose) and [`isPurposeForConsent`](#isPurposeForConsent) properties.
-""" ;
+`Purpose` is linked to `Consent` via the `givenForPurpose` and `isPurposeForConsent` properties."""@en ;
          rdfs:label "Purpose"@en .
 
 
@@ -300,51 +384,56 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 :ReadAction rdf:type owl:Class ;
             rdfs:subClassOf :Action ;
             owl:disjointWith :WriteAction ;
+            rdfs:comment "Represents the action where reading of data takes place."@en ;
             rdfs:label "Read"@en .
 
 
 ###  https://w3id.org/GConsent#ShareAction
 :ShareAction rdf:type owl:Class ;
              rdfs:subClassOf :Action ;
-             rdfs:comment "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the [`sharesDataWith`](#sharesDataWith) property." ;
+             rdfs:comment "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the `sharesDataWith` property."@en ;
              rdfs:label "Share"@en .
 
 
 ###  https://w3id.org/GConsent#Status
-:Status rdf:type owl:Class .
+:Status rdf:type owl:Class ;
+        rdfs:comment "Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."@en ;
+        rdfs:label "Status"@en .
 
 
 ###  https://w3id.org/GConsent#StatusInvalidForProcessing
 :StatusInvalidForProcessing rdf:type owl:Class ;
                             rdfs:subClassOf :Status ;
                             owl:disjointWith :StatusValidForProcessing ;
+                            rdfs:comment "Represents consent states that are invalid for processing."@en ;
                             rdfs:label "Status invalid for Processing"@en .
 
 
 ###  https://w3id.org/GConsent#StatusValidForProcessing
 :StatusValidForProcessing rdf:type owl:Class ;
                           rdfs:subClassOf :Status ;
+                          rdfs:comment "Represents consent states that are valid for processing"@en ;
                           rdfs:label "Status valid for Processing"@en .
 
 
 ###  https://w3id.org/GConsent#StoreAction
 :StoreAction rdf:type owl:Class ;
              rdfs:subClassOf :Action ;
-             rdfs:comment "Represents the action where storage of data takes place." ;
-             rdfs:label "Store"@en ,
-                        "StoreAction"@en .
+             rdfs:comment "Represents the action where storage of data takes place."@en ;
+             rdfs:label "Store"@en .
 
 
 ###  https://w3id.org/GConsent#UseAction
 :UseAction rdf:type owl:Class ;
            rdfs:subClassOf :Action ;
-           rdfs:comment "Represents the action where usage of data takes place." ;
+           rdfs:comment "Represents the action where usage of data takes place."@en ;
            rdfs:label "Use"@en .
 
 
 ###  https://w3id.org/GConsent#WriteAction
 :WriteAction rdf:type owl:Class ;
              rdfs:subClassOf :Action ;
+             rdfs:comment "Represents the action where writing of data takes place."@en ;
              rdfs:label "Write"@en .
 
 
@@ -355,100 +444,120 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 ###  https://w3id.org/GConsent#CollectPersonalData
 :CollectPersonalData rdf:type owl:NamedIndividual ,
                               :CollectAction ;
-                     rdfs:comment "Represents _collect_ action over personal data." .
+                     rdfs:comment "Represents collect action over personal data."@en ;
+                     rdfs:label "Collect Personal Data"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusExpired
-:ConsentStatusExpired rdf:type owl:NamedIndividual .
+:ConsentStatusExpired rdf:type owl:NamedIndividual ,
+                               :StatusInvalidForProcessing ;
+                      rdfs:comment "Indicates the consent has expired."@en ;
+                      rdfs:label "Expired"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusExplicitlyGiven
 :ConsentStatusExplicitlyGiven rdf:type owl:NamedIndividual ,
                                        :StatusValidForProcessing ;
-                              rdfs:comment "When the consent is explicitly given." ;
+                              rdfs:comment "Indicates consent is explicitly given."@en ;
                               rdfs:label "Explicitly Given"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusGivenByDelegation
 :ConsentStatusGivenByDelegation rdf:type owl:NamedIndividual ,
                                          :StatusValidForProcessing ;
+                                rdfs:comment "Indicates consent is given via delegation."@en ;
                                 rdfs:label "Given by Delegation"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusImplicitlyGiven
 :ConsentStatusImplicitlyGiven rdf:type owl:NamedIndividual ,
                                        :StatusValidForProcessing ;
-                              rdfs:comment "When the consent is implicitly obtained, that is, without an explicit action by the Data Subject." ;
+                              rdfs:comment "Indicates consent is given via an implicit action or assumption."@en ;
                               rdfs:label "Implicitly Given"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusInvalidated
 :ConsentStatusInvalidated rdf:type owl:NamedIndividual ,
                                    :StatusInvalidForProcessing ;
+                          rdfs:comment "Indicates the consent has been invalidated."@en ;
                           rdfs:label "Invalidated"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusNotGiven
 :ConsentStatusNotGiven rdf:type owl:NamedIndividual ,
                                 :StatusInvalidForProcessing ;
-                       rdfs:comment "When the consent status is unknown." ;
+                       rdfs:comment "Indicates that consent has not been given."@en ;
                        rdfs:label "Not Given"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusRefused
 :ConsentStatusRefused rdf:type owl:NamedIndividual ,
                                :StatusInvalidForProcessing ;
+                      rdfs:comment "Indicates that consent has been refused (to be given)."@en ;
                       rdfs:label "Refused"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusRequested
 :ConsentStatusRequested rdf:type owl:NamedIndividual ,
                                  :StatusInvalidForProcessing ;
+                        rdfs:comment "Indicates consent has been requested but has not been given (yet)."@en ;
                         rdfs:label "Requested"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusUnknown
 :ConsentStatusUnknown rdf:type owl:NamedIndividual ,
                                :StatusInvalidForProcessing ;
-                      rdfs:comment "When the consent status is unknown." ;
+                      rdfs:comment "Indicates the consent status is unknown."@en ;
                       rdfs:label "Unknown"@en .
 
 
 ###  https://w3id.org/GConsent#ConsentStatusWithdrawn
 :ConsentStatusWithdrawn rdf:type owl:NamedIndividual ,
                                  :StatusInvalidForProcessing ;
-                        rdfs:comment "When the consent status is withdrawn. This action or status needs to be associated with the consent to maintain a record of consent-related activity and metadata." ;
+                        rdfs:comment "Indicates consent has been withdrawn."@en ;
                         rdfs:label "Withdrawn"@en .
 
 
-###  https://w3id.org/GConsent#Read_Personal_Data
-:Read_Personal_Data rdf:type owl:NamedIndividual ,
-                             :ReadAction ;
-                    rdfs:label "Read Personal Data"@en .
+###  https://w3id.org/GConsent#ErasePersonalData
+:ErasePersonalData rdf:type owl:NamedIndividual ,
+                            :EraseData ;
+                   rdfs:comment "Specifies the action of erasing personal data."@en ;
+                   rdfs:label "Erase Personal Data"@en .
 
 
-###  https://w3id.org/GConsent#Share_Personal_Data
-:Share_Personal_Data rdf:type owl:NamedIndividual ,
-                              :ShareAction ;
-                     rdfs:comment "Represents _share_ action over personal data." .
+###  https://w3id.org/GConsent#ReadPersonalData
+:ReadPersonalData rdf:type owl:NamedIndividual ,
+                           :ReadAction ;
+                  rdfs:comment "Specifies the action of reading personal data."@en ;
+                  rdfs:label "Read Personal Data"@en .
 
 
-###  https://w3id.org/GConsent#Store_Personal_Data
-:Store_Personal_Data rdf:type owl:NamedIndividual ,
-                              :StoreAction ;
-                     rdfs:comment "Represents _store_ action over personal data" .
+###  https://w3id.org/GConsent#SharePersonalData
+:SharePersonalData rdf:type owl:NamedIndividual ,
+                            :ShareAction ;
+                   rdfs:comment "Represents share action over personal data."@en ;
+                   rdfs:label "Share Personal Data"@en .
 
 
-###  https://w3id.org/GConsent#Use_Personal_Data
-:Use_Personal_Data rdf:type owl:NamedIndividual ,
-                            :UseAction ;
-                   rdfs:comment "Represents _collect_ action over personal data." .
+###  https://w3id.org/GConsent#StorePersonalData
+:StorePersonalData rdf:type owl:NamedIndividual ,
+                            :StoreAction ;
+                   rdfs:comment "Represents store action over personal data"@en ;
+                   rdfs:label "Store Personal Data"@en .
 
 
-###  https://w3id.org/GConsent#Write_Personal_Data
-:Write_Personal_Data rdf:type owl:NamedIndividual ,
-                              :WriteAction ;
-                     rdfs:label "Write Personal Data"@en .
+###  https://w3id.org/GConsent#UsePersonalData
+:UsePersonalData rdf:type owl:NamedIndividual ,
+                          :UseAction ;
+                 rdfs:comment "Represents collect action over personal data."@en ;
+                 rdfs:label "Use Personal Data"@en .
+
+
+###  https://w3id.org/GConsent#WritePersonalData
+:WritePersonalData rdf:type owl:NamedIndividual ,
+                            :WriteAction ;
+                   rdfs:comment "Specifies writing of personal data."@en ;
+                   rdfs:label "Write Personal Data"@en .
 
 
 #################################################################
@@ -461,10 +570,6 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
                     rdfs:comment "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used." .
 
 
-:hasExpiry rdfs:label "has expiry"@en ;
-           rdfs:comment "Specifies the expiry of the (current) current instance. The value of this expiry can be an instant in time, such as a specific date or datetime, or can be a duration." .
-
-
 :isContextForConsentInstance rdfs:label "isContextForConsentInstance" ;
                              rdfs:comment "The parent propertly linking all contexts to `ConsentInstance`." .
 
@@ -475,11 +580,12 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :CollectPersonalData
-                        :Read_Personal_Data
-                        :Share_Personal_Data
-                        :Store_Personal_Data
-                        :Use_Personal_Data
-                        :Write_Personal_Data
+                        :ErasePersonalData
+                        :ReadPersonalData
+                        :SharePersonalData
+                        :StorePersonalData
+                        :UsePersonalData
+                        :WritePersonalData
                       )
 ] .
 

@@ -7,21 +7,21 @@
 @base <https://w3id.org/GConsent> .
 
 <https://w3id.org/GConsent> rdf:type owl:Ontology ;
+                             <http://purl.org/dc/terms/description> "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
+                             <http://xmlns.com/foaf/0.1/logo> <http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png> ;
+                             <http://purl.org/dc/terms/modified> "2018-11-10"^^xsd:date ;
+                             <http://purl.org/dc/terms/title> "GConsent - a consent ontology based on the GDPR" ;
+                             owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
+                             <http://purl.org/dc/terms/modified> "ADAPT Centre, Trinity College"^^xsd:string ;
+                             <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
+                             <http://purl.org/dc/terms/creator> "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
+                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "gconsent" ;
+                             <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
+                             <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/GConsent" ;
+                             owl:versionInfo "0.5"^^xsd:string ;
                              <http://purl.org/dc/terms/abstract> "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner."^^xsd:string ;
                              <http://purl.org/dc/terms/created> "2018-08-24"^^xsd:date ;
-                             <http://purl.org/dc/terms/creator> "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
-                             <http://purl.org/dc/terms/description> "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
-                             <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
-                             <http://purl.org/dc/terms/modified> "2018-11-10"^^xsd:date ,
-                                                                 "ADAPT Centre, Trinity College"^^xsd:string ;
-                             <http://purl.org/dc/terms/title> "GConsent - a consent ontology based on the GDPR"^^xsd:string ;
-                             <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
-                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "gconsent"^^xsd:string ;
-                             <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/GConsent"^^xsd:string ;
-                             owl:incompatibleWith <http://purl.org/adaptcentre/openscience/ontologies/consent> ;
-                             owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
-                             owl:versionInfo "0.5"^^xsd:string ;
-                             <http://xmlns.com/foaf/0.1/logo> <http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png> .
+                             owl:incompatibleWith <http://purl.org/adaptcentre/openscience/ontologies/consent> .
 
 #################################################################
 #    Object Properties
@@ -305,7 +305,7 @@ The Data Subject is linked to the Consent instance via the isConsentForDataSubje
 ###  https://w3id.org/GConsent#Delegation
 :Delegation rdf:type owl:Class ;
             rdfs:comment "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`."@en ;
-            rdfs:label "Delegation"^^xsd:string .
+            rdfs:label "Delegation" .
 
 
 ###  https://w3id.org/GConsent#EraseData
@@ -555,14 +555,14 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 #    Annotations
 #################################################################
 
-:ConsentInvalidated rdfs:comment "Consent that has been invalidated due to some condition."^^xsd:string ,
-                                 "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used."^^xsd:string ;
-                    rdfs:label "Status"@en ,
-                               "Consent Invalidated"^^xsd:string .
+:ConsentInvalidated rdfs:comment "Consent that has been invalidated due to some condition." ;
+                    rdfs:label "Consent Invalidated" ,
+                               "Status"@en ;
+                    rdfs:comment "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used." .
 
 
-:isContextForConsentInstance rdfs:comment "The parent propertly linking all contexts to `ConsentInstance`."^^xsd:string ;
-                             rdfs:label "isContextForConsentInstance"^^xsd:string .
+:isContextForConsentInstance rdfs:label "isContextForConsentInstance" ;
+                             rdfs:comment "The parent propertly linking all contexts to `ConsentInstance`." .
 
 
 #################################################################
@@ -596,4 +596,4 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 ] .
 
 
-###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -7,40 +7,62 @@ This section provides details for each class and property defined by GConsent - 
          <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
       </li>
       <li>
-         <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">CollectAction</a>
+         <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">Collect</a>
       </li>
       <li>
          <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
       </li>
       <li>
-         <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+         <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
       </li>
       <li>
-         <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+         <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
       </li>
       <li>
-         <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">DataSubject</a>
+         <a href="#EraseData" title="https://w3id.org/GConsent#EraseData">Erase</a>
       </li>
       <li>
-         <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
+         <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">
+            <span>instant</span>
+         </a>
       </li>
       <li>
-         <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">MinorDataSubject</a>
+         <a href="#Medium" title="https://w3id.org/GConsent#Medium">Medium</a>
       </li>
       <li>
-         <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">PersonalData</a>
+         <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">Minor Data Subject</a>
+      </li>
+      <li>
+         <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">Personal Data</a>
       </li>
       <li>
          <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
       </li>
       <li>
-         <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">ShareAction</a>
+         <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a>
       </li>
       <li>
-         <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">StoreAction</a>
+         <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a>
       </li>
       <li>
-         <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">UseAction</a>
+         <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+      </li>
+      <li>
+         <a href="#StatusInvalidForProcessing"
+            title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+      </li>
+      <li>
+         <a href="#StatusValidForProcessing"
+            title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+      </li>
+      <li>
+         <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">Store</a>
+      </li>
+      <li>
+         <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">Use</a>
+      </li>
+      <li>
+         <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a>
       </li>
    </ul>
    <div class="entity" id="Action">
@@ -51,67 +73,47 @@ This section provides details for each class and property defined by GConsent - 
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#Action</p>
       <div class="comment">
-         <span class="markdown">`Action` is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: *Collect*, *Store*, *Use*, and *Share*. To represent these, `Action` has been subclassed for each type of action as - [`CollectAction`](#CollectAction), [`StoreAction`](#StoreAction), [`UseAction`](#UseAction), and [`ShareAction`](#ShareAction). Each of these have a default instance to provide a generic target to refer to the action - [`CollectionOfPersonalData`](#CollectionOfPersonalData), [`StorageOfPersonalData`](#StorageOfPersonalData), [`UsageOfPersonalData`](#UsageOfPersonalData), and [`SharingOfPersonalData`](#SharingOfPersonalData).
+         <span class="markdown">Action is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: Collect, Store, Use, and Share. To represent these, Action has been subclassed for each type of action as - CollectAction, StoreAction, UseAction, and ShareAction. Each of these have a default instance to provide a generic target to refer to the action - CollectPersonalData, StorePersonalData, UsePersonalData, and SharePersonalData. Along with these, Read and Write are also defined as (subClassOf) actions with individuals ReadPersonalData and WritePersonalData respectively.
 
-`Action` has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost.
-</span>
+Action has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:StorageOfPersonalData ;     # &lt;----
-    gconsent:hasAction gconsent:UsageOfPersonalData ;       # &lt;----
-    gconsent:hasAction gconsent:SharingOfPersonalData .     # &lt;----
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:UsageOfPersonalData .       # &lt;----
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">CollectAction</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">ShareAction</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">StoreAction</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">UseAction</a>
+            <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">Collect</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#EraseData" title="https://w3id.org/GConsent#EraseData">Erase</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">Store</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">Use</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">isActionForPurpose</a>
+            <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">is action for purpose</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">hasAction</a>
+            <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#CollectionOfPersonalData"
-               title="https://w3id.org/GConsent#CollectionOfPersonalData">CollectionOfPersonalData</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">SharingOfPersonalData</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">StorageOfPersonalData</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#UsageOfPersonalData" title="https://w3id.org/GConsent#UsageOfPersonalData">UsageOfPersonalData</a>
+            <a href="#CollectPersonalData" title="https://w3id.org/GConsent#CollectPersonalData">Collect Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ErasePersonalData" title="https://w3id.org/GConsent#ErasePersonalData">Erase Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ReadPersonalData" title="https://w3id.org/GConsent#ReadPersonalData">Read Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SharePersonalData" title="https://w3id.org/GConsent#SharePersonalData">Share Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#StorePersonalData" title="https://w3id.org/GConsent#StorePersonalData">Store Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#UsePersonalData" title="https://w3id.org/GConsent#UsePersonalData">Use Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#WritePersonalData" title="https://w3id.org/GConsent#WritePersonalData">Write Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="CollectAction">
-      <h3>CollectAction<sup class="type-c" title="class">c</sup>
+      <h3>Collect<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -120,30 +122,6 @@ This section provides details for each class and property defined by GConsent - 
       <div class="comment">
          <span class="markdown">Represents the action where collection of data takes place.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData .
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:UsageOfPersonalData .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -152,8 +130,7 @@ This section provides details for each class and property defined by GConsent - 
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#CollectionOfPersonalData"
-               title="https://w3id.org/GConsent#CollectionOfPersonalData">CollectionOfPersonalData</a>
+            <a href="#CollectPersonalData" title="https://w3id.org/GConsent#CollectPersonalData">Collect Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -168,152 +145,42 @@ This section provides details for each class and property defined by GConsent - 
       <div class="comment">
          <span class="markdown">As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;
 
-In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the `Consent` class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.
+In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.
 
-To link the `Consent` instance with the `DataSubject` instance, use the [`isConsentFor`](#isConsentFor) and [`hasConsent`](#hasConsent) properties.</span>
+To link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:HJP_Consent a gconsent:Consent ;  # &lt;----
-    gconsent:isConsentFor :HJP .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#givenForPurpose" title="https://w3id.org/GConsent#givenForPurpose">givenForPurpose</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasConsentInstance" title="https://w3id.org/GConsent#hasConsentInstance">hasConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">hasStatus</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isConsentFor" title="https://w3id.org/GConsent#isConsentFor">isConsentFor</a>
+            <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPurpose" title="https://w3id.org/GConsent#hasPurpose">has purpose</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#invalidatesGivenConsent"
+               title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isConsentForDataSubject"
+               title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">was given at instant</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">was given at location</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenByAgent" title="https://w3id.org/GConsent#wasGivenByAgent">was given by agent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">was given through medium</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenUsingArtefact" title="https://w3id.org/GConsent#wasGivenUsingArtefact">was given using artefact</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">hasConsent</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isConsentInstanceOf" title="https://w3id.org/GConsent#isConsentInstanceOf">isConsentInstanceOf</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">isPurposeForConsent</a>
+            <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#invalidatesGivenConsent"
+               title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ConsentInstance">
-      <h3>ConsentInstance<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentInstance</p>
-      <div class="comment">
-         <span class="markdown">`Consent` as an entity exists as an interface (or representation) specifying the specific consent (as permission) between the data subject and the purpose (which contains action(s) and personal data item(s)). This _entity_ stays fixed (or constant) throughout its lifetime, and is associated with various _instances_ of given consent. To represent these instances, the class `ConsentInstance` is used.
-
-`ConsentInstance` is associated with a `Consent` instance using the [`hasConsentInstance`](#hasConsentInstance) and [`isConsentInstanceOf`](#isConsentInstanceOf) properties.
-
-A consent instance defines one specific given consent. The data subject has the right to change or modify or withdraw this consent at a later date. To link these two consent instances together, the properties [`wasReplacedByConsentInstance`](#wasReplacedByConsentInstance) and [`replacesConsentInstance`](#replacesConsentInstance) are used.
-
-Attributes describing the context of specific consent instances include metadata describing specific instances of consent - such as timestamp, location, or medium. A parent property is useful to represent such attributes collectively, and to provide a common way to link these to consent instances. These are defined as [`isContextForConsentInstance`](#isContextForConsentInstance) and [`hasContext`](#hasContext) properties.
-
-A Consent Instance represents a specific status of consent applicable to the instant it defines. For e.g. a consent given at a particular instant specifies "explicit consent" to the specified purpose. Whereas, another consent given later "withdraws" this consent for the specified purpose. To capture this chain or log or provenance of change in consent, the [`changesConsentStatusTo`](#changesConsentStatusTo) property is used.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;  # &lt;----
-    rdfs:label "Email op-out" ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasConsentInstance :consent_hjp_1808 ;
-    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#changesConsentStatusTo" title="https://w3id.org/GConsent#changesConsentStatusTo">changesConsentStatusTo</a>
-            <sup class="type-op" title="object property">op</sup>, <span class="dotted" title="https://w3id.org/GConsent#hasContext">hasContext</span>, <span class="dotted" title="https://w3id.org/GConsent#hasExpiry">hasExpiry</span>, <a href="#isConsentInstanceOf" title="https://w3id.org/GConsent#isConsentInstanceOf">isConsentInstanceOf</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#replacesConsentInstance"
-               title="https://w3id.org/GConsent#replacesConsentInstance">replacesConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>, <span class="dotted" title="https://w3id.org/GConsent#wasGivenAtInstant">wasGivenAtInstant</span>, <span class="dotted" title="https://w3id.org/GConsent#wasGivenAtLocation">wasGivenAtLocation</span>, <span class="dotted" title="https://w3id.org/GConsent#wasGivenBy">wasGivenBy</span>, <span class="dotted" title="https://w3id.org/GConsent#wasGivenThroughMedium">wasGivenThroughMedium</span>, <a href="#wasReplacedByConsentInstance"
-               title="https://w3id.org/GConsent#wasReplacedByConsentInstance">wasReplacedByConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasConsentInstance" title="https://w3id.org/GConsent#hasConsentInstance">hasConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isContextForConsentInstance"
-               title="https://w3id.org/GConsent#isContextForConsentInstance">isContextForConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#replacesConsentInstance"
-               title="https://w3id.org/GConsent#replacesConsentInstance">replacesConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#wasReplacedByConsentInstance"
-               title="https://w3id.org/GConsent#wasReplacedByConsentInstance">wasReplacedByConsentInstance</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ConsentStatus">
-      <h3>ConsentStatus<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatus</p>
-      <div class="comment">
-         <span class="markdown">Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:ConsentInvalidated a gconsent:ConsentStatus ;  # &lt;----
-    rdfs:label "Consent Invalidated" ;
-    rdfs:comment "Consent that has been invalidated due to some condition." .</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#changesConsentStatusTo" title="https://w3id.org/GConsent#changesConsentStatusTo">changesConsentStatusTo</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">hasStatus</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>has members</dt>
-         <dd>
-            <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">ConsentStatusExpired</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusExplicitlyGiven"
-               title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">ConsentStatusExplicitlyGiven</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusImplicitlyGiven"
-               title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">ConsentStatusImplicitlyGiven</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">ConsentStatusNotGiven</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">ConsentStatusUnknown</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">ConsentStatusWithdrawn</a>
-            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="DataSubject">
-      <h3>DataSubject<sup class="type-c" title="class">c</sup>
+      <h3>Data Subject<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -322,103 +189,111 @@ A Consent Instance represents a specific status of consent applicable to the ins
       <div class="comment">
          <span class="markdown">Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.
 
-In the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of `foaf:Person`.
+In the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.
 
-The Data Subject is linked to the `Consent` instance via the [`isConsentFor`](#isConsentFor) and [`hasConsent`](#hasConsent) properties.
-</span>
+The Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;  # &lt;----
-    foaf:name "Harshvardhan" . </pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
             <span class="dotted" title="http://xmlns.com/foaf/Person">person</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">MinorDataSubject</a>
+            <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">Minor Data Subject</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">hasConsent</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasConsentDelegation" title="https://w3id.org/GConsent#hasConsentDelegation">hasConsentDelegation</a>
+            <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#isConsentDelegationFor" title="https://w3id.org/GConsent#isConsentDelegationFor">isConsentDelegationFor</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isConsentFor" title="https://w3id.org/GConsent#isConsentFor">isConsentFor</a>
+            <a href="#isConsentForDataSubject"
+               title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="ConsentDelegation">
+   <div class="entity" id="Delegation">
       <h3>Delegation<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentDelegation</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#Delegation</p>
       <div class="comment">
-         <span class="markdown">A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They are provided respectively by the properties [`isConsentDelegationFor`](#isConsentDelegationFor), [`hasConsentGivenByDelegate`](#hasConsentGivenByDelegate), and [`hasVerificationProcessForDelegation`](#hasVerificationProcessForDelegation).</span>
+         <span class="markdown">A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
+   </div>
+   <div class="entity" id="EraseData">
+      <h3>Erase<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#EraseData</p>
+      <div class="comment">
+         <span class="markdown">Represents the action where erasure of data takes place.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
          <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:ConsentDelegation ;   # &lt;----
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospital Staff Member 4826719" ;
-    gconsent:isConsentDelegationFor :HJP ;
-    gconsent:hasVerificationProcessForDelegation "Recorded under medical registry for emergencies" .
-    </pre>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ErasePersonalData" title="https://w3id.org/GConsent#ErasePersonalData">Erase Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/time#Instant">
+      <h3>instant<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/time#Instant</p>
       <dl class="description">
-         <dt>is in domain of</dt>
+         <dt>has super-classes</dt>
          <dd>
-            <span class="dotted"
-                  title="https://w3id.org/GConsent#hasConsentGivenByDelegate">hasConsentGivenByDelegate</span>, <span class="dotted"
-                  title="https://w3id.org/GConsent#hasVerificationProcessForDelegation">hasVerificationProcessForDelegation</span>, <a href="#isConsentDelegationFor" title="https://w3id.org/GConsent#isConsentDelegationFor">isConsentDelegationFor</a>
-            <sup class="type-op" title="object property">op</sup>
+            <span class="dotted" title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</span>
+            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasConsentDelegation" title="https://w3id.org/GConsent#hasConsentDelegation">hasConsentDelegation</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isDelegateForConsentDelegation"
-               title="https://w3id.org/GConsent#isDelegateForConsentDelegation">isDelegateForConsentDelegation</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isVerificationProcessForDelegation"
-               title="https://w3id.org/GConsent#isVerificationProcessForDelegation">isVerificationProcessForDelegation</a>
+            <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">was given at instant</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Medium">
+      <h3>Medium<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#Medium</p>
+      <div class="comment">
+         <span class="markdown">Describes the medium through which consent was given/provided. Example: web form, recorded voice, signature on document.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">was given through medium</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="MinorDataSubject">
-      <h3>MinorDataSubject<sup class="type-c" title="class">c</sup>
+      <h3>Minor Data Subject<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -427,41 +302,22 @@ The Data Subject is linked to the `Consent` instance via the [`isConsentFor`](#i
       <div class="comment">
          <span class="markdown">A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.
 
-Consent given in lieu of a Minor (by their Representative) is associated with the [`ConsentInstance`](#ConsentInstance) class/instance using the [`wasGivenBy`](#wasGivenBy) property.
+Consent given in lieu of a Minor (by their Representative) is associated with the `ConsentInstance` class/instance using the `wasGivenBy` property.
 
 The ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.
 
-Note: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases.
-</span>
+Note: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:Child a gconsent:MinorDataSubject ;  # &lt;----
-    foaf:name "Harshvardhan Jr."
-    foaf:age 10 .
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" ;
-:Consent_10C a gconsent:Consent ;
-    gconsent:isConsentFor :Child ;
-    gconsent:wasGivenBy :HJP . </pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">DataSubject</a>
+            <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="PersonalData">
-      <h3>PersonalData<sup class="type-c" title="class">c</sup>
+      <h3>Personal Data<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -470,29 +326,18 @@ Note: A Minor can provide their own consent in certain cases, or conversely, a m
       <div class="comment">
          <span class="markdown">As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);
 
-`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the [`hasPersonalData`](#hasPersonalData) and [`isPersonalDataForPurpose`](#isPersonalDataForPurpose) properties.</span>
+`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the `hasPersonalData` and `isPersonalDataForPurpose` properties.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:ProfileInformation a gconsent:PersonalData ;  # &lt;----
-    rdfs:label "Profile Information of an User" .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
             <a href="#isPersonalDataForPurpose"
-               title="https://w3id.org/GConsent#isPersonalDataForPurpose">isPersonalDataForPurpose</a>
+               title="https://w3id.org/GConsent#isPersonalDataForPurpose">is personal data for purpose</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">hasPersonalData</a>
+            <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">has personal data</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -511,85 +356,64 @@ For example, consider the set of _(collect and use personal data)_ and the diffe
 
 Therefore, the modeling is done as follows: Each consent has only one purpose or more purposes The applicable purpose then is the union of all purposes For e.g. _Advertising_ and _Marketing_ are two purposes, but if they are associated with a single consent instance, then the consent is deemed to be given for the _union of Advertising and Marketing_. Each purpose can have multiple actions and multiple data The applicable consent is for the union of actions on the union of data That is, each action is permitted over each item of data For a different purpose, a separate consent object must be created.
 
-`Purpose` is linked to `Consent` via the [`givenForPurpose`](#givenForPurpose) and [`isPurposeForConsent`](#isPurposeForConsent) properties.
-</span>
+`Purpose` is linked to `Consent` via the `givenForPurpose` and `isPurposeForConsent` properties.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;  # &lt;----
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData .
-:Marketing a gconsent:Purpose .    # &lt;----
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">hasAction</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">hasPersonalData</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">isPurposeForConsent</a>
+            <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">has personal data</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#givenForPurpose" title="https://w3id.org/GConsent#givenForPurpose">givenForPurpose</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">isActionForPurpose</a>
+            <a href="#hasPurpose" title="https://w3id.org/GConsent#hasPurpose">has purpose</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">is action for purpose</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPersonalDataForPurpose"
-               title="https://w3id.org/GConsent#isPersonalDataForPurpose">isPersonalDataForPurpose</a>
+               title="https://w3id.org/GConsent#isPersonalDataForPurpose">is personal data for purpose</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ReadAction">
+      <h3>Read<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ReadAction</p>
+      <div class="comment">
+         <span class="markdown">Represents the action where reading of data takes place.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ReadPersonalData" title="https://w3id.org/GConsent#ReadPersonalData">Read Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="ShareAction">
-      <h3>ShareAction<sup class="type-c" title="class">c</sup>
+      <h3>Share<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ShareAction</p>
       <div class="comment">
-         <span class="markdown">Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the [`sharesDataWith`](#sharesDataWith) property.</span>
+         <span class="markdown">Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the `sharesDataWith` property.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData .  # &lt;----
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -598,17 +422,132 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/GConsent#sharesDataWith">sharesDataWith</span>
+            <a href="#sharesDataWith" title="https://w3id.org/GConsent#sharesDataWith">shares data with</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">SharingOfPersonalData</a>
+            <a href="#SharePersonalData" title="https://w3id.org/GConsent#SharePersonalData">Share Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
+   <div class="entity" id="Status">
+      <h3>Status<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#Status</p>
+      <div class="comment">
+         <span class="markdown">Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#StatusValidForProcessing"
+               title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusExplicitlyGiven"
+               title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusGivenByDelegation"
+               title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusImplicitlyGiven"
+               title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusInvalidated"
+               title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusRequested" title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StatusInvalidForProcessing">
+      <h3>Status invalid for Processing<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#StatusInvalidForProcessing</p>
+      <div class="comment">
+         <span class="markdown">Represents consent states that are invalid for processing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusInvalidated"
+               title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusRequested" title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#StatusValidForProcessing"
+               title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StatusValidForProcessing">
+      <h3>Status valid for Processing<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#StatusValidForProcessing</p>
+      <div class="comment">
+         <span class="markdown">Represents consent states that are valid for processing</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ConsentStatusExplicitlyGiven"
+               title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusGivenByDelegation"
+               title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ConsentStatusImplicitlyGiven"
+               title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="StoreAction">
-      <h3>StoreAction<sup class="type-c" title="class">c</sup>
+      <h3>Store<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -617,30 +556,6 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
       <div class="comment">
          <span class="markdown">Represents the action where storage of data takes place.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:StorageOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData .
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -649,13 +564,13 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">StorageOfPersonalData</a>
+            <a href="#StorePersonalData" title="https://w3id.org/GConsent#StorePersonalData">Store Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="UseAction">
-      <h3>UseAction<sup class="type-c" title="class">c</sup>
+      <h3>Use<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -664,30 +579,6 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
       <div class="comment">
          <span class="markdown">Represents the action where usage of data takes place.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:SharingOfPersonalData .
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData .  # &lt;----
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -696,8 +587,36 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#UsageOfPersonalData" title="https://w3id.org/GConsent#UsageOfPersonalData">UsageOfPersonalData</a>
+            <a href="#UsePersonalData" title="https://w3id.org/GConsent#UsePersonalData">Use Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WriteAction">
+      <h3>Write<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#WriteAction</p>
+      <div class="comment">
+         <span class="markdown">Represents the action where writing of data takes place.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#WritePersonalData" title="https://w3id.org/GConsent#WritePersonalData">Write Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -705,204 +624,120 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#changesConsentStatusTo" title="https://w3id.org/GConsent#changesConsentStatusTo">changesConsentStatusTo</a>
+         <a href="#gaveConsent" title="https://w3id.org/GConsent#gaveConsent">gave consent</a>
       </li>
       <li>
-         <a href="#givenForPurpose" title="https://w3id.org/GConsent#givenForPurpose">givenForPurpose</a>
+         <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
       </li>
       <li>
-         <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">hasAction</a>
+         <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
       </li>
       <li>
-         <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">hasConsent</a>
+         <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
       </li>
       <li>
-         <a href="#hasConsentDelegation" title="https://w3id.org/GConsent#hasConsentDelegation">hasConsentDelegation</a>
+         <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
       </li>
       <li>
-         <a href="#hasConsentInstance" title="https://w3id.org/GConsent#hasConsentInstance">hasConsentInstance</a>
+         <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">has personal data</a>
       </li>
       <li>
-         <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">hasPersonalData</a>
+         <a href="#hasPurpose" title="https://w3id.org/GConsent#hasPurpose">has purpose</a>
       </li>
       <li>
-         <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">hasStatus</a>
+         <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
       </li>
       <li>
-         <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">isActionForPurpose</a>
+         <a href="#invalidatesGivenConsent"
+            title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
       </li>
       <li>
-         <a href="#isConsentDelegationFor" title="https://w3id.org/GConsent#isConsentDelegationFor">isConsentDelegationFor</a>
+         <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">is action for purpose</a>
       </li>
       <li>
-         <a href="#isConsentFor" title="https://w3id.org/GConsent#isConsentFor">isConsentFor</a>
-      </li>
-      <li>
-         <a href="#isConsentInstanceOf" title="https://w3id.org/GConsent#isConsentInstanceOf">isConsentInstanceOf</a>
-      </li>
-      <li>
-         <a href="#isContextForConsentInstance"
-            title="https://w3id.org/GConsent#isContextForConsentInstance">isContextForConsentInstance</a>
-      </li>
-      <li>
-         <a href="#isDelegateForConsentDelegation"
-            title="https://w3id.org/GConsent#isDelegateForConsentDelegation">isDelegateForConsentDelegation</a>
+         <a href="#isConsentForDataSubject"
+            title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
       </li>
       <li>
          <a href="#isPersonalDataForPurpose"
-            title="https://w3id.org/GConsent#isPersonalDataForPurpose">isPersonalDataForPurpose</a>
+            title="https://w3id.org/GConsent#isPersonalDataForPurpose">is personal data for purpose</a>
       </li>
       <li>
-         <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">isPurposeForConsent</a>
+         <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
       </li>
       <li>
-         <a href="#isVerificationProcessForDelegation"
-            title="https://w3id.org/GConsent#isVerificationProcessForDelegation">isVerificationProcessForDelegation</a>
+         <a href="#sharesDataWith" title="https://w3id.org/GConsent#sharesDataWith">shares data with</a>
       </li>
       <li>
-         <a href="#replacesConsentInstance"
-            title="https://w3id.org/GConsent#replacesConsentInstance">replacesConsentInstance</a>
+         <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">was given at instant</a>
       </li>
       <li>
-         <a href="#wasReplacedByConsentInstance"
-            title="https://w3id.org/GConsent#wasReplacedByConsentInstance">wasReplacedByConsentInstance</a>
+         <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">was given at location</a>
+      </li>
+      <li>
+         <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">was given by</a>
+      </li>
+      <li>
+         <a href="#wasGivenByAgent" title="https://w3id.org/GConsent#wasGivenByAgent">was given by agent</a>
+      </li>
+      <li>
+         <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">was given through medium</a>
+      </li>
+      <li>
+         <a href="#wasGivenUsingArtefact" title="https://w3id.org/GConsent#wasGivenUsingArtefact">was given using artefact</a>
+      </li>
+      <li>
+         <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
       </li>
    </ul>
-   <div class="entity" id="changesConsentStatusTo">
-      <h3>changesConsentStatusTo<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="gaveConsent">
+      <h3>gave consent<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#changesConsentStatusTo</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#gaveConsent</p>
       <div class="comment">
-         <span class="markdown">Specifies the status of consent resulting from this consent.</span>
+         <span class="markdown">Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation).</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasExpiry "2000-01-01" ;
-    gconsent:hasStatus gconsent:ConsentStatusExpired .
-:consent_hjp_1809 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-out" ;
-    gconsent:replacesConsentInstance :consent_hjp_1808 ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .  # &lt;----</pre>
-         </dd>
-      </dl>
       <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional, asymmetric, irreflexive</p>
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
-            <dd>
-               <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="givenForPurpose">
-      <h3>givenForPurpose<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#givenForPurpose</p>
-      <div class="comment">
-         <span class="markdown">Links the `Consent` instance to a `Purpose` instance.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData .
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;  # &lt;----
-    gconsent:givenForPurpose :Marketing .    # &lt;----</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">isPurposeForConsent</a>
+               <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">was given by</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="hasAction">
-      <h3>hasAction<sup class="type-op" title="object property">op</sup>
+      <h3>has action<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#hasAction</p>
       <div class="comment">
-         <span class="markdown">Links `Purpose` to an `Action`.</span>
+         <span class="markdown">Links a purpose to the actions (over personal data) it contains.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData .
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-    gconsent:hasAction gconsent:UsageOfPersonalData .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:givenForPurpose :Advertising ;
-    gconsent:givenForPurpose :Marketing .</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -917,41 +752,29 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">isActionForPurpose</a>
+               <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">is action for purpose</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="hasConsent">
-      <h3>hasConsent<sup class="type-op" title="object property">op</sup>
+      <h3>has consent<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#hasConsent</p>
       <div class="comment">
-         <span class="markdown">Links the `DataSubject` instance with the `Consent` instance.</span>
+         <span class="markdown">Links a data subject to their consent.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" ;
-    gconsent:hasConsent :HJP_Consent .  # &lt;----
-:HJP_Consent a gconsent:Consent .</pre>
-         </dd>
-      </dl>
       <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">DataSubject</a>
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -961,100 +784,55 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#isConsentFor" title="https://w3id.org/GConsent#isConsentFor">isConsentFor</a>
+               <a href="#isConsentForDataSubject"
+                  title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasConsentDelegation">
-      <h3>hasConsentDelegation<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasContext">
+      <h3>has context<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasConsentDelegation</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#hasContext</p>
       <div class="comment">
-         <span class="markdown">Specifies the `ConsentDelegation` instances for a particular `DataSubject`.</span>
+         <span class="markdown">Links a consent instance to the context in which it was acquired/provided/given.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" ;
-    gconsent:hasConsentDelegation :delegatedconsent .  # &lt;----
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;  # &lt;----
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:Delegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospital Staff Member 4826719" ;
-    gconsent:isDelegationForDataSubject :HJP .</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">was given at instant</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">was given at location</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenByAgent" title="https://w3id.org/GConsent#wasGivenByAgent">was given by agent</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">was given through medium</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#wasGivenUsingArtefact" title="https://w3id.org/GConsent#wasGivenUsingArtefact">was given using artefact</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">DataSubject</a>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isConsentDelegationFor" title="https://w3id.org/GConsent#isConsentDelegationFor">isConsentDelegationFor</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasConsentInstance">
-      <h3>hasConsentInstance<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasExpiry">
+      <h3>has expiry<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasConsentInstance</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#hasExpiry</p>
       <div class="comment">
-         <span class="markdown">Links `Consent` to `ConsentInstance`.</span>
+         <span class="markdown">Specifies the Instant or Duration in which the consent expires.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-out" ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasConsentInstance :consent_hjp_1808 ;  # &lt;----
-    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .</pre>
-         </dd>
-      </dl>
       <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
@@ -1063,42 +841,22 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+               <span class="dotted" title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</span>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isConsentInstanceOf" title="https://w3id.org/GConsent#isConsentInstanceOf">isConsentInstanceOf</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="hasPersonalData">
-      <h3>hasPersonalData<sup class="type-op" title="object property">op</sup>
+      <h3>has personal data<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#hasPersonalData</p>
       <div class="comment">
-         <span class="markdown">Links `Purpose` instance with `PersonalData` instance.</span>
+         <span class="markdown">Links the purpose to personal data it uses.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:ProfileInformation a gconsent:PersonalData ;
-    rdfs:label "Profile Information of an User" .
-
-:Marketing a gconsent:Purpose ;
-    rdfs:label "Marketing" ;
-    gconsent:hasPersonalData :ProfileInformation .  # &lt;----</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1108,43 +866,28 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">PersonalData</a>
+               <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">Personal Data</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
                <a href="#isPersonalDataForPurpose"
-                  title="https://w3id.org/GConsent#isPersonalDataForPurpose">isPersonalDataForPurpose</a>
+                  title="https://w3id.org/GConsent#isPersonalDataForPurpose">is personal data for purpose</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasStatus">
-      <h3>hasStatus<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasPurpose">
+      <h3>has purpose<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasStatus</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#hasPurpose</p>
       <div class="comment">
-         <span class="markdown">Links `Consent` instance to its `ConsentStatus` instance.</span>
+         <span class="markdown">Links a consent instace to the purpose(s) it is associated with.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasExpiry "2000-01-01" ;
-    gconsent:hasStatus gconsent:ConsentStatusExpired .  # &lt;----</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1154,36 +897,86 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+               <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasStatus">
+      <h3>has status<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#hasStatus</p>
+      <div class="comment">
+         <span class="markdown">Denotes the state or status of consent.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
+   <div class="entity" id="invalidatesGivenConsent">
+      <h3>invalidates given consent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#invalidatesGivenConsent</p>
+      <div class="comment">
+         <span class="markdown">Denotes invalidation of the specified consent instance by the current instance. This happens when consent is revoked, withdrawn, expired, or invalidated.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> irreflexive</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="isActionForPurpose">
-      <h3>isActionForPurpose<sup class="type-op" title="object property">op</sup>
+      <h3>is action for purpose<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#isActionForPurpose</p>
       <div class="comment">
-         <span class="markdown">Links `Action` to a `Purpose`.</span>
+         <span class="markdown">Links an action to the purpose it is associated with.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:Advertising a gconsent:Purpose .
-gconsent:StorageOfPersonalData :isActionForPurpose :Advertising .  # &lt;---
-gconsent:UsageOfPersonalData :isActionForPurpose :Advertising .    # &lt;---
-gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1198,90 +991,25 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">hasAction</a>
+               <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="isConsentDelegationFor">
-      <h3>isConsentDelegationFor<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isConsentForDataSubject">
+      <h3>is consent for data subject<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#isConsentDelegationFor</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#isConsentForDataSubject</p>
       <div class="comment">
-         <span class="markdown">Specifies the `DataSubject` the delegation activity is for.</span>
+         <span class="markdown">Links a consent instance with the data subject it is associated with.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:Delegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospital Staff Member 4826719" ;
-    gconsent:isDelegationForDataSubject :HJP .  # &lt;----</pre>
-         </dd>
-      </dl>
       <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">DataSubject</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasConsentDelegation" title="https://w3id.org/GConsent#hasConsentDelegation">hasConsentDelegation</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isConsentFor">
-      <h3>isConsentFor<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#isConsentFor</p>
-      <div class="comment">
-         <span class="markdown">Links the `Consent` instance with the `DataSubject` instance it represents.
-</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:HJP_Consent a gconsent:Consent ;
-    gconsent:isConsentFor :HJP .  # &lt;----</pre>
-         </dd>
-      </dl>
-      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
@@ -1290,188 +1018,32 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">DataSubject</a>
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">hasConsent</a>
+               <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
                <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isConsentInstanceOf">
-      <h3>isConsentInstanceOf<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#isConsentInstanceOf</p>
-      <div class="comment">
-         <span class="markdown">Links `ConsentInstance` to `Consent`.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-out" ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;  # &lt;----
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasConsentInstance :consent_hjp_1808 ;
-    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasConsentInstance" title="https://w3id.org/GConsent#hasConsentInstance">hasConsentInstance</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isContextForConsentInstance">
-      <h3>isContextForConsentInstance<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#isContextForConsentInstance</p>
-      <div class="comment">
-         <span class="markdown">The parent propertly linking all contexts to `ConsentInstance`.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:capturedThroughWebForm rdf:type rdf:Property, owl:ObjectProperty ;
-    rdfs:label "capturedThroughWebForm" ;
-    rdfs:subPropertyOf gconsent:hasContext ;
-    owl:subPropertyOf gconsent:hasContext ;
-    rdfs:comment "Links the captured/obtained consent with the specific version of web form filled by the user." ;
-    rdfs:domain gconsent:ConsentInstance ;
-    rdfs:range :WebForm .
-:isWebFormForGivenConsent rdf:type rdf:Property, owl:ObjectProperty ;
-    rdfs:label "isWebFormForGivenConsent" ;
-    rdfs:subPropertyOf :isContextForConsentInstance ;  # &lt;----
-    owl:subPropertyOf :isContextForConsentInstance ;  # &lt;----
-    rdfs:comment "Links the Web Form object to the consent instances obtained through it." ;
-    rdfs:domain :WebForm ;
-    rdfs:range gconsent:ConsentInstance .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isDelegateForConsentDelegation">
-      <h3>isDelegateForConsentDelegation<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#isDelegateForConsentDelegation</p>
-      <div class="comment">
-         <span class="markdown">Links an entity that acted as delegate for giving consent with the delegation activity. The range of this property is the `ConsentDelegation` activity.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:Delegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate :HospitalStaff_4826719 ;
-    gconsent:isDelegationForDataSubject :HJP .
-
-:HospitalStaff_4826719 a foaf:Person ;
-    rdfs:label "Hospital Staff 4826719" ;
-    gconsent:isDelegateForConsentDelegation :delegatedconsent .  # &lt;----</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="isPersonalDataForPurpose">
-      <h3>isPersonalDataForPurpose<sup class="type-op" title="object property">op</sup>
+      <h3>is personal data for purpose<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#isPersonalDataForPurpose</p>
       <div class="comment">
-         <span class="markdown">Links `PersonalData` instance with `Purpose` instance.</span>
+         <span class="markdown">Links personal data with the purpose it is associated with.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:Marketing a gconsent:Purpose ;
-    rdfs:label "Marketing" ;
-    gconsent:hasPersonalData :ProfileInformation .
-
-:ProfileInformation a gconsent:PersonalData ;
-    rdfs:label "Profile Information of an User" ;
-    gconsent:isPersonalDataForPurpose :Marketing ;  # &lt;----</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">PersonalData</a>
+               <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">Personal Data</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1481,46 +1053,22 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">hasPersonalData</a>
+               <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">has personal data</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="isPurposeForConsent">
-      <h3>isPurposeForConsent<sup class="type-op" title="object property">op</sup>
+      <h3>is purpose for consent<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#isPurposeForConsent</p>
       <div class="comment">
-         <span class="markdown">Links the `Purpose` instance to `Consent` instance</span>
+         <span class="markdown">Links purpose with the consent instance associated with it.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:Advertising a gconsent:Purpose ;
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:StorageOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:hasAction gconsent:SharingOfPersonalData ;
-    gconsent:isPurposeForConsent :Consent_hjp .  # &lt;----
-:Marketing a gconsent:Purpose .
-    gconsent:hasAction gconsent:CollectionOfPersonalData ;
-    gconsent:hasAction gconsent:UsageOfPersonalData ;
-    gconsent:isPurposeForConsent :Consent_hjp .  # &lt;----
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP .</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1535,609 +1083,254 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#givenForPurpose" title="https://w3id.org/GConsent#givenForPurpose">givenForPurpose</a>
+               <a href="#hasPurpose" title="https://w3id.org/GConsent#hasPurpose">has purpose</a>
                <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isVerificationProcessForDelegation">
-      <h3>isVerificationProcessForDelegation<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#isVerificationProcessForDelegation</p>
-      <div class="comment">
-         <span class="markdown">Links the verification process used in the activity for delegation of consent with the delegation activity. The domain of this property can be a `prov:Activity`, or event, or reference to an activity.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;  # &lt;----
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:Delegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospital Staff Member 4826719" ;
-    gconsent:isDelegationForDataSubject :HJP ;
-    gconsent:hasVerificationProcessForDelegation :verify_delegate .
-
-:verify_delegate a prov:Activity ;
-    rdfs:label "Verification of Staff to provide consent for Patient HJP" ;
-    gconsent:isVerificationProcessForDelegation :delegatedconsent .  # &lt;----</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="replacesConsentInstance">
-      <h3>replacesConsentInstance<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#replacesConsentInstance</p>
-      <div class="comment">
-         <span class="markdown">Links a future `ConsentInstance` to a past `ConsentInstance` that it has replaced.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-in" ;
-    gconsent:wasReplacedByConsentInstance :consent_hjp_1809 ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-30-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-:consent_hjp_1809 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-out" ;
-    gconsent:replacesConsentInstance :consent_hjp_1808 ;  # &lt;----
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasConsentInstance :consent_hjp_1808 ;
-    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#wasReplacedByConsentInstance"
-                  title="https://w3id.org/GConsent#wasReplacedByConsentInstance">wasReplacedByConsentInstance</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="wasReplacedByConsentInstance">
-      <h3>wasReplacedByConsentInstance<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#wasReplacedByConsentInstance</p>
-      <div class="comment">
-         <span class="markdown">Links a past `ConsentInstance` to a future `ConsentInstance` that replaces it.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-in" ;
-    gconsent:wasReplacedByConsentInstance :consent_hjp_1809 ;  # &lt;----
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-30-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-:consent_hjp_1809 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-out" ;
-    gconsent:replacesConsentInstance :consent_hjp_1808 ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasConsentInstance :consent_hjp_1808 ;
-    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#replacesConsentInstance"
-                  title="https://w3id.org/GConsent#replacesConsentInstance">replacesConsentInstance</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div id="annotationproperties">
-   <h3 id="annotationproperties" class="list">Annotation Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#http://purl.org/vocab/vann/example" title="http://purl.org/vocab/vann/example">
-            <span>example</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasConsentGivenByDelegate"
-            title="https://w3id.org/GConsent#hasConsentGivenByDelegate">hasConsentGivenByDelegate</a>
-      </li>
-      <li>
-         <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">hasContext</a>
-      </li>
-      <li>
-         <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">hasExpiry</a>
-      </li>
-      <li>
-         <a href="#hasVerificationProcessForDelegation"
-            title="https://w3id.org/GConsent#hasVerificationProcessForDelegation">hasVerificationProcessForDelegation</a>
-      </li>
-      <li>
-         <a href="#sharesDataWith" title="https://w3id.org/GConsent#sharesDataWith">sharesDataWith</a>
-      </li>
-      <li>
-         <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">wasGivenAtInstant</a>
-      </li>
-      <li>
-         <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">wasGivenAtLocation</a>
-      </li>
-      <li>
-         <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">wasGivenBy</a>
-      </li>
-      <li>
-         <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">wasGivenThroughMedium</a>
-      </li>
-   </ul>
-   <div class="entity" id="http://purl.org/vocab/vann/example">
-      <h3>example<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/vocab/vann/example</p>
-   </div>
-   <div class="entity" id="hasConsentGivenByDelegate">
-      <h3>hasConsentGivenByDelegate<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasConsentGivenByDelegate</p>
-      <div class="comment">
-         <span class="markdown">Specifies the _delegate_ that gave consent. The range of this property can be a `DataSubject` or any entity, including cases where an entity is as an automated mechanism.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:Delegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospitanl Staff Member 4826719" ;  # &lt;----
-    gconsent:isDelegationForDataSubject :HJP .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasContext">
-      <h3>hasContext<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasContext</p>
-      <div class="comment">
-         <span class="markdown">The parent property linking all `ConsentInstance` to contexts.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:capturedThroughWebForm rdf:type rdf:Property, owl:ObjectProperty ;
-    rdfs:label "capturedThroughWebForm" ;
-    rdfs:subPropertyOf gconsent:hasContext ;  # &lt;----
-    owl:subPropertyOf gconsent:hasContext ;  # &lt;----
-    rdfs:comment "Links the captured/obtained consent with the specific version of web form filled by the user." ;
-    rdfs:domain gconsent:ConsentInstance ;
-    rdfs:range :WebForm .
-:isWebFormForGivenConsent rdf:type rdf:Property, owl:ObjectProperty ;
-    rdfs:label "isWebFormForGivenConsent" ;
-    rdfs:subPropertyOf :isContextForConsentInstance ;
-    owl:subPropertyOf :isContextForConsentInstance ;
-    rdfs:comment "Links the Web Form object to the consent instances obtained through it." ;
-    rdfs:domain :WebForm ;
-    rdfs:range gconsent:ConsentInstance .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">wasGivenAtInstant</a>
-               <sup class="type-ap" title="annotation property">ap</sup>, <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">wasGivenAtLocation</a>
-               <sup class="type-ap" title="annotation property">ap</sup>, <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">wasGivenBy</a>
-               <sup class="type-ap" title="annotation property">ap</sup>, <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">wasGivenThroughMedium</a>
-               <sup class="type-ap" title="annotation property">ap</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasExpiry">
-      <h3>hasExpiry<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasExpiry</p>
-      <div class="comment">
-         <span class="markdown">Specifies the expiry of the (current) current instance. The value of this expiry can be an instant in time, such as a specific date or datetime, or can be a duration.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:HJP a gconsent:DataSubject ;
-    foaf:name "Harshvardhan" .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-out" ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:hasExpiry "2 years" .  # &lt;----
-
-:Consent_hjp a gconsent:Consent ;
-    gconsent:isConsentFor :HJP ;
-    gconsent:hasConsentInstance :consent_hjp_1808 ;
-    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasVerificationProcessForDelegation">
-      <h3>hasVerificationProcessForDelegation<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#hasVerificationProcessForDelegation</p>
-      <div class="comment">
-         <span class="markdown">Specifies the verification process used in the activity for delegation of consent. The range of this property can be a `prov:Activity`, or event, or reference to an activity.</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;  # &lt;----
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:Delegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospital Staff Member 4826719" ;
-    gconsent:isDelegationForDataSubject :HJP ;
-    gconsent:hasVerificationProcessForDelegation :verify_delegate .  # &lt;----
-
-:verify_delegate a prov:Activity ;
-    rdfs:label "Verification of Staff to provide consent for Patient HJP" ;</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConsentDelegation" title="https://w3id.org/GConsent#ConsentDelegation">Delegation</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="sharesDataWith">
-      <h3>sharesDataWith<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+      <h3>shares data with<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#sharesDataWith</p>
       <div class="comment">
-         <span class="markdown">Sharing of data involves another entity that needs to be named (explicitly). Therefore, it is a special case of `Action`, and has the property `sharesDataWith` to link it with the entity that data is shared with. The domain of this property is an instance of `ShareAction` which should be unique for each entity the data is shared with. This also allows changes in how data is shared with entities indenpent of the given consent.</span>
+         <span class="markdown">Indicates the agent (organisation, person) the data is shared with.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:ShareWithPartners a gconsent:ShareAction ;
-    rdfs:label "Shares data with partners" ;
-    gconsent:sharesDataWith "ShareWithPartners" .  # &lt;----</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">ShareAction</a>
+               <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="wasGivenAtInstant">
-      <h3>wasGivenAtInstant<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+      <h3>was given at instant<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#wasGivenAtInstant</p>
       <div class="comment">
-         <span class="markdown">Specifies the instance in time for the given consent. This is used to specify the timestamp for when the consent was captured/obtained. It has (currently) no restrictions (`rdfs:range`) on how this instant is represented.</span>
+         <span class="markdown">Specifies the instant at which the consent was given.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Email op-in" ;
-    gconsent:wasReplacedByConsentInstance :consent_hjp_1809 ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :HJP ;
-    gconsent:wasGivenAtInstant "2099-12-30-00-00-00" ;  # &lt;----
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">hasContext</a>
-               <sup class="type-ap" title="annotation property">ap</sup>
+               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">instant</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="wasGivenAtLocation">
-      <h3>wasGivenAtLocation<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+      <h3>was given at location<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#wasGivenAtLocation</p>
       <div class="comment">
-         <span class="markdown">Specifies the location for the given consent. This could be a geological place (e.g. street, city) or a virtual entity (e.g. webpage, web form). It has (currently) no restrictions (`rdfs:range`) on how this location is represented.</span>
+         <span class="markdown">Specifies the location at which the consent was given.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy "Hospital Staff" ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;  # &lt;----
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">hasContext</a>
-               <sup class="type-ap" title="annotation property">ap</sup>
+               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2003/01/geo/wgs84_pos#Feature">feature</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="wasGivenBy">
-      <h3>wasGivenBy<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+      <h3>was given by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#wasGivenBy</p>
       <div class="comment">
-         <span class="markdown">Specifies the entity (or agent) that has given the specific consent. This allows representation of cases where another entity (or agent) acts in lieu of the data subject to provide consent. Examples are a legal representative or Guardian providing consent for a minor. In cases where _delegation_ occurs for giving consent, the `Delegation` class must be used as the range of the `wasGivenBy` property.</span>
+         <span class="markdown">Indicates the entity or activitiy that provided the consent.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1808 a gconsent:ConsentInstance ;
-    rdfs:label "Emergency consent for Mr. Harshvardhan" ;
-    rdfs:comment "Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records." ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenBy :delegatedconsent ;  # &lt;----
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenAtLocation "Hospital" ;
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .
-
-:delegatedconsent a gconsent:ConsentDelegation ;
-    rdfs:label "Delegated consent for Mr. Harshvardhan by Hospital Staff" ;
-    gconsent:hasConsentGivenByDelegate "Hospital Staff Member 4826719" ;
-    gconsent:isConsentDelegationFor :HJP ;
-    gconsent:hasVerificationProcessForDelegation "Recorded under medical registry for emergencies" .
-    </pre>
-         </dd>
-      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional, asymmetric, irreflexive</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#gaveConsent" title="https://w3id.org/GConsent#gaveConsent">gave consent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasGivenByAgent">
+      <h3>was given by agent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#wasGivenByAgent</p>
+      <div class="comment">
+         <span class="markdown">Specifies the agent that provided/gave the consent. Examples are automated systems that collect or provide consent. This is not the same as having a data subject provide the consent.</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">hasContext</a>
-               <sup class="type-ap" title="annotation property">ap</sup>
+               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
    <div class="entity" id="wasGivenThroughMedium">
-      <h3>wasGivenThroughMedium<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+      <h3>was given through medium<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#wasGivenThroughMedium</p>
       <div class="comment">
-         <span class="markdown">Specifies the medium of the given consent. This could be a paper document (e.g. signed application) or a web-form submitted through a web page. It has (currently) no restrictions (`rdfs:range`) on how this medium is represented.</span>
+         <span class="markdown">Specifies the medium through which the consent was given. Examples are web forms, paper documents.</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>
-@prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-@prefix : &lt;http://example.com/&gt; .
-
-:consent_hjp_1801 a gconsent:ConsentInstance ;
-    rdfs:label "User-Registeration" ;
-    rdfs:comment "User registered through website" ;
-    gconsent:isConsentInstanceOf :Consent_hjp ;
-    gconsent:wasGivenAtInstant "2099-12-31-00-00-00" ;
-    gconsent:wasGivenThroughMedium "website" ;  # &lt;----
-    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">hasContext</a>
-               <sup class="type-ap" title="annotation property">ap</sup>
+               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#ConsentInstance" title="https://w3id.org/GConsent#ConsentInstance">ConsentInstance</a>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Medium" title="https://w3id.org/GConsent#Medium">Medium</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasGivenUsingArtefact">
+      <h3>was given using artefact<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#wasGivenUsingArtefact</p>
+      <div class="comment">
+         <span class="markdown">Specifies involved artefacts in the consent process. Examples are terms of service and privacy policies.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasInvalidatedBy">
+      <h3>was invalidated by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#wasInvalidatedBy</p>
+      <div class="comment">
+         <span class="markdown">Specifies the consent instance which invalidated this instance.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> irreflexive</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#invalidatesGivenConsent"
+                  title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -2146,67 +1339,70 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
    <ul class="hlist">
       <li>
-         <a href="#CollectionOfPersonalData"
-            title="https://w3id.org/GConsent#CollectionOfPersonalData">CollectionOfPersonalData</a>
+         <a href="#CollectPersonalData" title="https://w3id.org/GConsent#CollectPersonalData">Collect Personal Data</a>
       </li>
       <li>
-         <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">ConsentStatusExpired</a>
+         <a href="#ErasePersonalData" title="https://w3id.org/GConsent#ErasePersonalData">Erase Personal Data</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
       </li>
       <li>
          <a href="#ConsentStatusExplicitlyGiven"
-            title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">ConsentStatusExplicitlyGiven</a>
+            title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusGivenByDelegation"
+            title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
       </li>
       <li>
          <a href="#ConsentStatusImplicitlyGiven"
-            title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">ConsentStatusImplicitlyGiven</a>
+            title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
       </li>
       <li>
-         <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">ConsentStatusNotGiven</a>
+         <a href="#ConsentStatusInvalidated"
+            title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
       </li>
       <li>
-         <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">ConsentStatusUnknown</a>
+         <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
       </li>
       <li>
-         <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">ConsentStatusWithdrawn</a>
+         <a href="#ReadPersonalData" title="https://w3id.org/GConsent#ReadPersonalData">Read Personal Data</a>
       </li>
       <li>
-         <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">SharingOfPersonalData</a>
+         <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
       </li>
       <li>
-         <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">StorageOfPersonalData</a>
+         <a href="#ConsentStatusRequested" title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
       </li>
       <li>
-         <a href="#UsageOfPersonalData" title="https://w3id.org/GConsent#UsageOfPersonalData">UsageOfPersonalData</a>
+         <a href="#SharePersonalData" title="https://w3id.org/GConsent#SharePersonalData">Share Personal Data</a>
+      </li>
+      <li>
+         <a href="#StorePersonalData" title="https://w3id.org/GConsent#StorePersonalData">Store Personal Data</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
+      </li>
+      <li>
+         <a href="#UsePersonalData" title="https://w3id.org/GConsent#UsePersonalData">Use Personal Data</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
+      </li>
+      <li>
+         <a href="#WritePersonalData" title="https://w3id.org/GConsent#WritePersonalData">Write Personal Data</a>
       </li>
    </ul>
-   <div class="entity" id="CollectionOfPersonalData">
-      <h3>CollectionOfPersonalData<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="CollectPersonalData">
+      <h3>Collect Personal Data<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#CollectionOfPersonalData</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#CollectPersonalData</p>
       <div class="comment">
-         <span class="markdown">Represents _collect_ action over personal data.
-    
-    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-    @prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-    @prefix : &lt;http://example.com/&gt; .
-
-    :HJP a gconsent:DataSubject ;
-        foaf:name "Harshvardhan" .
-    :Advertising a gconsent:Purpose ;
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-        gconsent:hasAction gconsent:StorageOfPersonalData ;
-        gconsent:hasAction gconsent:UsageOfPersonalData ;
-        gconsent:hasAction gconsent:SharingOfPersonalData .
-    :Marketing a gconsent:Purpose .
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-        gconsent:hasAction gconsent:UsageOfPersonalData .
-    :Consent_hjp a gconsent:Consent ;
-        gconsent:isConsentFor :HJP ;
-        gconsent:givenForPurpose :Advertising ;
-        gconsent:givenForPurpose :Marketing .</span>
+         <span class="markdown">Represents collect action over personal data.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
@@ -2215,147 +1411,360 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
-            <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">CollectAction</a>
+            <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">Collect</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ErasePersonalData">
+      <h3>Erase Personal Data<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ErasePersonalData</p>
+      <div class="comment">
+         <span class="markdown">Specifies the action of erasing personal data.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#EraseData" title="https://w3id.org/GConsent#EraseData">Erase</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="ConsentStatusExpired">
-      <h3>ConsentStatusExpired<sup class="type-ni" title="named individual">ni</sup>
+      <h3>Expired<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusExpired</p>
       <div class="comment">
-         <span class="markdown">When the consent has expired, that is, not been renewed past its intended expiry date.</span>
+         <span class="markdown">Indicates the consent has expired.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="ConsentStatusExplicitlyGiven">
-      <h3>ConsentStatusExplicitlyGiven<sup class="type-ni" title="named individual">ni</sup>
+      <h3>Explicitly Given<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusExplicitlyGiven</p>
       <div class="comment">
-         <span class="markdown">When the consent is explicitly given.</span>
+         <span class="markdown">Indicates consent is explicitly given.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusValidForProcessing"
+               title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ConsentStatusGivenByDelegation">
+      <h3>Given by Delegation<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusGivenByDelegation</p>
+      <div class="comment">
+         <span class="markdown">Indicates consent is given via delegation.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusValidForProcessing"
+               title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="ConsentStatusImplicitlyGiven">
-      <h3>ConsentStatusImplicitlyGiven<sup class="type-ni" title="named individual">ni</sup>
+      <h3>Implicitly Given<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusImplicitlyGiven</p>
       <div class="comment">
-         <span class="markdown">When the consent is implicitly obtained, that is, without an explicit action by the Data Subject.</span>
+         <span class="markdown">Indicates consent is given via an implicit action or assumption.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusValidForProcessing"
+               title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ConsentStatusInvalidated">
+      <h3>Invalidated<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusInvalidated</p>
+      <div class="comment">
+         <span class="markdown">Indicates the consent has been invalidated.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="ConsentStatusNotGiven">
-      <h3>ConsentStatusNotGiven<sup class="type-ni" title="named individual">ni</sup>
+      <h3>Not Given<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusNotGiven</p>
       <div class="comment">
-         <span class="markdown">When the consent status is unknown.</span>
+         <span class="markdown">Indicates that consent has not been given.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ReadPersonalData">
+      <h3>Read Personal Data<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ReadPersonalData</p>
+      <div class="comment">
+         <span class="markdown">Specifies the action of reading personal data.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ConsentStatusRefused">
+      <h3>Refused<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusRefused</p>
+      <div class="comment">
+         <span class="markdown">Indicates that consent has been refused (to be given).</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ConsentStatusRequested">
+      <h3>Requested<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusRequested</p>
+      <div class="comment">
+         <span class="markdown">Indicates consent has been requested but has not been given (yet).</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SharePersonalData">
+      <h3>Share Personal Data<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#SharePersonalData</p>
+      <div class="comment">
+         <span class="markdown">Represents share action over personal data.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StorePersonalData">
+      <h3>Store Personal Data<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#StorePersonalData</p>
+      <div class="comment">
+         <span class="markdown">Represents store action over personal data</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">Store</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="ConsentStatusUnknown">
-      <h3>ConsentStatusUnknown<sup class="type-ni" title="named individual">ni</sup>
+      <h3>Unknown<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusUnknown</p>
       <div class="comment">
-         <span class="markdown">When the consent status is unknown.</span>
+         <span class="markdown">Indicates the consent status is unknown.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="UsePersonalData">
+      <h3>Use Personal Data<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#UsePersonalData</p>
+      <div class="comment">
+         <span class="markdown">Represents collect action over personal data.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">Use</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="ConsentStatusWithdrawn">
-      <h3>ConsentStatusWithdrawn<sup class="type-ni" title="named individual">ni</sup>
+      <h3>Withdrawn<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/GConsent#ConsentStatusWithdrawn</p>
       <div class="comment">
-         <span class="markdown">When the consent status is withdrawn. This action or status needs to be associated with the consent to maintain a record of consent-related activity and metadata.</span>
+         <span class="markdown">Indicates consent has been withdrawn.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ConsentStatus" title="https://w3id.org/GConsent#ConsentStatus">ConsentStatus</a>
+            <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#StatusInvalidForProcessing"
+               title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="SharingOfPersonalData">
-      <h3>SharingOfPersonalData<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="WritePersonalData">
+      <h3>Write Personal Data<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#SharingOfPersonalData</p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#WritePersonalData</p>
       <div class="comment">
-         <span class="markdown">Represents _share_ action over personal data.
-
-    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-    @prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-    @prefix : &lt;http://example.com/&gt; .
-
-    :HJP a gconsent:DataSubject ;
-        foaf:name "Harshvardhan" .
-    :Advertising a gconsent:Purpose ;
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;
-        gconsent:hasAction gconsent:StorageOfPersonalData ;
-        gconsent:hasAction gconsent:UsageOfPersonalData ;
-        gconsent:hasAction gconsent:SharingOfPersonalData .  # &lt;----
-    :Marketing a gconsent:Purpose .
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;
-        gconsent:hasAction gconsent:UsageOfPersonalData .
-    :Consent_hjp a gconsent:Consent ;
-        gconsent:isConsentFor :HJP ;
-        gconsent:givenForPurpose :Advertising ;
-        gconsent:givenForPurpose :Marketing .</span>
+         <span class="markdown">Specifies writing of personal data.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
@@ -2364,89 +1773,7 @@ gconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # &lt;---</pr
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
-            <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">ShareAction</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="StorageOfPersonalData">
-      <h3>StorageOfPersonalData<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#StorageOfPersonalData</p>
-      <div class="comment">
-         <span class="markdown">Represents _store_ action over personal data.
-
-    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-    @prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-    @prefix : &lt;http://example.com/&gt; .
-
-    :HJP a gconsent:DataSubject ;
-        foaf:name "Harshvardhan" .
-    :Advertising a gconsent:Purpose ;
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;
-        gconsent:hasAction gconsent:StorageOfPersonalData ;  # &lt;----
-        gconsent:hasAction gconsent:UsageOfPersonalData ;
-        gconsent:hasAction gconsent:SharingOfPersonalData .
-    :Marketing a gconsent:Purpose .
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;
-        gconsent:hasAction gconsent:UsageOfPersonalData .
-    :Consent_hjp a gconsent:Consent ;
-        gconsent:isConsentFor :HJP ;
-        gconsent:givenForPurpose :Advertising ;
-        gconsent:givenForPurpose :Marketing .</span>
-      </div>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">StoreAction</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="UsageOfPersonalData">
-      <h3>UsageOfPersonalData<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/GConsent#UsageOfPersonalData</p>
-      <div class="comment">
-         <span class="markdown">Represents _collect_ action over personal data.
-    
-    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-    @prefix gconsent: &lt;https://w3id.org/GConsent#&gt; .
-    @prefix : &lt;http://example.com/&gt; .
-
-    :HJP a gconsent:DataSubject ;
-        foaf:name "Harshvardhan" .
-    :Advertising a gconsent:Purpose ;
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-        gconsent:hasAction gconsent:StorageOfPersonalData ;
-        gconsent:hasAction gconsent:UsageOfPersonalData ;
-        gconsent:hasAction gconsent:SharingOfPersonalData .
-    :Marketing a gconsent:Purpose .
-        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # &lt;----
-        gconsent:hasAction gconsent:UsageOfPersonalData .
-    :Consent_hjp a gconsent:Consent ;
-        gconsent:isConsentFor :HJP ;
-        gconsent:givenForPurpose :Advertising ;
-        gconsent:givenForPurpose :Marketing .</span>
-      </div>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">UseAction</a>
+            <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

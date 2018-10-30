@@ -1,8 +1,8 @@
 {
   "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
   "header" : {
-    "languages" : [ "undefined" ],
-    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/GConsent", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf" ],
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/GConsent", "http://www.w3.org/2003/01/geo/wgs84_pos", "http://www.w3.org/ns/prov", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf", "http://www.w3.org/2006/time" ],
     "title" : {
       "undefined" : "GConsent - a consent ontology based on the GDPR"
     },
@@ -17,12 +17,6 @@
         "identifier" : "versionIRI",
         "language" : "undefined",
         "value" : "https://w3id.org/GConsent/v/0.5",
-        "type" : "label"
-      } ],
-      "license" : [ {
-        "identifier" : "license",
-        "language" : "undefined",
-        "value" : "https://creativecommons.org/licenses/by/4.0/",
         "type" : "label"
       } ],
       "creator" : [ {
@@ -43,10 +37,10 @@
         "value" : "2018-08-24",
         "type" : "label"
       } ],
-      "preferredNamespacePrefix" : [ {
-        "identifier" : "preferredNamespacePrefix",
+      "abstract" : [ {
+        "identifier" : "abstract",
         "language" : "undefined",
-        "value" : "gconsent",
+        "value" : "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner.",
         "type" : "label"
       } ],
       "versionInfo" : [ {
@@ -55,22 +49,45 @@
         "value" : "0.5",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/GConsent",
-        "type" : "label"
-      } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "undefined",
-        "value" : "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner.",
-        "type" : "label"
-      } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
         "value" : "GConsent - a consent ontology based on the GDPR",
+        "type" : "label"
+      } ],
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "gconsent",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "ADAPT Centre, Trinity College",
+        "type" : "label"
+      }, {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2018-11-10",
+        "type" : "label"
+      } ],
+      "logo" : [ {
+        "identifier" : "logo",
+        "language" : "undefined",
+        "value" : "http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png",
+        "type" : "iri"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/GConsent",
         "type" : "label"
       } ],
       "status" : [ {
@@ -83,92 +100,452 @@
   },
   "namespace" : [ ],
   "metrics" : {
-    "classCount" : 14,
-    "objectPropertyCount" : 19,
+    "classCount" : 24,
+    "objectPropertyCount" : 21,
     "datatypePropertyCount" : 0,
-    "individualCount" : 10
+    "individualCount" : 17
   },
   "class" : [ {
     "id" : "0",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
+    "id" : "12",
     "type" : "owl:Class"
   }, {
-    "id" : "18",
-    "type" : "owl:Class"
-  }, {
-    "id" : "23",
-    "type" : "owl:Class"
-  }, {
-    "id" : "3",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "26",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "22",
-    "type" : "owl:Class"
-  }, {
-    "id" : "8",
+    "id" : "13",
     "type" : "owl:Class"
   }, {
     "id" : "14",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
     "id" : "11",
     "type" : "owl:Class"
   }, {
-    "id" : "16",
+    "id" : "23",
     "type" : "owl:Class"
   }, {
-    "id" : "34",
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
     "type" : "owl:Class"
   }, {
     "id" : "1",
     "type" : "owl:Class"
   }, {
-    "id" : "32",
+    "id" : "48",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "49",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "45",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "46",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "52",
     "type" : "owl:Class"
   }, {
-    "id" : "19",
+    "id" : "5",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
-    "iri" : "https://w3id.org/GConsent#CollectAction",
+    "iri" : "https://w3id.org/GConsent#Status",
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData .\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:UsageOfPersonalData .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
     "label" : {
-      "IRI-based" : "CollectAction",
-      "undefined" : "CollectAction"
+      "IRI-based" : "Status",
+      "en" : "Status"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/GConsent#CollectionOfPersonalData",
+      "iri" : "https://w3id.org/GConsent#ConsentStatusUnknown",
       "baseIri" : "https://w3id.org/GConsent",
       "comment" : {
-        "undefined" : "Represents _collect_ action over personal data.\n    \n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:StorageOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
+        "en" : "Indicates the consent status is unknown."
       },
       "labels" : {
-        "IRI-based" : "CollectionOfPersonalData",
-        "undefined" : "CollectionOfPersonalData"
+        "IRI-based" : "ConsentStatusUnknown",
+        "en" : "Unknown"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusRequested",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent has been requested but has not been given (yet)."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusRequested",
+        "en" : "Requested"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusGivenByDelegation",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent is given via delegation."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusGivenByDelegation",
+        "en" : "Given by Delegation"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusWithdrawn",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent has been withdrawn."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusWithdrawn",
+        "en" : "Withdrawn"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusImplicitlyGiven",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent is given via an implicit action or assumption."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusImplicitlyGiven",
+        "en" : "Implicitly Given"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusExpired",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates the consent has expired."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusExpired",
+        "en" : "Expired"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusRefused",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates that consent has been refused (to be given)."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusRefused",
+        "en" : "Refused"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusInvalidated",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates the consent has been invalidated."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusInvalidated",
+        "en" : "Invalidated"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusExplicitlyGiven",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent is explicitly given."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusExplicitlyGiven",
+        "en" : "Explicitly Given"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusNotGiven",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates that consent has not been given."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusNotGiven",
+        "en" : "Not Given"
+      }
+    } ],
+    "subClasses" : [ "1", "2" ],
+    "comment" : {
+      "en" : "Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."
+    },
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Entity",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/GConsent#PersonalData",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PersonalData",
+      "en" : "Personal Data"
+    },
+    "comment" : {
+      "en" : "As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);\n\n`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the `hasPersonalData` and `isPersonalDataForPurpose` properties."
+    },
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/GConsent#Purpose",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Purpose",
+      "en" : "Purpose"
+    },
+    "comment" : {
+      "en" : "The model of consent is such that `Purpose` is defined as the set of `Actions` on a `Data` with an intended 'purpose'. Therefore, the same set of actions on the same set of data can have different 'purposes'.\n\nFor example, consider the set of _(collect and use personal data)_ and the different purposes of _Advertising_ and _Marketing_. Since the consent for these two is separate or can be given and modified and withdrawn independently by the data subject, their modeling and representation should also reflect this separation.\n\nTherefore, the modeling is done as follows: Each consent has only one purpose or more purposes The applicable purpose then is the union of all purposes For e.g. _Advertising_ and _Marketing_ are two purposes, but if they are associated with a single consent instance, then the consent is deemed to be given for the _union of Advertising and Marketing_. Each purpose can have multiple actions and multiple data The applicable consent is for the union of actions on the union of data That is, each action is permitted over each item of data For a different purpose, a separate consent object must be created.\n\n`Purpose` is linked to `Consent` via the `givenForPurpose` and `isPurposeForConsent` properties."
+    },
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/GConsent#WriteAction",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WriteAction",
+      "en" : "Write"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#WritePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Specifies writing of personal data."
+      },
+      "labels" : {
+        "IRI-based" : "WritePersonalData",
+        "en" : "Write Personal Data"
       }
     } ],
     "comment" : {
-      "undefined" : "Represents the action where collection of data takes place."
+      "en" : "Represents the action where writing of data takes place."
     },
-    "id" : "0",
-    "superClasses" : [ "1" ]
+    "id" : "19",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#Medium",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Medium",
+      "en" : "Medium"
+    },
+    "comment" : {
+      "en" : "Describes the medium through which consent was given/provided. Example: web form, recorded voice, signature on document."
+    },
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/GConsent#MinorDataSubject",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MinorDataSubject",
+      "en" : "Minor Data Subject"
+    },
+    "comment" : {
+      "en" : "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.\n\nConsent given in lieu of a Minor (by their Representative) is associated with the `ConsentInstance` class/instance using the `wasGivenBy` property.\n\nThe ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.\n\nNote: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases."
+    },
+    "id" : "23",
+    "superClasses" : [ "24" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#StoreAction",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StoreAction",
+      "en" : "Store"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#StorePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents store action over personal data"
+      },
+      "labels" : {
+        "IRI-based" : "StorePersonalData",
+        "en" : "Store Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents the action where storage of data takes place."
+    },
+    "id" : "27",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#EraseData",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EraseData",
+      "en" : "Erase"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#ErasePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Specifies the action of erasing personal data."
+      },
+      "labels" : {
+        "IRI-based" : "ErasePersonalData",
+        "en" : "Erase Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents the action where erasure of data takes place."
+    },
+    "id" : "28",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Agent",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent"
+    },
+    "attributes" : [ "external" ],
+    "id" : "38"
+  }, {
+    "iri" : "https://w3id.org/GConsent#CollectAction",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CollectAction",
+      "en" : "Collect"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#CollectPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents collect action over personal data."
+      },
+      "labels" : {
+        "IRI-based" : "CollectPersonalData",
+        "en" : "Collect Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents the action where collection of data takes place."
+    },
+    "id" : "43",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#Delegation",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Delegation",
+      "undefined" : "Delegation"
+    },
+    "comment" : {
+      "en" : "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`."
+    },
+    "id" : "47"
+  }, {
+    "iri" : "https://w3id.org/GConsent#StatusValidForProcessing",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StatusValidForProcessing",
+      "en" : "Status valid for Processing"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusGivenByDelegation",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent is given via delegation."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusGivenByDelegation",
+        "en" : "Given by Delegation"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusImplicitlyGiven",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent is given via an implicit action or assumption."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusImplicitlyGiven",
+        "en" : "Implicitly Given"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusExplicitlyGiven",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent is explicitly given."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusExplicitlyGiven",
+        "en" : "Explicitly Given"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents consent states that are valid for processing"
+    },
+    "id" : "1",
+    "superClasses" : [ "0" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "47", "24" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "48"
+  }, {
+    "instances" : 0,
+    "union" : [ "47", "4" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "49"
+  }, {
+    "instances" : 0,
+    "union" : [ "47", "4" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "45"
+  }, {
+    "instances" : 0,
+    "union" : [ "47", "24" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "46"
   }, {
     "iri" : "http://xmlns.com/foaf/Person",
     "baseIri" : "http://xmlns.com/foaf",
@@ -176,60 +553,12 @@
     "label" : {
       "IRI-based" : "Person"
     },
-    "subClasses" : [ "8" ],
     "attributes" : [ "external" ],
-    "id" : "9"
-  }, {
-    "iri" : "https://w3id.org/GConsent#Purpose",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;  # <----\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData .\n:Marketing a gconsent:Purpose .    # <----\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Purpose",
-      "undefined" : "Purpose"
-    },
-    "comment" : {
-      "undefined" : "The model of consent is such that `Purpose` is defined as the set of `Actions` on a `Data` with an intended 'purpose'. Therefore, the same set of actions on the same set of data can have different 'purposes'.\n\nFor example, consider the set of _(collect and use personal data)_ and the different purposes of _Advertising_ and _Marketing_. Since the consent for these two is separate or can be given and modified and withdrawn independently by the data subject, their modeling and representation should also reflect this separation.\n\nTherefore, the modeling is done as follows: Each consent has only one purpose or more purposes The applicable purpose then is the union of all purposes For e.g. _Advertising_ and _Marketing_ are two purposes, but if they are associated with a single consent instance, then the consent is deemed to be given for the _union of Advertising and Marketing_. Each purpose can have multiple actions and multiple data The applicable consent is for the union of actions on the union of data That is, each action is permitted over each item of data For a different purpose, a separate consent object must be created.\n\n`Purpose` is linked to `Consent` via the [`givenForPurpose`](#givenForPurpose) and [`isPurposeForConsent`](#isPurposeForConsent) properties.\n"
-    },
-    "id" : "18"
-  }, {
-    "iri" : "https://w3id.org/GConsent#PersonalData",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:ProfileInformation a gconsent:PersonalData ;  # <----\n    rdfs:label \"Profile Information of an User\" .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "PersonalData",
-      "undefined" : "PersonalData"
-    },
-    "comment" : {
-      "undefined" : "As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);\n\n`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the [`hasPersonalData`](#hasPersonalData) and [`isPersonalDataForPurpose`](#isPersonalDataForPurpose) properties."
-    },
-    "id" : "23"
+    "id" : "52"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "3",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "26",
+    "id" : "5",
     "label" : {
       "undefined" : "Thing"
     }
@@ -237,923 +566,772 @@
     "iri" : "https://w3id.org/GConsent#UseAction",
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:SharingOfPersonalData .\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData .  # <----\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
     "label" : {
       "IRI-based" : "UseAction",
-      "undefined" : "UseAction"
+      "en" : "Use"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/GConsent#UsageOfPersonalData",
+      "iri" : "https://w3id.org/GConsent#UsePersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "comment" : {
-        "undefined" : "Represents _collect_ action over personal data.\n    \n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:StorageOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
+        "en" : "Represents collect action over personal data."
       },
       "labels" : {
-        "IRI-based" : "UsageOfPersonalData",
-        "undefined" : "UsageOfPersonalData"
+        "IRI-based" : "UsePersonalData",
+        "en" : "Use Personal Data"
       }
     } ],
     "comment" : {
-      "undefined" : "Represents the action where usage of data takes place."
+      "en" : "Represents the action where usage of data takes place."
     },
-    "id" : "22",
-    "superClasses" : [ "1" ]
+    "id" : "36",
+    "superClasses" : [ "17" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataSubject",
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;  # <----\n    foaf:name \"Harshvardhan\" . ",
-        "type" : "label"
-      } ]
-    },
     "label" : {
       "IRI-based" : "DataSubject",
-      "undefined" : "DataSubject"
+      "en" : "Data Subject"
     },
-    "subClasses" : [ "11" ],
+    "union" : [ "38", "52" ],
+    "subClasses" : [ "23" ],
     "comment" : {
-      "undefined" : "Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.\n\nIn the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of `foaf:Person`.\n\nThe Data Subject is linked to the `Consent` instance via the [`isConsentFor`](#isConsentFor) and [`hasConsent`](#hasConsent) properties.\n"
+      "en" : "Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.\n\nIn the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.\n\nThe Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties."
     },
-    "id" : "8",
-    "superClasses" : [ "9" ]
+    "attributes" : [ "union" ],
+    "id" : "24"
   }, {
-    "iri" : "https://w3id.org/GConsent#ShareAction",
+    "iri" : "https://w3id.org/GConsent#StatusInvalidForProcessing",
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData .  # <----\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
     "label" : {
-      "IRI-based" : "ShareAction",
-      "undefined" : "ShareAction"
-    },
-    "individuals" : [ {
-      "iri" : "https://w3id.org/GConsent#SharingOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "undefined" : "Represents _share_ action over personal data.\n\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:StorageOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .  # <----\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
-      },
-      "labels" : {
-        "IRI-based" : "SharingOfPersonalData",
-        "undefined" : "SharingOfPersonalData"
-      }
-    } ],
-    "comment" : {
-      "undefined" : "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the [`sharesDataWith`](#sharesDataWith) property."
-    },
-    "id" : "14",
-    "superClasses" : [ "1" ]
-  }, {
-    "iri" : "https://w3id.org/GConsent#ConsentInstance",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n\n:consent_hjp_1808 a gconsent:ConsentInstance ;  # <----\n    rdfs:label \"Email op-out\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;\n    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ConsentInstance",
-      "undefined" : "ConsentInstance"
-    },
-    "comment" : {
-      "undefined" : "`Consent` as an entity exists as an interface (or representation) specifying the specific consent (as permission) between the data subject and the purpose (which contains action(s) and personal data item(s)). This _entity_ stays fixed (or constant) throughout its lifetime, and is associated with various _instances_ of given consent. To represent these instances, the class `ConsentInstance` is used.\n\n`ConsentInstance` is associated with a `Consent` instance using the [`hasConsentInstance`](#hasConsentInstance) and [`isConsentInstanceOf`](#isConsentInstanceOf) properties.\n\nA consent instance defines one specific given consent. The data subject has the right to change or modify or withdraw this consent at a later date. To link these two consent instances together, the properties [`wasReplacedByConsentInstance`](#wasReplacedByConsentInstance) and [`replacesConsentInstance`](#replacesConsentInstance) are used.\n\nAttributes describing the context of specific consent instances include metadata describing specific instances of consent - such as timestamp, location, or medium. A parent property is useful to represent such attributes collectively, and to provide a common way to link these to consent instances. These are defined as [`isContextForConsentInstance`](#isContextForConsentInstance) and [`hasContext`](#hasContext) properties.\n\nA Consent Instance represents a specific status of consent applicable to the instant it defines. For e.g. a consent given at a particular instant specifies \"explicit consent\" to the specified purpose. Whereas, another consent given later \"withdraws\" this consent for the specified purpose. To capture this chain or log or provenance of change in consent, the [`changesConsentStatusTo`](#changesConsentStatusTo) property is used."
-    },
-    "id" : "4"
-  }, {
-    "iri" : "https://w3id.org/GConsent#MinorDataSubject",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:Child a gconsent:MinorDataSubject ;  # <----\n    foaf:name \"Harshvardhan Jr.\"\n    foaf:age 10 .\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" ;\n:Consent_10C a gconsent:Consent ;\n    gconsent:isConsentFor :Child ;\n    gconsent:wasGivenBy :HJP . ",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "MinorDataSubject",
-      "undefined" : "MinorDataSubject"
-    },
-    "comment" : {
-      "undefined" : "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.\n\nConsent given in lieu of a Minor (by their Representative) is associated with the [`ConsentInstance`](#ConsentInstance) class/instance using the [`wasGivenBy`](#wasGivenBy) property.\n\nThe ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.\n\nNote: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases.\n"
-    },
-    "id" : "11",
-    "superClasses" : [ "8" ]
-  }, {
-    "iri" : "https://w3id.org/GConsent#StoreAction",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:StorageOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData .\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "StoreAction",
-      "undefined" : "StoreAction"
-    },
-    "individuals" : [ {
-      "iri" : "https://w3id.org/GConsent#StorageOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "undefined" : "Represents _store_ action over personal data.\n\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:StorageOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
-      },
-      "labels" : {
-        "IRI-based" : "StorageOfPersonalData",
-        "undefined" : "StorageOfPersonalData"
-      }
-    } ],
-    "comment" : {
-      "undefined" : "Represents the action where storage of data takes place."
-    },
-    "id" : "16",
-    "superClasses" : [ "1" ]
-  }, {
-    "iri" : "https://w3id.org/GConsent#ConsentDelegation",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Emergency consent for Mr. Harshvardhan\" ;\n    rdfs:comment \"Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records.\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :delegatedconsent ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:wasGivenAtLocation \"Hospital\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n\n:delegatedconsent a gconsent:ConsentDelegation ;   # <----\n    rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;\n    gconsent:hasConsentGivenByDelegate \"Hospital Staff Member 4826719\" ;\n    gconsent:isConsentDelegationFor :HJP ;\n    gconsent:hasVerificationProcessForDelegation \"Recorded under medical registry for emergencies\" .\n    ",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ConsentDelegation",
-      "undefined" : "Delegation"
-    },
-    "comment" : {
-      "undefined" : "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They are provided respectively by the properties [`isConsentDelegationFor`](#isConsentDelegationFor), [`hasConsentGivenByDelegate`](#hasConsentGivenByDelegate), and [`hasVerificationProcessForDelegation`](#hasVerificationProcessForDelegation)."
-    },
-    "id" : "34"
-  }, {
-    "iri" : "https://w3id.org/GConsent#Action",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:StorageOfPersonalData ;     # <----\n    gconsent:hasAction gconsent:UsageOfPersonalData ;       # <----\n    gconsent:hasAction gconsent:SharingOfPersonalData .     # <----\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:UsageOfPersonalData .       # <----\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Action",
-      "undefined" : "Action"
-    },
-    "individuals" : [ {
-      "iri" : "https://w3id.org/GConsent#StorageOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "undefined" : "Represents _store_ action over personal data.\n\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:StorageOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
-      },
-      "labels" : {
-        "IRI-based" : "StorageOfPersonalData",
-        "undefined" : "StorageOfPersonalData"
-      }
-    }, {
-      "iri" : "https://w3id.org/GConsent#CollectionOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "undefined" : "Represents _collect_ action over personal data.\n    \n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:StorageOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
-      },
-      "labels" : {
-        "IRI-based" : "CollectionOfPersonalData",
-        "undefined" : "CollectionOfPersonalData"
-      }
-    }, {
-      "iri" : "https://w3id.org/GConsent#UsageOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "undefined" : "Represents _collect_ action over personal data.\n    \n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:StorageOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
-      },
-      "labels" : {
-        "IRI-based" : "UsageOfPersonalData",
-        "undefined" : "UsageOfPersonalData"
-      }
-    }, {
-      "iri" : "https://w3id.org/GConsent#SharingOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "undefined" : "Represents _share_ action over personal data.\n\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix gconsent: <https://w3id.org/GConsent#> .\n    @prefix : <http://example.com/> .\n\n    :HJP a gconsent:DataSubject ;\n        foaf:name \"Harshvardhan\" .\n    :Advertising a gconsent:Purpose ;\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:StorageOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData ;\n        gconsent:hasAction gconsent:SharingOfPersonalData .  # <----\n    :Marketing a gconsent:Purpose .\n        gconsent:hasAction gconsent:CollectionOfPersonalData ;\n        gconsent:hasAction gconsent:UsageOfPersonalData .\n    :Consent_hjp a gconsent:Consent ;\n        gconsent:isConsentFor :HJP ;\n        gconsent:givenForPurpose :Advertising ;\n        gconsent:givenForPurpose :Marketing ."
-      },
-      "labels" : {
-        "IRI-based" : "SharingOfPersonalData",
-        "undefined" : "SharingOfPersonalData"
-      }
-    } ],
-    "subClasses" : [ "0", "14", "16", "22" ],
-    "comment" : {
-      "undefined" : "`Action` is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: *Collect*, *Store*, *Use*, and *Share*. To represent these, `Action` has been subclassed for each type of action as - [`CollectAction`](#CollectAction), [`StoreAction`](#StoreAction), [`UseAction`](#UseAction), and [`ShareAction`](#ShareAction). Each of these have a default instance to provide a generic target to refer to the action - [`CollectionOfPersonalData`](#CollectionOfPersonalData), [`StorageOfPersonalData`](#StorageOfPersonalData), [`UsageOfPersonalData`](#UsageOfPersonalData), and [`SharingOfPersonalData`](#SharingOfPersonalData).\n\n`Action` has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost.\n"
-    },
-    "id" : "1"
-  }, {
-    "iri" : "https://w3id.org/GConsent#ConsentStatus",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:ConsentInvalidated a gconsent:ConsentStatus ;  # <----\n    rdfs:label \"Consent Invalidated\" ;\n    rdfs:comment \"Consent that has been invalidated due to some condition.\" .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ConsentStatus",
-      "undefined" : "ConsentStatus"
+      "IRI-based" : "StatusInvalidForProcessing",
+      "en" : "Status invalid for Processing"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/GConsent#ConsentStatusUnknown",
       "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "example" : [ {
-          "identifier" : "example",
-          "language" : "undefined",
-          "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP .\n\n    gconsent:hasStatus gconsent:ConsentStatusUnknown .  # <----",
-          "type" : "label"
-        } ]
-      },
       "comment" : {
-        "undefined" : "When the consent status is unknown."
+        "en" : "Indicates the consent status is unknown."
       },
       "labels" : {
         "IRI-based" : "ConsentStatusUnknown",
-        "undefined" : "ConsentStatusUnknown"
+        "en" : "Unknown"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusRequested",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates consent has been requested but has not been given (yet)."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusRequested",
+        "en" : "Requested"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusWithdrawn",
       "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "example" : [ {
-          "identifier" : "example",
-          "language" : "undefined",
-          "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-out\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;\n    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .  # <----",
-          "type" : "label"
-        } ]
-      },
       "comment" : {
-        "undefined" : "When the consent status is withdrawn. This action or status needs to be associated with the consent to maintain a record of consent-related activity and metadata."
+        "en" : "Indicates consent has been withdrawn."
       },
       "labels" : {
         "IRI-based" : "ConsentStatusWithdrawn",
-        "undefined" : "ConsentStatusWithdrawn"
-      }
-    }, {
-      "iri" : "https://w3id.org/GConsent#ConsentStatusImplicitlyGiven",
-      "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "example" : [ {
-          "identifier" : "example",
-          "language" : "undefined",
-          "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Emergency consent for Mr. Harshvardhan\" ;\n    rdfs:comment \"Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records.\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy \"Hospital Staff\" ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:wasGivenAtLocation \"Hospital\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusImplicitlyGiven .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasStatus gconsent:ConsentStatusImplicitlyGiven ;  # <----\n    gconsent:hasConsentInstance :consent_hjp_1808 .",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "undefined" : "When the consent is implicitly obtained, that is, without an explicit action by the Data Subject."
-      },
-      "labels" : {
-        "IRI-based" : "ConsentStatusImplicitlyGiven",
-        "undefined" : "ConsentStatusImplicitlyGiven"
+        "en" : "Withdrawn"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusExpired",
       "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "example" : [ {
-          "identifier" : "example",
-          "language" : "undefined",
-          "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasExpiry \"2000-01-01\" ;\n    gconsent:hasStatus gconsent:ConsentStatusExpired .  # <----",
-          "type" : "label"
-        } ]
-      },
       "comment" : {
-        "undefined" : "When the consent has expired, that is, not been renewed past its intended expiry date."
+        "en" : "Indicates the consent has expired."
       },
       "labels" : {
         "IRI-based" : "ConsentStatusExpired",
-        "undefined" : "ConsentStatusExpired"
+        "en" : "Expired"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#ConsentStatusExplicitlyGiven",
+      "iri" : "https://w3id.org/GConsent#ConsentStatusRefused",
       "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "example" : [ {
-          "identifier" : "example",
-          "language" : "undefined",
-          "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"User-Registeration consent\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;\n    gconsent:hasStatus gconsent:ConsentStatusExplicitlyGiven .  # <----",
-          "type" : "label"
-        } ]
-      },
       "comment" : {
-        "undefined" : "When the consent is explicitly given."
+        "en" : "Indicates that consent has been refused (to be given)."
       },
       "labels" : {
-        "IRI-based" : "ConsentStatusExplicitlyGiven",
-        "undefined" : "ConsentStatusExplicitlyGiven"
+        "IRI-based" : "ConsentStatusRefused",
+        "en" : "Refused"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusInvalidated",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates the consent has been invalidated."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusInvalidated",
+        "en" : "Invalidated"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusNotGiven",
       "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "example" : [ {
-          "identifier" : "example",
-          "language" : "undefined",
-          "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasStatus gconsent:ConsentStatusNotGiven .  # <----",
-          "type" : "label"
-        } ]
-      },
       "comment" : {
-        "undefined" : "When the consent status is unknown."
+        "en" : "Indicates that consent has not been given."
       },
       "labels" : {
         "IRI-based" : "ConsentStatusNotGiven",
-        "undefined" : "ConsentStatusNotGiven"
+        "en" : "Not Given"
       }
     } ],
     "comment" : {
-      "undefined" : "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used."
+      "en" : "Represents consent states that are invalid for processing."
     },
-    "id" : "32"
+    "id" : "2",
+    "superClasses" : [ "0" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#ShareAction",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ShareAction",
+      "en" : "Share"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#SharePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents share action over personal data."
+      },
+      "labels" : {
+        "IRI-based" : "SharePersonalData",
+        "en" : "Share Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the `sharesDataWith` property."
+    },
+    "id" : "41",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.w3.org/2006/time#Instant",
+    "baseIri" : "http://www.w3.org/2006/time",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Instant"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.w3.org/2003/01/geo/wgs84_pos#Feature",
+    "baseIri" : "http://www.w3.org/2003/01/geo/wgs84_pos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Feature"
+    },
+    "attributes" : [ "external" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://www.w3.org/2006/time#TemporalEntity",
+    "baseIri" : "http://www.w3.org/2006/time",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TemporalEntity"
+    },
+    "subClasses" : [ "15" ],
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/GConsent#ReadAction",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReadAction",
+      "en" : "Read"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#ReadPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Specifies the action of reading personal data."
+      },
+      "labels" : {
+        "IRI-based" : "ReadPersonalData",
+        "en" : "Read Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents the action where reading of data takes place."
+    },
+    "id" : "26",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#Action",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Action",
+      "en" : "Action"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#CollectPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents collect action over personal data."
+      },
+      "labels" : {
+        "IRI-based" : "CollectPersonalData",
+        "en" : "Collect Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#SharePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents share action over personal data."
+      },
+      "labels" : {
+        "IRI-based" : "SharePersonalData",
+        "en" : "Share Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#WritePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Specifies writing of personal data."
+      },
+      "labels" : {
+        "IRI-based" : "WritePersonalData",
+        "en" : "Write Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ReadPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Specifies the action of reading personal data."
+      },
+      "labels" : {
+        "IRI-based" : "ReadPersonalData",
+        "en" : "Read Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ErasePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Specifies the action of erasing personal data."
+      },
+      "labels" : {
+        "IRI-based" : "ErasePersonalData",
+        "en" : "Erase Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#UsePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents collect action over personal data."
+      },
+      "labels" : {
+        "IRI-based" : "UsePersonalData",
+        "en" : "Use Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#StorePersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents store action over personal data"
+      },
+      "labels" : {
+        "IRI-based" : "StorePersonalData",
+        "en" : "Store Personal Data"
+      }
+    } ],
+    "subClasses" : [ "43", "41", "28", "27", "19", "36", "26" ],
+    "comment" : {
+      "en" : "Action is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: Collect, Store, Use, and Share. To represent these, Action has been subclassed for each type of action as - CollectAction, StoreAction, UseAction, and ShareAction. Each of these have a default instance to provide a generic target to refer to the action - CollectPersonalData, StorePersonalData, UsePersonalData, and SharePersonalData. Along with these, Read and Write are also defined as (subClassOf) actions with individuals ReadPersonalData and WritePersonalData respectively.\n\nAction has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost."
+    },
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/GConsent#Consent",
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:HJP_Consent a gconsent:Consent ;  # <----\n    gconsent:isConsentFor :HJP .",
-        "type" : "label"
-      } ]
-    },
     "label" : {
       "IRI-based" : "Consent",
-      "undefined" : "Consent"
+      "en" : "Consent"
     },
     "comment" : {
-      "undefined" : "As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nIn the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the `Consent` class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.\n\nTo link the `Consent` instance with the `DataSubject` instance, use the [`isConsentFor`](#isConsentFor) and [`hasConsent`](#hasConsent) properties."
+      "en" : "As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nIn the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.\n\nTo link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."
     },
-    "id" : "19"
+    "id" : "4"
   } ],
   "property" : [ {
-    "id" : "2",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "5",
+    "id" : "3",
     "type" : "owl:objectProperty"
   }, {
     "id" : "7",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "10",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "12",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "13",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "15",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "17",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "21",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "24",
+    "id" : "8",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "6",
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
     "type" : "owl:objectProperty"
   }, {
     "id" : "20",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "27",
+    "id" : "22",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "29",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "31",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "33",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "35",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "37",
     "type" : "owl:objectProperty"
   }, {
     "id" : "30",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "25",
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "38",
-    "type" : "owl:objectProperty"
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "39",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "36",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "28",
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "58",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/GConsent#isContextForConsentInstance",
+    "iri" : "https://w3id.org/GConsent#hasContext",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "4",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:capturedThroughWebForm rdf:type rdf:Property, owl:ObjectProperty ;\n    rdfs:label \"capturedThroughWebForm\" ;\n    rdfs:subPropertyOf gconsent:hasContext ;\n    owl:subPropertyOf gconsent:hasContext ;\n    rdfs:comment \"Links the captured/obtained consent with the specific version of web form filled by the user.\" ;\n    rdfs:domain gconsent:ConsentInstance ;\n    rdfs:range :WebForm .\n:isWebFormForGivenConsent rdf:type rdf:Property, owl:ObjectProperty ;\n    rdfs:label \"isWebFormForGivenConsent\" ;\n    rdfs:subPropertyOf :isContextForConsentInstance ;  # <----\n    owl:subPropertyOf :isContextForConsentInstance ;  # <----\n    rdfs:comment \"Links the Web Form object to the consent instances obtained through it.\" ;\n    rdfs:domain :WebForm ;\n    rdfs:range gconsent:ConsentInstance .",
-        "type" : "label"
-      } ]
-    },
+    "range" : "5",
     "label" : {
-      "IRI-based" : "isContextForConsentInstance",
-      "undefined" : "isContextForConsentInstance"
-    },
-    "domain" : "3",
-    "comment" : {
-      "undefined" : "The parent propertly linking all contexts to `ConsentInstance`."
-    },
-    "attributes" : [ "object" ],
-    "id" : "2"
-  }, {
-    "iri" : "https://w3id.org/GConsent#wasReplacedByConsentInstance",
-    "inverse" : "6",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "4",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-in\" ;\n    gconsent:wasReplacedByConsentInstance :consent_hjp_1809 ;  # <----\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-30-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n:consent_hjp_1809 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-out\" ;\n    gconsent:replacesConsentInstance :consent_hjp_1808 ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;\n    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "wasReplacedByConsentInstance",
-      "undefined" : "wasReplacedByConsentInstance"
+      "IRI-based" : "hasContext",
+      "en" : "has context"
     },
     "domain" : "4",
+    "subproperty" : [ "6", "7", "8", "9", "10" ],
     "comment" : {
-      "undefined" : "Links a past `ConsentInstance` to a future `ConsentInstance` that replaces it."
+      "en" : "Links a consent instance to the context in which it was acquired/provided/given."
     },
     "attributes" : [ "object" ],
-    "id" : "5"
+    "id" : "3"
   }, {
-    "range" : "9",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
+    "iri" : "https://w3id.org/GConsent#wasGivenThroughMedium",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "wasGivenThroughMedium",
+      "en" : "was given through medium"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "4",
+    "comment" : {
+      "en" : "Specifies the medium through which the consent was given. Examples are web forms, paper documents."
+    },
+    "attributes" : [ "object" ],
     "id" : "7"
   }, {
-    "range" : "8",
-    "domain" : "11",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "10"
-  }, {
-    "range" : "1",
-    "domain" : "0",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "12"
-  }, {
-    "range" : "1",
-    "domain" : "14",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "13"
-  }, {
-    "range" : "1",
-    "domain" : "16",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "15"
-  }, {
-    "iri" : "https://w3id.org/GConsent#isPurposeForConsent",
-    "inverse" : "20",
+    "iri" : "https://w3id.org/GConsent#wasGivenAtInstant",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "19",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData ;\n    gconsent:isPurposeForConsent :Consent_hjp .  # <----\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:isPurposeForConsent :Consent_hjp .  # <----\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP .",
-        "type" : "label"
-      } ]
-    },
+    "range" : "15",
     "label" : {
-      "IRI-based" : "isPurposeForConsent",
-      "undefined" : "isPurposeForConsent"
+      "IRI-based" : "wasGivenAtInstant",
+      "en" : "was given at instant"
     },
-    "domain" : "18",
+    "superproperty" : [ "3" ],
+    "domain" : "4",
     "comment" : {
-      "undefined" : "Links the `Purpose` instance to `Consent` instance"
+      "en" : "Specifies the instant at which the consent was given."
     },
     "attributes" : [ "object" ],
-    "id" : "17"
-  }, {
-    "range" : "1",
-    "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "21"
+    "id" : "8"
   }, {
     "iri" : "https://w3id.org/GConsent#hasAction",
-    "inverse" : "25",
+    "inverse" : "18",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData .\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;  # <----\n    gconsent:hasAction gconsent:UsageOfPersonalData .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;\n    gconsent:givenForPurpose :Marketing .",
-        "type" : "label"
-      } ]
-    },
+    "range" : "17",
     "label" : {
       "IRI-based" : "hasAction",
-      "undefined" : "hasAction"
+      "en" : "has action"
     },
-    "domain" : "18",
+    "domain" : "14",
     "comment" : {
-      "undefined" : "Links `Purpose` to an `Action`."
+      "en" : "Links a purpose to the actions (over personal data) it contains."
     },
     "attributes" : [ "object" ],
-    "id" : "24"
+    "id" : "16"
   }, {
-    "iri" : "https://w3id.org/GConsent#replacesConsentInstance",
+    "iri" : "https://w3id.org/GConsent#wasGivenUsingArtefact",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "4",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-in\" ;\n    gconsent:wasReplacedByConsentInstance :consent_hjp_1809 ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-30-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n:consent_hjp_1809 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-out\" ;\n    gconsent:replacesConsentInstance :consent_hjp_1808 ;  # <----\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;\n    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .",
-        "type" : "label"
-      } ]
-    },
+    "range" : "12",
     "label" : {
-      "IRI-based" : "replacesConsentInstance",
-      "undefined" : "replacesConsentInstance"
+      "IRI-based" : "wasGivenUsingArtefact",
+      "en" : "was given using artefact"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "4",
+    "comment" : {
+      "en" : "Specifies involved artefacts in the consent process. Examples are terms of service and privacy policies."
+    },
+    "attributes" : [ "object" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/GConsent#hasExpiry",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "hasExpiry",
+      "en" : "has expiry"
     },
     "domain" : "4",
     "comment" : {
-      "undefined" : "Links a future `ConsentInstance` to a past `ConsentInstance` that it has replaced."
+      "en" : "Specifies the Instant or Duration in which the consent expires."
     },
-    "attributes" : [ "object" ],
-    "id" : "6"
-  }, {
-    "iri" : "https://w3id.org/GConsent#givenForPurpose",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "18",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Advertising a gconsent:Purpose ;\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:StorageOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData ;\n    gconsent:hasAction gconsent:SharingOfPersonalData .\n:Marketing a gconsent:Purpose .\n    gconsent:hasAction gconsent:CollectionOfPersonalData ;\n    gconsent:hasAction gconsent:UsageOfPersonalData .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:givenForPurpose :Advertising ;  # <----\n    gconsent:givenForPurpose :Marketing .    # <----",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "givenForPurpose",
-      "undefined" : "givenForPurpose"
-    },
-    "domain" : "19",
-    "comment" : {
-      "undefined" : "Links the `Consent` instance to a `Purpose` instance."
-    },
-    "attributes" : [ "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "20"
   }, {
-    "iri" : "https://w3id.org/GConsent#isConsentInstanceOf",
-    "inverse" : "28",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "19",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-out\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;  # <----\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;\n    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isConsentInstanceOf",
-      "undefined" : "isConsentInstanceOf"
-    },
-    "domain" : "4",
-    "comment" : {
-      "undefined" : "Links `ConsentInstance` to `Consent`."
-    },
-    "attributes" : [ "object" ],
-    "id" : "27"
-  }, {
-    "iri" : "https://w3id.org/GConsent#hasConsent",
-    "inverse" : "30",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "19",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" ;\n    gconsent:hasConsent :HJP_Consent .  # <----\n:HJP_Consent a gconsent:Consent .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasConsent",
-      "undefined" : "hasConsent"
-    },
-    "domain" : "8",
-    "comment" : {
-      "undefined" : "Links the `DataSubject` instance with the `Consent` instance."
-    },
-    "attributes" : [ "object" ],
-    "id" : "29"
-  }, {
-    "iri" : "https://w3id.org/GConsent#changesConsentStatusTo",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "32",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasExpiry \"2000-01-01\" ;\n    gconsent:hasStatus gconsent:ConsentStatusExpired .\n:consent_hjp_1809 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-out\" ;\n    gconsent:replacesConsentInstance :consent_hjp_1808 ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .  # <----",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "changesConsentStatusTo",
-      "undefined" : "changesConsentStatusTo"
-    },
-    "domain" : "4",
-    "comment" : {
-      "undefined" : "Specifies the status of consent resulting from this consent."
-    },
-    "attributes" : [ "object" ],
-    "id" : "31"
-  }, {
-    "iri" : "https://w3id.org/GConsent#isDelegateForConsentDelegation",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "34",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Emergency consent for Mr. Harshvardhan\" ;\n    rdfs:comment \"Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records.\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :delegatedconsent ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:wasGivenAtLocation \"Hospital\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n\n:delegatedconsent a gconsent:Delegation ;\n    rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;\n    gconsent:hasConsentGivenByDelegate :HospitalStaff_4826719 ;\n    gconsent:isDelegationForDataSubject :HJP .\n\n:HospitalStaff_4826719 a foaf:Person ;\n    rdfs:label \"Hospital Staff 4826719\" ;\n    gconsent:isDelegateForConsentDelegation :delegatedconsent .  # <----",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isDelegateForConsentDelegation",
-      "undefined" : "isDelegateForConsentDelegation"
-    },
-    "domain" : "26",
-    "comment" : {
-      "undefined" : "Links an entity that acted as delegate for giving consent with the delegation activity. The range of this property is the `ConsentDelegation` activity."
-    },
-    "attributes" : [ "object" ],
-    "id" : "33"
-  }, {
     "iri" : "https://w3id.org/GConsent#isPersonalDataForPurpose",
-    "inverse" : "36",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "18",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:Marketing a gconsent:Purpose ;\n    rdfs:label \"Marketing\" ;\n    gconsent:hasPersonalData :ProfileInformation .\n\n:ProfileInformation a gconsent:PersonalData ;\n    rdfs:label \"Profile Information of an User\" ;\n    gconsent:isPersonalDataForPurpose :Marketing ;  # <----",
-        "type" : "label"
-      } ]
-    },
+    "range" : "14",
     "label" : {
       "IRI-based" : "isPersonalDataForPurpose",
-      "undefined" : "isPersonalDataForPurpose"
+      "en" : "is personal data for purpose"
     },
-    "domain" : "23",
+    "domain" : "13",
     "comment" : {
-      "undefined" : "Links `PersonalData` instance with `Purpose` instance."
+      "en" : "Links personal data with the purpose it is associated with."
     },
     "attributes" : [ "object" ],
-    "id" : "35"
+    "id" : "22"
   }, {
-    "iri" : "https://w3id.org/GConsent#hasStatus",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "32",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasExpiry \"2000-01-01\" ;\n    gconsent:hasStatus gconsent:ConsentStatusExpired .  # <----",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasStatus",
-      "undefined" : "hasStatus"
-    },
-    "domain" : "19",
-    "comment" : {
-      "undefined" : "Links `Consent` instance to its `ConsentStatus` instance."
-    },
-    "attributes" : [ "object" ],
-    "id" : "37"
+    "range" : "17",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "25"
   }, {
-    "iri" : "https://w3id.org/GConsent#isConsentFor",
+    "iri" : "https://w3id.org/GConsent#isConsentForDataSubject",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "8",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:HJP_Consent a gconsent:Consent ;\n    gconsent:isConsentFor :HJP .  # <----",
-        "type" : "label"
-      } ]
-    },
+    "range" : "24",
     "label" : {
-      "IRI-based" : "isConsentFor",
-      "undefined" : "isConsentFor"
+      "IRI-based" : "isConsentForDataSubject",
+      "en" : "is consent for data subject"
     },
-    "domain" : "19",
+    "domain" : "4",
     "comment" : {
-      "undefined" : "Links the `Consent` instance with the `DataSubject` instance it represents.\n"
+      "en" : "Links a consent instance with the data subject it is associated with."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/GConsent#hasPurpose",
+    "inverse" : "31",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasPurpose",
+      "en" : "has purpose"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Links a consent instace to the purpose(s) it is associated with."
     },
     "attributes" : [ "object" ],
     "id" : "30"
   }, {
-    "iri" : "https://w3id.org/GConsent#isActionForPurpose",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "18",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:Advertising a gconsent:Purpose .\ngconsent:StorageOfPersonalData :isActionForPurpose :Advertising .  # <---\ngconsent:UsageOfPersonalData :isActionForPurpose :Advertising .    # <---\ngconsent:SharingOfPersonalData :isActionForPurpose :Advertising .  # <---",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isActionForPurpose",
-      "undefined" : "isActionForPurpose"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Links `Action` to a `Purpose`."
-    },
-    "attributes" : [ "object" ],
-    "id" : "25"
+    "range" : "17",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "32"
   }, {
-    "iri" : "https://w3id.org/GConsent#isConsentDelegationFor",
-    "inverse" : "39",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "8",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Emergency consent for Mr. Harshvardhan\" ;\n    rdfs:comment \"Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records.\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :delegatedconsent ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:wasGivenAtLocation \"Hospital\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n\n:delegatedconsent a gconsent:Delegation ;\n    rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;\n    gconsent:hasConsentGivenByDelegate \"Hospital Staff Member 4826719\" ;\n    gconsent:isDelegationForDataSubject :HJP .  # <----",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isConsentDelegationFor",
-      "undefined" : "isConsentDelegationFor"
-    },
-    "domain" : "34",
-    "comment" : {
-      "undefined" : "Specifies the `DataSubject` the delegation activity is for."
-    },
-    "attributes" : [ "object" ],
-    "id" : "38"
-  }, {
-    "iri" : "https://w3id.org/GConsent#hasConsentDelegation",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "34",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" ;\n    gconsent:hasConsentDelegation :delegatedconsent .  # <----\n\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Emergency consent for Mr. Harshvardhan\" ;\n    rdfs:comment \"Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records.\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :delegatedconsent ;  # <----\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:wasGivenAtLocation \"Hospital\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n\n:delegatedconsent a gconsent:Delegation ;\n    rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;\n    gconsent:hasConsentGivenByDelegate \"Hospital Staff Member 4826719\" ;\n    gconsent:isDelegationForDataSubject :HJP .",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasConsentDelegation",
-      "undefined" : "hasConsentDelegation"
-    },
-    "domain" : "8",
-    "comment" : {
-      "undefined" : "Specifies the `ConsentDelegation` instances for a particular `DataSubject`."
-    },
-    "attributes" : [ "object" ],
-    "id" : "39"
+    "range" : "17",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
   }, {
     "iri" : "https://w3id.org/GConsent#hasPersonalData",
+    "inverse" : "22",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "23",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:ProfileInformation a gconsent:PersonalData ;\n    rdfs:label \"Profile Information of an User\" .\n\n:Marketing a gconsent:Purpose ;\n    rdfs:label \"Marketing\" ;\n    gconsent:hasPersonalData :ProfileInformation .  # <----",
-        "type" : "label"
-      } ]
-    },
+    "range" : "13",
     "label" : {
       "IRI-based" : "hasPersonalData",
-      "undefined" : "hasPersonalData"
+      "en" : "has personal data"
     },
-    "domain" : "18",
+    "domain" : "14",
     "comment" : {
-      "undefined" : "Links `Purpose` instance with `PersonalData` instance."
+      "en" : "Links the purpose to personal data it uses."
     },
     "attributes" : [ "object" ],
-    "id" : "36"
+    "id" : "34"
   }, {
-    "iri" : "https://w3id.org/GConsent#isVerificationProcessForDelegation",
-    "baseIri" : "https://w3id.org/GConsent",
-    "range" : "34",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Emergency consent for Mr. Harshvardhan\" ;\n    rdfs:comment \"Harshvardhan had an accident and was brought to the hospital. During this time, his vitals and other information were taken for hospital records.\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :delegatedconsent ;  # <----\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:wasGivenAtLocation \"Hospital\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusExplicitlyGiven .\n\n:delegatedconsent a gconsent:Delegation ;\n    rdfs:label \"Delegated consent for Mr. Harshvardhan by Hospital Staff\" ;\n    gconsent:hasConsentGivenByDelegate \"Hospital Staff Member 4826719\" ;\n    gconsent:isDelegationForDataSubject :HJP ;\n    gconsent:hasVerificationProcessForDelegation :verify_delegate .\n\n:verify_delegate a prov:Activity ;\n    rdfs:label \"Verification of Staff to provide consent for Patient HJP\" ;\n    gconsent:isVerificationProcessForDelegation :delegatedconsent .  # <----",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isVerificationProcessForDelegation",
-      "undefined" : "isVerificationProcessForDelegation"
-    },
-    "domain" : "26",
-    "comment" : {
-      "undefined" : "Links the verification process used in the activity for delegation of consent with the delegation activity. The domain of this property can be a `prov:Activity`, or event, or reference to an activity."
-    },
-    "attributes" : [ "object" ],
+    "range" : "17",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "17",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "range" : "21",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "39"
+  }, {
+    "range" : "17",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
-    "iri" : "https://w3id.org/GConsent#hasConsentInstance",
+    "range" : "17",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/GConsent#wasGivenBy",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "wasGivenBy",
+      "en" : "was given by"
+    },
+    "domain" : "45",
+    "comment" : {
+      "en" : "Indicates the entity or activitiy that provided the consent."
+    },
+    "attributes" : [ "irreflexive", "asymmetric", "object", "functional" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://w3id.org/GConsent#wasInvalidatedBy",
     "baseIri" : "https://w3id.org/GConsent",
     "range" : "4",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "\n@prefix gconsent: <https://w3id.org/GConsent#> .\n@prefix : <http://example.com/> .\n\n:HJP a gconsent:DataSubject ;\n    foaf:name \"Harshvardhan\" .\n:consent_hjp_1808 a gconsent:ConsentInstance ;\n    rdfs:label \"Email op-out\" ;\n    gconsent:isConsentInstanceOf :Consent_hjp ;\n    gconsent:wasGivenBy :HJP ;\n    gconsent:wasGivenAtInstant \"2099-12-31-00-00-00\" ;\n    gconsent:changesConsentStatusTo gconsent:ConsentStatusWithdrawn .\n:Consent_hjp a gconsent:Consent ;\n    gconsent:isConsentFor :HJP ;\n    gconsent:hasConsentInstance :consent_hjp_1808 ;  # <----\n    gconsent:hasStatus gconsent:ConsentStatusWithdrawn .",
-        "type" : "label"
-      } ]
-    },
     "label" : {
-      "IRI-based" : "hasConsentInstance",
-      "undefined" : "hasConsentInstance"
+      "IRI-based" : "wasInvalidatedBy",
+      "en" : "was invalidated by"
     },
-    "domain" : "19",
+    "domain" : "4",
     "comment" : {
-      "undefined" : "Links `Consent` to `ConsentInstance`."
+      "en" : "Specifies the consent instance which invalidated this instance."
+    },
+    "attributes" : [ "irreflexive", "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://w3id.org/GConsent#wasGivenAtLocation",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "wasGivenAtLocation",
+      "en" : "was given at location"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "4",
+    "comment" : {
+      "en" : "Specifies the location at which the consent was given."
     },
     "attributes" : [ "object" ],
-    "id" : "28"
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/GConsent#gaveConsent",
+    "inverse" : "44",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "gaveConsent",
+      "en" : "gave consent"
+    },
+    "domain" : "48",
+    "comment" : {
+      "en" : "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."
+    },
+    "attributes" : [ "irreflexive", "inverse functional", "asymmetric", "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isPurposeForConsent",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isPurposeForConsent",
+      "en" : "is purpose for consent"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "Links purpose with the consent instance associated with it."
+    },
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "range" : "0",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "54"
+  }, {
+    "range" : "0",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "55"
+  }, {
+    "range" : "24",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "56"
+  }, {
+    "range" : "26",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "57"
+  }, {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://w3id.org/GConsent#invalidatesGivenConsent",
+    "inverse" : "50",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "invalidatesGivenConsent",
+      "en" : "invalidates given consent"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Denotes invalidation of the specified consent instance by the current instance. This happens when consent is revoked, withdrawn, expired, or invalidated."
+    },
+    "attributes" : [ "irreflexive", "object" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://w3id.org/GConsent#hasConsent",
+    "inverse" : "29",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasConsent",
+      "en" : "has consent"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Links a data subject to their consent."
+    },
+    "attributes" : [ "inverse functional", "object" ],
+    "id" : "60"
+  }, {
+    "iri" : "https://w3id.org/GConsent#hasStatus",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "hasStatus",
+      "en" : "has status"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Denotes the state or status of consent."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "61"
+  }, {
+    "iri" : "https://w3id.org/GConsent#sharesDataWith",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "sharesDataWith",
+      "en" : "shares data with"
+    },
+    "domain" : "41",
+    "comment" : {
+      "en" : "Indicates the agent (organisation, person) the data is shared with."
+    },
+    "attributes" : [ "object" ],
+    "id" : "62"
+  }, {
+    "iri" : "https://w3id.org/GConsent#wasGivenByAgent",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "wasGivenByAgent",
+      "en" : "was given by agent"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "4",
+    "comment" : {
+      "en" : "Specifies the agent that provided/gave the consent. Examples are automated systems that collect or provide consent. This is not the same as having a data subject provide the consent."
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isActionForPurpose",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "isActionForPurpose",
+      "en" : "is action for purpose"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Links an action to the purpose it is associated with."
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
   } ]
 }
