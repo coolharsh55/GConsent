@@ -12,6 +12,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vaem: <http://www.linkedmodel.org/schema/vaem> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix gdprtext: <https://w3id.org/GDPRtEXT#> .
 @base <https://w3id.org/GConsent> .
 
 <https://w3id.org/GConsent> rdf:type owl:Ontology ;
@@ -293,6 +294,7 @@ foaf:Person rdf:type owl:Class .
         rdfs:comment """Action is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: Collect, Store, Use, and Share. To represent these, Action has been subclassed for each type of action as - CollectAction, StoreAction, UseAction, and ShareAction. Each of these have a default instance to provide a generic target to refer to the action - CollectPersonalData, StorePersonalData, UsePersonalData, and SharePersonalData. Along with these, Read and Write are also defined as (subClassOf) actions with individuals ReadPersonalData and WritePersonalData respectively.
 
 Action has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost."""@en ;
+        rdfs:isDefinedBy gdprtext:DataActivity ;
         rdfs:label "Action"@en .
 
 
@@ -300,6 +302,7 @@ Action has subclasses because different use-cases might want to differentiate be
 :CollectAction rdf:type owl:Class ;
                rdfs:subClassOf :Action ;
                rdfs:comment "Represents the action where collection of data takes place."@en ;
+               rdfs:isDefinedBy gdprtext:CollectionOfPersonalData ;
                rdfs:label "Collect"@en .
 
 
@@ -310,6 +313,7 @@ Action has subclasses because different use-cases might want to differentiate be
 In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.
 
 To link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."""@en ;
+         rdfs:isDefinedBy gdprtext:GivenConsent ;
          rdfs:label "Consent"@en .
 
 
@@ -325,6 +329,7 @@ To link the `Consent` instance with the `DataSubject` instance, use the `isConse
 In the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.
 
 The Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties."""@en ;
+             rdfs:isDefinedBy gdprtext:DataSubject ;
              rdfs:label "Data Subject"@en .
 
 
@@ -338,6 +343,7 @@ The Data Subject is linked to the Consent instance via the isConsentForDataSubje
 :EraseData rdf:type owl:Class ;
            rdfs:subClassOf :Action ;
            rdfs:comment "Represents the action where erasure of data takes place."@en ;
+           rdfs:isDefinedBy gdprtext:EraseData ;
            rdfs:label "Erase"@en .
 
 
@@ -365,6 +371,7 @@ Note: A Minor can provide their own consent in certain cases, or conversely, a m
               rdfs:comment """As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);
 
 `PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the `hasPersonalData` and `isPersonalDataForPurpose` properties."""@en ;
+              rdfs:isDefinedBy gdprtext:PersonalData ;
               rdfs:label "Personal Data"@en .
 
 
@@ -377,6 +384,7 @@ For example, consider the set of _(collect and use personal data)_ and the diffe
 Therefore, the modeling is done as follows: Each consent has only one purpose or more purposes The applicable purpose then is the union of all purposes For e.g. _Advertising_ and _Marketing_ are two purposes, but if they are associated with a single consent instance, then the consent is deemed to be given for the _union of Advertising and Marketing_. Each purpose can have multiple actions and multiple data The applicable consent is for the union of actions on the union of data That is, each action is permitted over each item of data For a different purpose, a separate consent object must be created.
 
 `Purpose` is linked to `Consent` via the `givenForPurpose` and `isPurposeForConsent` properties."""@en ;
+         rdfs:isDefinedBy gdprtext:ExplicitPurpose ;
          rdfs:label "Purpose"@en .
 
 
@@ -392,6 +400,7 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 :ShareAction rdf:type owl:Class ;
              rdfs:subClassOf :Action ;
              rdfs:comment "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the `sharesDataWith` property."@en ;
+             rdfs:isDefinedBy gdprtext:ShareDataWithThirdParty ;
              rdfs:label "Share"@en .
 
 
@@ -420,6 +429,7 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 :StoreAction rdf:type owl:Class ;
              rdfs:subClassOf :Action ;
              rdfs:comment "Represents the action where storage of data takes place."@en ;
+             rdfs:isDefinedBy gdprtext:StoreData ;
              rdfs:label "Store"@en .
 
 
@@ -427,6 +437,7 @@ Therefore, the modeling is done as follows: Each consent has only one purpose or
 :UseAction rdf:type owl:Class ;
            rdfs:subClassOf :Action ;
            rdfs:comment "Represents the action where usage of data takes place."@en ;
+           rdfs:isDefinedBy gdprtext:UseData ;
            rdfs:label "Use"@en .
 
 
