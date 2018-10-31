@@ -1,4 +1,5 @@
-<h2 id="overv" class="list">GConsent - a consent ontology based on the GDPR: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="overv" class="list">GConsent: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<img src="../diagrams/ontology.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto;  border: 1px solid black;"/>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -106,21 +107,35 @@ This ontology has the following classes and properties.</span>
    <li>
 </ul>
 
-<h4>Object Properties</h4><ul class="hlist">
+<h4>Object Properties</h4>
+<h5>Consent, Data Subject, and Delegation</h5>
+<ul class="hlist">
    <li>
       <a href="#gaveConsent" title="https://w3id.org/GConsent#gaveConsent">gave consent</a>
-   </li>
-   <li>
-      <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
    </li>
    <li>
       <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
    </li>
    <li>
-      <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+      <a href="#invalidatesGivenConsent"
+         title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
    </li>
    <li>
-      <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
+      <a href="#isConsentForDataSubject"
+         title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
+   </li>
+   <li>
+      <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">was given by</a>
+   </li>
+   <li>
+      <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
+   </li>
+</ul>
+
+<h5>Consent Purpose, Action, Personal Data, and Status</h5>
+<ul class="hlist">
+   <li>
+      <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
    </li>
    <li>
       <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">has personal data</a>
@@ -132,15 +147,7 @@ This ontology has the following classes and properties.</span>
       <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
    </li>
    <li>
-      <a href="#invalidatesGivenConsent"
-         title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
-   </li>
-   <li>
       <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">is action for purpose</a>
-   </li>
-   <li>
-      <a href="#isConsentForDataSubject"
-         title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
    </li>
    <li>
       <a href="#isPersonalDataForPurpose"
@@ -152,14 +159,21 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#sharesDataWith" title="https://w3id.org/GConsent#sharesDataWith">shares data with</a>
    </li>
+</ul>
+
+<h5>Context of Given Consent</h5>
+<ul class="hlist">
+   <li>
+      <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a> (top-level property for all context related properties)
+   </li>
+   <li>
+      <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
+   </li>
    <li>
       <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">was given at instant</a>
    </li>
    <li>
       <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">was given at location</a>
-   </li>
-   <li>
-      <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">was given by</a>
    </li>
    <li>
       <a href="#wasGivenByAgent" title="https://w3id.org/GConsent#wasGivenByAgent">was given by agent</a>
@@ -170,14 +184,7 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#wasGivenUsingArtefact" title="https://w3id.org/GConsent#wasGivenUsingArtefact">was given using artefact</a>
    </li>
-   <li>
-      <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
-   </li>
-</ul><h4>Named Individuals</h4><ul class="hlist">
+</ul>
 
- 
-
- 
-      
-   </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html#ontology"></iframe> 
+<h4>WebVOWL Visualisation</h4>
+<iframe align="center" width="100%" height ="500px" src="webvowl/index.html#ontology"></iframe> 
