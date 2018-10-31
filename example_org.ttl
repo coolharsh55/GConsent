@@ -8,6 +8,34 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
-@prefix : <http://example.com/> .
+@prefix org: <http://example.com/organisation#> .
+@prefix ds: <http://example.com/datasubject#> .
 
+# Organisation
+org:ExampleOrg a gdprov:DataController ;
+	rdfs:label "Example Organisation"@en ;
+	rdfs:comment "An example organisation that is a Data Controller."@en .
 
+# Purposes
+org:Marketing a gconsent:Purpose ;
+	rdfs:label "Marketing"@en ;
+	rdfs:comment "Denotes Marketing as a purpose for data processing."@en .
+
+org:Analytics a gconsent:Purpose ;
+	rdfs:label "Analytics"@en ;
+	rdfs:comment "Denotes Analytics as a purpose for data processing."@en .
+
+org:Advertising a gconsent:Purpose ;
+	rdfs:label "Advertising"@en ;
+	rdfs:comment "Denotes Advertising as a purpose for data processing."@en .
+
+# Actions
+org:UseProfileInformation a gconsent:UseAction ;
+	rdfs:label "Use Profile Information"@en ;
+	rdfs:comment "Denotes the action of using profile information"@en .
+
+org:UseTrackingData a gconsent:UseAction ;
+	rdfs:label "Use Tracking Data"@en ;
+	rdfs:comment "Denotes the action of using tracking data"@en .
+
+org:

@@ -2,12 +2,10 @@
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
+<h5>Top-level Concepts</h5>
 <ul class="hlist">
    <li>
       <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
-   </li>
-   <li>
-      <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">Collect</a>
    </li>
    <li>
       <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -17,14 +15,6 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
-   </li>
-   <li>
-      <a href="#EraseData" title="https://w3id.org/GConsent#EraseData">Erase</a>
-   </li>
-   <li>
-      <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">
-         <span>instant</span>
-      </a>
    </li>
    <li>
       <a href="#Medium" title="https://w3id.org/GConsent#Medium">Medium</a>
@@ -39,32 +29,84 @@ This ontology has the following classes and properties.</span>
       <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
    </li>
    <li>
-      <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a>
-   </li>
-   <li>
-      <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a>
-   </li>
-   <li>
       <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
    </li>
+</ul>
+<h5>Actions</h5>
+<p>Each category or type of action has a default named individual (specified in brackets in the list below) defined in the ontology. For more specitivity, the category can be subclassed, whereas the default named individual can be used to specify the type of action.</p>
+<ul class="hlist">
    <li>
-      <a href="#StatusInvalidForProcessing"
-         title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+      <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">Collect</a> (<a href="#CollectPersonalData" title="https://w3id.org/GConsent#CollectPersonalData">Collect Personal Data</a>)
    </li>
    <li>
-      <a href="#StatusValidForProcessing"
-         title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+      <a href="#EraseData" title="https://w3id.org/GConsent#EraseData">Erase</a> (<a href="#ErasePersonalData" title="https://w3id.org/GConsent#ErasePersonalData">Erase Personal Data</a>)
    </li>
    <li>
-      <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">Store</a>
+      <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a> (<a href="#ReadPersonalData" title="https://w3id.org/GConsent#ReadPersonalData">Read Personal Data</a>)
    </li>
    <li>
-      <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">Use</a>
+      <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a> (<a href="#SharePersonalData" title="https://w3id.org/GConsent#SharePersonalData">Share Personal Data</a>)
    </li>
    <li>
-      <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a>
+      <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">Store</a> (<a href="#StorePersonalData" title="https://w3id.org/GConsent#StorePersonalData">Store Personal Data</a>)
    </li>
-</ul><h4>Object Properties</h4><ul class="hlist">
+   <li>
+      <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">Use</a> (<a href="#UsePersonalData" title="https://w3id.org/GConsent#UsePersonalData">Use Personal Data</a>)
+   </li>
+   <li>
+      <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a> (<a href="#WritePersonalData" title="https://w3id.org/GConsent#WritePersonalData">Write Personal Data</a>)
+   </li>
+</ul>
+<h5>Status</h5>
+<p>Status denotes the state of consent (instance). These are categorised as valid/invalid for the purposes of processing. Each category has some named individuals defined in the ontology specified in the lists below.</p>
+<p><a href="#StatusValidForProcessing"
+         title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a></p>
+<ul class="hlist">
+      <li>
+      <a href="#ConsentStatusExplicitlyGiven"
+         title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusGivenByDelegation"
+         title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusImplicitlyGiven"
+         title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
+   </li>
+</ul>
+<p><a href="#StatusInvalidForProcessing"
+         title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a></p>
+<ul class="hlist">
+     <li>
+      <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
+   </li>
+     <li>
+      <a href="#ConsentStatusInvalidated"
+         title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
+   </li>
+   <li>
+      
+   </li>
+   <li>
+      <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusRequested" title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
+   </li>
+   <li>
+</ul>
+
+<h4>Object Properties</h4><ul class="hlist">
    <li>
       <a href="#gaveConsent" title="https://w3id.org/GConsent#gaveConsent">gave consent</a>
    </li>
@@ -132,59 +174,10 @@ This ontology has the following classes and properties.</span>
       <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
    </li>
 </ul><h4>Named Individuals</h4><ul class="hlist">
-   <li>
-      <a href="#CollectPersonalData" title="https://w3id.org/GConsent#CollectPersonalData">Collect Personal Data</a>
-   </li>
-   <li>
-      <a href="#ErasePersonalData" title="https://w3id.org/GConsent#ErasePersonalData">Erase Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusExplicitlyGiven"
-         title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusGivenByDelegation"
-         title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusImplicitlyGiven"
-         title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusInvalidated"
-         title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
-   </li>
-   <li>
-      <a href="#ReadPersonalData" title="https://w3id.org/GConsent#ReadPersonalData">Read Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusRequested" title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
-   </li>
-   <li>
-      <a href="#SharePersonalData" title="https://w3id.org/GConsent#SharePersonalData">Share Personal Data</a>
-   </li>
-   <li>
-      <a href="#StorePersonalData" title="https://w3id.org/GConsent#StorePersonalData">Store Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
-   </li>
-   <li>
-      <a href="#UsePersonalData" title="https://w3id.org/GConsent#UsePersonalData">Use Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
-   </li>
-   <li>
-      <a href="#WritePersonalData" title="https://w3id.org/GConsent#WritePersonalData">Write Personal Data</a>
+
+ 
+
+ 
+      
    </li>
 </ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html#ontology"></iframe> 

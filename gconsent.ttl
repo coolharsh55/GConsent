@@ -19,17 +19,18 @@
                              dct:description "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
                              <http://xmlns.com/foaf/0.1/logo> <http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png> ;
                              dct:modified "2018-11-10"^^xsd:date ;
-                             dct:title "GConsent - a consent ontology based on the GDPR" ;
+                             dct:title "GConsent - a consent ontology based on the GDPR"@en ;
+                             <http://xmlns.com/foaf/0.1/depiction> <http://openscience.adaptcentre.ie/ontologies/GConsent/diagrams/ontology.png> ;
                              owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
                              dct:modified "ADAPT Centre, Trinity College"^^xsd:string ;
-                             dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
+                             vann:preferredNamespaceUri "https://w3id.org/GConsent"^^xsd:anyURI ;
+                             vann:preferredNamespacePrefix "gconsent"^^xsd:string ;
+                             dct:license <https://creativecommons.org/licenses/by/4.0/> ;
                              dct:creator "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
-                             vann:preferredNamespacePrefix "gconsent" ;
                              bibo:status <http://purl.org/ontology/bibo/status/draft> ;
-                             vann:preferredNamespaceUri "https://w3id.org/GConsent" ;
                              owl:versionInfo "0.5"^^xsd:string ;
-                             dct:abstract "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner."^^xsd:string ;
                              dct:created "2018-08-24"^^xsd:date ;
+                             dct:abstract "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2 ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner."@en ;
                              owl:incompatibleWith <http://purl.org/adaptcentre/openscience/ontologies/consent> .
 
 #################################################################
@@ -46,6 +47,10 @@ dct:publisher rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/vocab/vann/example
 vann:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/depiction
+<http://xmlns.com/foaf/0.1/depiction> rdf:type owl:AnnotationProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/logo
@@ -72,6 +77,7 @@ vann:example rdf:type owl:AnnotationProperty .
                                       )
                         ] ;
              rdfs:comment "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."@en ;
+             rdfs:isDefinedBy gdprtext:GivenConsent ;
              rdfs:label "gave consent"@en .
 
 
@@ -81,6 +87,7 @@ vann:example rdf:type owl:AnnotationProperty .
            rdfs:domain :Purpose ;
            rdfs:range :Action ;
            rdfs:comment "Links a purpose to the actions (over personal data) it contains."@en ;
+           rdfs:isDefinedBy gdprtext:DataActivity ;
            rdfs:label "has action"@en .
 
 
@@ -91,6 +98,7 @@ vann:example rdf:type owl:AnnotationProperty .
             rdfs:domain :DataSubject ;
             rdfs:range :Consent ;
             rdfs:comment "Links a data subject to their consent."@en ;
+            rdfs:isDefinedBy gdprtext:Consent ;
             rdfs:label "has consent"@en .
 
 
@@ -116,6 +124,7 @@ vann:example rdf:type owl:AnnotationProperty .
                  rdfs:domain :Purpose ;
                  rdfs:range :PersonalData ;
                  rdfs:comment "Links the purpose to personal data it uses."@en ;
+                 rdfs:isDefinedBy gdprtext:PersonalData ;
                  rdfs:label "has personal data"@en .
 
 
@@ -125,6 +134,7 @@ vann:example rdf:type owl:AnnotationProperty .
             rdfs:domain :Consent ;
             rdfs:range :Purpose ;
             rdfs:comment "Links a consent instace to the purpose(s) it is associated with."@en ;
+            rdfs:isDefinedBy gdprtext:PurposeLimitation ;
             rdfs:label "has purpose"@en .
 
 
@@ -185,6 +195,7 @@ vann:example rdf:type owl:AnnotationProperty .
                 rdfs:domain :ShareAction ;
                 rdfs:range prov:Agent ;
                 rdfs:comment "Indicates the agent (organisation, person) the data is shared with."@en ;
+                rdfs:isDefinedBy gdprtext:ShareDataWithThirdParty ;
                 rdfs:label "shares data with"@en .
 
 

@@ -8,9 +8,5 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix gconsent: <https://w3id.org/GConsent#> .
-@prefix : <http://example.com/> .
-
-
-:ExampleOrg a gdprov:DataController ;
-	rdfs:label "Example Org" ;
-	rdfs:comment "An example organisation that is a Data Controller."@en .
+@prefix org: <http://example.com/organisation#> .
+@prefix ds: <http://example.com/datasubject#> .
