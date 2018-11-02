@@ -16,15 +16,15 @@
 @base <https://w3id.org/GConsent> .
 
 <https://w3id.org/GConsent> rdf:type owl:Ontology ;
-                             dct:description "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
                              <http://xmlns.com/foaf/0.1/logo> <http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png> ;
+                             dct:description "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."^^xsd:string ;
                              dct:modified "2018-11-10"^^xsd:date ;
                              dct:title "GConsent - a consent ontology based on the GDPR"@en ;
                              <http://xmlns.com/foaf/0.1/depiction> <http://openscience.adaptcentre.ie/ontologies/GConsent/diagrams/ontology.png> ;
                              owl:versionIRI "https://w3id.org/GConsent/v/0.5"^^xsd:anyURI ;
+                             vann:preferredNamespacePrefix "gc"^^xsd:string ;
                              dct:modified "ADAPT Centre, Trinity College"^^xsd:string ;
                              vann:preferredNamespaceUri "https://w3id.org/GConsent"^^xsd:anyURI ;
-                             vann:preferredNamespacePrefix "gconsent"^^xsd:string ;
                              dct:license <https://creativecommons.org/licenses/by/4.0/> ;
                              dct:creator "https://harshp.com/i/me#HJP"^^xsd:anyURI ;
                              bibo:status <http://purl.org/ontology/bibo/status/draft> ;
@@ -319,9 +319,19 @@ Action has subclasses because different use-cases might want to differentiate be
 
 ###  https://w3id.org/GConsent#Consent
 :Consent rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStatus ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Status
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isConsentForDataSubject ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :DataSubject
+                         ] ;
          rdfs:comment """As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;
 
-In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.
+In the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it.
 
 To link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."""@en ;
          rdfs:isDefinedBy gdprtext:GivenConsent ;
@@ -356,6 +366,22 @@ The Data Subject is linked to the Consent instance via the isConsentForDataSubje
            rdfs:comment "Represents the action where erasure of data takes place."@en ;
            rdfs:isDefinedBy gdprtext:EraseData ;
            rdfs:label "Erase"@en .
+
+
+###  https://w3id.org/GConsent#GivenConsent
+:GivenConsent rdf:type owl:Class ;
+              rdfs:subClassOf :Consent ,
+                              [ rdf:type owl:Class ;
+                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasStatus ;
+                                                owl:hasValue :ConsentStatusExplicitlyGiven
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasStatus ;
+                                                owl:hasValue :ConsentStatusGivenByDelegation
+                                              ]
+                                            )
+                              ] .
 
 
 ###  https://w3id.org/GConsent#Medium
