@@ -1,0 +1,214 @@
+<h2 id="overv" class="list">GConsent: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<img src="../diagrams/ontology.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto;  border: 1px solid black;"/>
+
+<div id="namespacedeclarations">
+<h4 id="ns" class="list">Namespace declarations</h4>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/0.1/&gt;</td></tr>
+<tr><td><b>bibo</b></td><td>&lt;http://purl.org/ontology/bibo/&gt;</td></tr>
+<tr><td><b>status</b></td><td>&lt;http://purl.org/ontology/bibo/status/&gt;</td></tr>
+<tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov#&gt;</td></tr>
+<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann/&gt;</td></tr>
+<tr><td><b>time</b></td><td>&lt;http://www.w3.org/2006/time#&gt;</td></tr>
+<tr><td><b>wgs84-pos</b></td><td>&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;</td></tr>
+<tr style="background-color: #DDDDFF;"><td><b>gconsent</b></td><td>&lt;https://w3id.org/GConsent#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="overview-concepts" class="list">Concepts
+    <span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<h4>Top-level Concepts <span>back to <a href="#toc">ToC</a></span></h4>
+<ul class="hlist">
+   <li>
+      <a href="#Action" title="https://w3id.org/GConsent#Action">Action</a>
+   </li>
+   <li>
+      <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+   </li>
+   <li>
+      <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+   </li>
+   <li>
+      <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
+   </li>
+   <li>
+      <a href="#Medium" title="https://w3id.org/GConsent#Medium">Medium</a>
+   </li>
+   <li>
+      <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">Minor Data Subject</a>
+   </li>
+   <li>
+      <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">Personal Data</a>
+   </li>
+   <li>
+      <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
+   </li>
+   <li>
+      <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+   </li>
+</ul>
+<h4 id="overview-actions">Consent Actions <span class="backlink"> back to <a href="#toc">ToC</a></span></h4>
+<p>Each category or type of action has a default named individual (specified in brackets in the list below) defined in the ontology. For more specitivity, the category can be subclassed, whereas the default named individual can be used to specify the type of action.</p>
+<ul class="hlist">
+   <li>
+      <a href="#CollectAction" title="https://w3id.org/GConsent#CollectAction">Collect</a> (<a href="#CollectPersonalData" title="https://w3id.org/GConsent#CollectPersonalData">Collect Personal Data</a>)
+   </li>
+   <li>
+      <a href="#EraseData" title="https://w3id.org/GConsent#EraseData">Erase</a> (<a href="#ErasePersonalData" title="https://w3id.org/GConsent#ErasePersonalData">Erase Personal Data</a>)
+   </li>
+   <li>
+      <a href="#ReadAction" title="https://w3id.org/GConsent#ReadAction">Read</a> (<a href="#ReadPersonalData" title="https://w3id.org/GConsent#ReadPersonalData">Read Personal Data</a>)
+   </li>
+   <li>
+      <a href="#ShareAction" title="https://w3id.org/GConsent#ShareAction">Share</a> (<a href="#SharePersonalData" title="https://w3id.org/GConsent#SharePersonalData">Share Personal Data</a>)
+   </li>
+   <li>
+      <a href="#StoreAction" title="https://w3id.org/GConsent#StoreAction">Store</a> (<a href="#StorePersonalData" title="https://w3id.org/GConsent#StorePersonalData">Store Personal Data</a>)
+   </li>
+   <li>
+      <a href="#UseAction" title="https://w3id.org/GConsent#UseAction">Use</a> (<a href="#UsePersonalData" title="https://w3id.org/GConsent#UsePersonalData">Use Personal Data</a>)
+   </li>
+   <li>
+      <a href="#WriteAction" title="https://w3id.org/GConsent#WriteAction">Write</a> (<a href="#WritePersonalData" title="https://w3id.org/GConsent#WritePersonalData">Write Personal Data</a>)
+   </li>
+</ul>
+<h4 id="overview-status">Consent Status <span class="backlink"> back to <a href="#toc">ToC</a></span></h4>
+<p>Status denotes the state of consent (instance). These are categorised as valid/invalid for the purposes of processing. Each category has some named individuals defined in the ontology specified in the lists below.</p>
+<p><a href="#StatusValidForProcessing"
+         title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a></p>
+<ul class="hlist">
+      <li>
+      <a href="#ConsentStatusExplicitlyGiven"
+         title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusGivenByDelegation"
+            title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusImplicitlyGiven"
+            title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
+      </li>
+</ul>
+<p><a href="#StatusInvalidForProcessing"
+         title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a></p>
+<ul class="hlist">
+     <li>
+      <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
+   </li>
+     <li>
+      <a href="#ConsentStatusInvalidated"
+         title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
+   </li>
+   <li>
+      
+   </li>
+   <li>
+      <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusRequested" title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
+   </li>
+   <li>
+      <a href="#ConsentStatusWithdrawn" title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
+   </li>
+   <li>
+</ul>
+
+<h3 id="overview-properties" class="list">Object Properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<h4>Consent, Data Subject, and Delegation</h4>
+<ul class="hlist">
+   <li>
+      <a href="#gaveConsent" title="https://w3id.org/GConsent#gaveConsent">gave consent</a>
+   </li>
+   <li>
+      <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
+   </li>
+   <li>
+      <a href="#invalidatesGivenConsent"
+         title="https://w3id.org/GConsent#invalidatesGivenConsent">invalidates given consent</a>
+   </li>
+   <li>
+      <a href="#isConsentForDataSubject"
+         title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
+   </li>
+   <li>
+      <a href="#wasGivenBy" title="https://w3id.org/GConsent#wasGivenBy">was given by</a>
+   </li>
+   <li>
+      <a href="#wasInvalidatedBy" title="https://w3id.org/GConsent#wasInvalidatedBy">was invalidated by</a>
+   </li>
+</ul>
+
+<h5>Consent Purpose, Action, Personal Data, and Status</h5>
+<ul class="hlist">
+   <li>
+      <a href="#hasAction" title="https://w3id.org/GConsent#hasAction">has action</a>
+   </li>
+   <li>
+      <a href="#hasPersonalData" title="https://w3id.org/GConsent#hasPersonalData">has personal data</a>
+   </li>
+   <li>
+      <a href="#hasPurpose" title="https://w3id.org/GConsent#hasPurpose">has purpose</a>
+   </li>
+   <li>
+      <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
+   </li>
+   <li>
+      <a href="#isActionForPurpose" title="https://w3id.org/GConsent#isActionForPurpose">is action for purpose</a>
+   </li>
+   <li>
+      <a href="#isPersonalDataForPurpose"
+         title="https://w3id.org/GConsent#isPersonalDataForPurpose">is personal data for purpose</a>
+   </li>
+   <li>
+      <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
+   </li>
+   <li>
+      <a href="#sharesDataWith" title="https://w3id.org/GConsent#sharesDataWith">shares data with</a>
+   </li>
+</ul>
+
+<h5>Context of Given Consent</h5>
+<ul class="hlist">
+   <li>
+      <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a> (top-level property for all context related properties)
+   </li>
+   <li>
+      <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
+   </li>
+   <li>
+      <a href="#wasGivenAtInstant" title="https://w3id.org/GConsent#wasGivenAtInstant">was given at instant</a>
+   </li>
+   <li>
+      <a href="#wasGivenAtLocation" title="https://w3id.org/GConsent#wasGivenAtLocation">was given at location</a>
+   </li>
+   <li>
+      <a href="#wasGivenByAgent" title="https://w3id.org/GConsent#wasGivenByAgent">was given by agent</a>
+   </li>
+   <li>
+      <a href="#wasGivenThroughMedium" title="https://w3id.org/GConsent#wasGivenThroughMedium">was given through medium</a>
+   </li>
+   <li>
+      <a href="#wasGivenUsingArtefact" title="https://w3id.org/GConsent#wasGivenUsingArtefact">was given using artefact</a>
+   </li>
+</ul>
+
+<h3 id="overview-webvowl" class="list">WebVOWL Visualisation <span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<iframe align="center" width="100%" height ="500px" src="webvowl/index.html#ontology"></iframe> 

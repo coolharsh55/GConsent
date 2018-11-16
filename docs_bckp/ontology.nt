@@ -1,0 +1,577 @@
+<https://w3id.org/GConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/abstract> "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2-QL ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner." .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/created> "2018-08-24"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/creator> "https://harshp.com/i/me#HJP"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/description> "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption." .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/modified> "2018-11-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/modified> "ADAPT Centre, Trinity College" .
+<https://w3id.org/GConsent> <http://purl.org/dc/terms/title> "GConsent - a consent ontology based on the GDPR" .
+<https://w3id.org/GConsent> <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> .
+<https://w3id.org/GConsent> <http://purl.org/vocab/vann/preferredNamespacePrefix> "gconsent" .
+<https://w3id.org/GConsent> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/GConsent" .
+<https://w3id.org/GConsent> <http://www.w3.org/2002/07/owl#incompatibleWith> <http://purl.org/adaptcentre/openscience/ontologies/consent> .
+<https://w3id.org/GConsent> <http://www.w3.org/2002/07/owl#versionIRI> "https://w3id.org/GConsent/v/0.5"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/GConsent> <http://www.w3.org/2002/07/owl#versionInfo> "0.5" .
+<https://w3id.org/GConsent> <http://xmlns.com/foaf/0.1/logo> <http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/GConsent#gaveConsent
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/GConsent#wasGivenBy> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#DataSubject> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#Delegation> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#Consent> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#Delegation> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/2000/01/rdf-schema#comment> "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."@en .
+<https://w3id.org/GConsent#gaveConsent> <http://www.w3.org/2000/01/rdf-schema#label> "gave consent"@en .
+# 
+# https://w3id.org/GConsent#hasAction
+<https://w3id.org/GConsent#hasAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasAction> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/GConsent#isActionForPurpose> .
+<https://w3id.org/GConsent#hasAction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Purpose> .
+<https://w3id.org/GConsent#hasAction> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#hasAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a purpose to the actions (over personal data) it contains."@en .
+<https://w3id.org/GConsent#hasAction> <http://www.w3.org/2000/01/rdf-schema#label> "has action"@en .
+# 
+# https://w3id.org/GConsent#hasConsent
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/GConsent#isConsentForDataSubject> .
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#DataSubject> .
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a data subject to their consent."@en .
+<https://w3id.org/GConsent#hasConsent> <http://www.w3.org/2000/01/rdf-schema#label> "has consent"@en .
+# 
+# https://w3id.org/GConsent#hasContext
+<https://w3id.org/GConsent#hasContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasContext> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#hasContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a consent instance to the context in which it was acquired/provided/given."@en .
+<https://w3id.org/GConsent#hasContext> <http://www.w3.org/2000/01/rdf-schema#label> "has context"@en .
+# 
+# https://w3id.org/GConsent#hasExpiry
+<https://w3id.org/GConsent#hasExpiry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasExpiry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/GConsent#hasExpiry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#hasExpiry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalEntity> .
+<https://w3id.org/GConsent#hasExpiry> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the Instant or Duration in which the consent expires."@en .
+<https://w3id.org/GConsent#hasExpiry> <http://www.w3.org/2000/01/rdf-schema#label> "has expiry"@en .
+# 
+# https://w3id.org/GConsent#hasPersonalData
+<https://w3id.org/GConsent#hasPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasPersonalData> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/GConsent#isPersonalDataForPurpose> .
+<https://w3id.org/GConsent#hasPersonalData> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Purpose> .
+<https://w3id.org/GConsent#hasPersonalData> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#PersonalData> .
+<https://w3id.org/GConsent#hasPersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Links the purpose to personal data it uses."@en .
+<https://w3id.org/GConsent#hasPersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "has personal data"@en .
+# 
+# https://w3id.org/GConsent#hasPurpose
+<https://w3id.org/GConsent#hasPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasPurpose> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/GConsent#isPurposeForConsent> .
+<https://w3id.org/GConsent#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Purpose> .
+<https://w3id.org/GConsent#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a consent instace to the purpose(s) it is associated with."@en .
+<https://w3id.org/GConsent#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "has purpose"@en .
+# 
+# https://w3id.org/GConsent#hasStatus
+<https://w3id.org/GConsent#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/GConsent#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the state or status of consent."@en .
+<https://w3id.org/GConsent#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
+# 
+# https://w3id.org/GConsent#invalidatesGivenConsent
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/GConsent#wasInvalidatedBy> .
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes invalidation of the specified consent instance by the current instance. This happens when consent is revoked, withdrawn, expired, or invalidated."@en .
+<https://w3id.org/GConsent#invalidatesGivenConsent> <http://www.w3.org/2000/01/rdf-schema#label> "invalidates given consent"@en .
+# 
+# https://w3id.org/GConsent#isActionForPurpose
+<https://w3id.org/GConsent#isActionForPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#isActionForPurpose> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#isActionForPurpose> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Purpose> .
+<https://w3id.org/GConsent#isActionForPurpose> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an action to the purpose it is associated with."@en .
+<https://w3id.org/GConsent#isActionForPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "is action for purpose"@en .
+# 
+# https://w3id.org/GConsent#isConsentForDataSubject
+<https://w3id.org/GConsent#isConsentForDataSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#isConsentForDataSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/GConsent#isConsentForDataSubject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#isConsentForDataSubject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#DataSubject> .
+<https://w3id.org/GConsent#isConsentForDataSubject> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a consent instance with the data subject it is associated with."@en .
+<https://w3id.org/GConsent#isConsentForDataSubject> <http://www.w3.org/2000/01/rdf-schema#label> "is consent for data subject"@en .
+# 
+# https://w3id.org/GConsent#isPersonalDataForPurpose
+<https://w3id.org/GConsent#isPersonalDataForPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#isPersonalDataForPurpose> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#PersonalData> .
+<https://w3id.org/GConsent#isPersonalDataForPurpose> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Purpose> .
+<https://w3id.org/GConsent#isPersonalDataForPurpose> <http://www.w3.org/2000/01/rdf-schema#comment> "Links personal data with the purpose it is associated with."@en .
+<https://w3id.org/GConsent#isPersonalDataForPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "is personal data for purpose"@en .
+# 
+# https://w3id.org/GConsent#isPurposeForConsent
+<https://w3id.org/GConsent#isPurposeForConsent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#isPurposeForConsent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Purpose> .
+<https://w3id.org/GConsent#isPurposeForConsent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#isPurposeForConsent> <http://www.w3.org/2000/01/rdf-schema#comment> "Links purpose with the consent instance associated with it."@en .
+<https://w3id.org/GConsent#isPurposeForConsent> <http://www.w3.org/2000/01/rdf-schema#label> "is purpose for consent"@en .
+# 
+# https://w3id.org/GConsent#sharesDataWith
+<https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#ShareAction> .
+<https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the agent (organisation, person) the data is shared with."@en .
+<https://w3id.org/GConsent#sharesDataWith> <http://www.w3.org/2000/01/rdf-schema#label> "shares data with"@en .
+# 
+# https://w3id.org/GConsent#wasGivenAtInstant
+<https://w3id.org/GConsent#wasGivenAtInstant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasGivenAtInstant> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/GConsent#hasContext> .
+<https://w3id.org/GConsent#wasGivenAtInstant> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasGivenAtInstant> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/GConsent#wasGivenAtInstant> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the instant at which the consent was given."@en .
+<https://w3id.org/GConsent#wasGivenAtInstant> <http://www.w3.org/2000/01/rdf-schema#label> "was given at instant"@en .
+# 
+# https://w3id.org/GConsent#wasGivenAtLocation
+<https://w3id.org/GConsent#wasGivenAtLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasGivenAtLocation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/GConsent#hasContext> .
+<https://w3id.org/GConsent#wasGivenAtLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasGivenAtLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2003/01/geo/wgs84_pos#Feature> .
+<https://w3id.org/GConsent#wasGivenAtLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the location at which the consent was given."@en .
+<https://w3id.org/GConsent#wasGivenAtLocation> <http://www.w3.org/2000/01/rdf-schema#label> "was given at location"@en .
+# 
+# https://w3id.org/GConsent#wasGivenBy
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#Consent> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#Delegation> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/2000/01/rdf-schema#range> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#DataSubject> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#Delegation> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the entity or activitiy that provided the consent."@en .
+<https://w3id.org/GConsent#wasGivenBy> <http://www.w3.org/2000/01/rdf-schema#label> "was given by"@en .
+# 
+# https://w3id.org/GConsent#wasGivenByAgent
+<https://w3id.org/GConsent#wasGivenByAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasGivenByAgent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/GConsent#hasContext> .
+<https://w3id.org/GConsent#wasGivenByAgent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasGivenByAgent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/GConsent#wasGivenByAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the agent that provided/gave the consent. Examples are automated systems that collect or provide consent. This is not the same as having a data subject provide the consent."@en .
+<https://w3id.org/GConsent#wasGivenByAgent> <http://www.w3.org/2000/01/rdf-schema#label> "was given by agent"@en .
+# 
+# https://w3id.org/GConsent#wasGivenThroughMedium
+<https://w3id.org/GConsent#wasGivenThroughMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasGivenThroughMedium> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/GConsent#hasContext> .
+<https://w3id.org/GConsent#wasGivenThroughMedium> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasGivenThroughMedium> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Medium> .
+<https://w3id.org/GConsent#wasGivenThroughMedium> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the medium through which the consent was given. Examples are web forms, paper documents."@en .
+<https://w3id.org/GConsent#wasGivenThroughMedium> <http://www.w3.org/2000/01/rdf-schema#label> "was given through medium"@en .
+# 
+# https://w3id.org/GConsent#wasGivenUsingArtefact
+<https://w3id.org/GConsent#wasGivenUsingArtefact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasGivenUsingArtefact> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/GConsent#hasContext> .
+<https://w3id.org/GConsent#wasGivenUsingArtefact> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasGivenUsingArtefact> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/GConsent#wasGivenUsingArtefact> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies involved artefacts in the consent process. Examples are terms of service and privacy policies."@en .
+<https://w3id.org/GConsent#wasGivenUsingArtefact> <http://www.w3.org/2000/01/rdf-schema#label> "was given using artefact"@en .
+# 
+# https://w3id.org/GConsent#wasInvalidatedBy
+<https://w3id.org/GConsent#wasInvalidatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/GConsent#wasInvalidatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/GConsent#wasInvalidatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasInvalidatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GConsent#Consent> .
+<https://w3id.org/GConsent#wasInvalidatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the consent instance which invalidated this instance."@en .
+<https://w3id.org/GConsent#wasInvalidatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "was invalidated by"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2003/01/geo/wgs84_pos#Feature
+<http://www.w3.org/2003/01/geo/wgs84_pos#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+# 
+# http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://xmlns.com/foaf/Person
+<http://xmlns.com/foaf/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/GConsent#Action
+<https://w3id.org/GConsent#Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#Action> <http://www.w3.org/2000/01/rdf-schema#comment> "Action is defined as an activity that uses data in a particular or specific way. The purpose of action is to specify what is happening to/with the data. For GDPR, there are four types of actions: Collect, Store, Use, and Share. To represent these, Action has been subclassed for each type of action as - CollectAction, StoreAction, UseAction, and ShareAction. Each of these have a default instance to provide a generic target to refer to the action - CollectPersonalData, StorePersonalData, UsePersonalData, and SharePersonalData. Along with these, Read and Write are also defined as (subClassOf) actions with individuals ReadPersonalData and WritePersonalData respectively.\n\nAction has subclasses because different use-cases might want to differentiate between different types of the same action. For example, different types of collection mechanisms, or different types of sharing mechanisms (such as sharing with different entities). These are possible by either further subclassing the respective actions, or creating instances. If these actions were declared as instances from the start, then the ability to further distinguish these would be lost."@en .
+<https://w3id.org/GConsent#Action> <http://www.w3.org/2000/01/rdf-schema#label> "Action"@en .
+# 
+# https://w3id.org/GConsent#CollectAction
+<https://w3id.org/GConsent#CollectAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#CollectAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#CollectAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where collection of data takes place."@en .
+<https://w3id.org/GConsent#CollectAction> <http://www.w3.org/2000/01/rdf-schema#label> "Collect"@en .
+# 
+# https://w3id.org/GConsent#Consent
+<https://w3id.org/GConsent#Consent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#Consent> <http://www.w3.org/2000/01/rdf-schema#comment> "As per Article 4(11) of the GDPR, \u2018consent\u2019 of the data subject means any freely given, specific, informed and unambiguous indication of the data subject\u2019s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nIn the case of this ontology, 'Consent' is a concept as well as an entity. To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it. The class `ConsentInstance` represents the given consent at a specific time, which is linked to the Consent class.\n\nTo link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."@en .
+<https://w3id.org/GConsent#Consent> <http://www.w3.org/2000/01/rdf-schema#label> "Consent"@en .
+# 
+# https://w3id.org/GConsent#DataSubject
+<https://w3id.org/GConsent#DataSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#DataSubject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/prov#Agent> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/Person> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/GConsent#DataSubject> <http://www.w3.org/2000/01/rdf-schema#comment> "Data Subject is defined as an identified or identifiable natural person (\u2018data subject\u2019); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.\n\nIn the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.\n\nThe Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties."@en .
+<https://w3id.org/GConsent#DataSubject> <http://www.w3.org/2000/01/rdf-schema#label> "Data Subject"@en .
+# 
+# https://w3id.org/GConsent#Delegation
+<https://w3id.org/GConsent#Delegation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#Delegation> <http://www.w3.org/2000/01/rdf-schema#comment> "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`."@en .
+<https://w3id.org/GConsent#Delegation> <http://www.w3.org/2000/01/rdf-schema#label> "Delegation" .
+# 
+# https://w3id.org/GConsent#EraseData
+<https://w3id.org/GConsent#EraseData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#EraseData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#EraseData> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where erasure of data takes place."@en .
+<https://w3id.org/GConsent#EraseData> <http://www.w3.org/2000/01/rdf-schema#label> "Erase"@en .
+# 
+# https://w3id.org/GConsent#Medium
+<https://w3id.org/GConsent#Medium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#Medium> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the medium through which consent was given/provided. Example: web form, recorded voice, signature on document."@en .
+<https://w3id.org/GConsent#Medium> <http://www.w3.org/2000/01/rdf-schema#label> "Medium"@en .
+# 
+# https://w3id.org/GConsent#MinorDataSubject
+<https://w3id.org/GConsent#MinorDataSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#MinorDataSubject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#DataSubject> .
+<https://w3id.org/GConsent#MinorDataSubject> <http://www.w3.org/2000/01/rdf-schema#comment> "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.\n\nConsent given in lieu of a Minor (by their Representative) is associated with the `ConsentInstance` class/instance using the `wasGivenBy` property.\n\nThe ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.\n\nNote: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases."@en .
+<https://w3id.org/GConsent#MinorDataSubject> <http://www.w3.org/2000/01/rdf-schema#label> "Minor Data Subject"@en .
+# 
+# https://w3id.org/GConsent#PersonalData
+<https://w3id.org/GConsent#PersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#PersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "As per Article 4(1) of the GDPR, \u2018personal data\u2019 means any information relating to an identified or identifiable natural person (\u2018data subject\u2019);\n\n`PersonalData` is associated with the `Consent` via the `Purpose` associated with that consent. This is because each purpose may have different actions over personal data, and this separation allows distinguishing such actions over the specified personal data instances. To link the `PersonalData` instance with the `Purpose` instance, use the `hasPersonalData` and `isPersonalDataForPurpose` properties."@en .
+<https://w3id.org/GConsent#PersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Personal Data"@en .
+# 
+# https://w3id.org/GConsent#Purpose
+<https://w3id.org/GConsent#Purpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#Purpose> <http://www.w3.org/2000/01/rdf-schema#comment> "The model of consent is such that `Purpose` is defined as the set of `Actions` on a `Data` with an intended 'purpose'. Therefore, the same set of actions on the same set of data can have different 'purposes'.\n\nFor example, consider the set of _(collect and use personal data)_ and the different purposes of _Advertising_ and _Marketing_. Since the consent for these two is separate or can be given and modified and withdrawn independently by the data subject, their modeling and representation should also reflect this separation.\n\nTherefore, the modeling is done as follows: Each consent has only one purpose or more purposes The applicable purpose then is the union of all purposes For e.g. _Advertising_ and _Marketing_ are two purposes, but if they are associated with a single consent instance, then the consent is deemed to be given for the _union of Advertising and Marketing_. Each purpose can have multiple actions and multiple data The applicable consent is for the union of actions on the union of data That is, each action is permitted over each item of data For a different purpose, a separate consent object must be created.\n\n`Purpose` is linked to `Consent` via the `givenForPurpose` and `isPurposeForConsent` properties."@en .
+<https://w3id.org/GConsent#Purpose> <http://www.w3.org/2000/01/rdf-schema#label> "Purpose"@en .
+# 
+# https://w3id.org/GConsent#ReadAction
+<https://w3id.org/GConsent#ReadAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#ReadAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#ReadAction> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/GConsent#WriteAction> .
+<https://w3id.org/GConsent#ReadAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where reading of data takes place."@en .
+<https://w3id.org/GConsent#ReadAction> <http://www.w3.org/2000/01/rdf-schema#label> "Read"@en .
+# 
+# https://w3id.org/GConsent#ShareAction
+<https://w3id.org/GConsent#ShareAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#ShareAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#ShareAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where sharing of data takes place. To link the entity that data is being shared with, use the `sharesDataWith` property."@en .
+<https://w3id.org/GConsent#ShareAction> <http://www.w3.org/2000/01/rdf-schema#label> "Share"@en .
+# 
+# https://w3id.org/GConsent#Status
+<https://w3id.org/GConsent#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#Status> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."@en .
+<https://w3id.org/GConsent#Status> <http://www.w3.org/2000/01/rdf-schema#label> "Status"@en .
+# 
+# https://w3id.org/GConsent#StatusInvalidForProcessing
+<https://w3id.org/GConsent#StatusInvalidForProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#StatusInvalidForProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#StatusInvalidForProcessing> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/GConsent#StatusValidForProcessing> .
+<https://w3id.org/GConsent#StatusInvalidForProcessing> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents consent states that are invalid for processing."@en .
+<https://w3id.org/GConsent#StatusInvalidForProcessing> <http://www.w3.org/2000/01/rdf-schema#label> "Status invalid for Processing"@en .
+# 
+# https://w3id.org/GConsent#StatusValidForProcessing
+<https://w3id.org/GConsent#StatusValidForProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#StatusValidForProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#StatusValidForProcessing> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents consent states that are valid for processing"@en .
+<https://w3id.org/GConsent#StatusValidForProcessing> <http://www.w3.org/2000/01/rdf-schema#label> "Status valid for Processing"@en .
+# 
+# https://w3id.org/GConsent#StoreAction
+<https://w3id.org/GConsent#StoreAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#StoreAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#StoreAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where storage of data takes place."@en .
+<https://w3id.org/GConsent#StoreAction> <http://www.w3.org/2000/01/rdf-schema#label> "Store"@en .
+# 
+# https://w3id.org/GConsent#UseAction
+<https://w3id.org/GConsent#UseAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#UseAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#UseAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where usage of data takes place."@en .
+<https://w3id.org/GConsent#UseAction> <http://www.w3.org/2000/01/rdf-schema#label> "Use"@en .
+# 
+# https://w3id.org/GConsent#WriteAction
+<https://w3id.org/GConsent#WriteAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/GConsent#WriteAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#WriteAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the action where writing of data takes place."@en .
+<https://w3id.org/GConsent#WriteAction> <http://www.w3.org/2000/01/rdf-schema#label> "Write"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/GConsent#CollectPersonalData
+<https://w3id.org/GConsent#CollectPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#CollectPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#CollectPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#CollectAction> .
+<https://w3id.org/GConsent#CollectPersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents collect action over personal data."@en .
+<https://w3id.org/GConsent#CollectPersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Collect Personal Data"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusExpired
+<https://w3id.org/GConsent#ConsentStatusExpired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusExpired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusExpired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusExpired> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the consent has expired."@en .
+<https://w3id.org/GConsent#ConsentStatusExpired> <http://www.w3.org/2000/01/rdf-schema#label> "Expired"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusExplicitlyGiven
+<https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusValidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates consent is explicitly given."@en .
+<https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> <http://www.w3.org/2000/01/rdf-schema#label> "Explicitly Given"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusGivenByDelegation
+<https://w3id.org/GConsent#ConsentStatusGivenByDelegation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusGivenByDelegation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusGivenByDelegation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusValidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusGivenByDelegation> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates consent is given via delegation."@en .
+<https://w3id.org/GConsent#ConsentStatusGivenByDelegation> <http://www.w3.org/2000/01/rdf-schema#label> "Given by Delegation"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusImplicitlyGiven
+<https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusValidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates consent is given via an implicit action or assumption."@en .
+<https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> <http://www.w3.org/2000/01/rdf-schema#label> "Implicitly Given"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusInvalidated
+<https://w3id.org/GConsent#ConsentStatusInvalidated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusInvalidated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusInvalidated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusInvalidated> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the consent has been invalidated."@en .
+<https://w3id.org/GConsent#ConsentStatusInvalidated> <http://www.w3.org/2000/01/rdf-schema#label> "Invalidated"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusNotGiven
+<https://w3id.org/GConsent#ConsentStatusNotGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusNotGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusNotGiven> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusNotGiven> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that consent has not been given."@en .
+<https://w3id.org/GConsent#ConsentStatusNotGiven> <http://www.w3.org/2000/01/rdf-schema#label> "Not Given"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusRefused
+<https://w3id.org/GConsent#ConsentStatusRefused> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusRefused> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusRefused> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusRefused> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that consent has been refused (to be given)."@en .
+<https://w3id.org/GConsent#ConsentStatusRefused> <http://www.w3.org/2000/01/rdf-schema#label> "Refused"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusRequested
+<https://w3id.org/GConsent#ConsentStatusRequested> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusRequested> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusRequested> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusRequested> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates consent has been requested but has not been given (yet)."@en .
+<https://w3id.org/GConsent#ConsentStatusRequested> <http://www.w3.org/2000/01/rdf-schema#label> "Requested"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusUnknown
+<https://w3id.org/GConsent#ConsentStatusUnknown> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusUnknown> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusUnknown> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusUnknown> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the consent status is unknown."@en .
+<https://w3id.org/GConsent#ConsentStatusUnknown> <http://www.w3.org/2000/01/rdf-schema#label> "Unknown"@en .
+# 
+# https://w3id.org/GConsent#ConsentStatusWithdrawn
+<https://w3id.org/GConsent#ConsentStatusWithdrawn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ConsentStatusWithdrawn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Status> .
+<https://w3id.org/GConsent#ConsentStatusWithdrawn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+<https://w3id.org/GConsent#ConsentStatusWithdrawn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates consent has been withdrawn."@en .
+<https://w3id.org/GConsent#ConsentStatusWithdrawn> <http://www.w3.org/2000/01/rdf-schema#label> "Withdrawn"@en .
+# 
+# https://w3id.org/GConsent#ErasePersonalData
+<https://w3id.org/GConsent#ErasePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ErasePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#ErasePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#EraseData> .
+<https://w3id.org/GConsent#ErasePersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the action of erasing personal data."@en .
+<https://w3id.org/GConsent#ErasePersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Erase Personal Data"@en .
+# 
+# https://w3id.org/GConsent#ReadPersonalData
+<https://w3id.org/GConsent#ReadPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#ReadPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#ReadPersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#ReadAction> .
+<https://w3id.org/GConsent#ReadPersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the action of reading personal data."@en .
+<https://w3id.org/GConsent#ReadPersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Read Personal Data"@en .
+# 
+# https://w3id.org/GConsent#SharePersonalData
+<https://w3id.org/GConsent#SharePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#SharePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#SharePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#ShareAction> .
+<https://w3id.org/GConsent#SharePersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents share action over personal data."@en .
+<https://w3id.org/GConsent#SharePersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Share Personal Data"@en .
+# 
+# https://w3id.org/GConsent#StorePersonalData
+<https://w3id.org/GConsent#StorePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#StorePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#StorePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#StoreAction> .
+<https://w3id.org/GConsent#StorePersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents store action over personal data"@en .
+<https://w3id.org/GConsent#StorePersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Store Personal Data"@en .
+# 
+# https://w3id.org/GConsent#UsePersonalData
+<https://w3id.org/GConsent#UsePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#UsePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#UsePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#UseAction> .
+<https://w3id.org/GConsent#UsePersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents collect action over personal data."@en .
+<https://w3id.org/GConsent#UsePersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Use Personal Data"@en .
+# 
+# https://w3id.org/GConsent#WritePersonalData
+<https://w3id.org/GConsent#WritePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/GConsent#WritePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#Action> .
+<https://w3id.org/GConsent#WritePersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GConsent#WriteAction> .
+<https://w3id.org/GConsent#WritePersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies writing of personal data."@en .
+<https://w3id.org/GConsent#WritePersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "Write Personal Data"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<https://w3id.org/GConsent#ConsentInvalidated> <http://www.w3.org/2000/01/rdf-schema#comment> "Consent that has been invalidated due to some condition." .
+<https://w3id.org/GConsent#ConsentInvalidated> <http://www.w3.org/2000/01/rdf-schema#comment> "Status indicates the current status or state of the given consent. It enables an easy way to refer to whether the consent has expired, or was withdrawn, or hasn't been obtained yet. To declare each of these distinct states, instances are used." .
+<https://w3id.org/GConsent#ConsentInvalidated> <http://www.w3.org/2000/01/rdf-schema#label> "Status"@en .
+<https://w3id.org/GConsent#ConsentInvalidated> <http://www.w3.org/2000/01/rdf-schema#label> "Consent Invalidated" .
+# 
+<https://w3id.org/GConsent#isContextForConsentInstance> <http://www.w3.org/2000/01/rdf-schema#comment> "The parent propertly linking all contexts to `ConsentInstance`." .
+<https://w3id.org/GConsent#isContextForConsentInstance> <http://www.w3.org/2000/01/rdf-schema#label> "isContextForConsentInstance" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid16 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#CollectPersonalData> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ErasePersonalData> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ReadPersonalData> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#SharePersonalData> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#StorePersonalData> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#UsePersonalData> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#WritePersonalData> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid24 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusExpired> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusExplicitlyGiven> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusGivenByDelegation> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusImplicitlyGiven> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusInvalidated> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusNotGiven> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusRefused> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusRequested> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusUnknown> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GConsent#ConsentStatusWithdrawn> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

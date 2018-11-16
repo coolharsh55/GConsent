@@ -1,0 +1,109 @@
+<h2 id="desc" class="list">GConsent: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h3>Consent</h3>
+<img src="../diagrams/consent_concept.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Given Consent</h3>
+<img src="../diagrams/consent_given.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Context of Given Consent</h3>
+<img src="../diagrams/context.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<p>Time is of relevance to consent for describing events such as when the consent was given or when it was changed. GConsent already contains the property <a href="#wasGivenAtInstant">wasGivenAtInstant</a> to describe the time instant at which the consent was given. This is defined using the <a href="https://www.w3.org/TR/owl-time/">Time Ontology in OWL</a>, which is a W3C Recommendation since 19 October 2017.</p>
+<h3>Purpose of Given Consent</h3>
+<img src="../diagrams/purpose.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Actions in Purpose</h3>
+<img src="../diagrams/action.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Status</h3>
+<img src="../diagrams/status.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Invalidating Consent</h3>
+<img src="../diagrams/consent_invalidated.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<span class="markdown">
+</span>
+
+<h2 id="use-case" class="list">Examples and Use-Cases <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h3>Given Consent</h3>
+<img src="../diagrams/consent_given_data.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Given Consent via Delegation</h3>
+<img src="../diagrams/consent_delegation.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Context of Given Consent</h3>
+<img src="../diagrams/context_data.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Purpose of Given Consent</h3>
+<img src="../diagrams/purpose_data.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+<h3>Invalidating Consent</h3>
+<img src="../diagrams/consent_invalidated_data.png" style="max-width: 1200px; display: block; margin-right: auto; margin-left: auto; "/>
+
+<h2 id="how-to-compliance" class="list">How to use GConsent for GDPR Compliance <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h3 id="how-to-triple-store" class="list">Native RDF-based Compliance Model</h3>
+<h3 id="how-to-rdbms" class="list">Integration with RDBMS</h3>
+<h3 id="how-to-virtual" class="list">Creating Mock Datasets</h3>
+
+<h2 id="alignments" class="list">Mapping Existing Vocabularies & Ontologies <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p><b>Rationale and Motivation:</b>
+GConsent as an ontology is isolated to enable extending it using other models that do not agree with the development approach taken by the author(s). Therefore, where possible, mappings with other ontologies are provided as separate modules to the core ontology. Some external ontologies, such as PROV-O, Geo, and Time, are already used in certain properties, but are largely abstracted from the core ontology. This section describes application of other ontologies to the core vocabulary of GConsent.</p>
+
+<h3 id="onto-schema" class="list">Schema.org<span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<p><a href="https://schema.org/">Schema.org</a> provides a large range of concepts and properties. This section describes application for some of them to concepts and properties described in the core GConsent ontology. 
+	<!-- The module `gc-schema` contains mappings between GConsent and schema.org, and can be viewed and downloaded <a href="#">here</a>. -->
+</p>
+
+<h4>Consent &equiv; (Thing | Event)</h4>
+<p><a href="#Consent">Consent</a> can be defined as a <a href="https://schema.org/Thing">Thing</a>. This allows further defining it as an <a href="https://schema.org/Event">Event</a> for consent instances that have been 'given' or interacted with. However, there is no clear or 'clean' way to associate the Data Subject with the Consent using schema.org. One can use <a href="https://schema.org/mainEntityOfPage">mainEntityOfPage</a>, but that is not semantically coherent with the intended meaning. Therefore, we continue using the <a href="#wasGivenBy">wasGivenBy</a> and <a href="#gaveConsent">gaveConsent</a> properties as they are.</p>
+<p>Alternatively, modelling Consent as an Event allows associating it with the Person using the <a href="https://schema.org/about">about</a> property. This also allows capturing its context such as time (<a href="https://schema.org/startDate">startDate</a>/<a href="https://schema.org/endDate">endDate</a>), <a href="https://schema.org/location">location</a>, and medium (<a href="https://schema.org/recordedIn">recordedIn</a>).</p>
+
+<h4>Data Subject &equiv; Person</h4>
+<p>A <a href="#DataSubject">Data Subject</a> is a <a href="https://schema.org/Person">Person</a>. Therefore, Data Subject is defined as a subclass of Person.</p>
+
+<h4>Organisation</h4>
+<p>A Third Party involved in data sharing is defined in GConsent using prov:Agent. It can be mapped to <a href="https://schema.org/Organisation">Organisation</a> in schema.org. This makes schema:Organisation a subclass of prov:Agent.</p>
+
+<h4>Personal Data &equiv; Thing</h4>
+<p>Personal Data is defined as a <a href="https://schema.org/Thing">Thing</a>. With the Data Subject defined as a <a href="https://schema.org/Person">Person</a>, this allows the Data Subject concept to be associated with the properties provided by schema.org for the Person concept. Examples include "address", "birthDate", and "email". These are useful to define personal data associated with the person.
+However, not all properties are relevant as personal data, since some of them describe information associated with events and actions, such as "winner" and "brand". 
+<!-- A subset of these concepts and properties has been identified and added as subclasses to <a href="#PersonalData">gconsent:PersonalData</a> in the gc-schema module. -->
+</p>
+
+<h4>Action</h4>
+<p><a href="#Action">gconsent:Action</a> can be analogous to <a href="https://schema.org/Action">schema:Action</a>. These would probably need to be subclassed or specialised to refer to specific actions within the context of the use-case.</p>
+
+<h3 id="onto-provenance" class="list">Provenance Ontologies <span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<span class="markdown">
+#### PROV-O
+
+GConsent already uses [PROV-O](https://www.w3.org/TR/prov-o/).
+`prov:Agent` is used to define the [Data Subject](#DataSubject), the
+range of [shares Data With](#sharesDataWith) property for [Share
+Action](#ShareAction), and as the range of [was given by
+Agent](#wasGivenByAgent) property capturing the context of consent.
+`prov:Entity` is used as the range of [was given using
+Artefact](#wasGivenUsingArtefact) property capturing the entities of
+given consent. This section describes additional mappings between
+GConsent and PROV-O to facilitate the provenance aspect of the given
+consent.
+
+##### Consent as an Entity
+
+The consent instance can be defined as a `prov:Entity`, which allows
+properties defined in PROV-O regarding the generation and consumption of
+entities to be used with consent. However, since most of properties in
+PROV-O act upon entities, these need to be integrated into GConsent.
+This can be defined as defining the properties in GConsent as
+sub-properties of a combination of PROV-O concepts.
+
+Starting with `wasGivenBy`, which has the domain of type `Consent` and
+the range of type `DataSubject or Delegation`. Since we have defined
+`Consent` as being of type `prov:Entity`, we can use the associated property of `prov:wasAttributedTo` to reflect the `prov:Agent` that gave consent. The `DataSubject` is defined as a subclass of `prov:Agent`. However, the `Delegation` becomes an `prov:Activity`. This makes `wasGivenBy` the property where an `prov:Entity` is the union of: 
+
+	`(prov:wasAttributedTo prov:Agent) or (prov:wasGeneratedBy prov:Activity)`
+	`(prov:wasAttributedTo gconsent:DataSubject) or (prov:wasGeneratedBy prov:Delegation)`
+
+#### P-Plan
+</span>
+
+<h3 id="onto-gdpr" class="list">GDPR and Legal Ontologies <span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<h4>GDPRtEXT</h4>
+<h4>GDPRov</h4>
+<h4>ODRL</h4>
+
+<h3 id="onto-consent" class="list">Comparison with Other Consent Ontologies <span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<h4>SPECIAL Vocabularies</h4>
+<h4>Ontolgy by Bartolini et. al</h4>
+<h4>PrOnto</h4>
+
+<h2 id="validation" class="list">Validation using SHACL Shapes <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
