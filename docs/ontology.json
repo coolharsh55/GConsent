@@ -1,90 +1,5 @@
 [ {
   "@id" : "_:genid1",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#isContextForConsent"
-  } ]
-}, {
-  "@id" : "_:genid12",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.w3.org/ns/prov#Person"
-    }, {
-      "@id" : "https://w3id.org/GConsent#Delegation"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid15",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#providedConsent"
-  } ]
-}, {
-  "@id" : "_:genid16",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/GConsent#Consent"
-    }, {
-      "@id" : "https://w3id.org/GConsent#Delegation"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid19",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#providedConsent"
-  } ]
-}, {
-  "@id" : "_:genid2",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#isContextForConsent"
-  } ]
-}, {
-  "@id" : "_:genid20",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/GConsent#Consent"
-    }, {
-      "@id" : "https://w3id.org/GConsent#Delegation"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid23",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#wasInfluencedBy"
-  } ]
-}, {
-  "@id" : "_:genid24",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#wasAttributedTo"
-  } ]
-}, {
-  "@id" : "_:genid25",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#hasContext"
-  } ]
-}, {
-  "@id" : "_:genid26",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.w3.org/ns/prov#Person"
-    }, {
-      "@id" : "https://w3id.org/GConsent#Delegation"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid29",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/GConsent#Consent"
-    }, {
-      "@id" : "https://w3id.org/GConsent#Delegation"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid3",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -94,7 +9,101 @@
     } ]
   } ]
 }, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#Consent"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Delegation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/ns/prov#Person"
+    }, {
+      "@id" : "https://w3id.org/GConsent#DataSubject"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Delegation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#Consent"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Delegation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#Consent"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Delegation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid25",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/ns/prov#Person"
+    }, {
+      "@id" : "https://w3id.org/GConsent#DataController"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid28",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/ns/prov#Person"
+    }, {
+      "@id" : "https://w3id.org/GConsent#DataSubject"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Delegation"
+    } ]
+  } ]
+}, {
   "@id" : "_:genid32",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#Consent"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Delegation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid37",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/ns/prov#Person"
+    }, {
+      "@id" : "https://w3id.org/GConsent#DataController"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#Processing"
+    }, {
+      "@id" : "https://w3id.org/GConsent#Purpose"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid40",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/GConsent#Status"
@@ -107,7 +116,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid41",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/GConsent#DataSubject"
@@ -120,19 +129,19 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid34",
+  "@id" : "_:genid42",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "_:genid40"
+      "@id" : "_:genid48"
     }, {
-      "@id" : "_:genid38"
+      "@id" : "_:genid46"
     }, {
-      "@id" : "_:genid36"
+      "@id" : "_:genid44"
     } ]
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid44",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/GConsent#ConsentStatusImplicitlyGiven"
@@ -141,7 +150,7 @@
     "@id" : "https://w3id.org/GConsent#hasStatus"
   } ]
 }, {
-  "@id" : "_:genid38",
+  "@id" : "_:genid46",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/GConsent#ConsentStatusGivenByDelegation"
@@ -150,7 +159,7 @@
     "@id" : "https://w3id.org/GConsent#hasStatus"
   } ]
 }, {
-  "@id" : "_:genid40",
+  "@id" : "_:genid48",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/GConsent#ConsentStatusExplicitlyGiven"
@@ -159,7 +168,7 @@
     "@id" : "https://w3id.org/GConsent#hasStatus"
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid49",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -169,7 +178,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid44",
+  "@id" : "_:genid52",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -179,7 +188,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid47",
+  "@id" : "_:genid55",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -211,6 +220,8 @@
     }, {
       "@id" : "https://w3id.org/GConsent#RetrievalOfPersonalData"
     }, {
+      "@id" : "https://w3id.org/GConsent#SharingOfPersonalData"
+    }, {
       "@id" : "https://w3id.org/GConsent#StorageOfPersonalData"
     }, {
       "@id" : "https://w3id.org/GConsent#StructuringOfPersonalData"
@@ -219,12 +230,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid6",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#isContextForConsent"
-  } ]
-}, {
-  "@id" : "_:genid65",
+  "@id" : "_:genid74",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -250,25 +256,51 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid7",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#wasInfluencedBy"
-  } ]
-}, {
-  "@id" : "_:genid8",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/GConsent#isContextForConsent"
-  } ]
-}, {
   "@id" : "_:genid9",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/GConsent#Consent"
+      "@id" : "https://w3id.org/GConsent#Processing"
     }, {
-      "@id" : "https://w3id.org/GConsent#Delegation"
+      "@id" : "https://w3id.org/GConsent#Purpose"
     } ]
   } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2006/time#Instant",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
@@ -331,7 +363,7 @@
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2018-11-15"
+    "@value" : "2018-11-21"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@value" : "ADAPT Centre, Trinity College"
@@ -354,17 +386,10 @@
     "@id" : "http://purl.org/adaptcentre/openscience/ontologies/consent"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
-    "@value" : "https://w3id.org/GConsent/v/0.5"
+    "@id" : "https://w3id.org/GConsent/versions/v0.5"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "0.5"
-  } ],
-  "http://xmlns.com/foaf/0.1/depiction" : [ {
-    "@id" : "http://openscience.adaptcentre.ie/ontologies/GConsent/diagrams/ontology.png"
-  } ],
-  "http://xmlns.com/foaf/0.1/logo" : [ {
-    "@id" : "http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#AdaptationOfPersonalData",
@@ -453,9 +478,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#Entity"
   }, {
-    "@id" : "_:genid32"
+    "@id" : "_:genid40"
   }, {
-    "@id" : "_:genid33"
+    "@id" : "_:genid41"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#ConsentStatusExpired",
@@ -684,6 +709,27 @@
     "@id" : "https://w3id.org/GConsent#Processing"
   } ]
 }, {
+  "@id" : "https://w3id.org/GConsent#DataController",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/GDPRtEXT#Controller"
+  }, {
+    "@id" : "https://w3id.org/GDPRtEXT/gdpr#article4-7"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Data Controller"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Organisation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/GDPRov#Controller"
+  } ]
+}, {
   "@id" : "https://w3id.org/GConsent#DataDestruction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -815,6 +861,20 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Data Retrieval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/GConsent#Processing"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#DataSharing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Type of processing where sharing of data takes place with a Third Party."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Data Sharing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/GConsent#Processing"
@@ -973,7 +1033,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/GConsent#Consent"
   }, {
-    "@id" : "_:genid34"
+    "@id" : "_:genid42"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/GDPRov#GivenConsent"
@@ -1038,7 +1098,7 @@
     "@value" : "Personal Data"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid41"
+    "@id" : "_:genid49"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#Processing",
@@ -1109,6 +1169,17 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Retrieval Of Personal Data"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#SharingOfPersonalData",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/GConsent#DataSharing", "https://w3id.org/GConsent#Processing" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents sharing of personal data"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sharing of Personal Data"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#Status",
@@ -1192,7 +1263,7 @@
     "@value" : "Third Party"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid44"
+    "@id" : "_:genid52"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/GDPRov#ThirdParty"
@@ -1232,8 +1303,6 @@
     "@id" : "http://www.w3.org/ns/prov#atLocation"
   }, {
     "@id" : "https://w3id.org/GConsent#hasContext"
-  }, {
-    "@id" : "_:genid1"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#atTime",
@@ -1254,8 +1323,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/GConsent#hasContext"
-  }, {
-    "@id" : "_:genid2"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#forPersonalData",
@@ -1331,7 +1398,7 @@
     "@value" : "Indicates an Association with another entity for a Purpose or Processing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid3"
+    "@id" : "_:genid1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1339,6 +1406,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/ns/prov#Association"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/GConsent#isAssociationFor"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#hasConsent",
@@ -1453,8 +1523,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/GConsent#hasContext"
-  }, {
-    "@id" : "_:genid6"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#involvesThirdParty",
@@ -1464,7 +1532,7 @@
     "@value" : "Indicates the involvement by association of a Third Party."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Association"
+    "@id" : "_:genid4"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1473,8 +1541,29 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/GConsent#ThirdParty"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#agent"
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#hasAssociation"
+    }, {
+      "@id" : "http://www.w3.org/ns/prov#agent"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#isAssociationFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates an Association is for the associated Purpose or Processing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Association"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is association for"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid9"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#isConsentForDataSubject",
@@ -1543,8 +1632,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasInfluencedBy"
-  }, {
-    "@id" : "_:genid7"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/GConsent#isUpdatedConsentFor"
@@ -1574,24 +1661,29 @@
     "@value" : "Indicates the entity or activitiy that provided the consent."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid9"
+    "@id" : "_:genid12"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is provided by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid12"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#wasAttributedTo"
-  }, {
-    "@id" : "https://w3id.org/GConsent#hasContext"
-  }, {
-    "@id" : "_:genid8"
+    "@id" : "_:genid15"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/GConsent#providedConsent"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#isProvidedByDataSubject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/GConsent#Consent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/GConsent#DataSubject"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/GConsent#isProvidedBy"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#isProvidedByDelegation",
@@ -1601,7 +1693,7 @@
     "@value" : "Specifies the delegation that provided this consent."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid16"
+    "@id" : "_:genid19"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1611,11 +1703,7 @@
     "@id" : "https://w3id.org/GConsent#Delegation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/GConsent#hasContext"
-  }, {
     "@id" : "https://w3id.org/GConsent#isProvidedBy"
-  }, {
-    "@id" : "_:genid15"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#isProvidedByPerson",
@@ -1625,7 +1713,7 @@
     "@value" : "Specifies the Person that provided this consent."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid20"
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1635,11 +1723,67 @@
     "@id" : "http://www.w3.org/ns/prov#Person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/GConsent#hasContext"
-  }, {
     "@id" : "https://w3id.org/GConsent#isProvidedBy"
-  }, {
-    "@id" : "_:genid19"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#isProvidedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the Person or Data Controller the consent was provided to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/GConsent#Consent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is provided to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid25"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/GConsent#wasProvidedConsent"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#isProvidedToController",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the Organisation the consent was provided to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/GConsent#Consent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is provided to controller"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/GConsent#DataController"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/GConsent#isProvidedTo"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#isProvidedToPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates the Person the consent was provided to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/GConsent#Consent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is provided to person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/GConsent#isProvidedTo"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#isPurposeForConsent",
@@ -1694,8 +1838,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasInfluencedBy"
-  }, {
-    "@id" : "_:genid23"
   } ]
 }, {
   "@id" : "https://w3id.org/GConsent#providedConsent",
@@ -1705,7 +1847,7 @@
     "@value" : "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid26"
+    "@id" : "_:genid28"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/GDPRtEXT#GivenConsent"
@@ -1715,15 +1857,51 @@
     "@value" : "gave consent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid29"
+    "@id" : "_:genid32"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#sharesDataWithThirdParty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates sharing of personal data with a Third Party through the association."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/GConsent#DataSharing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/GConsent#ThirdParty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/GConsent#isContextForConsent"
-  }, {
-    "@id" : "_:genid24"
-  }, {
-    "@id" : "_:genid25"
+    "@id" : "https://w3id.org/GConsent#involvesThirdParty"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/GConsent#hasAssociation"
+    }, {
+      "@id" : "http://www.w3.org/ns/prov#agent"
+    } ]
   } ]
+}, {
+  "@id" : "https://w3id.org/GConsent#wasProvidedConsent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates that the specified Person or Data Controller was provided the associated consent."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid37"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "was provided consent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/GConsent#Consent"
+  } ]
+}, {
+  "@id" : "https://w3id.org/GDPRov#Controller",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://w3id.org/GDPRov#DataSubject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]

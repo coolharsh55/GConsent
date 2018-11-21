@@ -13,11 +13,11 @@
       "undefined" : "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption."
     },
     "other" : {
-      "versionIRI" : [ {
-        "identifier" : "versionIRI",
+      "license" : [ {
+        "identifier" : "license",
         "language" : "undefined",
-        "value" : "https://w3id.org/GConsent/v/0.5",
-        "type" : "label"
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
       } ],
       "creator" : [ {
         "identifier" : "creator",
@@ -37,34 +37,16 @@
         "value" : "2018-08-24",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "undefined",
-        "value" : "0.5",
-        "type" : "label"
-      } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "en",
-        "value" : "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2 ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner.",
-        "type" : "label"
-      } ],
-      "title" : [ {
-        "identifier" : "title",
-        "language" : "en",
-        "value" : "GConsent - a consent ontology based on the GDPR",
-        "type" : "label"
-      } ],
-      "license" : [ {
-        "identifier" : "license",
-        "language" : "undefined",
-        "value" : "https://creativecommons.org/licenses/by/4.0/",
-        "type" : "iri"
-      } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
         "value" : "gc",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2018-11-21",
         "type" : "label"
       } ],
       "publisher" : [ {
@@ -73,16 +55,10 @@
         "value" : "ADAPT Centre, Trinity College",
         "type" : "label"
       } ],
-      "logo" : [ {
-        "identifier" : "logo",
-        "language" : "undefined",
-        "value" : "http://openscience.adaptcentre.ie/ontologies/GConsent/logo.png",
-        "type" : "iri"
-      } ],
-      "modified" : [ {
-        "identifier" : "modified",
-        "language" : "undefined",
-        "value" : "2018-11-15",
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "Consent is one of the legal basis for processing personal data under the General Data Protection Regulation (GDPR), which is the current Eurpoean data protection law enforced from 25th May 2018. GDPR stipulates obligations on how consent should be obtained, used, modified, and recorded. Additionally, it provides data subjects with the right to modify or withdraw their consent at any time. Demonstrating compliance to these rights and obligations requires maintaining information about the consent lifecycle. Existing work has demonstrated the feasibility of using semantic web technologies to represent and query this information. GConsent is an OWL2 ontology for representing consent for GDPR compliance. The ontology is based on an analysis of modelling metadata requirements related to the consent lifecycle for GDPR compliance. It allows modelling and representation of information related to compliance in an extensible and comprehensive manner.",
         "type" : "label"
       } ],
       "preferredNamespaceUri" : [ {
@@ -91,44 +67,50 @@
         "value" : "https://w3id.org/GConsent",
         "type" : "label"
       } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.5",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "GConsent - a consent ontology based on the GDPR",
+        "type" : "label"
+      } ],
       "status" : [ {
         "identifier" : "status",
         "language" : "undefined",
         "value" : "http://purl.org/ontology/bibo/status/draft",
-        "type" : "iri"
-      } ],
-      "depiction" : [ {
-        "identifier" : "depiction",
-        "language" : "undefined",
-        "value" : "http://openscience.adaptcentre.ie/ontologies/GConsent/diagrams/ontology.png",
         "type" : "iri"
       } ]
     }
   },
   "namespace" : [ ],
   "metrics" : {
-    "classCount" : 44,
-    "objectPropertyCount" : 29,
+    "classCount" : 47,
+    "objectPropertyCount" : 36,
     "datatypePropertyCount" : 0,
-    "individualCount" : 27
+    "individualCount" : 28
   },
   "class" : [ {
-    "id" : "8",
+    "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
+    "id" : "8",
     "type" : "owl:equivalentClass"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
   }, {
     "id" : "12",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "36",
     "type" : "owl:Class"
   }, {
     "id" : "38",
-    "type" : "owl:Class"
-  }, {
-    "id" : "40",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -146,130 +128,151 @@
     "id" : "51",
     "type" : "owl:Class"
   }, {
-    "id" : "69",
-    "type" : "owl:equivalentClass"
+    "id" : "61",
+    "type" : "owl:Thing"
   }, {
     "id" : "64",
-    "type" : "owl:Class"
+    "type" : "owl:unionOf"
   }, {
-    "id" : "28",
-    "type" : "owl:Class"
+    "id" : "29",
+    "type" : "owl:Thing"
   }, {
-    "id" : "11",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "72",
-    "type" : "owl:Class"
-  }, {
-    "id" : "19",
-    "type" : "owl:Class"
-  }, {
-    "id" : "24",
-    "type" : "owl:Class"
-  }, {
-    "id" : "68",
-    "type" : "owl:Class"
-  }, {
-    "id" : "77",
-    "type" : "owl:Class"
-  }, {
-    "id" : "35",
-    "type" : "owl:Class"
-  }, {
-    "id" : "80",
-    "type" : "owl:Class"
-  }, {
-    "id" : "50",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "81",
-    "type" : "owl:Class"
-  }, {
-    "id" : "17",
-    "type" : "owl:Class"
-  }, {
-    "id" : "42",
-    "type" : "owl:Class"
+    "id" : "66",
+    "type" : "owl:unionOf"
   }, {
     "id" : "41",
     "type" : "owl:Class"
   }, {
-    "id" : "65",
+    "id" : "68",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "69",
     "type" : "owl:Class"
   }, {
-    "id" : "89",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "44",
+    "id" : "22",
     "type" : "owl:Class"
   }, {
-    "id" : "33",
+    "id" : "10",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "73",
     "type" : "owl:Class"
   }, {
-    "id" : "92",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "71",
+    "id" : "16",
     "type" : "owl:Class"
   }, {
     "id" : "1",
     "type" : "owl:Class"
   }, {
-    "id" : "98",
+    "id" : "67",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "76",
     "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "89",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "99",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "108",
+    "type" : "owl:Class"
+  }, {
+    "id" : "75",
+    "type" : "owl:equivalentClass"
   }, {
     "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "95",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "96",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "4",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "101",
+    "id" : "110",
     "type" : "owl:unionOf"
   }, {
     "id" : "86",
     "type" : "owl:unionOf"
   }, {
-    "id" : "87",
+    "id" : "104",
     "type" : "owl:unionOf"
   }, {
-    "id" : "30",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "75",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "94",
+    "id" : "105",
     "type" : "owl:unionOf"
   }, {
-    "id" : "39",
-    "type" : "owl:equivalentClass"
+    "id" : "4",
+    "type" : "owl:unionOf"
   }, {
-    "id" : "43",
-    "type" : "owl:Class"
+    "id" : "116",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "113",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "98",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "103",
+    "type" : "owl:unionOf"
   }, {
     "id" : "37",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
     "type" : "owl:Class"
   }, {
     "id" : "56",
     "type" : "owl:Class"
   }, {
-    "id" : "26",
+    "id" : "14",
     "type" : "owl:Class"
   }, {
-    "id" : "21",
+    "id" : "20",
     "type" : "owl:Class"
   }, {
-    "id" : "10",
+    "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "15",
+    "id" : "43",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -310,11 +313,11 @@
     "comment" : {
       "en" : "Represents the type of processing where Retrieval of data takes place."
     },
-    "id" : "8",
+    "id" : "7",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GConsent#GivenConsent",
-    "equivalent" : [ "11" ],
+    "equivalent" : [ "10" ],
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
     "label" : {
@@ -325,8 +328,8 @@
       "en" : "Represents a consent entity that is considered given whether implicitly, explicitly, or by delegation."
     },
     "attributes" : [ "equivalent" ],
-    "id" : "9",
-    "superClasses" : [ "10" ]
+    "id" : "8",
+    "superClasses" : [ "9" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataCollection",
     "baseIri" : "https://w3id.org/GConsent",
@@ -365,7 +368,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Collection of data takes place."
     },
-    "id" : "12",
+    "id" : "11",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Entity",
@@ -374,9 +377,9 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "10" ],
+    "subClasses" : [ "9" ],
     "attributes" : [ "external" ],
-    "id" : "13"
+    "id" : "12"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Person",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -384,9 +387,9 @@
     "label" : {
       "IRI-based" : "Person"
     },
-    "subClasses" : [ "39" ],
+    "subClasses" : [ "37" ],
     "attributes" : [ "external" ],
-    "id" : "38"
+    "id" : "36"
   }, {
     "iri" : "https://w3id.org/GConsent#DataStorage",
     "baseIri" : "https://w3id.org/GConsent",
@@ -425,7 +428,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Storage of data takes place."
     },
-    "id" : "40",
+    "id" : "38",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GConsent#Processing",
@@ -462,24 +465,6 @@
         "en" : "Destruction Of Personal Data"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#RecordingOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "Represents Recording Of personal data."
-      },
-      "labels" : {
-        "IRI-based" : "RecordingOfPersonalData",
-        "en" : "Recording Of Personal Data"
-      }
-    }, {
       "iri" : "https://w3id.org/GConsent#OrganisationOfPersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "annotations" : {
@@ -496,6 +481,24 @@
       "labels" : {
         "IRI-based" : "OrganisationOfPersonalData",
         "en" : "Organisation Of Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#RecordingOfPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Represents Recording Of personal data."
+      },
+      "labels" : {
+        "IRI-based" : "RecordingOfPersonalData",
+        "en" : "Recording Of Personal Data"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#RetrievalOfPersonalData",
@@ -516,24 +519,6 @@
         "en" : "Retrieval Of Personal Data"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#CollectionOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "Represents Collection Of personal data."
-      },
-      "labels" : {
-        "IRI-based" : "CollectionOfPersonalData",
-        "en" : "Collection Of Personal Data"
-      }
-    }, {
       "iri" : "https://w3id.org/GConsent#StorageOfPersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "annotations" : {
@@ -550,6 +535,24 @@
       "labels" : {
         "IRI-based" : "StorageOfPersonalData",
         "en" : "Storage Of Personal Data"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#CollectionOfPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Represents Collection Of personal data."
+      },
+      "labels" : {
+        "IRI-based" : "CollectionOfPersonalData",
+        "en" : "Collection Of Personal Data"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#ErasureOfPersonalData",
@@ -606,6 +609,16 @@
         "en" : "Disclosure by Transmission Of Personal Data"
       }
     }, {
+      "iri" : "https://w3id.org/GConsent#SharingOfPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents sharing of personal data"
+      },
+      "labels" : {
+        "IRI-based" : "SharingOfPersonalData",
+        "en" : "Sharing of Personal Data"
+      }
+    }, {
       "iri" : "https://w3id.org/GConsent#DisseminationOfPersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "annotations" : {
@@ -660,24 +673,6 @@
         "en" : "Consultation Of Personal Data"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#UseOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "Represents Use Of personal data."
-      },
-      "labels" : {
-        "IRI-based" : "UseOfPersonalData",
-        "en" : "Use Of Personal Data"
-      }
-    }, {
       "iri" : "https://w3id.org/GConsent#StructuringOfPersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "annotations" : {
@@ -696,7 +691,7 @@
         "en" : "Structuring Of Personal Data"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#RestrictionOfPersonalData",
+      "iri" : "https://w3id.org/GConsent#UseOfPersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "annotations" : {
         "isDefinedBy" : [ {
@@ -707,11 +702,11 @@
         } ]
       },
       "comment" : {
-        "en" : "Represents Restriction Of personal data."
+        "en" : "Represents Use Of personal data."
       },
       "labels" : {
-        "IRI-based" : "RestrictionOfPersonalData",
-        "en" : "Restriction Of Personal Data"
+        "IRI-based" : "UseOfPersonalData",
+        "en" : "Use Of Personal Data"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#AlterationOfPersonalData",
@@ -732,6 +727,24 @@
         "en" : "Alteration Of Personal Data"
       }
     }, {
+      "iri" : "https://w3id.org/GConsent#RestrictionOfPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Represents Restriction Of personal data."
+      },
+      "labels" : {
+        "IRI-based" : "RestrictionOfPersonalData",
+        "en" : "Restriction Of Personal Data"
+      }
+    }, {
       "iri" : "https://w3id.org/GConsent#AdaptationOfPersonalData",
       "baseIri" : "https://w3id.org/GConsent",
       "annotations" : {
@@ -750,7 +763,7 @@
         "en" : "Adaptation Of Personal Data"
       }
     } ],
-    "subClasses" : [ "41", "42", "40", "8", "43", "44", "33", "28", "37", "35", "12", "19", "26", "24", "17", "15", "1" ],
+    "subClasses" : [ "39", "40", "41", "38", "7", "27", "35", "33", "22", "18", "25", "11", "16", "14", "1", "42", "43", "44" ],
     "comment" : {
       "en" : "Processing is defined by the GDPR (Article 4-2) as \"any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;\".\n\nProcessing can be considered as the action, within an activity for example, that uses data in a particular or specific way. Therefore, processing specifies what is happening to/with the data. \n\nTo define a type of processing (or its associated action), the Processing class should be subclassed for each type. Furthermore, each subclass should define a instance as a generic representative of that action. For example, \"collect\" as a type of processing (defined by the GDPR), is defined as the class DataCollection, which is a subclass of Processing, and has the individual CollectionOfPersonalData to represent a generic instance of the concept. This is to provide a ready-to-use ontology in terms of \"collect\" as an action, while also providing a way to specialise the action/processing.\nGConsent defines several such types of processing taken from the text of the GDPR."
     },
@@ -788,7 +801,7 @@
       "en" : "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.\n\nConsent given in lieu of a Minor (by their Representative) is associated with the `ConsentInstance` class/instance using the `wasGivenBy` property.\n\nThe ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.\n\nNote: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases."
     },
     "id" : "49",
-    "superClasses" : [ "50", "39" ]
+    "superClasses" : [ "50", "37" ]
   }, {
     "iri" : "https://w3id.org/GDPRov#PersonalData",
     "baseIri" : "https://w3id.org/GDPRov",
@@ -799,14 +812,62 @@
     "attributes" : [ "external" ],
     "id" : "51"
   }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "61",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "5", "9" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "29",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "36", "67" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "66"
+  }, {
+    "iri" : "https://w3id.org/GConsent#DataSharing",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataSharing",
+      "en" : "Data Sharing"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#SharingOfPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Represents sharing of personal data"
+      },
+      "labels" : {
+        "IRI-based" : "SharingOfPersonalData",
+        "en" : "Sharing of Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Type of processing where sharing of data takes place with a Third Party."
+    },
+    "id" : "41",
+    "superClasses" : [ "2" ]
+  }, {
     "iri" : "https://w3id.org/GDPRov#ThirdParty",
     "baseIri" : "https://w3id.org/GDPRov",
     "instances" : 0,
     "label" : {
       "IRI-based" : "ThirdParty"
     },
-    "attributes" : [ "equivalent", "external" ],
-    "id" : "69"
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "68"
   }, {
     "iri" : "https://w3id.org/GConsent#StatusValidForProcessing",
     "baseIri" : "https://w3id.org/GConsent",
@@ -849,8 +910,8 @@
     "comment" : {
       "en" : "Represents consent states that are valid for processing"
     },
-    "id" : "64",
-    "superClasses" : [ "65" ]
+    "id" : "69",
+    "superClasses" : [ "70" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataUse",
     "baseIri" : "https://w3id.org/GConsent",
@@ -889,7 +950,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Use of data takes place."
     },
-    "id" : "28",
+    "id" : "22",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GDPRov#GivenConsent",
@@ -898,8 +959,8 @@
     "label" : {
       "IRI-based" : "GivenConsent"
     },
-    "attributes" : [ "equivalent", "external" ],
-    "id" : "11"
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "10"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Organisation",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -907,8 +968,9 @@
     "label" : {
       "IRI-based" : "Organisation"
     },
+    "subClasses" : [ "67" ],
     "attributes" : [ "external" ],
-    "id" : "72"
+    "id" : "73"
   }, {
     "iri" : "https://w3id.org/GConsent#DataRecording",
     "baseIri" : "https://w3id.org/GConsent",
@@ -947,7 +1009,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Recording of data takes place."
     },
-    "id" : "19",
+    "id" : "16",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataErasure",
@@ -987,8 +1049,36 @@
     "comment" : {
       "en" : "Represents the type of processing where Erasure of data takes place."
     },
-    "id" : "24",
+    "id" : "1",
     "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#DataController",
+    "equivalent" : [ "75" ],
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/GDPRtEXT#Controller",
+        "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-7",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DataController",
+      "undefined" : "Data Controller"
+    },
+    "comment" : {
+      "en" : "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "67",
+    "superClasses" : [ "73" ]
   }, {
     "iri" : "https://w3id.org/GConsent#StatusInvalidForProcessing",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1071,8 +1161,8 @@
     "comment" : {
       "en" : "Represents consent states that are invalid for processing."
     },
-    "id" : "68",
-    "superClasses" : [ "65" ]
+    "id" : "76",
+    "superClasses" : [ "70" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Location",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1081,7 +1171,7 @@
       "IRI-based" : "Location"
     },
     "attributes" : [ "external" ],
-    "id" : "77"
+    "id" : "78"
   }, {
     "iri" : "https://w3id.org/GConsent#DataCombination",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1120,7 +1210,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Combination of data takes place."
     },
-    "id" : "35",
+    "id" : "25",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GDPRov#PersonalDataEntity",
@@ -1130,7 +1220,7 @@
       "IRI-based" : "PersonalDataEntity"
     },
     "attributes" : [ "external" ],
-    "id" : "80"
+    "id" : "83"
   }, {
     "iri" : "https://w3id.org/GDPRov#DataSubject",
     "baseIri" : "https://w3id.org/GDPRov",
@@ -1139,7 +1229,7 @@
       "IRI-based" : "DataSubject"
     },
     "subClasses" : [ "49" ],
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "50"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Delegation",
@@ -1150,7 +1240,7 @@
     },
     "subClasses" : [ "5" ],
     "attributes" : [ "external" ],
-    "id" : "81"
+    "id" : "89"
   }, {
     "iri" : "https://w3id.org/GConsent#DataDissemination",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1188,46 +1278,6 @@
     } ],
     "comment" : {
       "en" : "Represents the type of processing where Dissemination of data takes place."
-    },
-    "id" : "17",
-    "superClasses" : [ "2" ]
-  }, {
-    "iri" : "https://w3id.org/GConsent#DataAlteration",
-    "baseIri" : "https://w3id.org/GConsent",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "DataAlteration",
-      "en" : "Data Alteration"
-    },
-    "individuals" : [ {
-      "iri" : "https://w3id.org/GConsent#AlterationOfPersonalData",
-      "baseIri" : "https://w3id.org/GConsent",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "Represents Alteration Of personal data."
-      },
-      "labels" : {
-        "IRI-based" : "AlterationOfPersonalData",
-        "en" : "Alteration Of Personal Data"
-      }
-    } ],
-    "comment" : {
-      "en" : "Represents the type of processing where Alteration of data takes place."
     },
     "id" : "42",
     "superClasses" : [ "2" ]
@@ -1269,7 +1319,47 @@
     "comment" : {
       "en" : "Represents the type of processing where Adaptation of data takes place."
     },
-    "id" : "41",
+    "id" : "39",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/GConsent#DataAlteration",
+    "baseIri" : "https://w3id.org/GConsent",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DataAlteration",
+      "en" : "Data Alteration"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/GConsent#AlterationOfPersonalData",
+      "baseIri" : "https://w3id.org/GConsent",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-2",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Represents Alteration Of personal data."
+      },
+      "labels" : {
+        "IRI-based" : "AlterationOfPersonalData",
+        "en" : "Alteration Of Personal Data"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents the type of processing where Alteration of data takes place."
+    },
+    "id" : "40",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GConsent#Status",
@@ -1320,16 +1410,6 @@
         "en" : "Withdrawn"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#ConsentStatusExpired",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "en" : "Indicates the consent has expired."
-      },
-      "labels" : {
-        "IRI-based" : "ConsentStatusExpired",
-        "en" : "Expired"
-      }
-    }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusImplicitlyGiven",
       "baseIri" : "https://w3id.org/GConsent",
       "comment" : {
@@ -1338,6 +1418,16 @@
       "labels" : {
         "IRI-based" : "ConsentStatusImplicitlyGiven",
         "en" : "Implicitly Given"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusExpired",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates the consent has expired."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusExpired",
+        "en" : "Expired"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusRefused",
@@ -1350,16 +1440,6 @@
         "en" : "Refused"
       }
     }, {
-      "iri" : "https://w3id.org/GConsent#ConsentStatusInvalidated",
-      "baseIri" : "https://w3id.org/GConsent",
-      "comment" : {
-        "en" : "Indicates the consent has been invalidated."
-      },
-      "labels" : {
-        "IRI-based" : "ConsentStatusInvalidated",
-        "en" : "Invalidated"
-      }
-    }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusExplicitlyGiven",
       "baseIri" : "https://w3id.org/GConsent",
       "comment" : {
@@ -1368,6 +1448,16 @@
       "labels" : {
         "IRI-based" : "ConsentStatusExplicitlyGiven",
         "en" : "Explicitly Given"
+      }
+    }, {
+      "iri" : "https://w3id.org/GConsent#ConsentStatusInvalidated",
+      "baseIri" : "https://w3id.org/GConsent",
+      "comment" : {
+        "en" : "Indicates the consent has been invalidated."
+      },
+      "labels" : {
+        "IRI-based" : "ConsentStatusInvalidated",
+        "en" : "Invalidated"
       }
     }, {
       "iri" : "https://w3id.org/GConsent#ConsentStatusNotGiven",
@@ -1380,26 +1470,26 @@
         "en" : "Not Given"
       }
     } ],
-    "subClasses" : [ "64", "68" ],
+    "subClasses" : [ "69", "76" ],
     "comment" : {
       "en" : "Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."
     },
-    "id" : "65"
+    "id" : "70"
   }, {
     "iri" : "https://w3id.org/GConsent#ThirdParty",
-    "equivalent" : [ "69" ],
+    "equivalent" : [ "68" ],
     "baseIri" : "https://w3id.org/GConsent",
     "instances" : 0,
     "label" : {
       "IRI-based" : "ThirdParty",
       "en" : "Third Party"
     },
-    "union" : [ "38", "72" ],
+    "union" : [ "36", "73" ],
     "comment" : {
       "en" : "Represents an Agent that is a Person or an Organisation other than the current entity (w.r.t. data protection laws)."
     },
     "attributes" : [ "union", "equivalent" ],
-    "id" : "89"
+    "id" : "99"
   }, {
     "iri" : "https://w3id.org/GConsent#DataStructuring",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1438,7 +1528,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Structuring of data takes place."
     },
-    "id" : "44",
+    "id" : "35",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataAlignment",
@@ -1488,11 +1578,6 @@
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "https://w3id.org/GDPRtEXT#PersonalData",
-        "type" : "iri"
-      }, {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
         "value" : "https://w3id.org/GDPRtEXT/gdpr#recital26",
         "type" : "iri"
       }, {
@@ -1500,18 +1585,23 @@
         "language" : "undefined",
         "value" : "https://w3id.org/GDPRtEXT/gdpr#article4-1",
         "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/GDPRtEXT#PersonalData",
+        "type" : "iri"
       } ]
     },
     "label" : {
       "IRI-based" : "PersonalData",
       "en" : "Personal Data"
     },
-    "union" : [ "51", "80" ],
+    "union" : [ "51", "83" ],
     "comment" : {
       "en" : "As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);"
     },
     "attributes" : [ "union" ],
-    "id" : "92"
+    "id" : "101"
   }, {
     "iri" : "https://w3id.org/GConsent#Purpose",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1531,7 +1621,7 @@
     "comment" : {
       "en" : "Purpose refers to the aim or goal towards which the data is processed (or associated with any other form of action)."
     },
-    "id" : "71"
+    "id" : "72"
   }, {
     "iri" : "https://w3id.org/GConsent#DataDisclosureByTransmission",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1570,7 +1660,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Disclosure by Transmission of data takes place."
     },
-    "id" : "1",
+    "id" : "44",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Role",
@@ -1580,7 +1670,16 @@
       "IRI-based" : "Role"
     },
     "attributes" : [ "external" ],
-    "id" : "98"
+    "id" : "108"
+  }, {
+    "iri" : "https://w3id.org/GDPRov#Controller",
+    "baseIri" : "https://w3id.org/GDPRov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Controller"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "75"
   }, {
     "iri" : "https://w3id.org/GConsent#Delegation",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1593,56 +1692,52 @@
       "en" : "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`."
     },
     "id" : "5",
-    "superClasses" : [ "81" ]
+    "superClasses" : [ "89" ]
   }, {
     "instances" : 0,
-    "union" : [ "5", "10" ],
+    "union" : [ "2", "72" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "95"
+    "id" : "110"
   }, {
     "instances" : 0,
-    "union" : [ "38", "5" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "96"
-  }, {
-    "instances" : 0,
-    "union" : [ "5", "10" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "4"
-  }, {
-    "instances" : 0,
-    "union" : [ "5", "10" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "101"
-  }, {
-    "instances" : 0,
-    "union" : [ "38", "5" ],
+    "union" : [ "2", "72" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "86"
   }, {
     "instances" : 0,
-    "union" : [ "5", "10" ],
+    "union" : [ "5", "9" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "87"
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "30",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "75",
-    "label" : {
-      "undefined" : "Thing"
-    }
+    "id" : "104"
   }, {
     "instances" : 0,
-    "union" : [ "2", "71" ],
+    "union" : [ "36", "5", "37" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "94"
+    "id" : "105"
+  }, {
+    "instances" : 0,
+    "union" : [ "5", "9" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "4"
+  }, {
+    "instances" : 0,
+    "union" : [ "5", "9" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "116"
+  }, {
+    "instances" : 0,
+    "union" : [ "36", "67" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "113"
+  }, {
+    "instances" : 0,
+    "union" : [ "36", "5", "37" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "98"
+  }, {
+    "instances" : 0,
+    "union" : [ "2", "72" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "103"
   }, {
     "iri" : "https://w3id.org/GConsent#DataSubject",
     "equivalent" : [ "50" ],
@@ -1665,8 +1760,8 @@
       "en" : "Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.\n\nIn the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.\n\nThe Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties."
     },
     "attributes" : [ "equivalent" ],
-    "id" : "39",
-    "superClasses" : [ "38" ]
+    "id" : "37",
+    "superClasses" : [ "36" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataRestriction",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1705,7 +1800,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Restriction of data takes place."
     },
-    "id" : "43",
+    "id" : "27",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataConsultation",
@@ -1745,7 +1840,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Consultation of data takes place."
     },
-    "id" : "37",
+    "id" : "18",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/2006/time#Instant",
@@ -1794,7 +1889,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Destruction of data takes place."
     },
-    "id" : "26",
+    "id" : "14",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/2006/time#TemporalEntity",
@@ -1804,7 +1899,7 @@
       "IRI-based" : "TemporalEntity"
     },
     "attributes" : [ "external" ],
-    "id" : "21"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/GConsent#Consent",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1821,12 +1916,12 @@
       "IRI-based" : "Consent",
       "en" : "Consent"
     },
-    "subClasses" : [ "9" ],
+    "subClasses" : [ "8" ],
     "comment" : {
       "en" : "As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nIn the case of this ontology, 'Consent' is a concept as well as a tangible entity (something that has a provenance record). To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it.\n\nTo link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."
     },
-    "id" : "10",
-    "superClasses" : [ "13" ]
+    "id" : "9",
+    "superClasses" : [ "12" ]
   }, {
     "iri" : "https://w3id.org/GConsent#DataOrganisation",
     "baseIri" : "https://w3id.org/GConsent",
@@ -1865,7 +1960,7 @@
     "comment" : {
       "en" : "Represents the type of processing where Organisation of data takes place."
     },
-    "id" : "15",
+    "id" : "43",
     "superClasses" : [ "2" ]
   } ],
   "property" : [ {
@@ -1875,40 +1970,40 @@
     "id" : "3",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "14",
+    "id" : "13",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "16",
+    "id" : "15",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "18",
+    "id" : "17",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "20",
+    "id" : "19",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "23",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "25",
+    "id" : "24",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "27",
+    "id" : "26",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "29",
+    "id" : "28",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "32",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "34",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "36",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "46",
@@ -1926,20 +2021,14 @@
     "id" : "55",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "57",
-    "type" : "rdfs:SubClassOf"
-  }, {
     "id" : "58",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "59",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "60",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "61",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "62",
     "type" : "rdfs:SubClassOf"
@@ -1947,91 +2036,124 @@
     "id" : "63",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "66",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "67",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "70",
+    "id" : "65",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "73",
+    "id" : "71",
     "type" : "owl:objectProperty"
   }, {
     "id" : "74",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "78",
+    "id" : "77",
     "type" : "owl:objectProperty"
   }, {
     "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "80",
     "type" : "owl:objectProperty"
   }, {
     "id" : "82",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "83",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "84",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "85",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "87",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "76",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "6",
-    "type" : "owl:objectProperty"
+    "id" : "88",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "90",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "93",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "7",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "91",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "94",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "96",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "97",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "99",
+    "id" : "57",
     "type" : "owl:objectProperty"
   }, {
     "id" : "100",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "47",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "102",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "103",
+    "id" : "6",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "104",
+    "id" : "109",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "105",
+    "id" : "112",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "114",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "117",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "118",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "119",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "120",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "97",
+    "id" : "121",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "31",
+    "id" : "30",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "106",
+    "id" : "122",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "123",
     "type" : "owl:objectProperty"
   }, {
     "id" : "107",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "88",
+    "id" : "106",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "111",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -2047,73 +2169,78 @@
       "IRI-based" : "isProvidedByDelegation",
       "en" : "is provided by delegation"
     },
-    "superproperty" : [ "6", "7" ],
+    "superproperty" : [ "6" ],
     "domain" : "4",
     "comment" : {
       "en" : "Specifies the delegation that provided this consent."
     },
-    "attributes" : [ "irreflexive", "object", "functional", "asymmetric" ],
+    "attributes" : [ "asymmetric", "object", "irreflexive", "functional" ],
     "id" : "3"
   }, {
     "range" : "2",
-    "domain" : "15",
+    "domain" : "14",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "14"
+    "id" : "13"
   }, {
     "range" : "2",
-    "domain" : "17",
+    "domain" : "16",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "16"
+    "id" : "15"
   }, {
     "range" : "2",
-    "domain" : "19",
+    "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "18"
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/GConsent#hasExpiry",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "21",
+    "range" : "20",
     "label" : {
       "IRI-based" : "hasExpiry",
       "en" : "has expiry"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Specifies the Instant or Duration in which the consent expires."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "20"
+    "id" : "19"
   }, {
     "range" : "2",
-    "domain" : "12",
+    "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "22"
+    "id" : "21"
   }, {
     "range" : "2",
-    "domain" : "24",
+    "domain" : "11",
     "attributes" : [ "anonymous", "object" ],
     "id" : "23"
   }, {
     "range" : "2",
-    "domain" : "26",
+    "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "25"
+    "id" : "24"
   }, {
     "range" : "2",
-    "domain" : "28",
+    "domain" : "27",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "27"
+    "id" : "26"
   }, {
     "iri" : "http://www.w3.org/ns/prov#atLocation",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "30",
+    "range" : "29",
     "label" : {
       "IRI-based" : "atLocation"
     },
-    "domain" : "30",
-    "subproperty" : [ "31" ],
+    "domain" : "29",
+    "subproperty" : [ "30" ],
     "attributes" : [ "object", "external" ],
-    "id" : "29"
+    "id" : "28"
+  }, {
+    "range" : "2",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "31"
   }, {
     "range" : "2",
     "domain" : "33",
@@ -2125,44 +2252,39 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "34"
   }, {
-    "range" : "2",
-    "domain" : "37",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "36"
-  }, {
     "iri" : "https://w3id.org/GConsent#isUpdatedConsentFor",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isUpdatedConsentFor",
       "en" : "is updated consent for"
     },
     "superproperty" : [ "47" ],
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Specifies the consent instance which this instance is an update or revision of."
     },
-    "attributes" : [ "irreflexive", "object" ],
+    "attributes" : [ "object", "irreflexive" ],
     "id" : "46"
   }, {
     "range" : "2",
-    "domain" : "43",
+    "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
     "id" : "52"
   }, {
     "range" : "2",
-    "domain" : "8",
+    "domain" : "40",
     "attributes" : [ "anonymous", "object" ],
     "id" : "53"
   }, {
     "iri" : "https://w3id.org/GConsent#isConsentForDataSubject",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "39",
+    "range" : "37",
     "label" : {
       "IRI-based" : "isConsentForDataSubject",
       "en" : "is consent for data subject"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Links a consent instance with the data subject it is associated with."
     },
@@ -2176,8 +2298,8 @@
       "IRI-based" : "atTime",
       "en" : "at time"
     },
-    "superproperty" : [ "6" ],
-    "domain" : "10",
+    "superproperty" : [ "57" ],
+    "domain" : "9",
     "comment" : {
       "en" : "Specifies the instant at which the consent was created/given/changed."
     },
@@ -2185,78 +2307,72 @@
     "id" : "55"
   }, {
     "range" : "2",
-    "domain" : "44",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "57"
-  }, {
-    "range" : "2",
-    "domain" : "41",
+    "domain" : "38",
     "attributes" : [ "anonymous", "object" ],
     "id" : "58"
+  }, {
+    "range" : "12",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "59"
   }, {
     "iri" : "https://w3id.org/GConsent#isPreviousConsentFor",
     "inverse" : "46",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isPreviousConsentFor",
       "en" : "is previous consent for"
     },
     "superproperty" : [ "47" ],
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Denotes that this consent instance is the previous consent for the specified consent instance."
     },
-    "attributes" : [ "irreflexive", "object" ],
-    "id" : "59"
-  }, {
-    "range" : "38",
-    "domain" : "39",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "irreflexive" ],
     "id" : "60"
   }, {
     "range" : "2",
-    "domain" : "40",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "61"
-  }, {
-    "range" : "2",
-    "domain" : "42",
+    "domain" : "39",
     "attributes" : [ "anonymous", "object" ],
     "id" : "62"
   }, {
-    "range" : "65",
-    "domain" : "64",
+    "range" : "36",
+    "domain" : "37",
     "attributes" : [ "anonymous", "object" ],
     "id" : "63"
   }, {
-    "range" : "13",
-    "domain" : "10",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "66"
-  }, {
-    "range" : "65",
-    "domain" : "68",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "67"
+    "iri" : "https://w3id.org/GConsent#wasProvidedConsent",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "wasProvidedConsent",
+      "en" : "was provided consent"
+    },
+    "domain" : "66",
+    "comment" : {
+      "en" : "Indicates that the specified Person or Data Controller was provided the associated consent."
+    },
+    "attributes" : [ "asymmetric", "object", "irreflexive" ],
+    "id" : "65"
   }, {
     "iri" : "https://w3id.org/GConsent#isPurposeForConsent",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isPurposeForConsent",
       "en" : "is purpose for consent"
     },
-    "domain" : "71",
+    "domain" : "72",
     "comment" : {
       "en" : "Links purpose with the consent instance associated with it."
     },
     "attributes" : [ "object" ],
-    "id" : "70"
+    "id" : "71"
   }, {
     "iri" : "https://w3id.org/GConsent#isProcessingForConsent",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isProcessingForConsent",
       "en" : "is action for purpose"
@@ -2266,42 +2382,46 @@
       "en" : "Links an action to the purpose it is associated with."
     },
     "attributes" : [ "object" ],
-    "id" : "73"
+    "id" : "74"
   }, {
     "iri" : "https://w3id.org/GConsent#isContextForConsent",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isContextForConsent",
       "en" : "is context for consent"
     },
-    "domain" : "75",
-    "subproperty" : [ "76" ],
+    "domain" : "61",
     "comment" : {
       "en" : "links a context to the consent instance it describes"
     },
     "attributes" : [ "object" ],
-    "id" : "74"
+    "id" : "77"
   }, {
-    "iri" : "https://w3id.org/GConsent#inMedium",
+    "range" : "9",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "79"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isProvidedToController",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "48",
+    "range" : "67",
     "label" : {
-      "IRI-based" : "inMedium",
-      "en" : "in medium"
+      "IRI-based" : "isProvidedToController",
+      "en" : "is provided to controller"
     },
-    "superproperty" : [ "6" ],
-    "domain" : "10",
+    "superproperty" : [ "81" ],
+    "domain" : "9",
     "comment" : {
-      "en" : "Specifies the medium through which the consent was given. Examples are web forms, paper documents."
+      "en" : "Indicates the Organisation the consent was provided to."
     },
-    "attributes" : [ "object" ],
-    "id" : "78"
+    "attributes" : [ "asymmetric", "object", "irreflexive", "inverse functional" ],
+    "id" : "80"
   }, {
     "iri" : "https://w3id.org/GConsent#forPurpose",
-    "inverse" : "70",
+    "inverse" : "71",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "71",
+    "range" : "72",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -2314,36 +2434,90 @@
       "IRI-based" : "forPurpose",
       "en" : "for purpose"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Links a consent instace to the purpose(s) it is associated with."
     },
     "attributes" : [ "object" ],
-    "id" : "79"
+    "id" : "82"
+  }, {
+    "iri" : "https://w3id.org/GConsent#inMedium",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "inMedium",
+      "en" : "in medium"
+    },
+    "superproperty" : [ "57" ],
+    "domain" : "9",
+    "comment" : {
+      "en" : "Specifies the medium through which the consent was given. Examples are web forms, paper documents."
+    },
+    "attributes" : [ "object" ],
+    "id" : "84"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isAssociationFor",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "isAssociationFor",
+      "en" : "is association for"
+    },
+    "domain" : "45",
+    "comment" : {
+      "en" : "Indicates an Association is for the associated Purpose or Processing."
+    },
+    "attributes" : [ "object" ],
+    "id" : "85"
+  }, {
+    "range" : "37",
+    "domain" : "49",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "87"
+  }, {
+    "range" : "89",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "88"
   }, {
     "range" : "50",
     "domain" : "49",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "82"
+    "id" : "90"
   }, {
-    "range" : "39",
-    "domain" : "49",
+    "range" : "70",
+    "domain" : "76",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "83"
+    "id" : "91"
   }, {
-    "range" : "10",
-    "domain" : "9",
+    "range" : "70",
+    "domain" : "69",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "84"
+    "id" : "92"
   }, {
-    "range" : "81",
-    "domain" : "5",
+    "range" : "2",
+    "domain" : "43",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "85"
+    "id" : "93"
+  }, {
+    "range" : "2",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "94"
+  }, {
+    "range" : "73",
+    "domain" : "67",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "95"
+  }, {
+    "range" : "2",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "96"
   }, {
     "iri" : "https://w3id.org/GConsent#providedConsent",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "87",
+    "range" : "64",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -2356,129 +2530,158 @@
       "IRI-based" : "providedConsent",
       "en" : "gave consent"
     },
-    "superproperty" : [ "74" ],
-    "domain" : "86",
+    "domain" : "98",
     "comment" : {
       "en" : "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."
     },
-    "attributes" : [ "irreflexive", "object", "inverse functional", "asymmetric" ],
-    "id" : "76"
+    "attributes" : [ "asymmetric", "object", "irreflexive", "inverse functional" ],
+    "id" : "97"
   }, {
     "iri" : "https://w3id.org/GConsent#hasContext",
-    "inverse" : "74",
+    "inverse" : "77",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "75",
+    "range" : "61",
     "label" : {
       "IRI-based" : "hasContext",
       "en" : "has context"
     },
-    "domain" : "10",
-    "subproperty" : [ "78", "3", "55", "88", "31", "7" ],
+    "domain" : "9",
+    "subproperty" : [ "84", "55", "30" ],
     "comment" : {
       "en" : "Links a consent instance to the context in which it was acquired/provided/given."
     },
     "attributes" : [ "object" ],
-    "id" : "6"
+    "id" : "57"
   }, {
     "iri" : "http://www.w3.org/ns/prov#agent",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "30",
+    "range" : "29",
     "label" : {
       "IRI-based" : "agent"
     },
-    "domain" : "30",
-    "subproperty" : [ "91" ],
+    "domain" : "29",
     "attributes" : [ "object", "external" ],
-    "id" : "90"
+    "id" : "100"
   }, {
     "iri" : "https://w3id.org/GConsent#hasAssociation",
+    "inverse" : "85",
     "baseIri" : "https://w3id.org/GConsent",
     "range" : "45",
     "label" : {
       "IRI-based" : "hasAssociation",
       "en" : "has association"
     },
-    "domain" : "94",
+    "domain" : "103",
     "comment" : {
       "en" : "Indicates an Association with another entity for a Purpose or Processing"
     },
     "attributes" : [ "object" ],
-    "id" : "93"
+    "id" : "102"
   }, {
     "iri" : "https://w3id.org/GConsent#isProvidedBy",
-    "inverse" : "76",
+    "inverse" : "97",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "96",
+    "range" : "105",
     "label" : {
       "IRI-based" : "isProvidedBy",
       "en" : "is provided by"
     },
-    "superproperty" : [ "6", "97" ],
-    "domain" : "95",
-    "subproperty" : [ "3", "88" ],
+    "domain" : "104",
+    "subproperty" : [ "3", "106", "107" ],
     "comment" : {
       "en" : "Indicates the entity or activitiy that provided the consent."
     },
-    "attributes" : [ "irreflexive", "object", "functional", "asymmetric" ],
-    "id" : "7"
+    "attributes" : [ "asymmetric", "object", "irreflexive", "functional" ],
+    "id" : "6"
   }, {
     "iri" : "https://w3id.org/GConsent#involvesThirdParty",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "89",
+    "range" : "99",
     "label" : {
       "IRI-based" : "involvesThirdParty",
       "en" : "involves third party"
     },
-    "superproperty" : [ "90" ],
-    "domain" : "45",
+    "domain" : "110",
+    "subproperty" : [ "111" ],
     "comment" : {
       "en" : "Indicates the involvement by association of a Third Party."
     },
     "attributes" : [ "object" ],
-    "id" : "91"
+    "id" : "109"
   }, {
     "iri" : "https://w3id.org/GConsent#isStatusForConsent",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isStatusForConsent",
       "en" : "is status for consent"
     },
-    "domain" : "65",
+    "domain" : "70",
     "comment" : {
       "en" : "Links a status to the consent that uses it."
     },
     "attributes" : [ "object", "inverse functional" ],
-    "id" : "99"
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isProvidedTo",
+    "inverse" : "65",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "113",
+    "label" : {
+      "IRI-based" : "isProvidedTo",
+      "en" : "is provided to"
+    },
+    "domain" : "9",
+    "subproperty" : [ "114", "80" ],
+    "comment" : {
+      "en" : "Indicates the Person or Data Controller the consent was provided to."
+    },
+    "attributes" : [ "asymmetric", "object", "irreflexive", "inverse functional" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isProvidedToPerson",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "isProvidedToPerson",
+      "en" : "is provided to person"
+    },
+    "superproperty" : [ "81" ],
+    "domain" : "9",
+    "comment" : {
+      "en" : "Indicates the Person the consent was provided to."
+    },
+    "attributes" : [ "asymmetric", "object", "irreflexive", "inverse functional" ],
+    "id" : "114"
   }, {
     "iri" : "https://w3id.org/GConsent#isPersonalDataForConsent",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isPersonalDataForConsent",
       "en" : "is personal data for consent"
     },
-    "domain" : "92",
+    "domain" : "101",
     "comment" : {
       "en" : "Links personal data with the consent it is associated with."
     },
     "attributes" : [ "object" ],
-    "id" : "100"
+    "id" : "115"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasInfluencedBy",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "30",
+    "range" : "29",
     "label" : {
       "IRI-based" : "wasInfluencedBy"
     },
-    "domain" : "30",
-    "subproperty" : [ "59", "46" ],
+    "domain" : "29",
+    "subproperty" : [ "60", "46" ],
     "attributes" : [ "object", "external" ],
     "id" : "47"
   }, {
     "iri" : "https://w3id.org/GConsent#hasRole",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "98",
+    "range" : "108",
     "label" : {
       "IRI-based" : "hasRole",
       "en" : "hasRole"
@@ -2488,27 +2691,27 @@
       "en" : "Indicates the role played by specified Person or Organisation or Third Party in the specified Association."
     },
     "attributes" : [ "object" ],
-    "id" : "102"
+    "id" : "117"
   }, {
     "iri" : "https://w3id.org/GConsent#forProcessing",
-    "inverse" : "73",
+    "inverse" : "74",
     "baseIri" : "https://w3id.org/GConsent",
     "range" : "2",
     "label" : {
       "IRI-based" : "forProcessing",
       "en" : "for processing"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Links the consent with its associated processing."
     },
     "attributes" : [ "object" ],
-    "id" : "103"
+    "id" : "118"
   }, {
     "iri" : "https://w3id.org/GConsent#forPersonalData",
-    "inverse" : "100",
+    "inverse" : "115",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "92",
+    "range" : "101",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -2521,48 +2724,47 @@
       "IRI-based" : "forPersonalData",
       "en" : "for personal data"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Links the consent to personal data it is associated with it."
     },
     "attributes" : [ "object" ],
-    "id" : "104"
+    "id" : "119"
   }, {
-    "range" : "64",
-    "domain" : "68",
+    "range" : "69",
+    "domain" : "76",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "105"
+    "id" : "120"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasAttributedTo",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "30",
+    "range" : "29",
     "label" : {
       "IRI-based" : "wasAttributedTo"
     },
-    "domain" : "30",
-    "subproperty" : [ "7" ],
+    "domain" : "29",
     "attributes" : [ "object", "external" ],
-    "id" : "97"
+    "id" : "121"
   }, {
     "iri" : "https://w3id.org/GConsent#atLocation",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "77",
+    "range" : "78",
     "label" : {
       "IRI-based" : "atLocation",
       "en" : "at location"
     },
-    "superproperty" : [ "6", "29" ],
-    "domain" : "10",
+    "superproperty" : [ "57", "28" ],
+    "domain" : "9",
     "comment" : {
       "en" : "Specifies the location at which the consent was given."
     },
     "attributes" : [ "object" ],
-    "id" : "31"
+    "id" : "30"
   }, {
     "iri" : "https://w3id.org/GConsent#hasConsent",
     "inverse" : "54",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "10",
+    "range" : "9",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -2575,41 +2777,66 @@
       "IRI-based" : "hasConsent",
       "en" : "has consent"
     },
-    "domain" : "39",
+    "domain" : "37",
     "comment" : {
       "en" : "Links a data subject to their consent."
     },
     "attributes" : [ "object", "inverse functional" ],
-    "id" : "106"
+    "id" : "122"
   }, {
     "iri" : "https://w3id.org/GConsent#hasStatus",
-    "inverse" : "99",
+    "inverse" : "112",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "65",
+    "range" : "70",
     "label" : {
       "IRI-based" : "hasStatus",
       "en" : "has status"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "en" : "Denotes the state or status of consent."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "107"
+    "id" : "123"
   }, {
     "iri" : "https://w3id.org/GConsent#isProvidedByPerson",
     "baseIri" : "https://w3id.org/GConsent",
-    "range" : "38",
+    "range" : "36",
     "label" : {
       "IRI-based" : "isProvidedByPerson",
       "en" : "is provided by person"
     },
-    "superproperty" : [ "6", "7" ],
-    "domain" : "101",
+    "superproperty" : [ "6" ],
+    "domain" : "116",
     "comment" : {
       "en" : "Specifies the Person that provided this consent."
     },
-    "attributes" : [ "irreflexive", "object", "functional", "asymmetric" ],
-    "id" : "88"
+    "attributes" : [ "asymmetric", "object", "irreflexive", "functional" ],
+    "id" : "107"
+  }, {
+    "iri" : "https://w3id.org/GConsent#isProvidedByDataSubject",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "isProvidedByDataSubject"
+    },
+    "superproperty" : [ "6" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "106"
+  }, {
+    "iri" : "https://w3id.org/GConsent#sharesDataWithThirdParty",
+    "baseIri" : "https://w3id.org/GConsent",
+    "range" : "99",
+    "label" : {
+      "IRI-based" : "sharesDataWithThirdParty"
+    },
+    "superproperty" : [ "109" ],
+    "domain" : "41",
+    "comment" : {
+      "en" : "Indicates sharing of personal data with a Third Party through the association."
+    },
+    "attributes" : [ "object" ],
+    "id" : "111"
   } ]
 }

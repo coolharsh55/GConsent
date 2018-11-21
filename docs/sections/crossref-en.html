@@ -25,6 +25,9 @@ This section provides details for each class and property defined by GConsent - 
          <a href="#DataConsultation" title="https://w3id.org/GConsent#DataConsultation">Data Consultation</a>
       </li>
       <li>
+         <a href="#DataController" title="https://w3id.org/GConsent#DataController">Data Controller</a>
+      </li>
+      <li>
          <a href="#DataDestruction" title="https://w3id.org/GConsent#DataDestruction">Data Destruction</a>
       </li>
       <li>
@@ -48,6 +51,9 @@ This section provides details for each class and property defined by GConsent - 
       </li>
       <li>
          <a href="#DataRetrieval" title="https://w3id.org/GConsent#DataRetrieval">Data Retrieval</a>
+      </li>
+      <li>
+         <a href="#DataSharing" title="https://w3id.org/GConsent#DataSharing">Data Sharing</a>
       </li>
       <li>
          <a href="#DataStorage" title="https://w3id.org/GConsent#DataStorage">Data Storage</a>
@@ -155,6 +161,11 @@ To link the `Consent` instance with the `DataSubject` instance, use the `isConse
             <sup class="type-op" title="object property">op</sup>, <a href="#isConsentForDataSubject"
                title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPreviousConsentFor" title="https://w3id.org/GConsent#isPreviousConsentFor">is previous consent for</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedByDataSubject"
+               title="https://w3id.org/GConsent#isProvidedByDataSubject">is provided by data subject</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedToPerson" title="https://w3id.org/GConsent#isProvidedToPerson">is provided to person</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isUpdatedConsentFor" title="https://w3id.org/GConsent#isUpdatedConsentFor">is updated consent for</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -169,6 +180,7 @@ To link the `Consent` instance with the `DataSubject` instance, use the `isConse
             <sup class="type-op" title="object property">op</sup>, <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isStatusForConsent" title="https://w3id.org/GConsent#isStatusForConsent">is status for consent</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isUpdatedConsentFor" title="https://w3id.org/GConsent#isUpdatedConsentFor">is updated consent for</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -350,6 +362,43 @@ To link the `Consent` instance with the `DataSubject` instance, use the `isConse
             <a href="#ConsultationOfPersonalData"
                title="https://w3id.org/GConsent#ConsultationOfPersonalData">Consultation Of Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DataController">
+      <h3>Data Controller<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#DataController</p>
+      <div class="comment">
+         <span class="markdown">A Data Controller is defined as "The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data."</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/GDPRtEXT#Controller">https://w3id.org/GDPRtEXT#Controller</a>
+         </dd>
+         <dd>
+            <a href="https://w3id.org/GDPRtEXT/gdpr#article4-7">https://w3id.org/GDPRtEXT/gdpr#article4-7</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <span class="dotted" title="https://w3id.org/GDPRov#Controller">controller</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Organisation">organisation</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -592,6 +641,35 @@ To link the `Consent` instance with the `DataSubject` instance, use the `isConse
          </dd>
       </dl>
    </div>
+   <div class="entity" id="DataSharing">
+      <h3>Data Sharing<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#DataSharing</p>
+      <div class="comment">
+         <span class="markdown">Type of processing where sharing of data takes place with a Third Party.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Processing" title="https://w3id.org/GConsent#Processing">Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#sharesDataWithThirdParty"
+               title="https://w3id.org/GConsent#sharesDataWithThirdParty">shares data with third party</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">Sharing of Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="DataStorage">
       <h3>Data Storage<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -696,6 +774,8 @@ The Data Subject is linked to the Consent instance via the isConsentForDataSubje
          <dd>
             <a href="#isConsentForDataSubject"
                title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedByDataSubject"
+               title="https://w3id.org/GConsent#isProvidedByDataSubject">is provided by data subject</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -917,6 +997,7 @@ GConsent defines several such types of processing taken from the text of the GDP
             <sup class="type-c" title="class">c</sup>, <a href="#DataRecording" title="https://w3id.org/GConsent#DataRecording">Data Recording</a>
             <sup class="type-c" title="class">c</sup>, <a href="#DataRestriction" title="https://w3id.org/GConsent#DataRestriction">Data Restriction</a>
             <sup class="type-c" title="class">c</sup>, <a href="#DataRetrieval" title="https://w3id.org/GConsent#DataRetrieval">Data Retrieval</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#DataSharing" title="https://w3id.org/GConsent#DataSharing">Data Sharing</a>
             <sup class="type-c" title="class">c</sup>, <a href="#DataStorage" title="https://w3id.org/GConsent#DataStorage">Data Storage</a>
             <sup class="type-c" title="class">c</sup>, <a href="#DataStructuring" title="https://w3id.org/GConsent#DataStructuring">Data Structuring</a>
             <sup class="type-c" title="class">c</sup>, <a href="#DataUse" title="https://w3id.org/GConsent#DataUse">Data Use</a>
@@ -961,6 +1042,7 @@ GConsent defines several such types of processing taken from the text of the GDP
                title="https://w3id.org/GConsent#RestrictionOfPersonalData">Restriction Of Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#RetrievalOfPersonalData"
                title="https://w3id.org/GConsent#RetrievalOfPersonalData">Retrieval Of Personal Data</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">Sharing of Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">Storage Of Personal Data</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#StructuringOfPersonalData"
                title="https://w3id.org/GConsent#StructuringOfPersonalData">Structuring Of Personal Data</a>
@@ -1148,6 +1230,8 @@ GConsent defines several such types of processing taken from the text of the GDP
          <dt>is in range of</dt>
          <dd>
             <a href="#involvesThirdParty" title="https://w3id.org/GConsent#involvesThirdParty">involves third party</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#sharesDataWithThirdParty"
+               title="https://w3id.org/GConsent#sharesDataWithThirdParty">shares data with third party</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1201,6 +1285,9 @@ GConsent defines several such types of processing taken from the text of the GDP
          <a href="#isProcessingForConsent" title="https://w3id.org/GConsent#isProcessingForConsent">is action for purpose</a>
       </li>
       <li>
+         <a href="#isAssociationFor" title="https://w3id.org/GConsent#isAssociationFor">is association for</a>
+      </li>
+      <li>
          <a href="#isConsentForDataSubject"
             title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
       </li>
@@ -1218,10 +1305,25 @@ GConsent defines several such types of processing taken from the text of the GDP
          <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
       </li>
       <li>
+         <a href="#isProvidedByDataSubject"
+            title="https://w3id.org/GConsent#isProvidedByDataSubject">
+            <span>is provided by data subject</span>
+         </a>
+      </li>
+      <li>
          <a href="#isProvidedByDelegation" title="https://w3id.org/GConsent#isProvidedByDelegation">is provided by delegation</a>
       </li>
       <li>
          <a href="#isProvidedByPerson" title="https://w3id.org/GConsent#isProvidedByPerson">is provided by person</a>
+      </li>
+      <li>
+         <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+      </li>
+      <li>
+         <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
+      </li>
+      <li>
+         <a href="#isProvidedToPerson" title="https://w3id.org/GConsent#isProvidedToPerson">is provided to person</a>
       </li>
       <li>
          <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
@@ -1231,6 +1333,15 @@ GConsent defines several such types of processing taken from the text of the GDP
       </li>
       <li>
          <a href="#isUpdatedConsentFor" title="https://w3id.org/GConsent#isUpdatedConsentFor">is updated consent for</a>
+      </li>
+      <li>
+         <a href="#sharesDataWithThirdParty"
+            title="https://w3id.org/GConsent#sharesDataWithThirdParty">
+            <span>shares data with third party</span>
+         </a>
+      </li>
+      <li>
+         <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
       </li>
    </ul>
    <div class="entity" id="atLocation">
@@ -1254,7 +1365,6 @@ GConsent defines several such types of processing taken from the text of the GDP
                <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -1285,7 +1395,6 @@ GConsent defines several such types of processing taken from the text of the GDP
                <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -1422,16 +1531,12 @@ GConsent defines several such types of processing taken from the text of the GDP
          <p>
             <strong>has characteristics:</strong> inverse functional, asymmetric, irreflexive</p>
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isContextForConsent" title="https://w3id.org/GConsent#isContextForConsent">is context for consent</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dd/>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
                <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
@@ -1477,6 +1582,11 @@ GConsent defines several such types of processing taken from the text of the GDP
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#Association">association</span>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isAssociationFor" title="https://w3id.org/GConsent#isAssociationFor">is association for</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -1537,9 +1647,6 @@ GConsent defines several such types of processing taken from the text of the GDP
                <a href="#atLocation" title="https://w3id.org/GConsent#atLocation">at location</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#atTime" title="https://w3id.org/GConsent#atTime">at time</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#inMedium" title="https://w3id.org/GConsent#inMedium">in medium</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedByDelegation" title="https://w3id.org/GConsent#isProvidedByDelegation">is provided by delegation</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedByPerson" title="https://w3id.org/GConsent#isProvidedByPerson">is provided by person</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1656,7 +1763,6 @@ GConsent defines several such types of processing taken from the text of the GDP
                <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -1682,20 +1788,32 @@ GConsent defines several such types of processing taken from the text of the GDP
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
+            <dt>has sub-properties</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/ns/prov#agent">agent</span>
+               <a href="#sharesDataWithThirdParty"
+                  title="https://w3id.org/GConsent#sharesDataWithThirdParty">shares data with third party</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/ns/prov#Association">association</span>
+               <a href="#Processing" title="https://w3id.org/GConsent#Processing">Processing</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ThirdParty" title="https://w3id.org/GConsent#ThirdParty">Third Party</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#hasAssociation" title="https://w3id.org/GConsent#hasAssociation">has association</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <span class="dotted" title="http://www.w3.org/ns/prov#agent">agent</span>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -1725,6 +1843,39 @@ GConsent defines several such types of processing taken from the text of the GDP
             <dt>is inverse of</dt>
             <dd>
                <a href="#forProcessing" title="https://w3id.org/GConsent#forProcessing">for processing</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isAssociationFor">
+      <h3>is association for<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#isAssociationFor</p>
+      <div class="comment">
+         <span class="markdown">Indicates an Association is for the associated Purpose or Processing.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Association">association</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Processing" title="https://w3id.org/GConsent#Processing">Processing</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasAssociation" title="https://w3id.org/GConsent#hasAssociation">has association</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -1774,11 +1925,6 @@ GConsent defines several such types of processing taken from the text of the GDP
       </div>
       <div class="description">
          <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#providedConsent" title="https://w3id.org/GConsent#providedConsent">gave consent</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -1841,7 +1987,6 @@ GConsent defines several such types of processing taken from the text of the GDP
                <span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -1874,19 +2019,11 @@ GConsent defines several such types of processing taken from the text of the GDP
          <p>
             <strong>has characteristics:</strong> functional, asymmetric, irreflexive</p>
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/ns/prov#wasAttributedTo">was attributed to</span>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dd/>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#isProvidedByDelegation" title="https://w3id.org/GConsent#isProvidedByDelegation">is provided by delegation</a>
+               <a href="#isProvidedByDataSubject"
+                  title="https://w3id.org/GConsent#isProvidedByDataSubject">is provided by data subject</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedByDelegation" title="https://w3id.org/GConsent#isProvidedByDelegation">is provided by delegation</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedByPerson" title="https://w3id.org/GConsent#isProvidedByPerson">is provided by person</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
@@ -1903,6 +2040,9 @@ GConsent defines several such types of processing taken from the text of the GDP
                <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -1910,6 +2050,33 @@ GConsent defines several such types of processing taken from the text of the GDP
             <dd>
                <a href="#providedConsent" title="https://w3id.org/GConsent#providedConsent">gave consent</a>
                <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isProvidedByDataSubject">
+      <h3>is provided by data subject<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#isProvidedByDataSubject</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
@@ -1930,14 +2097,9 @@ GConsent defines several such types of processing taken from the text of the GDP
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dd>
                <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -1970,20 +2132,120 @@ GConsent defines several such types of processing taken from the text of the GDP
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dd>
                <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
                <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isProvidedTo">
+      <h3>is provided to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#isProvidedTo</p>
+      <div class="comment">
+         <span class="markdown">Indicates the Person or Data Controller the consent was provided to.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional, asymmetric, irreflexive</p>
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#isProvidedToPerson" title="https://w3id.org/GConsent#isProvidedToPerson">is provided to person</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#DataController" title="https://w3id.org/GConsent#DataController">Data Controller</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isProvidedToController">
+      <h3>is provided to controller<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#isProvidedToController</p>
+      <div class="comment">
+         <span class="markdown">Indicates the Organisation the consent was provided to.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional, asymmetric, irreflexive</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#DataController" title="https://w3id.org/GConsent#DataController">Data Controller</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isProvidedToPerson">
+      <h3>is provided to person<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#isProvidedToPerson</p>
+      <div class="comment">
+         <span class="markdown">Indicates the Person the consent was provided to.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional, asymmetric, irreflexive</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2075,7 +2337,6 @@ GConsent defines several such types of processing taken from the text of the GDP
                <span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dd/>
             <dt>has domain</dt>
             <dd>
                <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
@@ -2093,6 +2354,240 @@ GConsent defines several such types of processing taken from the text of the GDP
             </dd>
          </dl>
       </div>
+   </div>
+   <div class="entity" id="sharesDataWithThirdParty">
+      <h3>shares data with third party<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#sharesDataWithThirdParty</p>
+      <div class="comment">
+         <span class="markdown">Indicates sharing of personal data with a Third Party through the association.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#involvesThirdParty" title="https://w3id.org/GConsent#involvesThirdParty">involves third party</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DataSharing" title="https://w3id.org/GConsent#DataSharing">Data Sharing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ThirdParty" title="https://w3id.org/GConsent#ThirdParty">Third Party</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#hasAssociation" title="https://w3id.org/GConsent#hasAssociation">has association</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <span class="dotted" title="http://www.w3.org/ns/prov#agent">agent</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasProvidedConsent">
+      <h3>was provided consent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#wasProvidedConsent</p>
+      <div class="comment">
+         <span class="markdown">Indicates that the specified Person or Data Controller was provided the associated consent.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> asymmetric, irreflexive</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#DataController" title="https://w3id.org/GConsent#DataController">Data Controller</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="annotationproperties">
+   <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract">
+            <span>abstract</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+            <span>created</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+            <span>creator</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+            <span>description</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+            <span>license</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified">
+            <span>modified</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+            title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+            <span>preferred namespace prefix</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+            <span>preferred namespace uri</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+            <span>publisher</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+            <span>status</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+            <span>title</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2002/07/owl#versionIRI" title="http://www.w3.org/2002/07/owl#versionIRI">
+            <span>version i r i</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://purl.org/dc/terms/abstract">
+      <h3>abstract<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/abstract</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/created">
+      <h3>created<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/creator">
+      <h3>creator<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/description">
+      <h3>description<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/license">
+      <h3>license<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/modified">
+      <h3>modified<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/modified</p>
+   </div>
+   <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+      <h3>preferred namespace prefix<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+   </div>
+   <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+      <h3>preferred namespace uri<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/publisher">
+      <h3>publisher<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/bibo/status">
+      <h3>status<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/bibo/status</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/title">
+      <h3>title<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+   </div>
+   <div class="entity" id="http://www.w3.org/2002/07/owl#versionIRI">
+      <h3>version i r i<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2002/07/owl#versionIRI</p>
    </div>
 </div><div id="namedindividuals">
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
@@ -2180,6 +2675,9 @@ GConsent defines several such types of processing taken from the text of the GDP
       <li>
          <a href="#RetrievalOfPersonalData"
             title="https://w3id.org/GConsent#RetrievalOfPersonalData">Retrieval Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">Sharing of Personal Data</a>
       </li>
       <li>
          <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">Storage Of Personal Data</a>
@@ -2768,6 +3266,28 @@ GConsent defines several such types of processing taken from the text of the GDP
          <dt>belongs to</dt>
          <dd>
             <a href="#DataRetrieval" title="https://w3id.org/GConsent#DataRetrieval">Data Retrieval</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#Processing" title="https://w3id.org/GConsent#Processing">Processing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SharingOfPersonalData">
+      <h3>Sharing of Personal Data<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/GConsent#SharingOfPersonalData</p>
+      <div class="comment">
+         <span class="markdown">Represents sharing of personal data</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#DataSharing" title="https://w3id.org/GConsent#DataSharing">Data Sharing</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>

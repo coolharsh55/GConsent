@@ -1,5 +1,7 @@
 body {
-    text-align: justify;    
+    text-align: justify; 
+    max-width: 1024px;
+    margin: auto;   
 }
 
 h1 {

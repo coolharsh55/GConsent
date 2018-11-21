@@ -8,6 +8,6 @@
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:specializationOf <https://w3id.org/GConsent#>;
-	 prov:wasGeneratedAt "2018-11-15";
+	 prov:wasGeneratedAt "2018-11-25";
 .
 :agent0 a prov:Agent; foaf:name "Christoph Debruyne, Kaniz Fatema, Pat McBennett".
