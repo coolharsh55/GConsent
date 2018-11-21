@@ -48,7 +48,9 @@ function loadTOC(){
       $("#abstract").load("sections/abstract-en.html"); 
       $("#introduction").load("sections/introduction-en.html"); 
       $("#overview").load("sections/overview-en.html"); 
+      $("#creation").load("sections/creation-en.html"); 
       $("#description").load("sections/description-en.html"); 
+      $("#related-work").load("sections/related-work-en.html"); 
       $("#references").load("sections/references-en.html"); 
       $("#crossref").load("sections/crossref-en.html", null, loadHash); 
     });
@@ -59,7 +61,7 @@ function loadTOC(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>GConsent</h1>
+<div id="header"><h1>GConsent</h1></div>
 <h2>A consent ontology based on the GDPR</h2>
 
 <dl>
@@ -73,10 +75,10 @@ function loadTOC(){
 <dd><a href="https://harshp.com/i/me#HJP">Harshvardhan J. Pandit</a>, (<a href="https://adaptcentre.ie/">ADAPT Centre</a>, <a href="https://tcd.ie/">Trinity College Dublin</a>)</dd>
 
 <dt>Contributors:</dt>
-<dd><dl>
+<dd>
 	<dd>Christoph Debruyne (<a href="https://adaptcentre.ie/">ADAPT Centre</a>, <a href="https://tcd.ie/">Trinity College Dublin</a>)</dd>
 	<dd>Pat McBennett (Independent Contribution, No Affiliations)</dd>
-</dl></dd>
+</dd>
 
 <dt>Publisher:</dt>
 <dd><a href="https://adaptcentre.ie/">ADAPT Centre</a>, (<a href="https://tcd.ie/">Trinity College Dublin</a>)</dd>
@@ -93,17 +95,24 @@ function loadTOC(){
 <div>
 <span>GConsent Ontology Status: Draft</span>
 </div>
-</div>     <div id="abstract"></div>
-<div id="toc"></div>     <div id="introduction"></div>
+</div>     
+<div id="abstract"></div>
+<div id="toc"></div>     
+<div id="introduction"></div>
      <div id="overview"></div>
+     <div id="creation"></div>
      <div id="description"></div>
+     <div id="related-work"></div>
      <div id="crossref"></div>
      <div id="references"></div>
 <html>
 <div id="acknowledgements">
 <h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>
-The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+<p><b>Funding:</b> This work is supported by the ADAPT Centre for Digital Content Technology
+which is funded under the SFI Research Centres Programme (Grant 13/RC/2106)
+and is co-funded under the European Regional Development Fund.</p>
+<p><b>Contributions:</b> </p>
+<p><b>Documentation:</b> The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
 </div>
 
 </html>

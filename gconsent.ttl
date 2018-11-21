@@ -289,7 +289,7 @@ prov:wasInfluencedBy rdf:type owl:ObjectProperty .
                         rdfs:domain :Processing ;
                         rdfs:range :Consent ;
                         rdfs:comment "Links an action to the purpose it is associated with."@en ;
-                        rdfs:label "is action for purpose"@en .
+                        rdfs:label "is processing for consent"@en .
 
 
 ###  https://w3id.org/GConsent#isProvidedBy
@@ -437,7 +437,7 @@ prov:wasInfluencedBy rdf:type owl:ObjectProperty .
                             ] ;
                  rdfs:comment "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."@en ;
                  rdfs:isDefinedBy gdprtext:GivenConsent ;
-                 rdfs:label "gave consent"@en .
+                 rdfs:label "provided consent"@en .
 
 
 ###  https://w3id.org/GConsent#sharesDataWithThirdParty

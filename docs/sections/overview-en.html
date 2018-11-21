@@ -1,377 +1,499 @@
-<html><h2 id="overv" class="list">GConsent - a consent ontology based on the GDPR: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This ontology has the following classes and properties.</span>
-<h4>Classes</h4>
-<ul class="hlist">
-   <li>
-      <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
-   </li>
-   <li>
-      <a href="#DataAdaptation" title="https://w3id.org/GConsent#DataAdaptation">Data Adaptation</a>
-   </li>
-   <li>
-      <a href="#DataAlignment" title="https://w3id.org/GConsent#DataAlignment">Data Alignment</a>
-   </li>
-   <li>
-      <a href="#DataAlteration" title="https://w3id.org/GConsent#DataAlteration">Data Alteration</a>
-   </li>
-   <li>
-      <a href="#DataCollection" title="https://w3id.org/GConsent#DataCollection">Data Collection</a>
-   </li>
-   <li>
-      <a href="#DataCombination" title="https://w3id.org/GConsent#DataCombination">Data Combination</a>
-   </li>
-   <li>
-      <a href="#DataConsultation" title="https://w3id.org/GConsent#DataConsultation">Data Consultation</a>
-   </li>
-   <li>
-      <a href="#DataController" title="https://w3id.org/GConsent#DataController">Data Controller</a>
-   </li>
-   <li>
-      <a href="#DataDestruction" title="https://w3id.org/GConsent#DataDestruction">Data Destruction</a>
-   </li>
-   <li>
-      <a href="#DataDisclosureByTransmission"
-         title="https://w3id.org/GConsent#DataDisclosureByTransmission">Data Disclosure by Transmission</a>
-   </li>
-   <li>
-      <a href="#DataDissemination" title="https://w3id.org/GConsent#DataDissemination">Data Dissemination</a>
-   </li>
-   <li>
-      <a href="#DataErasure" title="https://w3id.org/GConsent#DataErasure">Data Erasure</a>
-   </li>
-   <li>
-      <a href="#DataOrganisation" title="https://w3id.org/GConsent#DataOrganisation">Data Organisation</a>
-   </li>
-   <li>
-      <a href="#DataRecording" title="https://w3id.org/GConsent#DataRecording">Data Recording</a>
-   </li>
-   <li>
-      <a href="#DataRestriction" title="https://w3id.org/GConsent#DataRestriction">Data Restriction</a>
-   </li>
-   <li>
-      <a href="#DataRetrieval" title="https://w3id.org/GConsent#DataRetrieval">Data Retrieval</a>
-   </li>
-   <li>
-      <a href="#DataSharing" title="https://w3id.org/GConsent#DataSharing">Data Sharing</a>
-   </li>
-   <li>
-      <a href="#DataStorage" title="https://w3id.org/GConsent#DataStorage">Data Storage</a>
-   </li>
-   <li>
-      <a href="#DataStructuring" title="https://w3id.org/GConsent#DataStructuring">Data Structuring</a>
-   </li>
-   <li>
-      <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
-   </li>
-   <li>
-      <a href="#DataUse" title="https://w3id.org/GConsent#DataUse">Data Use</a>
-   </li>
-   <li>
-      <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
-   </li>
-   <li>
-      <a href="#GivenConsent" title="https://w3id.org/GConsent#GivenConsent">Given Consent</a>
-   </li>
-   <li>
-      <a href="#Medium" title="https://w3id.org/GConsent#Medium">Medium</a>
-   </li>
-   <li>
-      <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">Minor Data Subject</a>
-   </li>
-   <li>
-      <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">Personal Data</a>
-   </li>
-   <li>
-      <a href="#Processing" title="https://w3id.org/GConsent#Processing">Processing</a>
-   </li>
-   <li>
-      <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
-   </li>
-   <li>
-      <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
-   </li>
-   <li>
-      <a href="#StatusInvalidForProcessing"
-         title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
-   </li>
-   <li>
-      <a href="#StatusValidForProcessing"
-         title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
-   </li>
-   <li>
-      <a href="#ThirdParty" title="https://w3id.org/GConsent#ThirdParty">Third Party</a>
-   </li>
-</ul><h4>Object Properties</h4><ul class="hlist">
-   <li>
-      <a href="#atLocation" title="https://w3id.org/GConsent#atLocation">at location</a>
-   </li>
-   <li>
-      <a href="#atTime" title="https://w3id.org/GConsent#atTime">at time</a>
-   </li>
-   <li>
-      <a href="#forPersonalData" title="https://w3id.org/GConsent#forPersonalData">for personal data</a>
-   </li>
-   <li>
-      <a href="#forProcessing" title="https://w3id.org/GConsent#forProcessing">for processing</a>
-   </li>
-   <li>
-      <a href="#forPurpose" title="https://w3id.org/GConsent#forPurpose">for purpose</a>
-   </li>
-   <li>
-      <a href="#providedConsent" title="https://w3id.org/GConsent#providedConsent">gave consent</a>
-   </li>
-   <li>
-      <a href="#hasAssociation" title="https://w3id.org/GConsent#hasAssociation">has association</a>
-   </li>
-   <li>
-      <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
-   </li>
-   <li>
-      <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
-   </li>
-   <li>
-      <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
-   </li>
-   <li>
-      <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
-   </li>
-   <li>
-      <a href="#hasRole" title="https://w3id.org/GConsent#hasRole">hasRole</a>
-   </li>
-   <li>
-      <a href="#inMedium" title="https://w3id.org/GConsent#inMedium">in medium</a>
-   </li>
-   <li>
-      <a href="#involvesThirdParty" title="https://w3id.org/GConsent#involvesThirdParty">involves third party</a>
-   </li>
-   <li>
-      <a href="#isProcessingForConsent" title="https://w3id.org/GConsent#isProcessingForConsent">is action for purpose</a>
-   </li>
-   <li>
-      <a href="#isAssociationFor" title="https://w3id.org/GConsent#isAssociationFor">is association for</a>
-   </li>
-   <li>
-      <a href="#isConsentForDataSubject"
+<html>
+<h2 id="overv" class="list">GConsent: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="namespacedeclarations">
+   <h3 id="ns" class="list">Namespace declarations</h3>
+   <div id="ns" align="center">
+      <table>
+         <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+         <tbody>
+            <tr><td><b>gconsent</b></td><td>&lt;https://w3id.org/GConsent#&gt;</td></tr>
+            <tr><td><b>w3id-org</b></td><td>&lt;https://w3id.org&gt;</td></tr>
+            <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+            <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+            <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+            <tr><td><b>gdpr</b></td><td>&lt;https://w3id.org/GDPRtEXT/gdpr&gt;</td></tr>
+            <tr><td><b>gdprtext</b></td><td>&lt;https://w3id.org/GDPRtEXT&gt;</td></tr>
+            <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+            <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+            <tr><td><b>versions</b></td><td>&lt;https://w3id.org/GConsent/versions&gt;</td></tr>
+            <tr><td><b>bibo</b></td><td>&lt;http://purl.org/ontology/bibo&gt;</td></tr>
+            <tr><td><b>time</b></td><td>&lt;http://www.w3.org/2006/time&gt;</td></tr>
+            <tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
+            <tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov&gt;</td></tr>
+            <tr><td><b>gdprov</b></td><td>&lt;https://w3id.org/GDPRov&gt;</td></tr>
+            <tr><td><b>ontologies</b></td><td>&lt;http://purl.org/adaptcentre/openscience/ontologies&gt;</td></tr>
+            <tr><td><b>default namespace</b></td><td>&lt;https://w3id.org/GConsent&gt;</td></tr>
+            <tr><td><b>status</b></td><td>&lt;http://purl.org/ontology/bibo/status&gt;</td></tr>
+         </tbody>
+      </table>
+   </div>
+</div>
+
+<div class="div-overview">
+   <h3 id="overview-classes-properties" class="list">Classes and Properties</h3>
+   <h4>Core Vocabulary</h4>
+   <h5>Classes</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#Consent" title="https://w3id.org/GConsent#Consent">Consent</a>
+      </li>
+      <li>
+         <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+      </li>
+      <li>
+         <a href="#PersonalData" title="https://w3id.org/GConsent#PersonalData">Personal Data</a>
+      </li>
+      <li>
+         <a href="#Processing" title="https://w3id.org/GConsent#Processing">Processing</a>
+      </li>
+      <li>
+         <a href="#Purpose" title="https://w3id.org/GConsent#Purpose">Purpose</a>
+      </li>
+      <li>
+         <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+      </li>
+      </ul>
+   <h5>Object Properties</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#forPersonalData" title="https://w3id.org/GConsent#forPersonalData">for personal data</a>
+      </li>
+      <li>
+         <a href="#forProcessing" title="https://w3id.org/GConsent#forProcessing">for processing</a>
+      </li>
+      <li>
+         <a href="#forPurpose" title="https://w3id.org/GConsent#forPurpose">for purpose</a>
+      </li>
+      <li>
+         <a href="#providedConsent" title="https://w3id.org/GConsent#providedConsent">provided consent</a>
+      </li>
+      
+      <li>
+         <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
+      </li>
+      
+      <li>
+         <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
+      </li>
+      
+      <li>
+         <a href="#isProcessingForConsent" title="https://w3id.org/GConsent#isProcessingForConsent">is processing for consent</a>
+      </li>
+      
+      <li>
+         <a href="#isConsentForDataSubject"
          title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
-   </li>
-   <li>
-      <a href="#isContextForConsent" title="https://w3id.org/GConsent#isContextForConsent">is context for consent</a>
-   </li>
-   <li>
-      <a href="#isPersonalDataForConsent"
+      </li>
+      
+      <li>
+         <a href="#isPersonalDataForConsent"
          title="https://w3id.org/GConsent#isPersonalDataForConsent">is personal data for consent</a>
-   </li>
-   <li>
-      <a href="#isPreviousConsentFor" title="https://w3id.org/GConsent#isPreviousConsentFor">is previous consent for</a>
-   </li>
-   <li>
-      <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
-   </li>
-   <li>
-      <a href="#isProvidedByDataSubject"
+      </li>
+      
+      <li>
+         <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
+      </li>
+      <li>
+         <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+      </li>
+      
+      <li>
+         <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
+      </li>
+      <li>
+         <a href="#isStatusForConsent" title="https://w3id.org/GConsent#isStatusForConsent">is status for consent</a>
+      </li>
+      <li>
+         <a href="#isUpdatedConsentFor" title="https://w3id.org/GConsent#isUpdatedConsentFor">is updated consent for</a>
+      </li>
+      
+      <li>
+         <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
+      </li>
+   </ul>
+
+   <h4>Vocabulary for Context of Consent</h4>
+   <h5>Classes</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#Medium" title="https://w3id.org/GConsent#Medium">Medium</a>
+      </li>
+      <li><a href="http://www.w3.org/ns/prov#Location">prov:Location</a></li>
+      <li><a href="http://www.w3.org/2006/time#Instant">time:Instant</a></li>
+      <li><a href="http://www.w3.org/2006/time#TemporalEntity">time:TemporalEntity</a></li>
+   </ul>
+   <h5>Object Properties</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#atLocation" title="https://w3id.org/GConsent#atLocation">at location</a>
+      </li>
+      <li>
+         <a href="#atTime" title="https://w3id.org/GConsent#atTime">at time</a>
+      </li>
+      <li>
+         <a href="#hasContext" title="https://w3id.org/GConsent#hasContext">has context</a>
+      </li>
+      <li>
+         <a href="#hasExpiry" title="https://w3id.org/GConsent#hasExpiry">has expiry</a>
+      </li>
+      <li>
+         <a href="#inMedium" title="https://w3id.org/GConsent#inMedium">in medium</a>
+      </li>
+      <li>
+         <a href="#isContextForConsent" title="https://w3id.org/GConsent#isContextForConsent">is context for consent</a>
+      </li>
+   </ul>
+
+   <h4>Vocabulary for Entities related to Consent</h4>
+   <h5>Classes</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#DataController" title="https://w3id.org/GConsent#DataController">Data Controller</a>
+      </li>
+      <li>
+         <a href="#DataSubject" title="https://w3id.org/GConsent#DataSubject">Data Subject</a>
+      </li>
+      <li>
+         <a href="#MinorDataSubject" title="https://w3id.org/GConsent#MinorDataSubject">Minor Data Subject</a>
+      </li>
+      <li>
+         <a href="#ThirdParty" title="https://w3id.org/GConsent#ThirdParty">Third Party</a>
+      </li>
+   </ul>
+   <h5>Object Properties</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#providedConsent" title="https://w3id.org/GConsent#providedConsent">provided consent</a>
+      </li>
+      <li>
+         <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
+      </li>
+      
+      <li>
+         <a href="#involvesThirdParty" title="https://w3id.org/GConsent#involvesThirdParty">involves third party</a>
+      </li>
+      
+      <li>
+         <a href="#isConsentForDataSubject"
+         title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
+      </li>
+      
+      <li>
+         <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
+      </li>
+      <li>
+         <a href="#isProvidedByDataSubject"
          title="https://w3id.org/GConsent#isProvidedByDataSubject">
          <span>is provided by data subject</span>
-      </a>
-   </li>
-   <li>
-      <a href="#isProvidedByDelegation" title="https://w3id.org/GConsent#isProvidedByDelegation">is provided by delegation</a>
-   </li>
-   <li>
-      <a href="#isProvidedByPerson" title="https://w3id.org/GConsent#isProvidedByPerson">is provided by person</a>
-   </li>
-   <li>
-      <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
-   </li>
-   <li>
-      <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
-   </li>
-   <li>
-      <a href="#isProvidedToPerson" title="https://w3id.org/GConsent#isProvidedToPerson">is provided to person</a>
-   </li>
-   <li>
-      <a href="#isPurposeForConsent" title="https://w3id.org/GConsent#isPurposeForConsent">is purpose for consent</a>
-   </li>
-   <li>
-      <a href="#isStatusForConsent" title="https://w3id.org/GConsent#isStatusForConsent">is status for consent</a>
-   </li>
-   <li>
-      <a href="#isUpdatedConsentFor" title="https://w3id.org/GConsent#isUpdatedConsentFor">is updated consent for</a>
-   </li>
-   <li>
-      <a href="#sharesDataWithThirdParty"
+         </a>
+      </li>
+      <li>
+         <a href="#isProvidedByPerson" title="https://w3id.org/GConsent#isProvidedByPerson">is provided by person</a>
+      </li>
+      <li>
+         <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+      </li>
+      <li>
+         <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
+      </li>
+      <li>
+         <a href="#isProvidedToPerson" title="https://w3id.org/GConsent#isProvidedToPerson">is provided to person</a>
+      </li>
+      <li>
+         <a href="#sharesDataWithThirdParty"
          title="https://w3id.org/GConsent#sharesDataWithThirdParty">
          <span>shares data with third party</span>
       </a>
-   </li>
-   <li>
-      <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
-   </li>
-</ul><h4>Annotation Properties</h4><ul class="hlist">
-   <li>
-      <a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract">
-         <span>abstract</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
-         <span>created</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
-         <span>creator</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
-         <span>description</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
-         <span>license</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified">
-         <span>modified</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
-         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
-         <span>preferred namespace prefix</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
-         <span>preferred namespace uri</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
-         <span>publisher</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
-         <span>status</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
-         <span>title</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.w3.org/2002/07/owl#versionIRI" title="http://www.w3.org/2002/07/owl#versionIRI">
-         <span>version i r i</span>
-      </a>
-   </li>
-</ul><h4>Named Individuals</h4><ul class="hlist">
-   <li>
-      <a href="#AdaptationOfPersonalData"
-         title="https://w3id.org/GConsent#AdaptationOfPersonalData">Adaptation Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#AlignmentOfPersonalData"
-         title="https://w3id.org/GConsent#AlignmentOfPersonalData">Alignment Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#AlterationOfPersonalData"
-         title="https://w3id.org/GConsent#AlterationOfPersonalData">Alteration Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#CollectionOfPersonalData"
-         title="https://w3id.org/GConsent#CollectionOfPersonalData">Collection Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#CombinationOfPersonalData"
-         title="https://w3id.org/GConsent#CombinationOfPersonalData">Combination Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsultationOfPersonalData"
-         title="https://w3id.org/GConsent#ConsultationOfPersonalData">Consultation Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#DestructionOfPersonalData"
-         title="https://w3id.org/GConsent#DestructionOfPersonalData">Destruction Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#DisclosureByTransmissionOfPersonalData"
-         title="https://w3id.org/GConsent#DisclosureByTransmissionOfPersonalData">Disclosure by Transmission Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#DisseminationOfPersonalData"
-         title="https://w3id.org/GConsent#DisseminationOfPersonalData">Dissemination Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#ErasureOfPersonalData" title="https://w3id.org/GConsent#ErasureOfPersonalData">Erasure Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusExplicitlyGiven"
+      </li>
+      <li>
+         <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
+      </li>
+   </ul>
+
+   <h4>Vocabulary for Status of Consent</h4>
+   <h5>Classes</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#Status" title="https://w3id.org/GConsent#Status">Status</a>
+      </li>
+      <li>
+         <a href="#StatusInvalidForProcessing"
+         title="https://w3id.org/GConsent#StatusInvalidForProcessing">Status invalid for Processing</a>
+      </li>
+      <li>
+         <a href="#StatusValidForProcessing"
+         title="https://w3id.org/GConsent#StatusValidForProcessing">Status valid for Processing</a>
+      </li>
+   </ul>
+   <h5>Object Properties</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#hasStatus" title="https://w3id.org/GConsent#hasStatus">has status</a>
+      </li>
+      <li>
+         <a href="#isStatusForConsent" title="https://w3id.org/GConsent#isStatusForConsent">is status for consent</a>
+      </li>
+   </ul>
+   <h5>Named Individuals</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#ConsentStatusExpired" title="https://w3id.org/GConsent#ConsentStatusExpired">Expired</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusExplicitlyGiven"
          title="https://w3id.org/GConsent#ConsentStatusExplicitlyGiven">Explicitly Given</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusGivenByDelegation"
+      </li>
+      <li>
+         <a href="#ConsentStatusGivenByDelegation"
          title="https://w3id.org/GConsent#ConsentStatusGivenByDelegation">Given by Delegation</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusImplicitlyGiven"
+      </li>
+      <li>
+         <a href="#ConsentStatusImplicitlyGiven"
          title="https://w3id.org/GConsent#ConsentStatusImplicitlyGiven">Implicitly Given</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusInvalidated"
+      </li>
+      <li>
+         <a href="#ConsentStatusInvalidated"
          title="https://w3id.org/GConsent#ConsentStatusInvalidated">Invalidated</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
-   </li>
-   <li>
-      <a href="#OrganisationOfPersonalData"
-         title="https://w3id.org/GConsent#OrganisationOfPersonalData">Organisation Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#RecordingOfPersonalData"
-         title="https://w3id.org/GConsent#RecordingOfPersonalData">Recording Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusRequested"
+      </li>
+      <li>
+         <a href="#ConsentStatusNotGiven" title="https://w3id.org/GConsent#ConsentStatusNotGiven">Not Given</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusRefused" title="https://w3id.org/GConsent#ConsentStatusRefused">Refused</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusRequested"
          title="https://w3id.org/GConsent#ConsentStatusRequested">Requested</a>
-   </li>
-   <li>
-      <a href="#RestrictionOfPersonalData"
-         title="https://w3id.org/GConsent#RestrictionOfPersonalData">Restriction Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#RetrievalOfPersonalData"
-         title="https://w3id.org/GConsent#RetrievalOfPersonalData">Retrieval Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">Sharing of Personal Data</a>
-   </li>
-   <li>
-      <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">Storage Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#StructuringOfPersonalData"
-         title="https://w3id.org/GConsent#StructuringOfPersonalData">Structuring Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
-   </li>
-   <li>
-      <a href="#UseOfPersonalData" title="https://w3id.org/GConsent#UseOfPersonalData">Use Of Personal Data</a>
-   </li>
-   <li>
-      <a href="#ConsentStatusWithdrawn"
+      </li>
+      <li>
+         <a href="#ConsentStatusUnknown" title="https://w3id.org/GConsent#ConsentStatusUnknown">Unknown</a>
+      </li>
+      <li>
+         <a href="#ConsentStatusWithdrawn"
          title="https://w3id.org/GConsent#ConsentStatusWithdrawn">Withdrawn</a>
-   </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html#"></iframe> </html>
+      </li>
+   </ul>
+
+   <h4>Vocabulary for Processing Types</h4>
+   <h5>Classes</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#DataAdaptation" title="https://w3id.org/GConsent#DataAdaptation">Data Adaptation</a>
+      </li>
+      <li>
+         <a href="#DataAlignment" title="https://w3id.org/GConsent#DataAlignment">Data Alignment</a>
+      </li>
+      <li>
+         <a href="#DataAlteration" title="https://w3id.org/GConsent#DataAlteration">Data Alteration</a>
+      </li>
+      <li>
+         <a href="#DataCollection" title="https://w3id.org/GConsent#DataCollection">Data Collection</a>
+      </li>
+      <li>
+         <a href="#DataCombination" title="https://w3id.org/GConsent#DataCombination">Data Combination</a>
+      </li>
+      <li>
+         <a href="#DataConsultation" title="https://w3id.org/GConsent#DataConsultation">Data Consultation</a>
+      </li>
+      <li>
+         <a href="#DataDestruction" title="https://w3id.org/GConsent#DataDestruction">Data Destruction</a>
+      </li>
+      <li>
+         <a href="#DataDisclosureByTransmission"
+         title="https://w3id.org/GConsent#DataDisclosureByTransmission">Data Disclosure by Transmission</a>
+      </li>
+      <li>
+         <a href="#DataDissemination" title="https://w3id.org/GConsent#DataDissemination">Data Dissemination</a>
+      </li>
+      <li>
+         <a href="#DataErasure" title="https://w3id.org/GConsent#DataErasure">Data Erasure</a>
+      </li>
+      <li>
+         <a href="#DataOrganisation" title="https://w3id.org/GConsent#DataOrganisation">Data Organisation</a>
+      </li>
+      <li>
+         <a href="#DataRecording" title="https://w3id.org/GConsent#DataRecording">Data Recording</a>
+      </li>
+      <li>
+         <a href="#DataRestriction" title="https://w3id.org/GConsent#DataRestriction">Data Restriction</a>
+      </li>
+      <li>
+         <a href="#DataRetrieval" title="https://w3id.org/GConsent#DataRetrieval">Data Retrieval</a>
+      </li>
+      <li>
+         <a href="#DataSharing" title="https://w3id.org/GConsent#DataSharing">Data Sharing</a>
+      </li>
+      <li>
+         <a href="#DataStorage" title="https://w3id.org/GConsent#DataStorage">Data Storage</a>
+      </li>
+      <li>
+         <a href="#DataStructuring" title="https://w3id.org/GConsent#DataStructuring">Data Structuring</a>
+      </li>
+      <li>
+         <a href="#DataUse" title="https://w3id.org/GConsent#DataUse">Data Use</a>
+      </li>
+      </li>
+   </ul>
+   <h5>Object Properties</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#forProcessing" title="https://w3id.org/GConsent#forProcessing">for processing</a>
+      </li>
+      <li>
+         <a href="#isProcessingForConsent" title="https://w3id.org/GConsent#isProcessingForConsent">is processing for consent</a>
+      </li>
+   </ul>
+   <h5>Named Individuals</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#AdaptationOfPersonalData"
+         title="https://w3id.org/GConsent#AdaptationOfPersonalData">Adaptation Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#AlignmentOfPersonalData"
+         title="https://w3id.org/GConsent#AlignmentOfPersonalData">Alignment Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#AlterationOfPersonalData"
+         title="https://w3id.org/GConsent#AlterationOfPersonalData">Alteration Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#CollectionOfPersonalData"
+         title="https://w3id.org/GConsent#CollectionOfPersonalData">Collection Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#CombinationOfPersonalData"
+         title="https://w3id.org/GConsent#CombinationOfPersonalData">Combination Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#ConsultationOfPersonalData"
+         title="https://w3id.org/GConsent#ConsultationOfPersonalData">Consultation Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#DestructionOfPersonalData"
+         title="https://w3id.org/GConsent#DestructionOfPersonalData">Destruction Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#DisclosureByTransmissionOfPersonalData"
+         title="https://w3id.org/GConsent#DisclosureByTransmissionOfPersonalData">Disclosure by Transmission Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#DisseminationOfPersonalData"
+         title="https://w3id.org/GConsent#DisseminationOfPersonalData">Dissemination Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#ErasureOfPersonalData" title="https://w3id.org/GConsent#ErasureOfPersonalData">Erasure Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#OrganisationOfPersonalData"
+         title="https://w3id.org/GConsent#OrganisationOfPersonalData">Organisation Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#RecordingOfPersonalData"
+         title="https://w3id.org/GConsent#RecordingOfPersonalData">Recording Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#RestrictionOfPersonalData"
+         title="https://w3id.org/GConsent#RestrictionOfPersonalData">Restriction Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#RetrievalOfPersonalData"
+         title="https://w3id.org/GConsent#RetrievalOfPersonalData">Retrieval Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#SharingOfPersonalData" title="https://w3id.org/GConsent#SharingOfPersonalData">Sharing of Personal Data</a>
+      </li>
+      <li>
+         <a href="#StorageOfPersonalData" title="https://w3id.org/GConsent#StorageOfPersonalData">Storage Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#StructuringOfPersonalData"
+         title="https://w3id.org/GConsent#StructuringOfPersonalData">Structuring Of Personal Data</a>
+      </li>
+      <li>
+         <a href="#UseOfPersonalData" title="https://w3id.org/GConsent#UseOfPersonalData">Use Of Personal Data</a>
+      </li>
+   </ul>
+
+   <h4>Vocabulary for Provenance related to Consent</h4>
+   <h5>Classes</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#Delegation" title="https://w3id.org/GConsent#Delegation">Delegation</a>
+      </li>
+      <li>
+         <a href="#GivenConsent" title="https://w3id.org/GConsent#GivenConsent">Given Consent</a>
+      </li>
+      <li>
+         <a href="#ThirdParty" title="https://w3id.org/GConsent#ThirdParty">Third Party</a>
+      </li>
+   </ul>
+   <h5>Object Properties</h5>
+   <ul class="hlist">
+      <li>
+         <a href="#providedConsent" title="https://w3id.org/GConsent#providedConsent">provided consent</a>
+      </li>
+      <li>
+         <a href="#hasAssociation" title="https://w3id.org/GConsent#hasAssociation">has association</a>
+      </li>
+      <li>
+         <a href="#hasConsent" title="https://w3id.org/GConsent#hasConsent">has consent</a>
+      </li>
+      <li>
+         <a href="#hasRole" title="https://w3id.org/GConsent#hasRole">hasRole</a>
+      </li>
+      <li>
+         <a href="#involvesThirdParty" title="https://w3id.org/GConsent#involvesThirdParty">involves third party</a>
+      </li>
+      <li>
+         <a href="#isAssociationFor" title="https://w3id.org/GConsent#isAssociationFor">is association for</a>
+      </li>
+      <li>
+         <a href="#isConsentForDataSubject"
+         title="https://w3id.org/GConsent#isConsentForDataSubject">is consent for data subject</a>
+      </li>
+      <li>
+         <a href="#isPreviousConsentFor" title="https://w3id.org/GConsent#isPreviousConsentFor">is previous consent for</a>
+      </li>
+      <li>
+         <a href="#isProvidedBy" title="https://w3id.org/GConsent#isProvidedBy">is provided by</a>
+      </li>
+      <li>
+         <a href="#isProvidedByDataSubject"
+         title="https://w3id.org/GConsent#isProvidedByDataSubject">
+         <span>is provided by data subject</span>
+         </a>
+      </li>
+      <li>
+         <a href="#isProvidedByDelegation" title="https://w3id.org/GConsent#isProvidedByDelegation">is provided by delegation</a>
+      </li>
+      <li>
+         <a href="#isProvidedByPerson" title="https://w3id.org/GConsent#isProvidedByPerson">is provided by person</a>
+      </li>
+      <li>
+         <a href="#isProvidedTo" title="https://w3id.org/GConsent#isProvidedTo">is provided to</a>
+      </li>
+      <li>
+         <a href="#isProvidedToController" title="https://w3id.org/GConsent#isProvidedToController">is provided to controller</a>
+      </li>
+      <li>
+         <a href="#isProvidedToPerson" title="https://w3id.org/GConsent#isProvidedToPerson">is provided to person</a>
+      </li>
+      <li>
+         <a href="#isUpdatedConsentFor" title="https://w3id.org/GConsent#isUpdatedConsentFor">is updated consent for</a>
+      </li>
+      <li>
+         <a href="#sharesDataWithThirdParty"
+         title="https://w3id.org/GConsent#sharesDataWithThirdParty">
+         <span>shares data with third party</span>
+      </a>
+      </li>
+      <li>
+         <a href="#wasProvidedConsent" title="https://w3id.org/GConsent#wasProvidedConsent">was provided consent</a>
+      </li>
+   </ul>
+
+<h3 id="overview-webvowl" class="list">WebVOWL visualisation</h3>
+<iframe align="center" width="100%" height ="500px" src="webvowl/index.html#"></iframe>
+</div>
+</html>
