@@ -1,3 +1,62 @@
 <html>
 <h2 id="related-work" class="list">Related Work<span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<div id="div-related-work-consent">
+<h3 id="related-work-consent" class="list">Representation of Consent</h3>
+<h4>Data Protection Ontology by Bartolini et. al <a href="#ref-Bartolini">[ref]</a></h4>
+<span class="markdown">
+The ontology does not deal with capturing the metadata associated with consent, but rather lists consent as one of the legal basis within the process of compliance. Here, `Consent` is listed as a subclass of `Legal Justification` and `Trust`. It has a subclass `Special Consent` to reflect consent "given under special circumstances", and `Parent Consent` as its subclass to refer to consent given by a parent in lieu of a minor.
+
+It is used to determine `Consensual Processing` using OWL2's `EquivalentTo` through the following logic:
+```
+ConsensualProcessing EquivalentTo
+  ((not (processingAppliesTo some ChildData)) and (processingAppliesTo some SensitiveData) 
+    and (processingHasRequirement exactly 1 SpecialConsent)) 
+    or ((not (processingAppliesTo some SensitiveData)) and (processingHasRequirement exactly 1 Consent)) 
+    or ((processingAppliesTo some ChildData) and (processingHasRequirement exactly 1 ParentConsent))
+```
+
+It has properties that link consent to other entities. `consentAppliesTo` to link consent with `DataProcessing`, which is specialised using `specialConsentAppliesTo` for `SensitiveData`. It captures the `DataSubject` who "granted" consent through `wasGrantedBy`, but does not contain any mechanism to capture delegations.
+
+Its use of the concept `DataProcessing` is a higher-level abstraction consisting of `LawfulProcessing` which provides legal basis for processing such as "Consensual" or "Contractual", and `ProcessingActivity` which specifies operations performed on the data which can be compared to `Processing` in GConsent. However, it also contains `Action` with subclasses `Access`, `Erasure`, `Objection` and `Rectification`, which could also be considered to be processing types.
+
+It has concepts for `Person`, but defines `Controller` as a subclass of a Person, with the `Recipient` defined as the subclass of Controller. `DataSubject` is defined as a type of Person, with `ChildDataSubject` as a specialisation, similar to the model in GConsent for Data Subject and a Minor.
+
+The concept of `Purpose` refers to purpose limitation or data minimisation in the GDPR and is not the same purpose as defined within GConsent. 
+</span>
+
+<h4>Consent and Data Management Model by Fatema et. al <a href="#ref-CDMM">[ref]</a></h4>
+<span class="markdown">
+The Consent Ontology part of the Consent and Data Management Model (CDMM) is the initial attempt (which included the authors and some contributors of GConsent) at creating a consent-based ontology for the GDPR. The ontology was created before GDPR was applicable and therefore bases its modelling on the applicable norms at the time. Hereon, we refer to it as the CDMM ontology for short-notation.
+
+Although the overall design of GConsent is similar to that of the CDMM ontology, there are a few notable differences. The property `consent_given_by` links to `ConsentingParty`, which is specialised into `DataSubject` and `DataSubjectRepresentative` for delegation. The representative is further specialised into "legal representative" and "parent". Whereas GConsent uses `Purpose` and `Processing` to specify what the consent is about, the CDMM ontology uses `Permission` as a concept, based on Access Control models. Additionally, it specifically focuses on consent that is given, or withdrawn/revoked. GConsent extends it to capture other possible consent states.
+
+Similar to GConsent, CDMM also uses the PROV-O ontology. The Consenting Party, Data Subject, and "Allowed Party" are defined as `prov:Agent`, while Consent, "Event", and "Context" are defined as `prov:Entity`, with `Action` defined as a `prov:Activity`. GConsent expands on this model to also capture associations and delegations (using `PROV`) for consent.
+</span>
+
+<h4>SPECIAL's Usage Policy Language (SPL) <a href="#ref-SPL">[ref]</a></h4>
+<span class="markdown">
+The Usage Policy Language part of SPECIAL project's GDPR compliance framework provides an ex-post representation of the given consent. Its scope is therefore limited to capturing the permissive nature of given consent in order to compare it with its processing logs to determine (and evaluate) compliance according to the given consent. It contains a Data Category (Personal Data in GConsent), Processing, Purpose, Storage, and Recipient. Of these, Storage (location or temporal limitations) and Recipient are not directly represented within GConsent as concepts, but are instead defined through Processing types for "Data Storage" and "Data Sharing" (or other specialisations).
+Data define using GConsent can be mapped into SPL, making it possible to use GConsent for representation and documentation along with SPL for ex-intra and ex-post compliance checking.
+</span>
+
+<h4>PrOnto: Privacy Ontologies for Legal Reasoning <a href="#ref-PrOnto">[ref]</a></h4>
+<span class="markdown">
+PrOnto is an ontology for modelling GDPR related knowledge regarding privacy agents, data types, types of processing operations, rights and obligations. The ontology is described in the published paper, but is not provided with an reference to an online resource. Therefore, this section is based on the details provided as part of the referenced publication.
+
+PrOnto consists of five modules - Data, Purposes, Processing, Agents, and Rights - that specify the data being processed, with the processing linked to specific purposes; and to specify the rights for agents. The Data module defines the various categories of data, and corresponds to the `PersonalData` within GConsent.
+</span>
+
+<h4>ODRL: Open Digital Rights Language <a href="#ref-ODRL">[ref]</a></h4>
+
+</div>
+
+<div id="div-related-work-provenance">
+<h3 id="related-work-provenance" class="list">Provenance of Consent</h3>
+<h4>Provenance Records for Consent</h4>
+
+<h4>Provenance Models for Consent</h4>
+</div>
+
+
 </html>
