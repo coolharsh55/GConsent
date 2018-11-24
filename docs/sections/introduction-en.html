@@ -5,6 +5,26 @@
 
 <div id="div-intro-aims-scope-limitations">
 	<h3 id="intro-aims-scope-limitations" class="list">Aims, Scope, and Limitations</h3>
+	<h4>Aims</h4>
+	<ol>
+		<li>To model information associated with Consent as per the GDPR</li>
+		<li>Represent consent as an entity with various states (e.g. unknown, given, withdrawn)</li>
+		<li>Investigate ways to model related information (e.g. provenance, associations) using existing vocabularies</li>
+		<li>To provide an OWL2-DL ontology with concepts and relationships based on above</li>
+		<li>Create a list of competency questions related to consent and its assessment</li>
+	</ol>
+	<h4>Scope</h4>
+	<ul>
+		<li>Consent as a concept has broad definitions and applications. We limit the scope in GConsent to consent as defined within the context of the GDPR.</li>
+		<li>GConsent models information which will be of assistance to the process of compliance verification and demonstration. GDPR Compliance is not the goal for GConsent.</li>
+		<li>GConsent captures only the directly (or sometimes closely) related information regarding consent. For example, it does not capture things such as how the purpose or processing specified in the process is actually carried out.</li>
+	</ul>
+	<h4>Limitations</h4>
+	<ul>
+		<li>GConsent does not model the consent as a 'policy' or 'contract', and therefore does not contain more specific information such as where the data will be collected from or any temporal aspects regarding processes. This limitation can be addressed by using relevant concepts and properties from external vocabularies such as PROV-O.</li>
+		<li>There is no information on how existing schemas and vocabularies can be integrated into GConsent. This limitation is used as the basis for future work in this direction, particularly the investigation of using R2RML for mapping databases containing consent into ontological representations.</li>
+		<li>GConsent has a role in compliance verification and demonstration, which is currently not explained in detail. This is also the basis for future work by creating a platform that provides design patterns and tools for verifying the validity of consent, and for producing documentation based on it.</li>
+	</ul>
 </div>
 
 <div id="div-intro-structure">

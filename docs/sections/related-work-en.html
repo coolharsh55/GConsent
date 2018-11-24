@@ -2,7 +2,7 @@
 <h2 id="related-work" class="list">Related Work<span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
 <div id="div-related-work-consent">
-<h3 id="related-work-consent" class="list">Representation of Consent</h3>
+<!-- <h3 id="related-work-consent" class="list">Representation of Consent</h3> -->
 <h4>Data Protection Ontology by Bartolini et. al <a href="#ref-Bartolini">[ref]</a></h4>
 <span class="markdown">
 The ontology does not deal with capturing the metadata associated with consent, but rather lists consent as one of the legal basis within the process of compliance. Here, `Consent` is listed as a subclass of `Legal Justification` and `Trust`. It has a subclass `Special Consent` to reflect consent "given under special circumstances", and `Parent Consent` as its subclass to refer to consent given by a parent in lieu of a minor.
@@ -36,27 +36,65 @@ Similar to GConsent, CDMM also uses the PROV-O ontology. The Consenting Party, D
 
 <h4>SPECIAL's Usage Policy Language (SPL) <a href="#ref-SPL">[ref]</a></h4>
 <span class="markdown">
-The Usage Policy Language part of SPECIAL project's GDPR compliance framework provides an ex-post representation of the given consent. Its scope is therefore limited to capturing the permissive nature of given consent in order to compare it with its processing logs to determine (and evaluate) compliance according to the given consent. It contains a Data Category (Personal Data in GConsent), Processing, Purpose, Storage, and Recipient. Of these, Storage (location or temporal limitations) and Recipient are not directly represented within GConsent as concepts, but are instead defined through Processing types for "Data Storage" and "Data Sharing" (or other specialisations).
-Data define using GConsent can be mapped into SPL, making it possible to use GConsent for representation and documentation along with SPL for ex-intra and ex-post compliance checking.
+The Usage Policy Language part of SPECIAL project's GDPR compliance framework provides an ex-post representation of the given consent. Its scope is therefore limited to capturing the permissive nature of given consent in order to compare it with its processing logs to determine (and evaluate) compliance according to the given consent. It contains a Data Category (Personal Data in GConsent), Processing, Purpose, Storage, and Recipient. Of these, Storage (location or temporal limitations) and Recipient are not directly represented within GConsent as concepts, but are instead defined through Processing types for "Data Storage" and "Data Sharing" (or other specialisations).</span>
+<span class="markdown">
+Data defined using GConsent can be mapped into SPL, making it possible to use GConsent for representation and documentation along with SPL for ex-intra and ex-post compliance checking.
+To do this, reuse the structure of the Usage Control Policy, which is-
+```
+ObjectIntersectionOf (
+	ObjectSomeValuesFrom (spl:hasData SomeDataCategory)
+	ObjectSomeValuesFrom (spl:hasProcessing SomeProcessing)
+	ObjectSomeValuesFrom (spl:hasPurpose SomePurpose)
+	ObjectSomeValuesFrom (spl:hasStorage SomeStorage)
+	ObjectSomeValuesFrom (spl:hasRecipient SomeRecipient) )
+```
+... using the corresponding concepts and relationships from GConsent. For example,
+```
+ObjectIntersectionOf (
+	ObjectSomeValuesFrom (spl:hasData (rdfs:subClassOf some gc:PersonalData))
+	ObjectSomeValuesFrom (spl:hasProcessing gc:Processing)
+	ObjectSomeValuesFrom (spl:hasPurpose gc:Purpose)
+	ObjectSomeValuesFrom (spl:hasStorage (prov:Location))
+	ObjectSomeValuesFrom (spl:hasRecipient gc:ThirdParty) )
+```
+
+The SPECIAL vocabularies also contain a log vocabulary - SPECIAL Policy Log Vocabulary - based on PROV-O to record the provenance of processing activities. Again, this is a way to capture the ex-post record of what has happened with respect to the personal data being processed, and assessing its compliance.
 </span>
 
 <h4>PrOnto: Privacy Ontologies for Legal Reasoning <a href="#ref-PrOnto">[ref]</a></h4>
-<span class="markdown">
-PrOnto is an ontology for modelling GDPR related knowledge regarding privacy agents, data types, types of processing operations, rights and obligations. The ontology is described in the published paper, but is not provided with an reference to an online resource. Therefore, this section is based on the details provided as part of the referenced publication.
-
-PrOnto consists of five modules - Data, Purposes, Processing, Agents, and Rights - that specify the data being processed, with the processing linked to specific purposes; and to specify the rights for agents. The Data module defines the various categories of data, and corresponds to the `PersonalData` within GConsent.
-</span>
-
+<p>PrOnto is an ontology for modelling GDPR related knowledge regarding privacy agents, data types, types of processing operations, rights and obligations. The ontology is described in the published paper, but is not provided with an reference to an online resource. Therefore, this section is based on the details provided as part of the referenced publication. PrOnto consists of five modules - Data, Purposes, Processing, Agents, and Rights - that specify the data being processed, with the processing linked to specific purposes; and to specify the rights for agents.</p>
+<figure>
+	<img src="diagrams/pronto/pronto-data.png" alt="PrOnto Document & Data Module" class="onto-diagram" style="max-height: 400px;" />
+	<figcaption>PrOnto Document & Data Module <a href="#ref-PrOnto">[ref]</a></figcaption>
+</figure>
+<p>The Document & Data module defines the various categories of data, and corresponds to the `PersonalData` within GConsent. As is evident from the diagram, `PersonalData` is subclassed into `JudicialData`, and `SensitiveData` with specialisations for health, ethnic, genetic, biometric, sexual, and opinion data (which are derived from the text of the GDPR). Furthermore, it provides classification for Non-Personal Data, with Anonymised data and `LegalPersonData` being specialisations of it. The relation between a person and their personal data is represented using the `relatedTo` property. The Personal Data can be specified as being pseudo-anonmyised using the `pseudoanonymized` data property with boolean values (true / false). Similarly, Data (which is the superclass of Personal Data) can be specified as being encrypted using the `encrypted` property. Data can be linked to a `Legal_Person` from the `lkif` vocabulary using the `concernedTo` property. </p>
+<p>While GConsent does not provide such detailed specialisation of data categories, in part due to the large number of such possible categories, it can be easily expanded to include these categories through the subclassing mechanism. Similarly, denoting whether the data is (or would be) pseudoanonymised or encrypted is something that is not directly concerned with consent. If there are requirements to specify these in terms of the data categories associated with consent (for example, collecting Account Encryption which will then be pseudoanonymised and encrypted), these need to be denoted as specific terms of contract or information with the data subject.</p>
+<figure>
+	<img src="diagrams/pronto/pronto-action.png" alt="PrOnto Action Module" class="onto-diagram" style="max-height: 400px;" />
+	<figcaption>PrOnto Action Module <a href="#ref-PrOnto">[ref]</a></figcaption>
+</figure>
+<p>The Action module is akin to the `Processing` term under GConsent in that it describes a set of 'actions' such as Delete, Derive, and Store. However, `Consent` is described as an Action in PrOnto (from the figure), which is different from the approach taken by GConsent.</p>
+<p>The Purpose module defines concepts for "purpose" similar to the Data Protection Ontology by Bartolini et. al i.e. it relates the GDPR definition of 'purpose' in the context of rather than GConsent's context of consent.</p>
+<p>In conclusion, PrOnto provides a significant number of concepts (from combining different ontologies and design patterns) for modelling GDPR-related concepts. However, due to unavailability of more information about the ontology, its documentation, as well as an accessible serialisation of it, it is difficult to compare it sufficiently with GConsent.</p>
 <h4>ODRL: Open Digital Rights Language <a href="#ref-ODRL">[ref]</a></h4>
-
+<p>Open Digital Rights Language (ODRL) is a policy expression language that provides a flexible and interoperable information model, vocabulary, and encoding mechanisms for representing statements about the usage of content and services. The ODRL Information Model describes the underlying concepts, entities, and relationships that form the foundational basis for the semantics of the ODRL policies. It is a W3C Recommendation since 2018-02-15.</p>
+<p>Consent can be modelled as a policy or a contract between the Data Subject and the Data Controller using ODRL. This can specify the Personal Data, Purposes, and Processing operations corresponding to the consent. It can also assist in modelling additional information regarding the specific policies such as storage locations, third parties, or durations. However, ODRL is not suitable to capture the provenance and various states of consent. It can be used along side GConsent to specify the agreement (or policy) responsible for the consent.</p>
+<h4>Other related work</h4>
+<p>Other than the vocabularies listed above, there are some other related vocabularies listed below.</p>
+<ul>
+	<li>Permission Ontology by Grando &amp; Schwab <a href="#ref-permission-onto">[ref]</a></li>
+	<li>Consent Management Service to retrieve &amp; store consent documents by Heinze et. al <a href="#ref-heinze">[ref]</a></li>
+	<li>Reference model for management of consent &amp; revocation in enterprise <a href="#ref-consent-enterprise-1">[ref]</a> <a href="#ref-consent-enterprise-1">[ref]</a></li>
+</ul>
 </div>
 
-<div id="div-related-work-provenance">
+<!-- <div id="div-related-work-provenance">
 <h3 id="related-work-provenance" class="list">Provenance of Consent</h3>
+<p>Provenance in the context of consent refers to the lifecycle of consent, starting from when it was created or obtained, including the activities responsible for it, to how the consent is used in various processing operations, how it is changed or modified or revoked, and ultimately how it is archived as a record for compliance. The following two sections respectively represent the provenance records (as in capturing what has happened) and provenance models (as in what can or should happen) for such consent lifecycles. Each of them describe how this information can be modelled using OWL2 vocabularies - GDPRov, P-Plan, and PROV-O.</p>
 <h4>Provenance Records for Consent</h4>
-
+<p>
 <h4>Provenance Models for Consent</h4>
-</div>
+</div> -->
 
 
 </html>

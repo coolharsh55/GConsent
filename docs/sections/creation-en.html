@@ -1,14 +1,164 @@
 <html>
-	<h2 id="ontology-methodology" class="list">Methodology<span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-	<div id="div-methodology-gdpr">
-		<h3 id="methodology-gdpr" class="list">Analyses of GDPR</h3>
-	</div>	
+<h2 id="ontology-methodology" class="list">Methodology<span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="div-methodology-gdpr">
+	<h3 id="methodology-gdpr" class="list">Analyses of GDPR</h3>
+</div>	
 
-	<div id="div-competency-questions">
-		<h3 id="comptency-questions" class="list">Competency Questions</h3>
-	</div>
+<div id="div-competency-questions">
+	<h3 id="comptency-questions" class="list">Competency Questions</h3>
+	<p>The ontology is validated using the following competency questions. These questions are based on the various requirements of consent as specified under GDPR, as well as to explore the role of various entities and agents in the state of consent. The questions are also useful to validate the data instances created using the ontology.</p>
 
-	<div id="div-ontology-quality">
-		<h3 id="ontology-quality" class="list">Ensuring Ontology Quality</h3>
-	</div>	
+	<table class="gridtable">
+		<thead><tr><th title="Field #1">ID</th>
+			<th title="Field #2">Question</th>
+			<th title="Field #3">Concepts</th>
+			<th title="Field #4">Properties</th>
+			<th title="Field #5">Comment</th>
+		</tr></thead>
+		<tbody>
+		<tr><td colspan="5"><b>Questions about consent</b></td></tr>
+		<tr>
+			<td>C1</td>
+			<td>Who is the consent about?</td>
+			<td>DataSubject</td>
+			<td>isConsentForDataSubject</td>
+			<td>Specifies the Data Subject.</td>
+		</tr>
+		<tr>
+			<td>C2</td>
+			<td>What type of Personal Data are associated with the Consent?</td>
+			<td>PersonalData</td>
+			<td>forPersonalData</td>
+			<td>Relates to the set of Personal Data.</td>
+		</tr>
+		<tr>
+			<td>C3</td>
+			<td>What type of Purposes are associated with the Consent?</td>
+			<td>Purpose</td>
+			<td>forPurpose</td>
+			<td>Specifies the set of Purposes.</td>
+		</tr>
+		<tr>
+			<td>C4</td>
+			<td>What type of Processing are associated with the Consent?</td>
+			<td>Processing</td>
+			<td>forProcessing</td>
+			<td>Specifies the set of Processing (actions or activities).</td>
+		</tr>
+		<tr>
+			<td>C5</td>
+			<td>What is the Status of Consent?</td>
+			<td>Status</td>
+			<td>hasStatus</td>
+			<td>Specifies the status of consent.</td>
+		</tr>
+		<tr>
+			<td>C6</td>
+			<td>Is the current status valid for processing?</td>
+			<td>StatusValidForProcessing, StatusInvalidForProcessing</td>
+			<td>hasStatus</td>
+			<td>Specifies whether the current status is valid for use in processing.</td>
+		</tr>
+		<tr>
+			<td>C7</td>
+			<td>Who is the consent given to?</td>
+			<td>prov:Person, DataController</td>
+			<td>isProvidedTo</td>
+			<td>Specifies the entity that was provided consent.</td>
+		</tr>
+		<tr>
+		<tr><td colspan="5"><b>Questions about how the consent was created/given/acquired/changed/invalidated</b></td></tr>	
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>Who created/gave/acquired/invalidated the consent?</td>
+			<td>DataSubject, Delegation</td>
+			<td>isProvidedBy</td>
+			<td>Specifies the Data Subject or Delegation that gave consent.</td>
+		</tr>
+		<tr>
+			<td>P2</td>
+			<td>If consent was created/gave/acquired/invalidated through Delegation, who acted as the Delegate?</td>
+			<td>prov:Person, Delegation</td>
+			<td>prov:agent</td>
+			<td>Specifies the entity that provided consent in a delegation.</td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>If consent was created/gave/acquired/invalidated through Delegation, what was the role played by Delegate?</td>
+			<td>prov:Role</td>
+			<td>prov:hadRole</td>
+			<td>Specifies the role played by the entity that gave consent in a delegation.</td>
+		</tr>
+		<tr>
+			<td>P4</td>
+			<td>If consent was created/gave/acquired/invalidated through Delegation, how was the delegation executed?</td>
+			<td>prov:Activity</td>
+			<td>prov:hadActivity</td>
+			<td>Specifies the activity that provided consent in a delegation.</td>
+		</tr>
+		<tr><td colspan="5"><b>Questions about the context of how consent was created/gave/acquired/invalidated</b></td></tr>
+		<tr>
+			<td>T1</td>
+			<td>What is the location of associated with consent?</td>
+			<td>prov:Location</td>
+			<td>atLocation</td>
+			<td>Specifies the location where consent was created/generated/given/collected.</td>
+		</tr>
+		<tr>
+			<td>T2</td>
+			<td>What is the medium associated with consent?</td>
+			<td>Medium</td>
+			<td>inMedium</td>
+			<td>Specifies the medium through which consent was created/generated/given/collected.</td>
+		</tr>
+		<tr>
+			<td>T3</td>
+			<td>What is the timestamp associated with the consent?</td>
+			<td>time:Instant</td>
+			<td>atTime</td>
+			<td>Specifies the instant in time when consent was created/generated/given/collected.</td>
+		</tr>
+		<tr>
+			<td>T4</td>
+			<td>What is the expiry of the consent?</td>
+			<td>time:TemporalEntity</td>
+			<td>hasExpiry</td>
+			<td>Specifies the expiry of consent as an instant or duration or time period.</td>
+		</tr>
+		<tr>
+			<td>T5</td>
+			<td>How was the consent acquired/changed/created/invalidated?</td>
+			<td>prov:Activity</td>
+			<td>prov:generated, prov:invalidated</td>
+			<td>Specifies the activity that was responsible for the consent instance.</td>
+		</tr>
+		<tr>
+			<td>T6</td>
+			<td>What artefacts were shown when consent was acquired/changed/created/invalidated?</td>
+			<td>prov:Entity</td>
+			<td>prov:used</td>
+			<td>Specifies artefacts or entities associated with the consent.</td>
+		</tr>
+		<tr><td colspan="5"><b>Questions related to Third Party associated with the consent</b></td></tr>
+		<tr>
+			<td>D1</td>
+			<td>Is the purpose or processing associated with a third party?</td>
+			<td>Association, ThirdParty</td>
+			<td>hasAssociation, prov:agent</td>
+			<td>Specifies any third parties associated with the purposes or processing for the consent.</td>
+		</tr>
+		<tr>
+			<td>D2</td>
+			<td>What is the role played by the third party in the purpose or processing?</td>
+			<td>Role</td>
+			<td>prov:hadRole</td>
+			<td>Specifies roles played by the third parties associated with the purposes or processing for the consent.</td>
+		</tr>
+	</tbody></table>
+</div>
+
+<div id="div-ontology-quality">
+	<h3 id="ontology-quality" class="list">Ensuring Ontology Quality</h3>
+</div>	
 </html>
