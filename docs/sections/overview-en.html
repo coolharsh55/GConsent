@@ -6,24 +6,19 @@
       <table>
          <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
          <tbody>
-            <tr><td><b>gconsent</b></td><td>&lt;https://w3id.org/GConsent#&gt;</td></tr>
-            <tr><td><b>w3id-org</b></td><td>&lt;https://w3id.org&gt;</td></tr>
-            <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
             <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
-            <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
-            <tr><td><b>gdpr</b></td><td>&lt;https://w3id.org/GDPRtEXT/gdpr&gt;</td></tr>
-            <tr><td><b>gdprtext</b></td><td>&lt;https://w3id.org/GDPRtEXT&gt;</td></tr>
             <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+            <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+            <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
             <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
-            <tr><td><b>versions</b></td><td>&lt;https://w3id.org/GConsent/versions&gt;</td></tr>
             <tr><td><b>bibo</b></td><td>&lt;http://purl.org/ontology/bibo&gt;</td></tr>
             <tr><td><b>time</b></td><td>&lt;http://www.w3.org/2006/time&gt;</td></tr>
             <tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
             <tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov&gt;</td></tr>
+            <tr><td><b>gdprtext</b></td><td>&lt;https://w3id.org/GDPRtEXT&gt;</td></tr>
+            <tr><td><b>gdpr</b></td><td>&lt;https://w3id.org/GDPRtEXT/gdpr&gt;</td></tr>
             <tr><td><b>gdprov</b></td><td>&lt;https://w3id.org/GDPRov&gt;</td></tr>
-            <tr><td><b>ontologies</b></td><td>&lt;http://purl.org/adaptcentre/openscience/ontologies&gt;</td></tr>
-            <tr><td><b>default namespace</b></td><td>&lt;https://w3id.org/GConsent&gt;</td></tr>
-            <tr><td><b>status</b></td><td>&lt;http://purl.org/ontology/bibo/status&gt;</td></tr>
+            <tr><td><b>gc</b></td><td>&lt;https://w3id.org/GConsent#&gt;</td></tr>
          </tbody>
       </table>
    </div>
@@ -32,6 +27,7 @@
 <div class="div-overview">
    <h3 id="overview-classes-properties" class="list">Classes and Properties</h3>
    <h4>Core Vocabulary</h4>
+   <p>These classes defined the core concepts within GConsent, where 'core' is defined as the necessary aspects of modelling consent. These include the consent instance itself, along with the data subject it is associated with, the purposes and processing, and the status of consent associated with a specific instance.</p>
    <h5>Classes</h5>
    <ul class="hlist">
       <li>
@@ -113,6 +109,7 @@
    </ul>
 
    <h4>Vocabulary for Context of Consent</h4>
+   <p>Context is defined as the information related to how the consent was created or instantiated or generated or 'given' or invalidated. This has an overlap with the generation of consent as an 'entity' using PROV-O. This includes properties such as location, medium, and the timestamp of instantiation. Additional information can be associated with a consent instance by using or extending the generic property <code>hasContext</code> or <code>isContextForConsent</code>.</p>
    <h5>Classes</h5>
    <ul class="hlist">
       <li>
@@ -145,6 +142,7 @@
    </ul>
 
    <h4>Vocabulary for Entities related to Consent</h4>
+   <p>These are the entities associated with consent, such as a Data Subject that gave the consent, or the Data Controller it was given to, or a Third Party associated with a purpose. Since GConsent re-uses terms from PROV-O including Person and Organisation, these are also entities related to consent, but are not listed in GConsent's list of concepts.</p>
    <h5>Classes</h5>
    <ul class="hlist">
       <li>
@@ -211,6 +209,7 @@
    </ul>
 
    <h4>Vocabulary for Status of Consent</h4>
+   <p>The status of consent reflects the usability of consent as a legal basis for the processing of personal data. Therefore, to better reflect this usage, GConsent provides distinction between 'valid' and 'invalid' states.</p>
    <h5>Classes</h5>
    <ul class="hlist">
       <li>
@@ -279,6 +278,7 @@
    </ul>
 
    <h4>Vocabulary for Processing Types</h4>
+   <p>Data Processing as a concept can include a large number of categories or types, which is difficult to list in a vocabulary. Instead, GConsent provides a list of classes and generic instances taken from the GDPR for processing types.</p>
    <h5>Classes</h5>
    <ul class="hlist">
       <li>
@@ -420,6 +420,7 @@
    </ul>
 
    <h4>Vocabulary for Provenance related to Consent</h4>
+   <p>These are concepts defined within GConsent associated with provenance of consent and its associated properties. For a more comprehensive vocabulary for modelling the provenance of consent, check GDPRov. GConsent also largely recommends using PROV-O extended vocabulary (Role, Association, Delegation) to define relationships and associations.</p>
    <h5>Classes</h5>
    <ul class="hlist">
       <li>

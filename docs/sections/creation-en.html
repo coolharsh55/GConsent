@@ -1,7 +1,58 @@
 <html>
 <h2 id="ontology-methodology" class="list">Methodology<span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+The creation of the ontology followed an iterative model consisting of the following steps:
+
+1. Gather information from GDPR, articles, academic papers, communications from various supervisory bodies and regulatory authorities (such as the Data Protection Commissioner's office)
+2. Quantify information as a set of requirements
+3. Create models for representation of information
+4. Test the model using-
+	- Various use-cases for expressibility
+	- Competency Questions for effectiveness
+	- OntoClean for completeness
+	- SPARQL queries for usability
+5. Generate OWL2 ontology for the model
+6. Ensure ontology quality using best practices and guidelines
+
+PrOnto <a href="#ref-pronto">[ref]</a> describes the Methodology for building Legal Ontology (MeLOn), which is a 10 step process geared towards involving legal experts in the ontology building process. GConsent plans to integrate this methodology to further expand the ontology to other areas of legal compliance. Noted below are the steps or objectives common between methodologies used by PrOnto and GConsent from the MeLOn list:
+
+* Start with the aim/goal.
+* Identify parameters for evaluation. For GConsent, these were - coherence, efficiency, effectiveness, usability, and extendability.
+* State of the art survey.
+* Use of Graffoo.
+* Use of OntoClean to improve the ontology.
+* Use of SPARQL to test applicability.
+
+</span>
 <div id="div-methodology-gdpr">
 	<h3 id="methodology-gdpr" class="list">Analyses of GDPR</h3>
+	<ul>
+		<li><p>Recital 32: Under Recital 32, the requirement of unambiguous
+ness can be satisfied, for instance, by a box being
+ticked, whereas an opt out model is expressly ruled
+out. An audit of the respective terms and conditions
+ought to be performed regarding pre formulated con
+sents (Recital 42).</p></li>
+		<li><p>According to Recital 32, consent should cover all pro
+cessing activities carried out for the same purpose or
+purposes. When the processing has multiple purpos
+es, consent should be given for all of them.</p></li>
+		<li><p>Article 4 (11) GDPR requires that consent
+be given by a freely given, informed and unambigu
+ous indication of the data subject's agreement to the
+processing of his or her personal data. In order to be
+informed, the consent must also comprise the pur
+pose of the data processing. Consent must be explic
+itlygiven in the event that sensitive data are processed
+or that data are processed for profiling purposes.</p></li>
+<li><p>The GDRP explicitly prescribes that data subjects be
+able to withdraw their consent at any time [Article 7
+(3) GDPR].</p></li>
+<li><p>Article 5(1)(b) of the GDPR sets forth the fundamental notion that
+personal data must be collected for a "specific, explicit and legitimate"
+purpose and cannot be further "processed" (a term broadly defined)" in a
+45</p></li>
+	</ul>
 </div>	
 
 <div id="div-competency-questions">
@@ -160,5 +211,16 @@
 
 <div id="div-ontology-quality">
 	<h3 id="ontology-quality" class="list">Ensuring Ontology Quality</h3>
+	<p>The ontology follows best practices guidelines encouraged and adopted by the semantic web community. The list below lists these, along with a few comments.</p>
+	<ul>
+		<li><a href="https://www.w3.org/TR/swbp-vocab-pub/">Best Practice Recipes for Publishing RDF Vocabularies - W3C Working Group Note 28 August 2008</a><br/>
+		These guidelines form the core of best practices, and relate to creation and usage of namespaces and content negotiation. GConsent uses a consistent naming convention based on these guidelines, and provides content negotiation in the serialisation formats listed at the top of this documentation.</li>
+		<li><a href="http://www.essepuntato.it/lode">Live OWL Documentation Environment (LODE)</a><br/>
+		LODE is a well-known service within the semantic web community for self-documentation of ontologies. GConsent provides relevant metadata to document the ontology in a LODE-compatible manner.</li>
+		<li><a href="http://oops.linkeddata.es/">OntOlogy Pitfall Scanner!</a><br/>
+		OOPS! is another well-known service that detects some of the most common pitfalls appearing when developing ontologies. GConsent was tested iteratively throughout its development using the OOPS! service. Note: the latest version of GConsent shows some pitfalls in the OOPS! report, which result from its usage of external concepts and properties (mostly from PROV-0). The pitfalls can be safely discarded as there are no errors directly related to the concepts and relationships definde within GConsent.</li>
+		<li><a href="https://dgarijo.github.io/Widoco/">WIzard for DOCumenting Ontologies (WIDOCO)</a><br/>
+		WIDOCO extends the LODE and OOPS! services along with Licensius, WebVOWL, and Bubastis to create a set of documentation based on best practices and guidelines, that can be edited and served in a responsible manner using pre-configured files for Apache. GConsent uses WIDOCO to generate the documentation pages, and follows its set of best practices - <a href="https://dgarijo.github.io/Widoco/doc/bestPractices/index-en.html">A checklist for complete vocabulary metadata - 25 April 2017</a>.</li>
+	</ul>
 </div>	
 </html>

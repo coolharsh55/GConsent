@@ -9,29 +9,58 @@
 	<img src="diagrams/gconsent_core.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Overview of the core ontology</figcaption>
 </figure>
+<span class="markdown">
+The core ontology concepts and relationships describe the essential entities and their relationship with consent. The concept of 'consent' itself does not necessarily mean "given consent", and can also refer to consent whose state is unknown, or that has been refused, withdrawn, or invalidated by the Data Subject or even the Controller itself. This definition of consent is closer to managing consent as a data entity rather than as a semantic concept.
+In this definition, consent is represented using a set of 5 associated entities - Data Subject, Personal Data, Purpose, Processing, and Status.
+
+The Data Subject is the person that the consent is associated with. It is not necessarily the entity that gave the consent. The `DataSubject` class is defined as a subclass of `prov:Person`, and has the subclass `MinorDataSubject` to denote a data subject that is a minor (such as a child).
+A consent can only be associated with a single data subject, which will also be the only data subject associated with all its related instances, such as those that are its predecessors and successors. Once a consent is associated with a data subject, it cannot be changed. Other associated entities are mutable to an extent.
+
+The Personal Data is the set of personal data associated with the consent. Where multiple personal data are associated with a single instance of consent, it is interpreted to mean the *union* of these sets of personal data. Similarly, Purpose and Processing are also to be interpreted as *union* rather than intersection. Whether such multiple instances should be defined using a single property with a list as the predicate, or through multiple properties each having a single predicate is a matter of semantics and is left to the practical adopter of this vocabulary.
+
+Purpose and Processing are concepts that have semantic meaning based upon the use of the word within the GDPR. Purpose, in this case, is the *intent* or *aim* of why the set of personal data is needed or to be used for. It is generally defined at a higher abstract level, and often encompasses several types or categories of data. An example of this, as worded within a privacy policy, is where "account information" and "location of service use" are data categories that are "collected" and "used" - which are processing operations on the personal data - to ensure "security of the account" - which is the purpose. The relation between a purpose and processing operations is quite opaque. It is difficult to determine which processing operations a purpose entails and vice versa. Therefore, GConsent provides purpose and processing as self-declarative high-level concepts, which the adopter can extend with additional information. For example, `Purpose` as a class can be defined to be a subclass of `gdprov:Process` which itself is a subclass of `p-plan:Plan`. This can allow a 'purpose' to be defined as a series of other plans and steps towards a definite goal.
+
+The status of consent indicates the suitability of using it as a legal basis for the processing of personal data. To faciliate this, GConsent provides several instances of useful status types divided across two subclass to indicate the valid and invalid states. Additional categories can be defined by extending any of the classes as required.
+</span>
 
 <h4>Context of Consent</h4>
 <figure id="onto-diagram-context">
 	<img src="diagrams/context.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Capturing context of consent</figcaption>
 </figure>
+<span class="markdown">
+The context of consent refers to the environmental attributes such as the location or time when the consent was created / invalidated / generated / changed / modified / given / recorded. GConsent provides concepts for location, medium, and a timestamp for instant of creation (or invalidation, etc.) along with capturing the expiry of consent as either a instant of time or a duration (using the TIME vocabulary). It also captures how the consent was "provided" by an agent, in the form of a Person or Data Subject or Delegation. A delegation is the transfer of responsiblity to provide consent to an entity other than the data subject the consent is about. This includes a parent or a guardian giving the consent in lieu of a minor. Additional contexts can be captured by using or extending the generic property `hasContext`.
+</span>
 
 <h4>Status of Consent</h4>
 <figure id="onto-diagram-status">
 	<img src="diagrams/status.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Indicating status of consent</figcaption>
 </figure>
+<span class="markdown">
+GConsent provides instances of valid status as - explicitly given, implicitly given, and given by delegation. Instances of invalid status are - unknown, not given, withdrawn, expired, invalidated, refused, and requested. These states are defined as distinct individuals to reflect their semantic uniqueness as representations of specific states regarding consent. For example, *unknown* is the state where the status of consent is not known - which can occur when importing data from another source. This is distinct from *not given*, which indicates that the data subject has been offered the option to give consent, but has not provided any actionable response yet. This is distinct from *refused*, which indicates that the data subject has not accepted the offered terms and has "refused to give consent" through a clear indicative action. In the context of the GDPR, it is not necessary to capture states such as unknown or refused. GConsent, however, provides them with a view towards better management of consent information.
+</span>
 
 <h5>Changing status of consent</h5>
 <figure id="onto-diagram-invalidate">
 	<img src="diagrams/consent_invalidated_data.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Example: Withdrawing Consent</figcaption>
 </figure>
+<span class="markdown">
+GDPR requires keeping track of state change for consent. For example, when the status changes from *given* to *withdrawn* or when the state if changed to *invalidated* because of the choice of the controller or some legal requirement. Therefore, whenever a consent status changes, this results in a new consent instance being created, which also assists in capturing the context of the new consent (such as time instant). Therefore, this leads to a chain of consent instances, where the "latest" consent is at the "end" of this chain, and will have the most recent timestamp of creation. It is vital to record such provenance to demonstrate past processing was in compliance with the state of consent at that point in time.
+</span>
+</div>
+
+<div id="div-usage-adoption">
+	<h3 class="list" id="usage-adoption">Usage &amp; Adoption</h3>
 
 <figure id="onto-diagram-invalidate">
 	<img src="diagrams/consent_invalidated_data_activity.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Example: Provenance of withdrawn consent</figcaption>
 </figure>
+<span class="markdown">
+	
+</span>
 
 <h4>Example 1: Given Consent</h4>
 <figure id="onto-diagram-ds1">
@@ -58,10 +87,6 @@
 	<figcaption>Example: Association with a Third Party</figcaption>
 </figure>
 
-</div>
-
-<div id="div-usage-adoption">
-	<h3 class="list" id="usage-adoption">Usage &amp; Adoption</h3>
 </div>
 
 </html>
