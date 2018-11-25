@@ -53,16 +53,60 @@ GDPR requires keeping track of state change for consent. For example, when the s
 
 <div id="div-usage-adoption">
 	<h3 class="list" id="usage-adoption">Usage &amp; Adoption</h3>
+<span class="markdown">
+The examples in the following section demonstrate usage and adoption of GConsent through various scenarios. A more exhaustive list of scenarious, part of the methodology used to validate the ontology, is given below:
 
+#### Use-Cases & Scenarios:
+
+* obtaining consent
+	- consent is given via a web-form
+	- consent is given as a signed paper document
+	- consent is given as a verbal confirmation
+	- consent is given implicitly
+	- consent is given via delegation
+* Agent
+	* given directly by data subject
+	* given by representative of data subject
+	* consent given by parent/guardian for minor with age verification process
+* Grouping of Personal Data
+	* individual data items are defined
+	* a common parent class is defined
+* Define how consent is obtained or created or brought into existence
+	* Define an activity using GDPRov or PROV-O
+	* Define new properties directly on the consent instance
+* Time constraints
+	* consent expires (has a tangible expiry)
+	* consent does not expire (is valid for "as long as required")
+* Modification of consent
+	* modify as prov entity through an activity (record preserved)
+	* modify information stored in consent itself (no record of previous consent)
+* Consent is Revoked
+	* revoke triple defined in consent itself (boolean flag)
+	* prov invalidated relation using an external activity
+* Third party
+	* Personal Data is collected from a third party
+	* Processing involves third party
+	* Purpose involves third party
+* Roles &amp; Association
+	* Role played by delegate in the delegation of given consent
+	* Role played by third party in a processing or purpose association
+* Storage Duration and Locations for Personal Data
+	* Defining properties over personal data (data is exclusive i.e. only for this consent)
+	* Creating abstract entity referring to personal data and annotating it
+	* Annotating property connecting consent instance and personal data
+
+</span>
+
+<h4>Example 1: Change in Consent State</h4>
 <figure id="onto-diagram-invalidate">
 	<img src="diagrams/consent_invalidated_data_activity.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Example: Provenance of withdrawn consent</figcaption>
 </figure>
 <span class="markdown">
-	
+
 </span>
 
-<h4>Example 1: Given Consent</h4>
+<h4>Example 2: Capturing Given Consent</h4>
 <figure id="onto-diagram-ds1">
 	<img src="diagrams/example_ds1.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Example: Given Consent</figcaption>
@@ -74,14 +118,14 @@ GDPR requires keeping track of state change for consent. For example, when the s
 	<figcaption>Punning to allow reusing Classes as Instances</figcaption>
 </figure>
 
-<h4>Example 2: </h4>
+<h4>Example 3: Capturing Consent Given via Delegation </h4>
 <figure id="onto-diagram-ds2">
 	<img src="diagrams/example_ds2.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Example: Delegation</figcaption>
 </figure>
 
 
-<h4>Example 2: </h4>
+<h4>Example 4: Capturing Consent where Data is shared with a Third Party</h4>
 <figure id="onto-diagram-ds3">
 	<img src="diagrams/example_ds3.png" class="onto-diagram" alt="missing diagram" />
 	<figcaption>Example: Association with a Third Party</figcaption>
