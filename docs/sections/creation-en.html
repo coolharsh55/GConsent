@@ -26,7 +26,7 @@ PrOnto <a href="#ref-pronto">[ref]</a> describes the Methodology for building Le
 </span>
 <div id="div-methodology-gdpr">
 	<h3 id="methodology-gdpr" class="list">Analyses of GDPR</h3>
-	<ul>
+	<!-- <ul>
 		<li><p>Recital 32: Under Recital 32, the requirement of unambiguous
 ness can be satisfied, for instance, by a box being
 ticked, whereas an opt out model is expressly ruled
@@ -52,7 +52,28 @@ able to withdraw their consent at any time [Article 7
 personal data must be collected for a "specific, explicit and legitimate"
 purpose and cannot be further "processed" (a term broadly defined)" in a
 45</p></li>
-	</ul>
+	</ul> -->
+    <p>
+                                    The foremost methodology we used in the creation of GConsent was the seminal guide "Ontology Development 101" by Noy and McGuiness [<a class="citation" href="#ontology-101">1</a>], which included using <a class="footnote" href="https://protege.stanford.edu/">Protégé</a> in evaluating and maintaining the correctness of the ontology. The creation of the ontology followed an iterative model. Each iteration of the ontology was tested for suitability and expressiveness by modelling the collected use-cases and scenarios and then evaluating using the competency questions as queries. The methodology can be summarised with the following steps:
+                                    <ol>
+                                        <li>Gather information from GDPR, articles, academic papers, communications from various supervisory bodies and regulatory authorities</li>
+                                        <li>Quantify information as a set of use-cases and scenarios, and create a list of requirements as well as competency questions based on their introspection</li>
+                                        <li>Generate OWL2-DL representation of model from requirements </li>
+                                        <li>Test the suitability of expressing  collected used-case and scenarios by answering the competency questions.</li>
+                                    </ol>
+                                </p>     
+
+                            <h3 property="schema:name">Information Collection &amp; Analysis</h3>
+                            <div datatype="rdf:HTML" property="schema:description">
+                                <p>
+                                    This section describes the information collection process and its analysis used to model the information associated with consent. The primary source of information were the articles and recitals pertaining to consent within the <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">GDPR</a> [<a class="citation" href="#european_parliament_and_council_regulation_2016"></a>]. Additionally, Article 29 Working Party, which was the official advisory body providing expert opinions regarding data protection, has provided <a href="https://ec.europa.eu/newsroom/article29/item-detail.cfm?item_id=623051">guidelines on consent</a> [<a class="citation" href="#a29wp-consent"></a>] that assisted in the interpretation of the GDPR. The Apart from these, the various guidelines and reports published by the <a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/consent/">Data Protection offices</a> and <a href="https://info.nymity.com/">legal firms</a>, the <a href="https://publications.europa.eu/en/publication-detail/-/publication/5b0cfa83-63f3-11e8-ab9c-01aa75ed71a1">Handbook on Eurpoean Data Protection Law</a>, and <a href="https://www.legifrance.gouv.fr/affichCnil.do?oldAction=rechExpCnil&id=CNILTEXT000037594451">recent court laws</a> were also used to understand and formulate technical requirements regarding consent. 
+                                </p>
+                                <p>
+                                    We only consider consent as defined within Art.4-11 of the GDPR, and do not include the more special cases of consent (Art.9) such scientific research (Rec.33) and children's personal data (Art.8, Rec.38). The use of consent as a legal basis (Art.6,Rec.40) includes conditions for consent to be considered valid (Art.7, Rec.42, Rec.43). The burden of proof and requirements for consent is specified to be on the Data Controller (Rec.42), which requires demonstrable proof that the data subject provided the consent and that it was valid as per the obligations specified in the GDPR. For consent to be informed, it is necessary to provide certain information to the data subject, such as the specific purposes the personal data will be used for. GDPR provides data subjects with the right to modify or withdraw consent (Art.7-3). In cases where the consent is withdrawn, processing done prior to the withdrawal is considered valid under the valid consent applicable at that time.
+                                </p>
+                                <p>
+                                    The above described information along with the information provided by the resources mentioned at the start of this section resulted in the model of consent described in this paragraph. Consent is associated with the following attributes - data subject the consent is about, their personal data, the purposes and processing operations associated with personal data, and who the consent is provided to. This is similar to the model adopted by existing models for given consent [<a class="citation" href="#kirrane_scalable_2018"></a>]. In addition to these, we also found additional attributes such as - entity that provided consent, status, context (location, medium, time-stamp), and expiry that are useful in determining whether the specific instance of consent satisfies the obligations of the GDPR. We also include the provenance of consent as it is essential to determine its validity, such as for being informed - which is a qualitative requirement. This presents a slight overlap with existing work in GDPRov [<a class="citation" href="#pandit_modelling_2017"></a>], which is resolved by clarifying that scope of GConsent is for modelling of consent as an entity, and that of GDProv is the modelling of provenance associated with consent and personal data.
+                                </p>
 </div>	
 
 <div id="div-competency-questions">
