@@ -1,5 +1,14 @@
 <html>
 <h2 id="ontology-methodology" class="list">Methodology<span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+        The foremost methodology we used in the creation of GConsent was the seminal guide "Ontology Development 101" by Noy and McGuiness [<a class="citation" href="#ontology-101">1</a>], which included using <a class="footnote" href="https://protege.stanford.edu/">Protégé</a> in evaluating and maintaining the correctness of the ontology. The creation of the ontology followed an iterative model. Each iteration of the ontology was tested for suitability and expressiveness by modelling the collected use-cases and scenarios and then evaluating using the competency questions as queries. The methodology can be summarised with the following steps:
+        <ol>
+            <li>Gather information from GDPR, articles, academic papers, communications from various supervisory bodies and regulatory authorities</li>
+            <li>Quantify information as a set of use-cases and scenarios, and create a list of requirements as well as competency questions based on their introspection</li>
+            <li>Generate OWL2-DL representation of model from requirements </li>
+            <li>Test the suitability of expressing  collected used-case and scenarios by answering the competency questions.</li>
+        </ol>
+    </p>   
 <span class="markdown">
 The creation of the ontology followed an iterative model consisting of the following steps:
 
@@ -7,10 +16,10 @@ The creation of the ontology followed an iterative model consisting of the follo
 2. Quantify information as a set of requirements
 3. Create models for representation of information
 4. Test the model using-
-	- Various use-cases for expressibility
-	- Competency Questions for effectiveness
-	- OntoClean for completeness
-	- SPARQL queries for usability
+- Various use-cases for expressibility
+- Competency Questions for effectiveness
+- OntoClean for completeness
+- SPARQL queries for usability
 5. Generate OWL2 ontology for the model
 6. Ensure ontology quality using best practices and guidelines
 
@@ -22,212 +31,173 @@ PrOnto <a href="#ref-pronto">[ref]</a> describes the Methodology for building Le
 * Use of Graffoo.
 * Use of OntoClean to improve the ontology.
 * Use of SPARQL to test applicability.
-
 </span>
 <div id="div-methodology-gdpr">
 	<h3 id="methodology-gdpr" class="list">Analyses of GDPR</h3>
-	<!-- <ul>
-		<li><p>Recital 32: Under Recital 32, the requirement of unambiguous
-ness can be satisfied, for instance, by a box being
-ticked, whereas an opt out model is expressly ruled
-out. An audit of the respective terms and conditions
-ought to be performed regarding pre formulated con
-sents (Recital 42).</p></li>
-		<li><p>According to Recital 32, consent should cover all pro
-cessing activities carried out for the same purpose or
-purposes. When the processing has multiple purpos
-es, consent should be given for all of them.</p></li>
-		<li><p>Article 4 (11) GDPR requires that consent
-be given by a freely given, informed and unambigu
-ous indication of the data subject's agreement to the
-processing of his or her personal data. In order to be
-informed, the consent must also comprise the pur
-pose of the data processing. Consent must be explic
-itlygiven in the event that sensitive data are processed
-or that data are processed for profiling purposes.</p></li>
-<li><p>The GDRP explicitly prescribes that data subjects be
-able to withdraw their consent at any time [Article 7
-(3) GDPR].</p></li>
-<li><p>Article 5(1)(b) of the GDPR sets forth the fundamental notion that
-personal data must be collected for a "specific, explicit and legitimate"
-purpose and cannot be further "processed" (a term broadly defined)" in a
-45</p></li>
-	</ul> -->
-    <p>
-                                    The foremost methodology we used in the creation of GConsent was the seminal guide "Ontology Development 101" by Noy and McGuiness [<a class="citation" href="#ontology-101">1</a>], which included using <a class="footnote" href="https://protege.stanford.edu/">Protégé</a> in evaluating and maintaining the correctness of the ontology. The creation of the ontology followed an iterative model. Each iteration of the ontology was tested for suitability and expressiveness by modelling the collected use-cases and scenarios and then evaluating using the competency questions as queries. The methodology can be summarised with the following steps:
-                                    <ol>
-                                        <li>Gather information from GDPR, articles, academic papers, communications from various supervisory bodies and regulatory authorities</li>
-                                        <li>Quantify information as a set of use-cases and scenarios, and create a list of requirements as well as competency questions based on their introspection</li>
-                                        <li>Generate OWL2-DL representation of model from requirements </li>
-                                        <li>Test the suitability of expressing  collected used-case and scenarios by answering the competency questions.</li>
-                                    </ol>
-                                </p>     
+    <div datatype="rdf:HTML" property="schema:description">
+        <p>
+            This section describes the information collection process and its analysis used to model the information associated with consent. The primary source of information were the articles and recitals pertaining to consent within the <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">GDPR</a> [<a class="citation" href="#european_parliament_and_council_regulation_2016"></a>]. Additionally, Article 29 Working Party, which was the official advisory body providing expert opinions regarding data protection, has provided <a href="https://ec.europa.eu/newsroom/article29/item-detail.cfm?item_id=623051">guidelines on consent</a> [<a class="citation" href="#a29wp-consent"></a>] that assisted in the interpretation of the GDPR. The Apart from these, the various guidelines and reports published by the <a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/consent/">Data Protection offices</a> and <a href="https://info.nymity.com/">legal firms</a>, the <a href="https://publications.europa.eu/en/publication-detail/-/publication/5b0cfa83-63f3-11e8-ab9c-01aa75ed71a1">Handbook on Eurpoean Data Protection Law</a>, and <a href="https://www.legifrance.gouv.fr/affichCnil.do?oldAction=rechExpCnil&id=CNILTEXT000037594451">recent court laws</a> were also used to understand and formulate technical requirements regarding consent. 
+        </p>
+        <p>
+            We only consider consent as defined within Art.4-11 of the GDPR, and do not include the more special cases of consent (Art.9) such scientific research (Rec.33) and children's personal data (Art.8, Rec.38). The use of consent as a legal basis (Art.6,Rec.40) includes conditions for consent to be considered valid (Art.7, Rec.42, Rec.43). The burden of proof and requirements for consent is specified to be on the Data Controller (Rec.42), which requires demonstrable proof that the data subject provided the consent and that it was valid as per the obligations specified in the GDPR. For consent to be informed, it is necessary to provide certain information to the data subject, such as the specific purposes the personal data will be used for. GDPR provides data subjects with the right to modify or withdraw consent (Art.7-3). In cases where the consent is withdrawn, processing done prior to the withdrawal is considered valid under the valid consent applicable at that time.
+        </p>
+        <p>
+            The above described information along with the information provided by the resources mentioned at the start of this section resulted in the model of consent described in this paragraph. Consent is associated with the following attributes - data subject the consent is about, their personal data, the purposes and processing operations associated with personal data, and who the consent is provided to. This is similar to the model adopted by existing models for given consent [<a class="citation" href="#kirrane_scalable_2018"></a>]. In addition to these, we also found additional attributes such as - entity that provided consent, status, context (location, medium, time-stamp), and expiry that are useful in determining whether the specific instance of consent satisfies the obligations of the GDPR. We also include the provenance of consent as it is essential to determine its validity, such as for being informed - which is a qualitative requirement. This presents a slight overlap with existing work in GDPRov [<a class="citation" href="#pandit_modelling_2017"></a>], which is resolved by clarifying that scope of GConsent is for modelling of consent as an entity, and that of GDProv is the modelling of provenance associated with consent and personal data.
+        </p>
+    </div>	
 
-                            <h3 property="schema:name">Information Collection &amp; Analysis</h3>
-                            <div datatype="rdf:HTML" property="schema:description">
-                                <p>
-                                    This section describes the information collection process and its analysis used to model the information associated with consent. The primary source of information were the articles and recitals pertaining to consent within the <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">GDPR</a> [<a class="citation" href="#european_parliament_and_council_regulation_2016"></a>]. Additionally, Article 29 Working Party, which was the official advisory body providing expert opinions regarding data protection, has provided <a href="https://ec.europa.eu/newsroom/article29/item-detail.cfm?item_id=623051">guidelines on consent</a> [<a class="citation" href="#a29wp-consent"></a>] that assisted in the interpretation of the GDPR. The Apart from these, the various guidelines and reports published by the <a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/consent/">Data Protection offices</a> and <a href="https://info.nymity.com/">legal firms</a>, the <a href="https://publications.europa.eu/en/publication-detail/-/publication/5b0cfa83-63f3-11e8-ab9c-01aa75ed71a1">Handbook on Eurpoean Data Protection Law</a>, and <a href="https://www.legifrance.gouv.fr/affichCnil.do?oldAction=rechExpCnil&id=CNILTEXT000037594451">recent court laws</a> were also used to understand and formulate technical requirements regarding consent. 
-                                </p>
-                                <p>
-                                    We only consider consent as defined within Art.4-11 of the GDPR, and do not include the more special cases of consent (Art.9) such scientific research (Rec.33) and children's personal data (Art.8, Rec.38). The use of consent as a legal basis (Art.6,Rec.40) includes conditions for consent to be considered valid (Art.7, Rec.42, Rec.43). The burden of proof and requirements for consent is specified to be on the Data Controller (Rec.42), which requires demonstrable proof that the data subject provided the consent and that it was valid as per the obligations specified in the GDPR. For consent to be informed, it is necessary to provide certain information to the data subject, such as the specific purposes the personal data will be used for. GDPR provides data subjects with the right to modify or withdraw consent (Art.7-3). In cases where the consent is withdrawn, processing done prior to the withdrawal is considered valid under the valid consent applicable at that time.
-                                </p>
-                                <p>
-                                    The above described information along with the information provided by the resources mentioned at the start of this section resulted in the model of consent described in this paragraph. Consent is associated with the following attributes - data subject the consent is about, their personal data, the purposes and processing operations associated with personal data, and who the consent is provided to. This is similar to the model adopted by existing models for given consent [<a class="citation" href="#kirrane_scalable_2018"></a>]. In addition to these, we also found additional attributes such as - entity that provided consent, status, context (location, medium, time-stamp), and expiry that are useful in determining whether the specific instance of consent satisfies the obligations of the GDPR. We also include the provenance of consent as it is essential to determine its validity, such as for being informed - which is a qualitative requirement. This presents a slight overlap with existing work in GDPRov [<a class="citation" href="#pandit_modelling_2017"></a>], which is resolved by clarifying that scope of GConsent is for modelling of consent as an entity, and that of GDProv is the modelling of provenance associated with consent and personal data.
-                                </p>
-</div>	
+    <div id="div-competency-questions">
+       <h3 id="comptency-questions" class="list">Competency Questions</h3>
+       <p>The ontology is validated using the following competency questions. These questions are based on the various requirements of consent as specified under GDPR, as well as to explore the role of various entities and agents in the state of consent. The questions are also useful to validate the data instances created using the ontology.</p>
 
-<div id="div-competency-questions">
-	<h3 id="comptency-questions" class="list">Competency Questions</h3>
-	<p>The ontology is validated using the following competency questions. These questions are based on the various requirements of consent as specified under GDPR, as well as to explore the role of various entities and agents in the state of consent. The questions are also useful to validate the data instances created using the ontology.</p>
-
-	<table class="gridtable">
-		<thead><tr><th title="Field #1">ID</th>
-			<th title="Field #2">Question</th>
-			<th title="Field #3">Concepts</th>
-			<th title="Field #4">Properties</th>
-			<th title="Field #5">Comment</th>
-		</tr></thead>
-		<tbody>
-		<tr><td colspan="5"><b>Questions about consent</b></td></tr>
-		<tr>
-			<td>C1</td>
-			<td>Who is the consent about?</td>
-			<td>DataSubject</td>
-			<td>isConsentForDataSubject</td>
-			<td>Specifies the Data Subject.</td>
-		</tr>
-		<tr>
-			<td>C2</td>
-			<td>What type of Personal Data are associated with the Consent?</td>
-			<td>PersonalData</td>
-			<td>forPersonalData</td>
-			<td>Relates to the set of Personal Data.</td>
-		</tr>
-		<tr>
-			<td>C3</td>
-			<td>What type of Purposes are associated with the Consent?</td>
-			<td>Purpose</td>
-			<td>forPurpose</td>
-			<td>Specifies the set of Purposes.</td>
-		</tr>
-		<tr>
-			<td>C4</td>
-			<td>What type of Processing are associated with the Consent?</td>
-			<td>Processing</td>
-			<td>forProcessing</td>
-			<td>Specifies the set of Processing (actions or activities).</td>
-		</tr>
-		<tr>
-			<td>C5</td>
-			<td>What is the Status of Consent?</td>
-			<td>Status</td>
-			<td>hasStatus</td>
-			<td>Specifies the status of consent.</td>
-		</tr>
-		<tr>
-			<td>C6</td>
-			<td>Is the current status valid for processing?</td>
-			<td>StatusValidForProcessing, StatusInvalidForProcessing</td>
-			<td>hasStatus</td>
-			<td>Specifies whether the current status is valid for use in processing.</td>
-		</tr>
-		<tr>
-			<td>C7</td>
-			<td>Who is the consent given to?</td>
-			<td>prov:Person, DataController</td>
-			<td>isProvidedTo</td>
-			<td>Specifies the entity that was provided consent.</td>
-		</tr>
-		<tr>
-		<tr><td colspan="5"><b>Questions about how the consent was created/given/acquired/changed/invalidated</b></td></tr>	
-		</tr>
-		<tr>
-			<td>P1</td>
-			<td>Who created/gave/acquired/invalidated the consent?</td>
-			<td>DataSubject, Delegation</td>
-			<td>isProvidedBy</td>
-			<td>Specifies the Data Subject or Delegation that gave consent.</td>
-		</tr>
-		<tr>
-			<td>P2</td>
-			<td>If consent was created/gave/acquired/invalidated through Delegation, who acted as the Delegate?</td>
-			<td>prov:Person, Delegation</td>
-			<td>prov:agent</td>
-			<td>Specifies the entity that provided consent in a delegation.</td>
-		</tr>
-		<tr>
-			<td>P3</td>
-			<td>If consent was created/gave/acquired/invalidated through Delegation, what was the role played by Delegate?</td>
-			<td>prov:Role</td>
-			<td>prov:hadRole</td>
-			<td>Specifies the role played by the entity that gave consent in a delegation.</td>
-		</tr>
-		<tr>
-			<td>P4</td>
-			<td>If consent was created/gave/acquired/invalidated through Delegation, how was the delegation executed?</td>
-			<td>prov:Activity</td>
-			<td>prov:hadActivity</td>
-			<td>Specifies the activity that provided consent in a delegation.</td>
-		</tr>
-		<tr><td colspan="5"><b>Questions about the context of how consent was created/gave/acquired/invalidated</b></td></tr>
-		<tr>
-			<td>T1</td>
-			<td>What is the location of associated with consent?</td>
-			<td>prov:Location</td>
-			<td>atLocation</td>
-			<td>Specifies the location where consent was created/generated/given/collected.</td>
-		</tr>
-		<tr>
-			<td>T2</td>
-			<td>What is the medium associated with consent?</td>
-			<td>Medium</td>
-			<td>inMedium</td>
-			<td>Specifies the medium through which consent was created/generated/given/collected.</td>
-		</tr>
-		<tr>
-			<td>T3</td>
-			<td>What is the timestamp associated with the consent?</td>
-			<td>time:Instant</td>
-			<td>atTime</td>
-			<td>Specifies the instant in time when consent was created/generated/given/collected.</td>
-		</tr>
-		<tr>
-			<td>T4</td>
-			<td>What is the expiry of the consent?</td>
-			<td>time:TemporalEntity</td>
-			<td>hasExpiry</td>
-			<td>Specifies the expiry of consent as an instant or duration or time period.</td>
-		</tr>
-		<tr>
-			<td>T5</td>
-			<td>How was the consent acquired/changed/created/invalidated?</td>
-			<td>prov:Activity</td>
-			<td>prov:generated, prov:invalidated</td>
-			<td>Specifies the activity that was responsible for the consent instance.</td>
-		</tr>
-		<tr>
-			<td>T6</td>
-			<td>What artefacts were shown when consent was acquired/changed/created/invalidated?</td>
-			<td>prov:Entity</td>
-			<td>prov:used</td>
-			<td>Specifies artefacts or entities associated with the consent.</td>
-		</tr>
-		<tr><td colspan="5"><b>Questions related to Third Party associated with the consent</b></td></tr>
-		<tr>
-			<td>D1</td>
-			<td>Is the purpose or processing associated with a third party?</td>
-			<td>Association, ThirdParty</td>
-			<td>hasAssociation, prov:agent</td>
-			<td>Specifies any third parties associated with the purposes or processing for the consent.</td>
-		</tr>
-		<tr>
-			<td>D2</td>
-			<td>What is the role played by the third party in the purpose or processing?</td>
-			<td>Role</td>
-			<td>prov:hadRole</td>
-			<td>Specifies roles played by the third parties associated with the purposes or processing for the consent.</td>
-		</tr>
-	</tbody></table>
+       <table class="gridtable">
+          <thead><tr><th title="Field #1">ID</th>
+             <th title="Field #2">Question</th>
+             <th title="Field #3">Concepts</th>
+             <th title="Field #4">Properties</th>
+             <th title="Field #5">Comment</th>
+         </tr></thead>
+         <tbody>
+          <tr><td colspan="5"><b>Questions about consent</b></td></tr>
+          <tr>
+             <td>C1</td>
+             <td>Who is the consent about?</td>
+             <td>DataSubject</td>
+             <td>isConsentForDataSubject</td>
+             <td>Specifies the Data Subject.</td>
+         </tr>
+         <tr>
+             <td>C2</td>
+             <td>What type of Personal Data are associated with the Consent?</td>
+             <td>PersonalData</td>
+             <td>forPersonalData</td>
+             <td>Relates to the set of Personal Data.</td>
+         </tr>
+         <tr>
+             <td>C3</td>
+             <td>What type of Purposes are associated with the Consent?</td>
+             <td>Purpose</td>
+             <td>forPurpose</td>
+             <td>Specifies the set of Purposes.</td>
+         </tr>
+         <tr>
+             <td>C4</td>
+             <td>What type of Processing are associated with the Consent?</td>
+             <td>Processing</td>
+             <td>forProcessing</td>
+             <td>Specifies the set of Processing (actions or activities).</td>
+         </tr>
+         <tr>
+             <td>C5</td>
+             <td>What is the Status of Consent?</td>
+             <td>Status</td>
+             <td>hasStatus</td>
+             <td>Specifies the status of consent.</td>
+         </tr>
+         <tr>
+             <td>C6</td>
+             <td>Is the current status valid for processing?</td>
+             <td>StatusValidForProcessing, StatusInvalidForProcessing</td>
+             <td>hasStatus</td>
+             <td>Specifies whether the current status is valid for use in processing.</td>
+         </tr>
+         <tr>
+             <td>C7</td>
+             <td>Who is the consent given to?</td>
+             <td>prov:Person, DataController</td>
+             <td>isProvidedTo</td>
+             <td>Specifies the entity that was provided consent.</td>
+         </tr>
+         <tr>
+          <tr><td colspan="5"><b>Questions about how the consent was created/given/acquired/changed/invalidated</b></td></tr>	
+      </tr>
+      <tr>
+         <td>P1</td>
+         <td>Who created/gave/acquired/invalidated the consent?</td>
+         <td>DataSubject, Delegation</td>
+         <td>isProvidedBy</td>
+         <td>Specifies the Data Subject or Delegation that gave consent.</td>
+     </tr>
+     <tr>
+         <td>P2</td>
+         <td>If consent was created/gave/acquired/invalidated through Delegation, who acted as the Delegate?</td>
+         <td>prov:Person, Delegation</td>
+         <td>prov:agent</td>
+         <td>Specifies the entity that provided consent in a delegation.</td>
+     </tr>
+     <tr>
+         <td>P3</td>
+         <td>If consent was created/gave/acquired/invalidated through Delegation, what was the role played by Delegate?</td>
+         <td>prov:Role</td>
+         <td>prov:hadRole</td>
+         <td>Specifies the role played by the entity that gave consent in a delegation.</td>
+     </tr>
+     <tr>
+         <td>P4</td>
+         <td>If consent was created/gave/acquired/invalidated through Delegation, how was the delegation executed?</td>
+         <td>prov:Activity</td>
+         <td>prov:hadActivity</td>
+         <td>Specifies the activity that provided consent in a delegation.</td>
+     </tr>
+     <tr><td colspan="5"><b>Questions about the context of how consent was created/gave/acquired/invalidated</b></td></tr>
+     <tr>
+         <td>T1</td>
+         <td>What is the location of associated with consent?</td>
+         <td>prov:Location</td>
+         <td>atLocation</td>
+         <td>Specifies the location where consent was created/generated/given/collected.</td>
+     </tr>
+     <tr>
+         <td>T2</td>
+         <td>What is the medium associated with consent?</td>
+         <td>Medium</td>
+         <td>inMedium</td>
+         <td>Specifies the medium through which consent was created/generated/given/collected.</td>
+     </tr>
+     <tr>
+         <td>T3</td>
+         <td>What is the timestamp associated with the consent?</td>
+         <td>time:Instant</td>
+         <td>atTime</td>
+         <td>Specifies the instant in time when consent was created/generated/given/collected.</td>
+     </tr>
+     <tr>
+         <td>T4</td>
+         <td>What is the expiry of the consent?</td>
+         <td>time:TemporalEntity</td>
+         <td>hasExpiry</td>
+         <td>Specifies the expiry of consent as an instant or duration or time period.</td>
+     </tr>
+     <tr>
+         <td>T5</td>
+         <td>How was the consent acquired/changed/created/invalidated?</td>
+         <td>prov:Activity</td>
+         <td>prov:generated, prov:invalidated</td>
+         <td>Specifies the activity that was responsible for the consent instance.</td>
+     </tr>
+     <tr>
+         <td>T6</td>
+         <td>What artefacts were shown when consent was acquired/changed/created/invalidated?</td>
+         <td>prov:Entity</td>
+         <td>prov:used</td>
+         <td>Specifies artefacts or entities associated with the consent.</td>
+     </tr>
+     <tr><td colspan="5"><b>Questions related to Third Party associated with the consent</b></td></tr>
+     <tr>
+         <td>D1</td>
+         <td>Is the purpose or processing associated with a third party?</td>
+         <td>Association, ThirdParty</td>
+         <td>hasAssociation, prov:agent</td>
+         <td>Specifies any third parties associated with the purposes or processing for the consent.</td>
+     </tr>
+     <tr>
+         <td>D2</td>
+         <td>What is the role played by the third party in the purpose or processing?</td>
+         <td>Role</td>
+         <td>prov:hadRole</td>
+         <td>Specifies roles played by the third parties associated with the purposes or processing for the consent.</td>
+     </tr>
+ </tbody></table>
 </div>
 
 <div id="div-ontology-quality">
@@ -241,9 +211,9 @@ purpose and cannot be further "processed" (a term broadly defined)" in a
 		<li><a href="http://oops.linkeddata.es/">OntOlogy Pitfall Scanner!</a><br/>
 		OOPS! is another well-known service that detects some of the most common pitfalls appearing when developing ontologies. GConsent was tested iteratively throughout its development using the OOPS! service. Note: the latest version of GConsent shows some pitfalls in the OOPS! report, which result from its usage of external concepts and properties (mostly from PROV-0). The pitfalls can be safely discarded as there are no errors directly related to the concepts and relationships definde within GConsent.</li>
 		<li><a href="https://dgarijo.github.io/Widoco/">WIzard for DOCumenting Ontologies (WIDOCO)</a><br/>
-		WIDOCO extends the LODE and OOPS! services along with Licensius, WebVOWL, and Bubastis to create a set of documentation based on best practices and guidelines, that can be edited and served in a responsible manner using pre-configured files for Apache. GConsent uses WIDOCO to generate the documentation pages, and follows its set of best practices - <a href="https://dgarijo.github.io/Widoco/doc/bestPractices/index-en.html">A checklist for complete vocabulary metadata - 25 April 2017</a>.</li>
-		<li>Towards Ontology Quality Assessment <a href="#ref-ontology-quality-assessment">[ref]</a><br/>
-		Upon completion, the ontology was assessed and improved based on the quality metrics present in the above referenced paper. The quality metrics discussed in the paper are addressed towards the design and use of the ontology rather than best practices or guidelines. These are similar to the evaluation provided by OOPS! rather than the best practices advocated by WIDOCO.</li>
-	</ul>
-</div>	
-</html>
+          WIDOCO extends the LODE and OOPS! services along with Licensius, WebVOWL, and Bubastis to create a set of documentation based on best practices and guidelines, that can be edited and served in a responsible manner using pre-configured files for Apache. GConsent uses WIDOCO to generate the documentation pages, and follows its set of best practices - <a href="https://dgarijo.github.io/Widoco/doc/bestPractices/index-en.html">A checklist for complete vocabulary metadata - 25 April 2017</a>.</li>
+          <li>Towards Ontology Quality Assessment <a href="#ref-ontology-quality-assessment">[ref]</a><br/>
+          Upon completion, the ontology was assessed and improved based on the quality metrics present in the above referenced paper. The quality metrics discussed in the paper are addressed towards the design and use of the ontology rather than best practices or guidelines. These are similar to the evaluation provided by OOPS! rather than the best practices advocated by WIDOCO.</li>
+      </ul>
+  </div>	
+  </html>

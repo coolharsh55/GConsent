@@ -54,46 +54,67 @@ GDPR requires keeping track of state change for consent. For example, when the s
 <div id="div-usage-adoption">
 	<h3 class="list" id="usage-adoption">Usage &amp; Adoption</h3>
 <span class="markdown">
-The examples in the following section demonstrate usage and adoption of GConsent through various scenarios. A more exhaustive list of scenarious, part of the methodology used to validate the ontology, is given below:
+The examples in the following section demonstrate usage and adoption of GConsent through various scenarios. Each use-case refers to a specific demonstration of information associated with consent. Consequently, the use-cases are categorised based on the information they refer to. Each use-case is described using only this aspect of information. A list of scenarious, part of the methodology used to validate the ontology is given below:
 
 #### Use-Cases & Scenarios:
 
-* obtaining consent
+* Obtaining / Declaring Consent (its state)
+    - The consent is given
+    - Consent was given, but is now invalidated (by the controller)
+    - Consent was given, but was withdrawn (by the Data Subject)
+    - Consent was requested (by the controller)
+    - Consent was requested, but was refused (by the Data Subject) 
+    - Consent state is unknown (e.g. when importing data about consent)
+* Entity the consent is about
+    - The consent is about a Data Subject who is not a minor
+    - The consent is about a Data Subject who is a minor
+* Activity for Data Subject
+    - There was an age verification process associated with the consent (such as for minors)
+    - There was an identity verification process associated with the consent
+* Entity that provided consent
+    - Consent was provided by the Data Subject it is about
+    - Consent was not provided by the Data Subject it is about, but was provided by a Delegation
+        - Consent in the Delegation was provided by another Data Subject
+        - Consent in the Delegation was provided by a Person
+        - Consent in the Delegatiton was provided by another Delegation
+* Role within Delegation
+    - Entity is the Parent/Guardian of the Data Subject
+    - Entity is a third-party to the Data Subject
+* Activity of Delegation
+    - There was some verification process to assert the authentication of the delegation
+* Personal Data associated with consent
+    - Consent was given for specific instances of personal data
+    - Consent was given for categories of personal data (note: not instances)
+* Medium of Consent
 	- consent is given via a web-form
 	- consent is given as a signed paper document
 	- consent is given as a verbal confirmation
-	- consent is given implicitly
-	- consent is given via delegation
-* Agent
-	* given directly by data subject
-	* given by representative of data subject
-	* consent given by parent/guardian for minor with age verification process
-* Grouping of Personal Data
-	* individual data items are defined
-	* a common parent class is defined
-* Define how consent is obtained or created or brought into existence
-	* Define an activity using GDPRov or PROV-O
-	* Define new properties directly on the consent instance
+	- consent is given implicitly in some form (medium)
+	- consent is given via delegation in some form (medium)
+* Activity responsible for consent
+	* Activity created consent as a new entity
+	* Activity modified existing consent
+* Previous consent and relationship
+    * Consent has no previous instance
+    * Consent has a previous instance, it replaces it
+* Differences between consent instances
+    * Something changes between two consent instances (e.g. personal data category is added)
 * Time constraints
-	* consent expires (has a tangible expiry)
+	* consent expires (has a tangible expiry such as a specific date or duration)
 	* consent does not expire (is valid for "as long as required")
-* Modification of consent
-	* modify as prov entity through an activity (record preserved)
-	* modify information stored in consent itself (no record of previous consent)
-* Consent is Revoked
-	* revoke triple defined in consent itself (boolean flag)
-	* prov invalidated relation using an external activity
-* Third party
+* Third party Association
 	* Personal Data is collected from a third party
+    * Personal Data is stored with a third party (processor)
+    * Personal Data is shared with a third party
 	* Processing involves third party
 	* Purpose involves third party
-* Roles &amp; Association
-	* Role played by delegate in the delegation of given consent
-	* Role played by third party in a processing or purpose association
+* Role of Third Party
+    * Third Party is a Processor contracted by the Controller
+    * Third Party is another Controller
+    * Third Party is another entity (regulatory/supervisory/governmental)
 * Storage Duration and Locations for Personal Data
-	* Defining properties over personal data (data is exclusive i.e. only for this consent)
-	* Creating abstract entity referring to personal data and annotating it
-	* Annotating property connecting consent instance and personal data
+	* Data is stored for a fixed time (specific instance or duration)
+    * Data is stored for an indefinte duration ("for as long as required")
 
 </span>
 
