@@ -1,24 +1,56 @@
-<h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
-<div id="namespacedeclarations">
-<h3 id="ns" class="list">Namespace declarations</h3>
-<div id="ns" align="center">
-<table>
-<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
-<tbody>
-<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
-<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
-<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
-<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
-<tr><td><b>bibo</b></td><td>&lt;http://purl.org/ontology/bibo/&gt;</td></tr>
-<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
-<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann/&gt;</td></tr>
-<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/&gt;</td></tr>
-<tr><td><b>ontologies</b></td><td>&lt;http://purl.org/adaptcentre/openscience/ontologies/&gt;</td></tr>
-<tr><td><b>gconsent</b></td><td>&lt;https://w3id.org/GConsent#&gt;</td></tr>
-<tr><td><b>status</b></td><td>&lt;http://purl.org/ontology/bibo/status/&gt;</td></tr>
-</tbody>
-</table>
+<html><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="div-intro-motivation">
+	<h3 id="intro-motivation" class="list">Motivation</h3>
+	<p>The General Data Protection Regulation (GDPR)
+	<a href="#european_parliament_and_council_regulation_2016">[1]</a> is the current
+	European data protection law enforced from 25<sup>th</sup> May 2018. It affects
+	any service or organisation that uses personal data, and has large fines
+	to deter non-compliance. Consent is one of the legal basis for using
+	personal data under the GDPR (Art.6). Consent is considered valid only
+	when it is freely given, specific, informed, and unambiguous (Art.2-11);
+	and in the case of minors to be given by their legal guardian (Art.8).
+	GDPR also provides rights regarding changing and withdrawing consent at
+	any time. To demonstrate compliance with these obligations, Data
+	Controllers should maintain a demonstrable proof of the given consent
+	<a href="#tikkinen-piri_eu_2018">[2]</a> by collecting and storing information on how
+	consent was collected, used, and invalidated <a href="#mittal_role_2017">[3]</a>.</p>
+	<p>Semantic Web technologies are ideal for representing this information
+	because of its flexibility in expressing concepts and relationships,
+	e.g. using the Web Ontology Language - OWL2, using a standardised model
+	for data - i.e. the Resource Description Framework (RDF). Existing work [<a href="#bartolini_reconciling_2015">4</a>,<a href="#fatema_compliance_2017">5</a>,<a href="#pandit_modelling_2017">6</a>,<a href="#pandit_gdprtext_2018">7</a>,<a href="#belhajjame_provenance_2018">8</a>,<a href="#palmirani_pronto:_2018">9</a>,<a href="#bonatti_special_2018">10</a>,<a href="#kirrane_scalable_2018">11</a>]
+	has demonstrated the feasibility of using semantic web technologies for
+	representing and querying metadata for assisting with the GDPR
+	compliance process. Our previous work presented the Consent and Data
+	Management Model (CDMM) <a href="#fatema_compliance_2017">[5]</a> as a framework for
+	information related to GDPR and its compliance using semantic web
+	technologies, which included a preliminary OWL2 ontology for
+	representing consent.</p>
+	<p>The work mentioned above, as well as that in the related work section features concepts mostly focused on the 'given' aspect of consent i.e. consent provided by the data subject. There is a lack of work regarding other states of consent, as well as creating a comprehensive information model around consent. Furthermore, consent as a concept is encompassing of the notion of given consent, as it also includes other aspects, or states, of consent such as "not given" or "refused" or "withdrawn" which cannot be modelled in the same manner as "given consent". This provided the motivation to create a more generic ontology for the modelling of consent states, in the form of GConsent.</p>
 </div>
+
+<div id="div-intro-aims-scope-limitations">
+	<h3 id="intro-aims-scope-limitations" class="list">Aims, Scope, and Limitations</h3>
+	<h4>Aims</h4>
+	<ol>
+		<li>To model information associated with Consent as per the GDPR</li>
+		<li>Represent consent as an entity with various states (e.g. unknown, given, withdrawn)</li>
+		<li>Investigate ways to model related information (e.g. provenance, associations) using existing vocabularies</li>
+		<li>To provide an OWL2-DL ontology with concepts and relationships based on above</li>
+		<li>Create a list of competency questions related to consent and its assessment</li>
+	</ol>
+	<h4>Scope</h4>
+	<ul>
+		<li>Consent as a concept has broad definitions and applications. We limit the scope in GConsent to consent as defined within the context of the GDPR.</li>
+		<li>GConsent models information which will be of assistance to the process of compliance verification and demonstration. GDPR Compliance is not the goal for GConsent.</li>
+		<li>GConsent captures only the directly (or sometimes closely) related information regarding consent. For example, it does not capture things such as how the purpose or processing specified in the process is actually carried out.</li>
+	</ul>
+	<h4>Limitations</h4>
+	<ul>
+		<li>GConsent does not model the consent as a 'policy' or 'contract', and therefore does not contain more specific information such as where the data will be collected from or any temporal aspects regarding processes. This limitation can be addressed by using relevant concepts and properties from external vocabularies such as PROV-O.</li>
+		<li>GConsent is related to, but does not model the provenance of lifecycles for consent. GDPRov is a provenance vocabulary that can be used to model the provenance of lifecycles.</li>
+		<li>There is no information on how existing schemas and vocabularies can be integrated into GConsent. This limitation is used as the basis for future work in this direction, particularly the investigation of using R2RML for mapping databases containing consent into ontological representations.</li>
+		<li>GConsent has a role in compliance verification and demonstration, which is currently not explained in detail. This is also the basis for future work by creating a platform that provides design patterns and tools for verifying the validity of consent, and for producing documentation based on it.</li>
+	</ul>
 </div>
+
+</html>
